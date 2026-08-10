@@ -22,6 +22,8 @@ The program studies warranted causal pathways from evidence to consequential cha
 \rightarrow
 \text{Protected structure}
 \rightarrow
+\text{Post-Modification Correctability}
+\rightarrow
 \text{Repeated correction}
 \rightarrow
 \text{Justified transformability}
@@ -43,6 +45,8 @@ The corresponding epistemic dependency is:
 \text{validated causal composition}
 \prec
 \text{modification consequences}
+\prec
+\text{post-modification correctability}
 \prec
 \text{repeated correction}
 \prec
@@ -210,15 +214,7 @@ M
 
 If a claimed path \(\pi\) represents additional transformations between the decision identified by G1 and the modification identified by G2 as causally separable, those transformations must satisfy the CCA Causal Composition Principle.
 
-Thus the previous shorthand:
-
-\[
-\mathrm{ADVANCE}\iff G_1\land G_{2T}\land G_{2P}
-\]
-
-is insufficient whenever the claimed path contains additional separable transformations.
-
-The correct authorization structure is:
+Thus:
 
 \[
 \boxed{
@@ -238,27 +234,116 @@ where `PathValid(π)` requires every additional separable transformation crossed
 
 A large target improvement cannot compensate for evidence-insensitive decision control, an invalid intermediate transformation, or unacceptable collateral interference.
 
-## Level 4 — Repeated correction
+## Level 4A — Post-Modification Correctability
 
-The next program-level conceptual frontier is:
+CCA provisionally adopts **Post-Modification Correctability (PMC)** as the conceptual object immediately upstream of repeated correction.
 
-> **What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?**
+Its scientific role is:
 
-This asks whether the evidence-to-change machinery remains available and valid in the changed system rather than only before the first modification.
+> **After a consequential change, do the conditions required for future warranted correction remain available?**
 
-A schematic recursion is:
+The causal content remains:
 
 \[
-S_t
-\xrightarrow{\text{warranted correction}}
-S_{t+1}
-\xrightarrow{E_{t+1}}
-\text{new warranted authority}
-\xrightarrow{}
-\text{new consequential change}.
+\boxed{
+\text{future admissible evidence}
+\leadsto
+\text{warranted causal authority}
+\leadsto
+\text{consequential correction}
+}
 \]
 
-This gate is not yet operationalized and no empirical repeated-correction study is authorized. Any future experiment remains blocked until its upstream evidence-to-change pathway satisfies G1, direct G2 identification, and the causal-composition principle for every separable transformation the claim crosses.
+with the question being whether that pathway remains available after modification within a prospectively declared scope.
+
+PMC is not defined as current performance, capability, generic adaptability, plasticity, or one-shot correction success.
+
+Thus:
+
+\[
+\boxed{
+\text{the modified system is still good}
+\not\equiv
+\text{the modified system is still correctable}
+}
+\]
+
+and:
+
+\[
+\boxed{
+\text{successful correction at }t
+\not\Rightarrow
+\text{PMC at }t+1.
+}
+\]
+
+PMC is also not provisionally treated as an intrinsic scalar of \(S_{t+1}\) alone. A future contract must define the relevant relational correction scope. Illustrative notation such as
+
+\[
+\mathrm{Corr}(S_{t+1};\Omega)
+\]
+
+is not frozen notation or a metric.
+
+The following remain explicitly unfrozen:
+
+```text
+future-correction environment / Omega
+system-apparatus boundary
+future horizon
+correction-path topology
+dimensions of correctability
+preservation / degradation criterion
+C_corr scalar
+estimand / estimator
+metric / threshold
+empirical protocol
+```
+
+The canonical role decision is [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
+
+## Level 4B — Repeated correction
+
+CCA provisionally separates PMC from repeated correction:
+
+\[
+\boxed{
+\mathrm{PMC}\neq\mathrm{Repeated\ Correction}.
+}
+\]
+
+PMC concerns whether another warranted correction remains possible under the declared correction scope.
+
+Repeated correction concerns whether another valid correction episode actually occurs and is established under its own prospective causal contract.
+
+The candidate dependency is:
+
+\[
+\boxed{
+\text{one valid correction}
+\rightarrow
+\text{preserved capacity for another}
+\rightarrow
+\text{actual repeated correction}
+}
+\]
+
+The arrows remain unvalidated scientific claims.
+
+No repeated-correction experiment is operationalized or authorized.
+
+PMC also does not establish improvement in correction capacity:
+
+\[
+\boxed{
+\text{PMC preserved}
+\not\Rightarrow
+\Delta\mathrm{Corr}>0.
+}
+\]
+
+Thus `C_improve` remains downstream and theoretical.
 
 ## Level 5 — Justified transformability
 
@@ -304,7 +389,7 @@ M
 }
 \]
 
-but the arrow from the selected decision to modification is now explicitly recognized as an architecture-dependent causal-composition obligation rather than silently inherited from the endpoints.
+but the arrow from the selected decision to modification is explicitly recognized as an architecture-dependent causal-composition obligation rather than silently inherited from the endpoints.
 
 Separate identification remains:
 
@@ -312,6 +397,7 @@ Separate identification remains:
 G1   warranted causal evidence control over the current separable decision
 G2T  target efficacy under direct do(M=m)
 G2P  protected-behavior isolation under direct do(M=m)
+PMC  conceptual post-change availability of future warranted-correction pathways
 ```
 
 The non-substitution boundary is:
@@ -328,6 +414,8 @@ G_1
 \not\Rightarrow
 G_2
 \not\Rightarrow
+\mathrm{PMC}
+\not\Rightarrow
 \text{repeated correction}
 \not\Rightarrow
 \text{justified transformability}
@@ -337,6 +425,12 @@ G_2
 \]
 
 No descendant experiment is currently frozen or authorized.
+
+## Next conceptual frontier
+
+The next attack is:
+
+> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
 
 ## Research authority
 
