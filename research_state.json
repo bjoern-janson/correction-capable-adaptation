@@ -1,31 +1,37 @@
 {
-  "schema_version": 1,
+  "schema_version": 2,
   "program": "Correction-Capable Adaptation",
   "central_question": "Can an adaptive system increase its future viability while remaining capable of incorporating justified correction?",
   "core_rule": "Never infer a downstream capability from an unvalidated upstream mechanism.",
   "current_frontier": {
     "maturity_level": 0,
-    "layer": "measurement",
-    "object": "G1 meaning of evidence use",
-    "lifecycle_state": "ADVERSARIAL_REVIEW",
-    "unresolved_alternatives": [
-      "G1_broad",
-      "G1_relational"
-    ],
-    "next_legitimate_action": "Resolve the scientific-object meaning of evidence use before selecting an ontology or constructing the descendant evidence intervention space."
+    "layer": "measurement_and_scientific_object",
+    "object": "G1 warranted causal evidence control over a separable adaptive decision",
+    "lifecycle_state": "ROLE_PROVISIONALLY_FIXED",
+    "operational_instantiation": "candidate_selection",
+    "universal_architectural_claim": false,
+    "empirical_status": "UNTESTED",
+    "contract_state": "UNFROZEN",
+    "implementation_authorized": false
+  },
+  "next_scientific_design_boundary": {
+    "object": "G1_to_G2_bridge",
+    "question": "How should CCA connect warranted causal control over a separable adaptive decision to independently identified modification competence while preserving direct do(M=m) identification?",
+    "status": "NOT_YET_OPENED",
+    "implementation_authorized": false
   },
   "maturity_ladder": [
     {
       "level": 0,
       "name": "measurement_validity",
-      "status": "ACTIVE_FRONTIER",
-      "criterion": "The intended scientific object is identifiable under a prospectively declared measurement structure."
+      "status": "SCIENTIFIC_ROLE_PROVISIONALLY_FIXED_CONTRACT_UNFROZEN",
+      "criterion": "The intended G1 role is scientifically coherent and scoped; any empirical instantiation still requires a prospectively frozen measurement and treatment contract."
     },
     {
       "level": 1,
       "name": "evidence_controlled_selection",
-      "status": "BLOCKED",
-      "blocked_by": "G1 scientific-object decision"
+      "status": "SCIENTIFIC_OBJECT_DEFINED_EMPIRICALLY_UNTESTED",
+      "criterion": "Prospectively admissible independently warranted evidence causally controls a separable adaptive decision in the warranted direction."
     },
     {
       "level": 2,
@@ -76,6 +82,26 @@
       "implementation_authorized": false,
       "descendant_repairs_count_as_same_object": false
     },
+    "G1": {
+      "role": "first_empirical_causal_gate_in_current_CCA_decomposition",
+      "scientific_role": "warranted evidence acquiring causal control over a separable adaptive decision",
+      "operational_instantiation": "candidate_selection",
+      "architectural_universality_claimed": false,
+      "status": "ROLE_PROVISIONALLY_FIXED",
+      "empirical_status": "UNTESTED",
+      "contract_state": "UNFROZEN",
+      "implementation_authorized": false,
+      "non_substitutes": [
+        "codebook construction",
+        "relational sensitivity",
+        "representation invariance",
+        "access robustness",
+        "candidate accuracy",
+        "mechanism/channel attribution"
+      ],
+      "provenance_prs": [3, 4, 5, 6, 7, 8],
+      "decision_record": "lineage/decisions/G1_LEVEL0_ROLE.md"
+    },
     "ECIM": {
       "role": "provisional_mechanism_architecture",
       "lifecycle_state": "PROPOSED",
@@ -83,7 +109,7 @@
       "fixed_design_principles": [
         "G2 is identified by independent direct do(M=m), not by conditioning on selected modifications."
       ],
-      "measurement_state": "UNRESOLVED",
+      "measurement_state": "UNRESOLVED_AT_EXPERIMENT_LEVEL",
       "contract_state": "UNFROZEN",
       "execution_state": "NOT_AUTHORIZED",
       "implementation_authorized": false
@@ -93,8 +119,17 @@
     "universal_relational_codebook": "REFUTED",
     "ontology_conditional_relational_codebook": "FEASIBLE_IN_PRINCIPLE",
     "constant_function_witness": "RELATIONAL_UNSAT",
-    "balanced_three_candidate_two_region_witness": "RELATIONAL_SAT_IN_PRINCIPLE"
+    "balanced_three_candidate_two_region_witness": "RELATIONAL_SAT_IN_PRINCIPLE",
+    "g1_program_role": "PROVISIONALLY_FIXED_SCOPED",
+    "g1_architectural_universality": "NOT_ESTABLISHED"
   },
+  "causal_boundaries": [
+    "G1 != CCA",
+    "G1 does not imply G2",
+    "G2 does not imply repeated correction",
+    "repeated correction does not imply justified transformability",
+    "justified transformability does not imply adaptive viability"
+  ],
   "agent_policy": {
     "must_read_before_empirical_implementation": true,
     "implementation_requires": {
@@ -109,7 +144,9 @@
       "repair a closed negative result under the same object identity",
       "loosen a frozen gate after outcome",
       "replace a policy-level estimand with a post-selected subset",
-      "infer capability or viability from upstream mechanism success"
+      "infer capability or viability from upstream mechanism success",
+      "treat candidate selection as a universal architecture of correction",
+      "infer modification competence from selected or deployed modifications instead of direct do(M=m)"
     ]
   }
 }
