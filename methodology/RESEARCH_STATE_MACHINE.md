@@ -4,28 +4,29 @@ This document defines how scientific work is allowed to move through the Correct
 
 The purpose is procedural: **an unresolved scientific question must not become an implementation decision by accident.**
 
-The program is cumulative. A downstream gate can be entered only when the upstream scientific object, measurement structure, and authorization conditions required by that gate have already been established.
+The program is cumulative. A downstream claim can acquire authority only when the upstream scientific objects, measurement structures, and every separable causal transformation required by that claim have already been warranted.
 
 ## Program maturity ladder
 
 The scientific dependency ladder is:
 
 ```text
-Level 0  MEASUREMENT VALIDITY
+Level 0  MEASUREMENT / SCIENTIFIC-OBJECT VALIDITY
          Can the intended scientific object be identified?
               ↓
-Level 1  EVIDENCE-CONTROLLED SELECTION
-         Does evidence control warranted candidate choice?
+Level 1  EVIDENCE-CONTROLLED ADAPTIVE DECISION
+         Does warranted evidence acquire causal control?
               ↓
 Level 2  ISOLATED MODIFICATION
          Does direct do(M=m) produce the intended target effect
          while preserving protected behavior within tolerance?
               ↓
 Level 3  EVIDENCE → JUSTIFIED MODIFICATION
-         Do selection and modification mechanisms work together?
+         Can the validated upstream and downstream relations be
+         composed across every separable transformation they cross?
               ↓
 Level 4  REPEATED CORRECTION
-         Can justified correction recur without destroying prior valid structure?
+         Can justified correction recur after consequential change?
               ↓
 Level 5  JUSTIFIED TRANSFORMABILITY
          Does repeated correction preserve or expand appropriately reachable states?
@@ -37,7 +38,38 @@ Level 7  EXTREME ADAPTIVE SYSTEMS
          AGI / recursive improvement / ASI as stress-test regimes
 ```
 
-These levels are **not averaged**. Program maturity is defined by the first unresolved causal prerequisite.
+These levels are **not averaged**. Empirical maturity is limited by the first unresolved causal prerequisite of the claim being made.
+
+## CCA Causal Composition Principle
+
+CCA adopts the following canonical methodological rule:
+
+> **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
+
+Compactly:
+
+\[
+\boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}.}
+\]
+
+and:
+
+\[
+\boxed{\text{No causal authority may be propagated across an unvalidated separable transformation.}}
+\]
+
+For a claimed path \(\pi\), every transformation the prospective contract represents as causally separable and that the claim crosses must be warranted. A separable transformation may be:
+
+1. independently causally identified; or
+2. fixed by a prospectively specified, independently validated or mechanically verified apparatus relation within the relevant scope.
+
+If it is neither, the claim must stop before crossing it.
+
+An apparatus guarantee is not created by declaration. If the experiment relies on a relation such as \(M=\phi(C)\), \(\phi\) must be prospectively specified and validated or verified over the claimed domain.
+
+An apparatus-mediated link does not establish that the adaptive system itself possesses the corresponding adoption, translation, or deployment competence.
+
+The canonical decision record is [`../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
 
 ## Experiment lifecycle
 
@@ -91,6 +123,7 @@ Required questions include:
 - Can an ordinary or shallower explanation absorb the proposed mechanism?
 - Are there constructive impossibility cases?
 - What evidence would disconfirm the object or mechanism?
+- Does the claimed causal path cross separable transformations that have not acquired independent authority?
 
 A failed adversarial review returns to `PROPOSED` or closes the proposed construction.
 
@@ -98,13 +131,16 @@ A failed adversarial review returns to `PROPOSED` or closes the proposed constru
 
 The measurement contract is sufficiently specified that the intended object can, in principle, be distinguished from relevant alternatives under the declared admissible transformations and nuisance channels.
 
-This state does **not** imply that the mechanism exists.
+This state does **not** imply that the mechanism exists or that adjacent separable transformations are valid.
 
 ### CONTRACT_FROZEN
 
 Before observing scientific outcomes, the contract freezes at minimum:
 
 - scientific proposition;
+- causal path actually claimed;
+- separable variables and transformations used by that path;
+- identification or validated-apparatus status of each required separable transformation;
 - intervention space;
 - independent truth/warrant mapping where required;
 - target and protected outcomes;
@@ -194,6 +230,20 @@ Conceptually:
 
 Logging a result is not sufficient. The evidence must change the future authority state of hypotheses, mechanisms, measurements, policies, or actions within its warranted scope.
 
+### Causal composition
+
+Authority transfer is local to the relation identified.
+
+If a contract claims:
+
+\[
+A\rightarrow B\rightarrow C,
+\]
+
+then evidence for \(A\rightarrow B\) and separate evidence for an effect of \(C\) do not establish \(B\rightarrow C\).
+
+Endpoint validity does not validate an intervening pathway.
+
 ## Frozen-object rule
 
 A `CLOSED` object is immutable as a scientific result.
@@ -235,23 +285,34 @@ An agent must not infer authorization from:
 - an open issue;
 - a plausible benchmark;
 - available compute;
-- a model being easy to run.
+- a model being easy to run;
+- successful endpoint assays when an intervening separable transformation remains unvalidated.
 
 ## Current application
 
-The current frontier is Level 0.
+The scientific role of `G1` is provisionally fixed:
 
-```text
-G1 scientific object
-G1^broad vs G1^relational
-→ ADVERSARIAL_REVIEW
-```
+\[
+\boxed{
+G_1=
+\text{warranted evidence acquiring causal control over a separable adaptive decision}
+}
+\]
 
-Measurement analysis has already established:
+Candidate selection is the current operational instantiation, not a universal architecture.
 
-```text
-universal relational codebook       REFUTED
-ontology-conditional construction   FEASIBLE IN PRINCIPLE
-```
+`G1` remains empirically untested and contract-unfrozen.
 
-But the program has not selected which G1 object it intends to test. Therefore ontology selection, evidence-space freezing, model selection, prompt engineering, and ECIM execution remain unauthorized.
+`G2` remains architecture-only and must be identified independently through direct:
+
+\[
+\boxed{do(M=m)\rightarrow(Y_T,Y_P)}.
+\]
+
+PRs #9 and #10 established the methodological need for causal composition discipline without earning a universal intermediate gate. The CCA Causal Composition Principle is now canonical.
+
+The next **conceptual** frontier is:
+
+> **What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?**
+
+This does not authorize a repeated-correction experiment. Any empirical claim about post-modification correctability remains blocked until its particular evidence-to-change pathway satisfies the required empirical gates, frozen contract, and every separable transformation it crosses under the CCA Causal Composition Principle.
