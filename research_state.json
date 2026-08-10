@@ -1,5 +1,5 @@
 {
-  "schema_version": 3,
+  "schema_version": 4,
   "program": "Correction-Capable Adaptation",
   "central_question": "Can an adaptive system increase its future viability while remaining capable of incorporating justified correction?",
   "core_rule": "Never infer a downstream capability from an unvalidated upstream mechanism.",
@@ -28,11 +28,11 @@
     "implementation_authorized": false
   },
   "conceptual_frontier": {
-    "object": "post_modification_correctability",
-    "question": "What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?",
-    "status": "CONCEPTUAL_FRONTIER_ONLY",
+    "object": "PMC_vs_repeated_correction",
+    "question": "Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?",
+    "status": "ADVERSARIAL_REVIEW_NEXT",
     "empirical_execution_authorized": false,
-    "prerequisite_note": "Any empirical repeated-correction claim remains blocked until its particular evidence-to-change pathway satisfies G1, direct G2 identification, and the CCA causal composition principle for every separable transformation it crosses."
+    "prerequisite_note": "PMC role is provisionally fixed but its environment, system boundary, horizon, dimensions, representation, preservation criterion, metric, and empirical protocol remain unfrozen. Any empirical repeated-correction claim remains blocked until its particular evidence-to-change pathway satisfies upstream gates and the CCA causal composition principle."
   },
   "maturity_ladder": [
     {
@@ -61,8 +61,9 @@
     },
     {
       "level": 4,
-      "name": "repeated_correction",
-      "status": "CONCEPTUAL_FRONTIER_EMPIRICALLY_NOT_AUTHORIZED"
+      "name": "post_modification_correctability_and_repeated_correction",
+      "status": "PMC_ROLE_PROVISIONALLY_FIXED_REPEATED_CORRECTION_EMPIRICALLY_NOT_AUTHORIZED",
+      "criterion": "PMC asks whether the conditions for future warranted correction remain available after consequential change; repeated correction requires a subsequent valid correction episode. Their distinction remains under adversarial review and neither has an empirical contract."
     },
     {
       "level": 5,
@@ -130,6 +131,36 @@
       ],
       "implementation_authorized": false
     },
+    "PMC": {
+      "role": "conceptual_object_immediately_upstream_of_repeated_correction",
+      "scientific_question": "After a consequential change, do the conditions required for future warranted correction remain available?",
+      "causal_content": "future admissible evidence -> warranted causal authority -> consequential correction remains available after modification within a prospectively specified scope",
+      "status": "ROLE_PROVISIONALLY_FIXED",
+      "empirical_status": "UNTESTED",
+      "contract_state": "UNFROZEN",
+      "metric_state": "UNFROZEN",
+      "intrinsic_state_scalar_claimed": false,
+      "relational_scope_required": true,
+      "repeated_correction_equivalence_claimed": false,
+      "c_improve_equivalence_claimed": false,
+      "unfrozen": [
+        "future-correction environment Omega",
+        "system/apparatus boundary",
+        "temporal horizon",
+        "correction-path topology",
+        "dimensions of correctability",
+        "preservation/degradation criterion",
+        "C_corr scalar",
+        "estimand",
+        "estimator",
+        "metric",
+        "threshold",
+        "empirical protocol"
+      ],
+      "provenance_prs": [11],
+      "decision_record": "lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md",
+      "implementation_authorized": false
+    },
     "ECIM": {
       "role": "provisional_mechanism_architecture",
       "lifecycle_state": "PROPOSED",
@@ -153,14 +184,20 @@
     "g1_program_role": "PROVISIONALLY_FIXED_SCOPED",
     "g1_architectural_universality": "NOT_ESTABLISHED",
     "universal_explicit_bridge_requirement": "REFUTED_AS_TOO_STRONG",
-    "architecture_conditional_causal_composition_rule": "CANONICAL"
+    "architecture_conditional_causal_composition_rule": "CANONICAL",
+    "post_modification_correctability_role": "PROVISIONALLY_FIXED_CONCEPTUAL",
+    "pmc_intrinsic_scalar": "NOT_ESTABLISHED",
+    "pmc_repeated_correction_equivalence": "UNDER_ADVERSARIAL_REVIEW"
   },
   "causal_boundaries": [
     "G1 != CCA",
     "G1 does not imply G2",
     "positive G1 and positive G2 do not imply a connected evidence-to-modification pathway",
     "validated endpoints do not imply a validated pathway",
-    "G2 does not imply repeated correction",
+    "one successful correction does not imply post-modification correctability",
+    "current performance or capability does not imply post-modification correctability",
+    "post-modification correctability does not imply repeated correction occurred",
+    "preserved post-modification correctability does not imply correction capacity improved",
     "repeated correction does not imply justified transformability",
     "justified transformability does not imply adaptive viability"
   ],
@@ -187,7 +224,10 @@
       "infer modification competence from selected or deployed modifications instead of direct do(M=m)",
       "compose validated endpoints across an unvalidated separable transformation",
       "treat deterministic apparatus plumbing as validated without prospective specification and validation or verification",
-      "invent an intermediate gate when the target architecture does not instantiate independently meaningful separable variables"
+      "invent an intermediate gate when the target architecture does not instantiate independently meaningful separable variables",
+      "treat current performance, generic adaptability, or one-shot correction success as evidence of PMC",
+      "treat PMC as an intrinsic scalar without a prospectively specified relational correction scope",
+      "treat PMC as equivalent to repeated correction or C_improve"
     ]
   }
 }
