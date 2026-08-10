@@ -25,8 +25,12 @@ Level 3  EVIDENCE → JUSTIFIED MODIFICATION
          Can the validated upstream and downstream relations be
          composed across every separable transformation they cross?
               ↓
-Level 4  REPEATED CORRECTION
-         Can justified correction recur after consequential change?
+Level 4A POST-MODIFICATION CORRECTABILITY
+         After consequential change, do the conditions required
+         for future warranted correction remain available?
+              ↓
+Level 4B REPEATED CORRECTION
+         Does another valid correction episode actually occur?
               ↓
 Level 5  JUSTIFIED TRANSFORMABILITY
          Does repeated correction preserve or expand appropriately reachable states?
@@ -39,6 +43,8 @@ Level 7  EXTREME ADAPTIVE SYSTEMS
 ```
 
 These levels are **not averaged**. Empirical maturity is limited by the first unresolved causal prerequisite of the claim being made.
+
+PMC is currently a **provisionally fixed conceptual role**, not an empirical gate with a frozen measurement contract. The Level-4A/4B split is therefore a dependency distinction, not evidence that either object has passed empirically.
 
 ## CCA Causal Composition Principle
 
@@ -244,6 +250,41 @@ then evidence for \(A\rightarrow B\) and separate evidence for an effect of \(C\
 
 Endpoint validity does not validate an intervening pathway.
 
+## Post-Modification Correctability discipline
+
+CCA provisionally adopts PMC as the conceptual object immediately upstream of repeated correction:
+
+> **After a consequential change, do the conditions required for future warranted correction remain available?**
+
+PMC must retain the causal content:
+
+\[
+\text{future admissible evidence}
+\leadsto
+\text{warranted causal authority}
+\leadsto
+\text{consequential correction}.
+\]
+
+PMC must not be inferred from:
+
+- current performance or capability;
+- generic plasticity or steerability;
+- success of the immediately preceding correction;
+- external rescue outside the declared system boundary.
+
+PMC is not yet a scalar or metric. A future empirical contract must prospectively specify the relational correction scope, system/apparatus boundary, horizon, representation, and any measurement or preservation criterion before execution.
+
+The canonical role decision is [`../lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](../lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
+
+CCA currently treats:
+
+\[
+\boxed{\mathrm{PMC}\neq\mathrm{Repeated\ Correction}}
+\]
+
+as a provisional conceptual distinction under adversarial review. PMC concerns availability of another warranted correction path; repeated correction concerns an actually established subsequent correction episode.
+
 ## Frozen-object rule
 
 A `CLOSED` object is immutable as a scientific result.
@@ -286,7 +327,9 @@ An agent must not infer authorization from:
 - a plausible benchmark;
 - available compute;
 - a model being easy to run;
-- successful endpoint assays when an intervening separable transformation remains unvalidated.
+- successful endpoint assays when an intervening separable transformation remains unvalidated;
+- the existence of a PMC role without a frozen PMC measurement contract;
+- successful one-shot correction as evidence of repeated correction or PMC.
 
 ## Current application
 
@@ -309,10 +352,12 @@ Candidate selection is the current operational instantiation, not a universal ar
 \boxed{do(M=m)\rightarrow(Y_T,Y_P)}.
 \]
 
-PRs #9 and #10 established the methodological need for causal composition discipline without earning a universal intermediate gate. The CCA Causal Composition Principle is now canonical.
+The CCA Causal Composition Principle is canonical.
+
+PMC is now provisionally fixed **in role only**. Its future-correction environment, system boundary, horizon, representation, dimensions, metric, estimator, threshold, and protocol remain unfrozen.
 
 The next **conceptual** frontier is:
 
-> **What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?**
+> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
 
-This does not authorize a repeated-correction experiment. Any empirical claim about post-modification correctability remains blocked until its particular evidence-to-change pathway satisfies the required empirical gates, frozen contract, and every separable transformation it crosses under the CCA Causal Composition Principle.
+This does not authorize a repeated-correction experiment. Any empirical claim about PMC or repeated correction remains blocked until its particular evidence-to-change pathway satisfies the required empirical gates, frozen contract, and every separable transformation it crosses under the CCA Causal Composition Principle.
