@@ -22,8 +22,10 @@ The program does not average evidence across maturity levels. Downstream authori
 | G1-ROLE | 0 | Warranted causal evidence control over a separable adaptive decision | **Role provisionally fixed / empirically untested** | PRs #3–#8 progressively eliminated codebook construction, relational sensitivity, representation invariance, access robustness, accuracy, and mechanism attribution as substitutes for the parent object. | CCA may define its first studied empirical pathway as warranted evidence acquiring causal control over a separable adaptive decision, currently instantiated as candidate selection. | A positive G1 result; universal necessity of candidate selection; modification competence; repeated correction; transformability; viability. | Scientific-object role fixed; experiment-level contract remains unfrozen. |
 | COMP-A9 | cross-level | G1/G2 bridge semantics | Closed adversarial provenance | `G1 -> G2` is shorthand, not a literal causal edge; positive G1 and direct G2 endpoint assays can coexist while the middle selection→deployment→modification relation is absent, blocked, mistranslated, or bypassed. | Established that endpoint success does not identify the missing middle relation in a separable decomposition. | A universal bridge variable; a named gate; a bridge estimand. | Motivated an architecture-necessity attack rather than immediate gate creation. |
 | COMP-A10 | cross-level | Architecture-independent bridge necessity | Closed adversarial provenance | Separate bridge identification is required for some separable architectures, unnecessary for direct-update architectures, and potentially malformed for inseparable architectures. | Architecture-conditional composition obligation; refutation of universal `G1.5`. | A universal adoption/translation architecture. | Supported a general causal-composition law instead of another maturity level. |
-| CCA-COMP | cross-level | CCA Causal Composition Principle | **Canonical methodological rule** | Validated endpoints do not validate an intervening separable pathway. Every separable transformation crossed by a claim must be independently identified or prospectively specified and validated/verified as an apparatus guarantee; otherwise the claim must stop before it. | Program-wide authority-propagation rule; Level-3 conjunction repaired to include path validity. | Any positive G1/G2 result; a bridge gate; system-internal bridge competence; repeated correction. | Governs all future contracts and causal claims. Opens post-modification correctability as the next conceptual frontier while leaving empirical execution blocked. |
+| CCA-COMP | cross-level | CCA Causal Composition Principle | **Canonical methodological rule** | Validated endpoints do not validate an intervening separable pathway. Every separable transformation crossed by a claim must be independently identified or prospectively specified and validated/verified as an apparatus guarantee; otherwise the claim must stop before it. | Program-wide authority-propagation rule; Level-3 conjunction repaired to include path validity. | Any positive G1/G2 result; a bridge gate; system-internal bridge competence; repeated correction. | Governs all future contracts and causal claims. |
 | G2-DESIGN | 2 | Modification identification | Fixed design principle / architecture only | Modification efficacy/isolation must be estimated through direct \(do(M=m)\), not only selected modifications. | Clean separation of decision-control competence from modification competence. | Evidence that any modification is effective or isolated; evidence about how M acquired its value. | Future Level-2 contract must independently estimate target efficacy and protected interference. |
+| PMC-A11 | 4 | Post-modification correctability scientific-object attack | Closed adversarial provenance | PMC can be distinguished in principle from current performance, current capability, generic adaptability/plasticity, and one-shot correction success; treating it as an intrinsic scalar of \(S_{t+1}\) is under-specified without a declared future-correction scope. | Supports a relational/scoped conceptual object and separates correctability level from the causal effect of modification on correctability. | A PMC metric; \(\Omega\); system boundary; horizon; topology; scalar; preservation criterion; repeated-correction result. | Supported a role-level decision rather than measurement construction. |
+| PMC-ROLE | 4 | Post-Modification Correctability | **Role provisionally fixed / empirically untested** | PR #11 showed that a changed system may perform better yet lose future correction pathways, or preserve future warranted correction without immediate performance gain. | CCA may use PMC as the conceptual object immediately upstream of repeated correction: after consequential change, do the conditions required for future warranted correction remain available? | A PMC metric; a scalar \(C_{corr}\); correction-capacity improvement; repeated correction; transformability; viability. | Opens the PMC-vs-repeated-correction distinction as the next conceptual attack while leaving all operational machinery unfrozen. |
 
 ## Research maturity ladder
 
@@ -34,7 +36,8 @@ LEVEL 0  measurement/scientific-object validity  G1 ROLE PROVISIONALLY FIXED; CO
 LEVEL 1  evidence-controlled adaptive decision   SCIENTIFIC OBJECT DEFINED; EMPIRICALLY UNTESTED
 LEVEL 2  isolated modification                    ARCHITECTURE ONLY
 LEVEL 3  evidence → justified modification        NOT AUTHORIZED; CAUSAL COMPOSITION REQUIRED
-LEVEL 4  repeated correction                      CONCEPTUAL FRONTIER; EMPIRICALLY NOT AUTHORIZED
+LEVEL 4A post-modification correctability         ROLE PROVISIONALLY FIXED; METRIC/CONTRACT UNFROZEN
+LEVEL 4B repeated correction                      EMPIRICALLY NOT AUTHORIZED
 LEVEL 5  justified transformability               THEORETICAL ONLY
 LEVEL 6  adaptive viability / capability          NOT AUTHORIZED
 LEVEL 7  extreme adaptive systems                 NOT AUTHORIZED
@@ -60,7 +63,7 @@ E\rightarrow C_{\mathrm{selected}},
 
 not a universal architectural claim.
 
-The decision record is [`decisions/G1_LEVEL0_ROLE.md`](decisions/G1_LEVEL0_ROLE.md).
+Decision record: [`decisions/G1_LEVEL0_ROLE.md`](decisions/G1_LEVEL0_ROLE.md).
 
 ## CCA Causal Composition Principle
 
@@ -72,17 +75,57 @@ Canonical rule:
 
 > **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
 
-If a transformation is excluded, the claim stops before it; exclusion does not validate it.
-
 Decision record: [`decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+
+## Post-Modification Correctability
+
+CCA provisionally adopts PMC as the conceptual object immediately upstream of repeated correction:
+
+> **After a consequential change, do the conditions required for future warranted correction remain available?**
+
+The role retains the causal requirement:
+
+\[
+\boxed{
+\text{future admissible evidence}
+\leadsto
+\text{warranted causal authority}
+\leadsto
+\text{consequential correction}
+}
+\]
+
+within a prospectively declared correction scope.
+
+PMC is not current performance, current capability, generic adaptability, or one-shot correction success. It is not yet a scalar or metric.
+
+Decision record: [`decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
+
+CCA provisionally distinguishes:
+
+\[
+\boxed{
+\mathrm{PMC}\neq\mathrm{Repeated\ Correction}
+}
+\]
+
+and:
+
+\[
+\boxed{
+\text{PMC preserved}\not\Rightarrow\Delta\mathrm{Corr}>0.
+}
+\]
 
 ## Current empirical authority
 
 ```text
 G1 role                           PROVISIONALLY FIXED
 CCA causal composition principle  CANONICAL METHODOLOGICAL RULE
+PMC role                          PROVISIONALLY FIXED
 G1 empirical result               UNOBSERVED
 G1 experiment contract            UNFROZEN
+PMC measurement / metric          UNFROZEN
 G1 implementation                 NOT AUTHORIZED
 Level-3 end-to-end composition    NOT AUTHORIZED
 repeated-correction execution     NOT AUTHORIZED
@@ -91,16 +134,12 @@ repeated-correction execution     NOT AUTHORIZED
 Therefore:
 
 \[
-\boxed{G_1\neq\mathrm{CCA}}
-\]
-
-and
-
-\[
 \boxed{
 G_1
 \not\Rightarrow
 G_2
+\not\Rightarrow
+\mathrm{PMC}
 \not\Rightarrow
 \text{repeated correction}
 \not\Rightarrow
@@ -110,25 +149,11 @@ G_2
 }
 \]
 
-Also:
-
-\[
-\boxed{
-G_1>0\land G_2>0
-\not\Rightarrow
-\text{connected evidence-to-modification pathway}
-}
-\]
-
-when the claimed path crosses an unvalidated separable transformation.
-
 ## Current conceptual frontier
 
-> **What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?**
+> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
 
-This is a theory/scientific-object frontier, not authorization to execute a repeated-correction experiment.
-
-Any future empirical claim at this layer remains blocked until its particular evidence-to-change path has established the required upstream gates and valid causal composition.
+This is a scientific-object frontier, not authorization to execute a repeated-correction experiment.
 
 ## Evidence-to-authority rule
 
@@ -141,7 +166,7 @@ observation
 → next research state
 ```
 
-A result may close a hypothesis without validating its proposed replacement. A mechanism diagnosis may motivate a descendant without repairing the ancestor. An existence witness may show feasibility without authorizing a model experiment. Valid endpoint relations may coexist without validating an intervening separable transformation.
+A result may close a hypothesis without validating its proposed replacement. A mechanism diagnosis may motivate a descendant without repairing the ancestor. An existence witness may show feasibility without authorizing a model experiment. Valid endpoint relations may coexist without validating an intervening separable transformation. A preserved conceptual role does not establish its metric or empirical value.
 
 ## Source of current authority state
 
