@@ -37,7 +37,8 @@ LEVEL 4B REPEATED CORRECTION
          Does another valid correction actually occur?
              ↓
 LEVEL 5  JUSTIFIED TRANSFORMABILITY
-         Does the system remain open to warranted future change?
+         Can the system become appropriately different
+         while preserving warranted future correction pathways?
              ↓
 LEVEL 6  ADAPTIVE VIABILITY / CAPABILITY
          Does correction-capable adaptation improve future viability?
@@ -88,7 +89,7 @@ Decision record: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](linea
 
 ## Post-Modification Correctability
 
-CCA now provisionally adopts **Post-Modification Correctability (PMC)** as the conceptual object immediately upstream of repeated correction.
+CCA provisionally adopts **Post-Modification Correctability (PMC)** as the conceptual object immediately upstream of repeated correction.
 
 Its role is:
 
@@ -122,33 +123,63 @@ PMC is also **not yet a metric**. Its future-correction environment, system boun
 
 Decision record: [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
 
-## PMC is not repeated correction
+## Capacity survived is not capacity exercised
 
-CCA provisionally separates:
-
-\[
-\boxed{
-\mathrm{PMC}\neq\mathrm{Repeated\ Correction}.
-}
-\]
-
-PMC asks whether another warranted correction remains possible after change.
-
-Repeated correction asks whether another valid correction episode actually occurs and is established.
-
-The candidate dependency is:
+CCA now canonically preserves:
 
 \[
 \boxed{
-\text{one valid correction}
-\rightarrow
-\text{preserved capacity for another}
-\rightarrow
-\text{actual repeated correction}
+\mathrm{PMC}\neq\mathrm{Repeated\ Correction}
 }
 \]
 
-The arrows remain unvalidated scientific claims.
+or:
+
+\[
+\boxed{
+\text{capacity survived}\neq\text{capacity exercised}.
+}
+\]
+
+PMC asks whether another warranted correction remains possible after change. Repeated correction asks whether another valid correction episode actually occurs and is established.
+
+Therefore:
+
+\[
+\boxed{
+\mathrm{PMC}\not\Rightarrow\mathrm{ObservedRepeatedCorrection}.
+}
+\]
+
+A valid repeated correction provides local evidence that a relevant correction path existed for that realized opportunity:
+
+\[
+\boxed{
+\mathrm{ValidRepeatedCorrection}(e)
+\Rightarrow
+\mathrm{LocalCorrectionAvailability}(e),
+}
+\]
+
+but does not establish broad PMC over untested future opportunities:
+
+\[
+\boxed{
+\mathrm{LocalCorrectionAvailability}(e)
+\not\Rightarrow
+\mathrm{PMC}(\Omega_{\mathrm{broader}}).
+}
+\]
+
+Raw correction count is not correction capacity:
+
+\[
+\boxed{
+N_{\mathrm{corrections}}\neq C_{\mathrm{corr}}.
+}
+\]
+
+Decision record: [`lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
 
 PMC also does not imply improved correction capacity:
 
@@ -163,18 +194,21 @@ PMC also does not imply improved correction capacity:
 ## What has—and has not—advanced
 
 ```text
-G1 scientific role                PROVISIONALLY FIXED
-CCA causal composition principle  CANONICAL METHODOLOGICAL RULE
-PMC conceptual role               PROVISIONALLY FIXED
-G1 empirical result               UNOBSERVED
-G1 experiment contract            UNFROZEN
-PMC measurement contract          UNFROZEN
-PMC metric                        UNFROZEN
-repeated-correction experiment    NOT AUTHORIZED
-implementation                    NOT AUTHORIZED
+G1 scientific role                 PROVISIONALLY FIXED
+CCA causal composition principle   CANONICAL METHODOLOGICAL RULE
+PMC conceptual role                PROVISIONALLY FIXED
+PMC / repeated-correction split    CANONICAL CONCEPTUAL DISTINCTION
+G1 empirical result                UNOBSERVED
+G1 experiment contract             UNFROZEN
+PMC measurement contract           UNFROZEN
+PMC metric                         UNFROZEN
+repeated-correction contract       UNFROZEN
+repeated-correction empirical      UNOBSERVED
+transformability metric/contract   UNFROZEN
+implementation                     NOT AUTHORIZED
 ```
 
-No candidate ontology, semantic evidence set, realization policy, scalar estimand, threshold, model, prompt, benchmark, PMC environment, or architecture-specific bridge assay has been frozen.
+No candidate ontology, semantic evidence set, realization policy, scalar estimand, threshold, model, prompt, benchmark, PMC environment, transformability representation, or architecture-specific bridge assay has been frozen.
 
 The core non-substitution chain is:
 
@@ -235,9 +269,9 @@ execution        NOT AUTHORIZED
 
 The **conceptual frontier** is now:
 
-> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
+> **Is repeated correction scientifically distinct from Justified Transformability, or can repeated valid corrections occur without establishing the capacity to reach appropriately different warranted states while preserving future correction pathways?**
 
-That is a conceptual attack, not authorization to build a repeated-correction experiment.
+That is a conceptual attack, not authorization to build a repeated-correction or transformability experiment.
 
 ## Provenance
 
@@ -259,10 +293,11 @@ The causal-composition attacks were:
 #10 architecture-independent necessity of a bridge
 ```
 
-The PMC role is informed by:
+The PMC sequence is:
 
 ```text
 #11 attack post-modification correctability as a scientific object
+#12 attack PMC versus repeated correction distinction
 ```
 
 They are preserved as adversarial provenance rather than experiments.
@@ -284,7 +319,9 @@ CCA Causal Composition Principle
         ↓
 Post-Modification Correctability role
         ↓
-PMC vs repeated-correction attack
+capacity-survived vs capacity-exercised distinction
+        ↓
+Repeated Correction vs Justified Transformability attack
 ```
 
 ASI-0 remains an immutable ancestor and is not repaired retrospectively.
