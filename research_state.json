@@ -1,0 +1,115 @@
+{
+  "schema_version": 1,
+  "program": "Correction-Capable Adaptation",
+  "central_question": "Can an adaptive system increase its future viability while remaining capable of incorporating justified correction?",
+  "core_rule": "Never infer a downstream capability from an unvalidated upstream mechanism.",
+  "current_frontier": {
+    "maturity_level": 0,
+    "layer": "measurement",
+    "object": "G1 meaning of evidence use",
+    "lifecycle_state": "ADVERSARIAL_REVIEW",
+    "unresolved_alternatives": [
+      "G1_broad",
+      "G1_relational"
+    ],
+    "next_legitimate_action": "Resolve the scientific-object meaning of evidence use before selecting an ontology or constructing the descendant evidence intervention space."
+  },
+  "maturity_ladder": [
+    {
+      "level": 0,
+      "name": "measurement_validity",
+      "status": "ACTIVE_FRONTIER",
+      "criterion": "The intended scientific object is identifiable under a prospectively declared measurement structure."
+    },
+    {
+      "level": 1,
+      "name": "evidence_controlled_selection",
+      "status": "BLOCKED",
+      "blocked_by": "G1 scientific-object decision"
+    },
+    {
+      "level": 2,
+      "name": "isolated_modification",
+      "status": "ARCHITECTURE_ONLY",
+      "criterion": "Direct do(M=m) produces the warranted target effect while protected behavior remains within prospectively fixed tolerance."
+    },
+    {
+      "level": 3,
+      "name": "evidence_to_justified_modification",
+      "status": "NOT_AUTHORIZED"
+    },
+    {
+      "level": 4,
+      "name": "repeated_correction",
+      "status": "NOT_AUTHORIZED"
+    },
+    {
+      "level": 5,
+      "name": "justified_transformability",
+      "status": "THEORETICAL_ONLY"
+    },
+    {
+      "level": 6,
+      "name": "adaptive_viability_capability",
+      "status": "NOT_AUTHORIZED"
+    },
+    {
+      "level": 7,
+      "name": "extreme_adaptive_systems",
+      "status": "NOT_AUTHORIZED",
+      "note": "AGI, recursive improvement, and ASI are stress-test regimes, not foundational objects."
+    }
+  ],
+  "objects": {
+    "ASI-0": {
+      "role": "immutable_ancestor",
+      "lifecycle_state": "CLOSED",
+      "immutable": true,
+      "result": {
+        "C": 0.0,
+        "A": 0.0,
+        "L_C": 0.0,
+        "L_A": 0.0,
+        "primary": "STOP",
+        "replication": "NOT_AUTHORIZED"
+      },
+      "implementation_authorized": false,
+      "descendant_repairs_count_as_same_object": false
+    },
+    "ECIM": {
+      "role": "provisional_mechanism_architecture",
+      "lifecycle_state": "PROPOSED",
+      "architecture": "E -> C_selected -> M_effective -> (Y_T, Y_P)",
+      "fixed_design_principles": [
+        "G2 is identified by independent direct do(M=m), not by conditioning on selected modifications."
+      ],
+      "measurement_state": "UNRESOLVED",
+      "contract_state": "UNFROZEN",
+      "execution_state": "NOT_AUTHORIZED",
+      "implementation_authorized": false
+    }
+  },
+  "measurement_results": {
+    "universal_relational_codebook": "REFUTED",
+    "ontology_conditional_relational_codebook": "FEASIBLE_IN_PRINCIPLE",
+    "constant_function_witness": "RELATIONAL_UNSAT",
+    "balanced_three_candidate_two_region_witness": "RELATIONAL_SAT_IN_PRINCIPLE"
+  },
+  "agent_policy": {
+    "must_read_before_empirical_implementation": true,
+    "implementation_requires": {
+      "measurement_state": "MEASUREMENT_VALID_OR_LATER",
+      "contract_state": "CONTRACT_FROZEN_OR_LATER",
+      "execution_state": "AUTHORIZED",
+      "implementation_authorized": true
+    },
+    "forbidden_shortcuts": [
+      "choose scientific object through benchmark convenience",
+      "treat available compute as authorization",
+      "repair a closed negative result under the same object identity",
+      "loosen a frozen gate after outcome",
+      "replace a policy-level estimand with a post-selected subset",
+      "infer capability or viability from upstream mechanism success"
+    ]
+  }
+}
