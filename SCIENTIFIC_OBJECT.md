@@ -8,7 +8,7 @@
 
 **Correction-capable adaptation** is the capacity of an adaptive system to undergo warranted, effective change while preserving the conditions required for justified future correction.
 
-The program studies one causal pathway:
+The program studies warranted causal pathways from evidence to consequential change and onward to future correctability. One current decomposition is:
 
 \[
 \boxed{
@@ -40,9 +40,9 @@ The corresponding epistemic dependency is:
 \prec
 \text{warranted causal control}
 \prec
-\text{modification}
+\text{validated causal composition}
 \prec
-\text{joint justified change}
+\text{modification consequences}
 \prec
 \text{repeated correction}
 \prec
@@ -54,7 +54,39 @@ The corresponding epistemic dependency is:
 }
 \]
 
-A downstream claim cannot acquire authority while a required upstream prerequisite remains unvalidated.
+A downstream claim cannot acquire authority while a required upstream prerequisite or separable causal transformation remains unvalidated.
+
+## CCA Causal Composition Principle
+
+CCA canonically adopts:
+
+> **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
+
+Therefore:
+
+\[
+\boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}.}
+\]
+
+This is a law of causal composition, not a new maturity level and not a universal intermediate mechanism.
+
+The exact intermediate graph is architecture-dependent. A separable system may instantiate:
+
+\[
+E\rightarrow C\rightarrow D\rightarrow M\rightarrow Y,
+\]
+
+while another may implement a direct update:
+
+\[
+E\rightarrow M\rightarrow Y,
+\]
+
+and an inseparable architecture may not contain independently manipulable selection and modification nodes at all.
+
+A decomposition is scientifically useful only when its nodes represent meaningful causal distinctions. CCA must not manufacture intermediate mechanisms merely to preserve a preferred benchmark architecture.
+
+Canonical decision: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
 
 ## Level 0 — Scientific-object and measurement validity
 
@@ -158,47 +190,75 @@ The tolerance \(\epsilon_P\) must be fixed prospectively.
 
 ## Level 3 — Evidence → justified modification
 
-The Level-1 and Level-2 mechanisms must eventually support a causal bridge of the form:
+Level 3 is an end-to-end causal-composition claim. It cannot be established merely because upstream G1 and downstream G2 assays are separately positive.
 
-\[
-E
-\rightarrow
-\text{warranted adaptive decision}
-\rightarrow
-M
-\rightarrow
-(Y_T,Y_P).
-\]
-
-For the current candidate-selection decomposition:
+For the current candidate-selection decomposition, a prospective claim may cross:
 
 \[
 E
 \rightarrow
 C_{\mathrm{selected}}
 \rightarrow
+D_{\mathrm{adopt/translate}}
+\rightarrow
 M
 \rightarrow
 (Y_T,Y_P).
 \]
 
-Authorization is conjunctive rather than compensatory:
+`D_adopt/translate` is illustrative, not a canonical variable or gate. The actual intermediate graph must be declared per architecture.
+
+If a claimed path \(\pi\) represents additional transformations between the decision identified by G1 and the modification identified by G2 as causally separable, those transformations must satisfy the CCA Causal Composition Principle.
+
+Thus the previous shorthand:
+
+\[
+\mathrm{ADVANCE}\iff G_1\land G_{2T}\land G_{2P}
+\]
+
+is insufficient whenever the claimed path contains additional separable transformations.
+
+The correct authorization structure is:
 
 \[
 \boxed{
-\mathrm{ADVANCE}
+\mathrm{ADVANCE}_{\pi}
 \iff
-G_1\land G_{2T}\land G_{2P}
+G_1
+\land
+\mathrm{PathValid}(\pi)
+\land
+G_{2T}
+\land
+G_{2P}
 }
 \]
 
-A large target improvement cannot compensate for evidence-insensitive decision control or unacceptable collateral interference.
+where `PathValid(π)` requires every additional separable transformation crossed by the claim to be independently identified or prospectively specified and validated/verified as an apparatus relation. An unvalidated transformation must be excluded from the claim rather than inherited through endpoint success.
+
+A large target improvement cannot compensate for evidence-insensitive decision control, an invalid intermediate transformation, or unacceptable collateral interference.
 
 ## Level 4 — Repeated correction
 
-After one valid modification, can later evidence still produce warranted correction under the same or an explicitly transformed measurement contract?
+The next program-level conceptual frontier is:
 
-This gate is not yet operationalized.
+> **What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?**
+
+This asks whether the evidence-to-change machinery remains available and valid in the changed system rather than only before the first modification.
+
+A schematic recursion is:
+
+\[
+S_t
+\xrightarrow{\text{warranted correction}}
+S_{t+1}
+\xrightarrow{E_{t+1}}
+\text{new warranted authority}
+\xrightarrow{}
+\text{new consequential change}.
+\]
+
+This gate is not yet operationalized and no empirical repeated-correction study is authorized. Any future experiment remains blocked until its upstream evidence-to-change pathway satisfies G1, direct G2 identification, and the causal-composition principle for every separable transformation the claim crosses.
 
 ## Level 5 — Justified transformability
 
@@ -230,7 +290,7 @@ Before testing invariance or equivalence, the admissible transformation class mu
 
 ## Current descendant causal architecture
 
-The provisionally fixed mechanism architecture remains:
+The current candidate-selection decomposition remains provisionally useful:
 
 \[
 \boxed{
@@ -238,13 +298,15 @@ E
 \rightarrow
 C_{\mathrm{selected}}
 \rightarrow
-M_{\mathrm{effective}}
+M
 \rightarrow
 (Y_T,Y_P)
 }
 \]
 
-with separate identification of:
+but the arrow from the selected decision to modification is now explicitly recognized as an architecture-dependent causal-composition obligation rather than silently inherited from the endpoints.
+
+Separate identification remains:
 
 ```text
 G1   warranted causal evidence control over the current separable decision
@@ -255,9 +317,7 @@ G2P  protected-behavior isolation under direct do(M=m)
 The non-substitution boundary is:
 
 \[
-\boxed{
-G_1\neq\mathrm{CCA}
-}
+\boxed{G_1\neq\mathrm{CCA}}
 \]
 
 and
@@ -277,23 +337,6 @@ G_2
 \]
 
 No descendant experiment is currently frozen or authorized.
-
-## Next scientific-design boundary
-
-The next new conceptual question is:
-
-\[
-\boxed{G_1\rightarrow G_2?}
-\]
-
-This does not mean G1 has empirically passed. It asks how the program should relate warranted causal decision control to independently identified modification competence while preserving the hard rule:
-
-\[
-\boxed{
-G_2\text{ is identified by direct }do(M=m),
-\text{ never by conditioning on }C_{\mathrm{selected}}.
-}
-\]
 
 ## Research authority
 
