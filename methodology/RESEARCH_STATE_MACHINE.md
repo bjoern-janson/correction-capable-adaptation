@@ -8,8 +8,6 @@ The program is cumulative. A downstream claim can acquire authority only when th
 
 ## Program maturity ladder
 
-The scientific dependency ladder is:
-
 ```text
 Level 0  MEASUREMENT / SCIENTIFIC-OBJECT VALIDITY
          Can the intended scientific object be identified?
@@ -22,66 +20,48 @@ Level 2  ISOLATED MODIFICATION
          while preserving protected behavior within tolerance?
               ↓
 Level 3  EVIDENCE → JUSTIFIED MODIFICATION
-         Can the validated upstream and downstream relations be
-         composed across every separable transformation they cross?
+         Can the validated relations be composed across every
+         separable transformation they cross?
               ↓
 Level 4A POST-MODIFICATION CORRECTABILITY
-         After consequential change, do the conditions required
-         for future warranted correction remain available?
+         Do future warranted-correction conditions remain available?
               ↓
 Level 4B REPEATED CORRECTION
-         Are those conditions actually exercised in another
-         valid correction episode?
+         Are those conditions actually exercised again?
               ↓
 Level 5  JUSTIFIED TRANSFORMABILITY
-         Can the system reach appropriately different warranted
-         states while preserving future warranted correction pathways?
+         What warranted transformation repertoire remains reachable,
+         including materially different destinations that preserve
+         or reconstitute future correction conditions?
               ↓
 Level 6  ADAPTIVE VIABILITY / CAPABILITY
-         Does correction-capable adaptation improve prospectively defined future viability?
+         Does correction-capable adaptation improve future viability?
               ↓
 Level 7  EXTREME ADAPTIVE SYSTEMS
          AGI / recursive improvement / ASI as stress-test regimes
 ```
 
-These levels are **not averaged**. Empirical maturity is limited by the first unresolved causal prerequisite of the claim being made.
+These levels are not averaged. Empirical maturity is limited by the first unresolved causal prerequisite of the claim being made.
 
-PMC is a **provisionally fixed conceptual role**, and the PMC/repeated-correction distinction is now a canonical conceptual distinction. Neither object has a frozen empirical measurement contract.
+The ladder is an **evidence-ordering discipline**. Unless separately established, it must not be interpreted as a universal logical or metaphysical decomposition of every adaptive system.
 
 ## CCA Causal Composition Principle
 
-CCA adopts the following canonical methodological rule:
+CCA adopts:
 
 > **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
-
-Compactly:
 
 \[
 \boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}.}
 \]
 
-and:
+If a claimed path crosses a separable transformation, that transformation must be independently causally identified or prospectively specified and validated/mechanically verified as an apparatus relation. Otherwise the claim stops before the edge.
 
-\[
-\boxed{\text{No causal authority may be propagated across an unvalidated separable transformation.}}
-\]
-
-For a claimed path \(\pi\), every transformation the prospective contract represents as causally separable and that the claim crosses must be warranted. A separable transformation may be:
-
-1. independently causally identified; or
-2. fixed by a prospectively specified, independently validated or mechanically verified apparatus relation within the relevant scope.
-
-If it is neither, the claim must stop before crossing it.
-
-An apparatus guarantee is not created by declaration. If the experiment relies on a relation such as \(M=\phi(C)\), \(\phi\) must be prospectively specified and validated or verified over the claimed domain.
-
-An apparatus-mediated link does not establish that the adaptive system itself possesses the corresponding adoption, translation, or deployment competence.
-
-The canonical decision record is [`../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+Decision record: [`../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
 
 ## Experiment lifecycle
 
-Every empirical object must move through the following lifecycle:
+Every empirical object must move through:
 
 ```text
 PROPOSED
@@ -105,33 +85,21 @@ The lifecycle is a scientific authority sequence, not a software workflow.
 
 ### PROPOSED
 
-A scientific object or mechanism is stated clearly enough to criticize.
+Allowed: conceptual decomposition, counterexamples, competing formulations, non-model feasibility analysis.
 
-Allowed:
-
-- conceptual decomposition;
-- counterexamples;
-- competing formulations;
-- non-model feasibility analysis.
-
-Not allowed:
-
-- treating implementation details as evidence;
-- choosing an ontology merely because it is convenient to code;
-- execution presented as scientific evidence.
+Not allowed: treating implementation details as evidence, choosing an ontology for coding convenience, or presenting execution as scientific evidence.
 
 ### ADVERSARIAL_REVIEW
-
-The object is actively attacked before implementation.
 
 Required questions include:
 
 - Is the object identifiable?
-- Does the measurement partly redefine the object?
-- Can an ordinary or shallower explanation absorb the proposed mechanism?
+- Does measurement partly redefine the object?
+- Can a shallower explanation absorb it?
 - Are there constructive impossibility cases?
-- What evidence would disconfirm the object or mechanism?
-- Does the claimed causal path cross separable transformations that have not acquired independent authority?
+- What would disconfirm it?
+- Does the claim cross separable transformations lacking authority?
+- Is a program evidence-order being mistaken for a logical definition?
 
 A failed adversarial review returns to `PROPOSED` or closes the proposed construction.
 
@@ -139,16 +107,16 @@ A failed adversarial review returns to `PROPOSED` or closes the proposed constru
 
 The measurement contract is sufficiently specified that the intended object can, in principle, be distinguished from relevant alternatives under the declared admissible transformations and nuisance channels.
 
-This state does **not** imply that the mechanism exists or that adjacent separable transformations are valid.
+This does not imply that the mechanism exists or that adjacent transformations are valid.
 
 ### CONTRACT_FROZEN
 
-Before observing scientific outcomes, the contract freezes at minimum:
+Before observing outcomes, the contract freezes at minimum:
 
 - scientific proposition;
 - causal path actually claimed;
-- separable variables and transformations used by that path;
-- identification or validated-apparatus status of each required separable transformation;
+- separable variables and transformations;
+- identification/apparatus status of each required transformation;
 - intervention space;
 - independent truth/warrant mapping where required;
 - target and protected outcomes;
@@ -160,105 +128,31 @@ Before observing scientific outcomes, the contract freezes at minimum:
 - authorization rule;
 - implementation-validity criteria.
 
-### AUTHORIZED
+For repertoire-level claims, the contract must also freeze whatever prospective target/transformation scope and distinctness/warrant rules constitute the claimed repertoire.
 
-Execution is allowed only after the frozen contract and its upstream dependencies have been validated.
+### AUTHORIZED / EXECUTED / ANALYZED / CLOSED
 
-`AUTHORIZED` means **permission to execute the frozen object**, not confidence that the hypothesis is true.
+`AUTHORIZED` permits execution of the frozen object; it does not assert truth. `EXECUTED` records outcome-bearing execution or explicit implementation failure. `ANALYZED` applies frozen estimands/rules. `CLOSED` fixes the result under its stopping condition.
 
-### EXECUTED
-
-The frozen execution has produced an outcome-bearing scientific record, or an implementation failure has been recorded explicitly.
-
-Implementation failure must not be recoded as a scientific zero.
-
-### ANALYZED
-
-The frozen estimands and decision rules have been applied. Post-outcome diagnostics must remain separated from the primary outcome and may not rewrite it.
-
-### CLOSED
-
-The scientific object has reached its prospectively defined stopping condition.
-
-A closed negative result is evidence. It is not an invitation to alter the benchmark until it becomes positive.
-
-## Invalid and failed executions
-
-Two terminal-looking states are deliberately distinguished from scientific failure:
-
-```text
-UNOBSERVED / INVALID
-```
-
-The intended scientific object was not successfully instantiated or measured. No primary scientific result exists for the affected execution.
-
-```text
-NEGATIVE / NULL
-```
-
-The scientific object was validly instantiated and the frozen success criterion was not established.
-
-These states must never be conflated.
-
-## Failure transition rule
-
-When a valid experiment fails:
-
-```text
-FAILED / NEGATIVE RESULT
-        ↓
-mechanism diagnosis
-        ↓
-new prospective scientific object
-```
-
-Forbidden:
-
-```text
-FAILED
-  ↓
-loosen gate
-  ↓
-change prompt / model / estimand
-  ↓
-rerun until positive
-```
-
-A descendant motivated by failure receives a new object identity and a new prospective contract.
+Implementation failure must not be recoded as a scientific zero. Closed negative results must not be repaired post hoc.
 
 ## Authority transfer
 
-Evidence may increase authority only along dimensions it can identify.
-
-Conceptually:
+Evidence may increase authority only along dimensions it can identify:
 
 ```text
 ΔE_t → ΔW_{t+1}
 ```
 
-Logging a result is not sufficient. The evidence must change the future authority state of hypotheses, mechanisms, measurements, policies, or actions within its warranted scope.
-
-### Causal composition
-
-Authority transfer is local to the relation identified.
-
-If a contract claims:
-
-\[
-A\rightarrow B\rightarrow C,
-\]
-
-then evidence for \(A\rightarrow B\) and separate evidence for an effect of \(C\) do not establish \(B\rightarrow C\).
-
-Endpoint validity does not validate an intervening pathway.
+Authority transfer is local. Endpoint success does not identify an intervening pathway; realized trajectory evidence does not identify a broader counterfactual repertoire unless the repertoire scope was independently constituted and measured.
 
 ## Post-Modification Correctability discipline
 
-CCA provisionally adopts PMC as the conceptual object immediately upstream of repeated correction:
+PMC asks:
 
 > **After a consequential change, do the conditions required for future warranted correction remain available?**
 
-PMC must retain the causal content:
+It retains:
 
 \[
 \text{future admissible evidence}
@@ -268,16 +162,11 @@ PMC must retain the causal content:
 \text{consequential correction}.
 \]
 
-PMC must not be inferred from:
+PMC must not be inferred from current performance/capability, generic plasticity, the success of the preceding correction, or external rescue outside the declared system boundary.
 
-- current performance or capability;
-- generic plasticity or steerability;
-- success of the immediately preceding correction;
-- external rescue outside the declared system boundary.
+PMC remains role-only; its scope and measurement contract are unfrozen.
 
-PMC is not yet a scalar or metric. A future empirical contract must prospectively specify the relational correction scope, system/apparatus boundary, horizon, representation, and any measurement or preservation criterion before execution.
-
-The canonical role decision is [`../lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](../lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
+Decision record: [`../lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](../lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
 
 ## Capacity-survived versus capacity-exercised discipline
 
@@ -289,50 +178,95 @@ CCA canonically distinguishes:
 
 because PMC is latent/dispositional availability while repeated correction is a realized valid correction episode.
 
-Therefore absence of an observed repeated correction does not identify absence of PMC unless a discriminating correction opportunity and valid activation/execution conditions were prospectively guaranteed.
-
-A realized valid repeated correction provides only local authority:
+A realized repeated correction for opportunity \(e\) provides local authority only:
 
 \[
 \mathrm{ValidRepeatedCorrection}(e)
 \Rightarrow
-\mathrm{LocalCorrectionAvailability}(e)
+\mathrm{LocalCorrectionAvailability}(e),
 \]
 
-for the realized opportunity \(e\), under the frozen boundary and path-valid process.
-
-It does not authorize broad PMC over untested opportunities. Raw episode count, scripted sequences, or repeated execution of the same local route must not be treated as correction-capacity metrics.
+not broad PMC over untested opportunities.
 
 \[
 \boxed{N_{\mathrm{corrections}}\neq C_{\mathrm{corr}}.}
 \]
 
-The canonical decision record is [`../lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](../lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
+Decision record: [`../lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](../lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
+
+## Trajectory-versus-repertoire discipline
+
+CCA provisionally adopts **Justified Transformability (JT)** as a repertoire-level conceptual role:
+
+> **What prospectively relevant warranted transformations remain reachable, and can materially different warranted destinations be reached while preserving or reconstituting future correction conditions?**
+
+CCA distinguishes:
+
+```text
+PMC                  availability
+Repeated Correction  realized temporal exercise
+JT                   warranted transformation repertoire
+```
+
+Therefore:
+
+\[
+\boxed{\mathrm{RepeatedCorrection}\not\Rightarrow\mathrm{JT}.}
+\]
+
+Repeated valid episodes can be scripted, confined to a narrow dimension or fixed menu, or cumulatively destroy broader future transformation options.
+
+Nor is observed repeated temporal history definitionally necessary for a repertoire claim:
+
+\[
+\boxed{\mathrm{JT}\not\Rightarrow\mathrm{ObservedRepeatedCorrectionHistory}.}
+\]
+
+A branching counterfactual design could in principle probe different warranted transformations across replicated instances.
+
+Hence:
+
+\[
+\boxed{\text{trajectory evidence}\neq\text{repertoire evidence}}
+\]
+
+and:
+
+\[
+\boxed{\text{logical object dependency}\neq\text{program evidence-ordering dependency}.}
+\]
+
+Repeated correction remains upstream in CCA's research order as a conservative prerequisite for granting JT authority, but that is an epistemic policy, not the universal definition of JT.
+
+Decision record: [`../lineage/decisions/JUSTIFIED_TRANSFORMABILITY_ROLE.md`](../lineage/decisions/JUSTIFIED_TRANSFORMABILITY_ROLE.md).
+
+### JT anti-inflation guardrails
+
+Until prospectively frozen, an agent must not treat any of the following as sufficient evidence of JT:
+
+- raw correction episode count;
+- scripted or memorized correction sequences;
+- many reachable states;
+- nominal benchmark diversity;
+- transformations judged warranted only after seeing outcomes;
+- trivial parameter/state differences declared materially distinct post hoc;
+- external apparatus supplying transformations when the claim concerns system-internal repertoire.
+
+\[
+\boxed{\text{many reachable states}\not\Rightarrow\text{many warranted transformations}.}
+\]
+
+Warrant semantics, material distinctness, target-family scope, preservation/reconstitution, counterfactual availability, representation, metric, estimator, and threshold remain unfrozen.
 
 ## Frozen-object rule
 
-A `CLOSED` object is immutable as a scientific result.
-
-Permitted after closure:
-
-- clearer documentation;
-- provenance repair;
-- outcome-blind mechanism diagnosis if prospectively bounded;
-- new descendant objects.
-
-Not permitted:
-
-- changing the original estimand;
-- replacing the model and calling it the same experiment;
-- loosening acceptance gates;
-- using an accepted-only subset to replace a policy-level ITT estimand;
-- upgrading the claim because later theory became more ambitious.
+A `CLOSED` object is immutable as a scientific result. Permitted work after closure includes clearer documentation, provenance repair, bounded outcome-blind diagnosis, and new descendant objects. Changing estimands, models, gates, or post-selecting outcomes to rescue the ancestor is forbidden.
 
 ## Agent / Codex guardrail
 
-Automated implementation agents must read `research_state.json` before proposing or writing empirical execution code.
+Automated implementation agents must read `research_state.json` before empirical execution work.
 
-Implementation of a scientific experiment is authorized only when the relevant object records:
+Implementation is authorized only when the relevant object records:
 
 ```text
 measurement_state = MEASUREMENT_VALID or later
@@ -341,51 +275,31 @@ execution_state   = AUTHORIZED
 implementation_authorized = true
 ```
 
-If any required field is absent, unresolved, or false, the allowed work is limited to conceptual analysis, documentation, measurement validation, contract construction, or non-scientific implementation scaffolding explicitly marked as such.
+An agent must not infer authorization from directory existence, an open issue, a plausible benchmark, available compute, model availability, endpoint success, conceptual-role adoption, or a theoretical metric.
 
-An agent must not infer authorization from:
+Specifically forbidden are:
 
-- the existence of a directory;
-- a proposed architecture;
-- an open issue;
-- a plausible benchmark;
-- available compute;
-- a model being easy to run;
-- successful endpoint assays when an intervening separable transformation remains unvalidated;
-- the existence of a PMC role without a frozen PMC measurement contract;
-- successful one-shot correction as evidence of repeated correction or PMC;
-- one realized repeated correction as evidence of broad PMC;
-- repeated or scripted correction count as evidence of Justified Transformability.
+- inferring broad PMC from one repeated correction;
+- treating raw correction count as correction capacity;
+- treating repeated correction history as the definition of JT;
+- treating state count as warranted repertoire;
+- defining warrantedness or distinctness retrospectively;
+- implementing JT while its target-family and counterfactual semantics remain unfrozen.
 
 ## Current application
 
-The scientific role of `G1` is provisionally fixed:
+`G1` is role-fixed but empirically untested and contract-unfrozen.
 
-\[
-\boxed{
-G_1=
-\text{warranted evidence acquiring causal control over a separable adaptive decision}
-}
-\]
-
-Candidate selection is the current operational instantiation, not a universal architecture.
-
-`G1` remains empirically untested and contract-unfrozen.
-
-`G2` remains architecture-only and must be identified independently through direct:
+`G2` remains architecture-only and must be identified through direct:
 
 \[
 \boxed{do(M=m)\rightarrow(Y_T,Y_P)}.
 \]
 
-The CCA Causal Composition Principle is canonical.
+The CCA Causal Composition Principle is canonical. PMC is role-fixed only. The PMC/repeated-correction distinction is canonical conceptually. Repeated correction remains empirically untested. JT is now role-fixed only; its warrant/distinctness semantics and measurement machinery remain unfrozen.
 
-PMC is provisionally fixed **in role only**. Its future-correction environment, system boundary, horizon, representation, dimensions, metric, estimator, threshold, and protocol remain unfrozen.
+The next conceptual frontier is:
 
-The PMC/repeated-correction distinction is canonical conceptually, but repeated correction remains empirically untested and contract-unfrozen.
+> **Can the warrant, distinctness, repertoire, preservation, target-family, and counterfactual-availability semantics of Justified Transformability be specified without retrospective approval, trivial-difference inflation, or benchmark-defined reachability?**
 
-The next **conceptual** frontier is:
-
-> **Is repeated correction scientifically distinct from Justified Transformability, or can repeated valid corrections occur without establishing the capacity to reach appropriately different warranted states while preserving future correction pathways?**
-
-This does not authorize a repeated-correction or transformability experiment. Any empirical claim remains blocked until its particular evidence-to-change pathway satisfies the required empirical gates, frozen contract, and every separable transformation it crosses under the CCA Causal Composition Principle.
+No repeated-correction or JT experiment is authorized by this transition.
