@@ -305,7 +305,7 @@ The canonical role decision is [`lineage/decisions/POST_MODIFICATION_CORRECTABIL
 
 ## Level 4B — Repeated correction
 
-CCA provisionally separates PMC from repeated correction:
+CCA canonically distinguishes:
 
 \[
 \boxed{
@@ -313,23 +313,55 @@ CCA provisionally separates PMC from repeated correction:
 }
 \]
 
-PMC concerns whether another warranted correction remains possible under the declared correction scope.
-
-Repeated correction concerns whether another valid correction episode actually occurs and is established under its own prospective causal contract.
-
-The candidate dependency is:
+Compactly:
 
 \[
 \boxed{
-\text{one valid correction}
-\rightarrow
-\text{preserved capacity for another}
-\rightarrow
-\text{actual repeated correction}
+\text{capacity survived}\neq\text{capacity exercised}.
 }
 \]
 
-The arrows remain unvalidated scientific claims.
+PMC is a prospectively scoped latent/dispositional availability property. Repeated correction is a realized subsequent valid correction episode.
+
+Therefore:
+
+\[
+\boxed{
+\mathrm{PMC}\not\Rightarrow\mathrm{ObservedRepeatedCorrection}.
+}
+\]
+
+No future opportunity may arrive even when relevant correction pathways survive.
+
+A valid realized second correction provides only local authority for the opportunity it actually traversed:
+
+\[
+\boxed{
+\mathrm{ValidRepeatedCorrection}(e)
+\Rightarrow
+\mathrm{LocalCorrectionAvailability}(e)
+}
+\]
+
+under a frozen system/apparatus boundary and path-valid process, but:
+
+\[
+\boxed{
+\mathrm{LocalCorrectionAvailability}(e)
+\not\Rightarrow
+\mathrm{PMC}(\Omega_{\mathrm{broader}}).
+}
+\]
+
+Thus one narrow retained route, a scripted sequence, or repeated execution of the same easy correction cannot establish broad future correction capacity.
+
+\[
+\boxed{
+N_{\mathrm{corrections}}\neq C_{\mathrm{corr}}.
+}
+\]
+
+The decision record is [`lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
 
 No repeated-correction experiment is operationalized or authorized.
 
@@ -347,9 +379,23 @@ Thus `C_improve` remains downstream and theoretical.
 
 ## Level 5 — Justified transformability
 
-Does repeated correction preserve or expand the set of warranted future transformations rather than merely achieving a local objective?
+The next conceptual attack is:
 
-This is the empirical target of the provisional MAGIKARP theory layer. It is not yet an established metric.
+> **What distinguishes repeated valid correction from the capacity to reach appropriately different warranted states while preserving future correction pathways?**
+
+Repeated correction may be scripted, narrowly local, destructive to unrelated structure, dependent on one fixed route, or incapable of reaching materially new warranted states. Therefore:
+
+\[
+\boxed{
+\text{Repeated Correction}
+\not\Rightarrow
+\text{Justified Transformability}.
+}
+\]
+
+This non-implication is a research boundary, not yet a frozen definition of transformability.
+
+The provisional MAGIKARP theory layer remains theoretical; no transformability metric or empirical contract exists.
 
 ## Level 6 — Adaptive viability / capability
 
@@ -398,6 +444,7 @@ G1   warranted causal evidence control over the current separable decision
 G2T  target efficacy under direct do(M=m)
 G2P  protected-behavior isolation under direct do(M=m)
 PMC  conceptual post-change availability of future warranted-correction pathways
+RC   realized subsequent valid correction episode
 ```
 
 The non-substitution boundary is:
@@ -430,7 +477,7 @@ No descendant experiment is currently frozen or authorized.
 
 The next attack is:
 
-> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
+> **Is repeated correction scientifically distinct from Justified Transformability, or can repeated valid corrections occur without establishing the capacity to reach appropriately different warranted states while preserving future correction pathways?**
 
 ## Research authority
 
