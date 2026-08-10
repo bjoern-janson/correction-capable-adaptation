@@ -79,6 +79,34 @@ Feedback counts as adaptive correction only if it changes future weighting, poli
 
 Logging a contradiction without changing future behavior does not by itself constitute successful adaptation.
 
+## Causal composition discipline
+
+CCA applies a general composition rule to causal claims:
+
+> **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
+
+Thus:
+
+\[
+\boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}.}
+\]
+
+This is the causal-architecture counterpart of the CARS rule that failure does not identify its cause.
+
+If a claim crosses:
+
+\[
+A\rightarrow B\rightarrow C,
+\]
+
+then evidence for \(A\rightarrow B\) and separate evidence about \(C\)'s consequences do not establish \(B\rightarrow C\).
+
+A deterministic apparatus relation can carry authority only when it is prospectively specified and validated or mechanically verified within the claimed scope. Calling a transformation “plumbing” does not validate it.
+
+If the apparatus supplies the transformation, the claim is apparatus-mediated. That does not establish the corresponding competence as a property of the adaptive system.
+
+Canonical decision: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+
 ## Revision discipline
 
 When a validated contradiction or prediction failure appears:
