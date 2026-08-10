@@ -10,50 +10,102 @@ The program does not average evidence across maturity levels. Downstream authori
 | SUB | ancestral | Correction-specific primitive search | Closed / no distinct residual established in audited scope | Candidate controller, transition-quality, lineage, sufficiency, and target-discovery residuals were progressively absorbed by ordinary state/dynamics/information/control descriptions in the audited space. | Stronger ordinary explanations; explicit null-space boundary. | Proof that no correction-specific construct can ever exist. | Required any future special construct to earn incremental empirical content prospectively. |
 | P1-ID1 | ancestral | Adaptive predictive / identification burden | Closed negative | Restricted predictors showed differences; stronger generic modeling removed nearly all of the gap and the remaining tiny discrepancy reversed sign on replication. | Evidence against an adaptive-specific burden at the tested question. | General equivalence of adaptive and non-adaptive systems. | Closed that synthetic branch rather than escalating complexity. |
 | ASI0 | ancestral | Evidence-assignment capability + attribution | **Closed negative / immutable** | \(C=0\), \(A=0\), \(L_C=0\), \(L_A=0\), `STOP`; replication not authorized. | A clean negative primary under the frozen intervention policy. | Evidence that evidence alignment is generally useless; intelligence; viability; ASI. | Authorized outcome-blind mechanism diagnosis only. |
-| ASI0-DX | ancestral | ASI-0 mechanism diagnosis | Closed diagnostic | Assigned evidence weakly controlled candidate identity; 15/16 frozen patches failed protected-behavior preservation; 28/28 valid selected patches were rejected. | Separate inference and modification-isolation bottlenecks; acceptance gate appeared to function as designed. | Permission to repair ASI-0 retrospectively. | Motivated a new mechanism architecture with independent selection and modification assays. |
-| M-CODEBOOK-UNIV | 0 | Universal relational codebook feasibility | **Refuted** | Constant-function ontology makes candidate identity live entirely in output marginals; pairing contributes no separately identifiable authority. | Impossibility boundary for universal relational measurement. | Failure of all relational measurement. | Relational G1 must constrain the admissible ontology class. |
-| M-CODEBOOK-EX | 0 | Ontology-conditional relational feasibility | **Feasible in principle** | Balanced 3-candidate / 2-region witness preserves identical marginals while candidate identity remains in pair relations. | Existence witness for relational identification without semantic recoding. | A frozen ECIM evidence intervention; model-level evidence. | Leaves broad-vs-relational G1 as the upstream scientific-object decision. |
-| G1-OBJECT | 0 | Meaning of evidence use | **Current frontier / ADVERSARIAL_REVIEW** | Broad and relational objects imply different admissible ontologies and different claims. | The fork is explicit, bounded, and falsifiable. | Authority to choose an ontology, model, prompt, or experiment implicitly. | Resolve this scientific-object decision before freezing \(\mathcal E\). |
-| G2-DESIGN | 2 | Modification identification | Fixed design principle / architecture only | Modification efficacy/isolation must be estimated through direct \(do(M=m)\), not only selected modifications. | Clean separation of selection competence from modification competence. | Evidence that any modification is effective or isolated. | Future Level-2 contract must independently estimate target efficacy and protected interference. |
+| ASI0-DX | ancestral | ASI-0 mechanism diagnosis | Closed diagnostic | Assigned evidence weakly controlled candidate identity; 15/16 frozen patches failed protected-behavior preservation; 28/28 valid selected patches were rejected. | Separate inference and modification-isolation bottlenecks; acceptance gate appeared to function as designed. | Permission to repair ASI-0 retrospectively. | Motivated a new mechanism architecture with independent decision-control and modification assays. |
+| M-CODEBOOK-UNIV | 0 | Universal relational codebook feasibility | **Refuted** | Constant-function ontology makes candidate identity live entirely in output marginals; pairing contributes no separately identifiable authority. | Impossibility boundary for universal relational measurement. | Failure of all relational measurement. | Relational mechanism claims require ontology-conditional identification. |
+| M-CODEBOOK-EX | 0 | Ontology-conditional relational feasibility | **Feasible in principle** | Balanced 3-candidate / 2-region witness preserves identical marginals while candidate identity remains in pair relations. | Existence witness for relational identification without semantic recoding. | A frozen evidence intervention; model-level evidence; definition of G1. | Kept relational attribution available as a narrower mechanism/measurement object. |
+| G1-A3 | 0 | Broad vs relational fork | Closed adversarial provenance | Relational sensitivity can be either a narrower warranted-selection design or a distinct channel-dependence claim. | Exposed outcome/mechanism level distinction. | Selection of a canonical G1 by itself. | Motivated explicit separation of warranted outcome control from channel attribution. |
+| G1-A4 | 0 | Outcome vs channel attribution | Closed adversarial provenance | Total warranted evidence control can be identified in principle even when channel attribution is underidentified, provided treatment/warrant are independently constituted. | Separation of outcome-level G1 from mechanism/channel claims. | A complete treatment constitution. | Moved the unresolved burden upstream to evidence-treatment constitution. |
+| G1-A5 | 0 | Representation invariance | Closed adversarial provenance | Semantic equivalence does not imply behavioral invariance; representation stability is a stronger system property. | Separated semantic/oracle invariance from behavioral robustness. | Universal representation invariance requirement. | Required explicit realization/access scope instead of robustness-by-definition. |
+| G1-A6 | 0 | Realization/access envelope | Closed adversarial provenance | A prospective envelope is feasible only relative to an ex ante interface contract and frozen realization policy; equal accessibility cannot be assumed. | Scoped admissibility/sampling layer and access-heterogeneity distinction. | Proof that representation effects are nuisance or mediated by one access variable. | Preserved access capability as a separate property. |
+| G1-A7 | 0 | Causal identification | Closed adversarial provenance | The identifiable parent object is a total effect of prospectively constituted evidence-assignment regimes, not a purified semantic-only path effect. | Causal response-matrix framing; treatment descendants need not be fixed. | Permission to call malformed treatment packages evidence effects. | Preserved treatment validity as logically prior to randomization. |
+| G1-A8 | 0 | Scientific program role | Closed adversarial provenance | Explicit candidate-selection G1 is not universally necessary for all conceivable correction architectures, but it is a coherent earliest separable gate in the current CCA pathway. | Scoped role for G1 without architectural universality. | G1 = CCA; G1 sufficient for correction; universal candidate-selection architecture. | Supported a program-level decision rather than another construction attack. |
+| G1-ROLE | 0 | Warranted causal evidence control over a separable adaptive decision | **Role provisionally fixed / empirically untested** | PRs #3–#8 progressively eliminated codebook construction, relational sensitivity, representation invariance, access robustness, accuracy, and mechanism attribution as substitutes for the parent object. | CCA may define its first studied empirical pathway as warranted evidence acquiring causal control over a separable adaptive decision, currently instantiated as candidate selection. | A positive G1 result; universal necessity of candidate selection; modification competence; repeated correction; transformability; viability. | Scientific-object role fixed; experiment-level contract remains unfrozen. Next conceptual boundary is G1→G2. |
+| G2-DESIGN | 2 | Modification identification | Fixed design principle / architecture only | Modification efficacy/isolation must be estimated through direct \(do(M=m)\), not only selected modifications. | Clean separation of decision-control competence from modification competence. | Evidence that any modification is effective or isolated. | Future Level-2 contract must independently estimate target efficacy and protected interference. |
 
 ## Research maturity ladder
 
 Current program state:
 
 ```text
-LEVEL 0  measurement validity               ACTIVE FRONTIER / PARTIALLY DEMONSTRATED
-LEVEL 1  evidence-controlled selection      BLOCKED BY LEVEL 0 OBJECT
-LEVEL 2  isolated modification              ARCHITECTURE ONLY
-LEVEL 3  evidence → justified modification  NOT AUTHORIZED
-LEVEL 4  repeated correction                NOT AUTHORIZED
-LEVEL 5  justified transformability         THEORETICAL ONLY
-LEVEL 6  adaptive viability / capability    NOT AUTHORIZED
-LEVEL 7  extreme adaptive systems           NOT AUTHORIZED
+LEVEL 0  measurement/scientific-object validity  G1 ROLE PROVISIONALLY FIXED; CONTRACT UNFROZEN
+LEVEL 1  evidence-controlled adaptive decision   SCIENTIFIC OBJECT DEFINED; EMPIRICALLY UNTESTED
+LEVEL 2  isolated modification                    ARCHITECTURE ONLY
+LEVEL 3  evidence → justified modification        NOT AUTHORIZED
+LEVEL 4  repeated correction                      NOT AUTHORIZED
+LEVEL 5  justified transformability               THEORETICAL ONLY
+LEVEL 6  adaptive viability / capability          NOT AUTHORIZED
+LEVEL 7  extreme adaptive systems                 NOT AUTHORIZED
 ```
 
-The ladder is causal, not additive:
+The ladder is causal, not additive.
 
-\[
-\boxed{\text{frontier}=\text{first unresolved causal prerequisite}}
-\]
-
-## Current frontier
+## Current scoped G1 role
 
 \[
 \boxed{
-G_1^{\mathrm{broad}}
-\quad\text{vs.}\quad
-G_1^{\mathrm{relational}}
+G_1
+=
+\text{warranted evidence acquiring causal control over a separable adaptive decision}
 }
 \]
 
-The current object is in lifecycle state:
+Candidate selection is the current operational instantiation:
+
+\[
+E\rightarrow C_{\mathrm{selected}},
+\]
+
+not a universal architectural claim.
+
+The decision record is [`decisions/G1_LEVEL0_ROLE.md`](decisions/G1_LEVEL0_ROLE.md).
+
+## Current empirical authority
 
 ```text
-ADVERSARIAL_REVIEW
+G1 role                 PROVISIONALLY FIXED
+G1 empirical result     UNOBSERVED
+G1 experiment contract  UNFROZEN
+G1 implementation       NOT AUTHORIZED
 ```
 
-Nothing downstream currently has authority to execute.
+Therefore:
+
+\[
+\boxed{G_1\neq\mathrm{CCA}}
+\]
+
+and
+
+\[
+\boxed{
+G_1
+\not\Rightarrow
+G_2
+\not\Rightarrow
+\text{repeated correction}
+\not\Rightarrow
+\text{justified transformability}
+\not\Rightarrow
+\text{adaptive viability}
+}
+\]
+
+## Next scientific-design boundary
+
+\[
+\boxed{G_1\rightarrow G_2?}
+\]
+
+This is a conceptual dependency question, not evidence that G1 has empirically passed.
+
+The hard modification-identification rule remains:
+
+\[
+\boxed{
+G_2\text{ identified only by direct }do(M=m),
+\text{ never by conditioning on }C_{\mathrm{selected}}.
+}
+\]
 
 ## Evidence-to-authority rule
 
