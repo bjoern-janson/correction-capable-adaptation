@@ -16,7 +16,7 @@ The program advances only through independently validated causal prerequisites a
 | 1 | Evidence-controlled adaptive decision | **SCIENTIFIC OBJECT DEFINED / EMPIRICALLY UNTESTED** |
 | 2 | Isolated modification | **ARCHITECTURE ONLY** |
 | 3 | Evidence → justified modification | **NOT AUTHORIZED / CAUSAL COMPOSITION REQUIRED** |
-| 4 | Repeated correction | **CONCEPTUAL FRONTIER / EMPIRICALLY NOT AUTHORIZED** |
+| 4 | Post-Modification Correctability → repeated correction | **PMC ROLE PROVISIONALLY FIXED / REPEATED CORRECTION EMPIRICALLY NOT AUTHORIZED** |
 | 5 | Justified transformability | **THEORETICAL ONLY** |
 | 6 | Adaptive viability / capability | **NOT AUTHORIZED** |
 | 7 | Extreme adaptive systems | **NOT AUTHORIZED** |
@@ -158,6 +158,8 @@ G_1
 \not\Rightarrow
 G_2
 \not\Rightarrow
+\text{PMC}
+\not\Rightarrow
 \text{repeated correction}
 \not\Rightarrow
 \text{justified transformability}
@@ -216,9 +218,116 @@ If a transformation is explicitly excluded, the claim must stop before crossing 
 
 No bridge gate, bridge estimand, or bridge intervention is currently frozen.
 
-## Measurement and bridge provenance
+## Post-Modification Correctability — provisional conceptual role
 
-The scoped G1 decision is informed by six independent attack PRs:
+CCA provisionally adopts **Post-Modification Correctability (PMC)** as the conceptual object immediately upstream of repeated correction.
+
+Its role is:
+
+> **After a consequential change, do the conditions required for future warranted correction remain available?**
+
+The causal content must remain stronger than generic flexibility:
+
+\[
+\boxed{
+\text{future admissible evidence}
+\leadsto
+\text{warranted causal authority}
+\leadsto
+\text{consequential correction}
+}
+\]
+
+PMC asks whether such a path remains available after modification within a prospectively declared scope.
+
+The decision record is [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
+
+### What PMC is not
+
+PR #11 established that none of the following is sufficient evidence of PMC:
+
+```text
+current performance
+current capability
+generic adaptability / plasticity
+one-shot correction success
+```
+
+Therefore:
+
+\[
+\boxed{
+\text{the modified system is still good}
+\not\equiv
+\text{the modified system is still correctable}
+}
+\]
+
+and:
+
+\[
+\boxed{
+\text{one successful correction}
+\not\Rightarrow
+\text{PMC after that correction}
+}
+\]
+
+### Relational rather than intrinsic by default
+
+PMC is not provisionally treated as a scalar property of \(S_{t+1}\) alone. A future measurement object must specify the relational future-correction scope under which correctability is claimed.
+
+Illustrative notation such as
+
+\[
+\mathrm{Corr}(S_{t+1};\Omega)
+\]
+
+is not frozen notation or a metric. \(\Omega\), the system boundary, temporal horizon, correction-path representation, dimensions, preservation criteria, scalarization, estimand, estimator, threshold, and protocol all remain unresolved.
+
+### PMC is not repeated correction
+
+CCA provisionally distinguishes:
+
+\[
+\boxed{
+\mathrm{PMC}\neq\mathrm{Repeated\ Correction}
+}
+\]
+
+PMC concerns whether another warranted correction remains possible under the declared correction scope.
+
+Repeated correction concerns whether another valid correction episode actually occurs and is established under its own prospective causal contract.
+
+The candidate dependency is therefore:
+
+\[
+\boxed{
+\text{one valid correction}
+\rightarrow
+\text{preserved capacity for another}
+\rightarrow
+\text{actual repeated correction}
+}
+\]
+
+The arrows are not empirically established.
+
+PMC also does not imply that correctability increased:
+
+\[
+\boxed{
+\text{PMC preserved}
+\not\Rightarrow
+\Delta\mathrm{Corr}>0
+}
+\]
+
+and does not canonize `C_improve`.
+
+## Adversarial provenance
+
+The scoped G1 decision is informed by:
 
 ```text
 #3  broad vs relational
@@ -234,6 +343,12 @@ The composition principle is informed by:
 ```text
 #9  causal semantics of the G1-to-G2 bridge
 #10 architecture-independent necessity of a bridge
+```
+
+The PMC role is informed by:
+
+```text
+#11 attack post-modification correctability as a scientific object
 ```
 
 These remain provenance rather than canonical empirical experiments.
@@ -261,6 +376,9 @@ ASI-0                                 CLOSED / IMMUTABLE
 G1 scientific role                    PROVISIONALLY FIXED
 G1 operational candidate-selection    CURRENT INSTANTIATION / NOT UNIVERSAL
 CCA causal composition principle      CANONICAL METHODOLOGICAL RULE
+PMC conceptual role                   PROVISIONALLY FIXED
+PMC environment / system boundary     UNFROZEN
+PMC metric / estimand / threshold     UNFROZEN
 G1 experiment contract                UNFROZEN
 candidate ontology                    UNFROZEN
 evidence intervention space           UNFROZEN
@@ -268,17 +386,14 @@ architecture-specific bridge object   UNFROZEN / UNNAMED
 ECIM scientific contract              UNFROZEN
 ECIM model / prompt                    NOT SELECTED
 ECIM empirical implementation         NOT AUTHORIZED
+repeated-correction experiment        NOT AUTHORIZED
 new empirical execution               NOT AUTHORIZED
 ```
 
 ## Next conceptual frontier
 
-The next program-level conceptual question is:
+The next attack is:
 
-> **What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?**
+> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
 
-This is the transition from validating one correction pathway toward preservation of correction capacity across change.
-
-It is **not** authorization to skip the unresolved empirical prerequisites. Any future repeated-correction experiment remains blocked until the particular evidence-to-change pathway it depends on has validly established its upstream gates and satisfied the CCA Causal Composition Principle across every separable transformation it claims.
-
-No implementation is authorized by this transition.
+This remains conceptual. No repeated-correction implementation is authorized, and any empirical work at this layer remains blocked until its particular evidence-to-change pathway satisfies the upstream empirical gates and the CCA Causal Composition Principle.
