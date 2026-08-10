@@ -1,0 +1,1659 @@
+# Level-0 Attack: Is Total Warranted-Evidence Control Causally Identifiable?
+
+## Status
+
+**ADVERSARIAL SCIENTIFIC ANALYSIS — NO STATE TRANSITION — NO IMPLEMENTATION**
+
+This document attacks the remaining causal question exposed by PR #6:
+
+> **Given frozen semantic evidence semantics, interface scope, realization policy, and an independently defined warrant mapping, can intervention on evidence identify a causal effect on warranted selection without silently attributing other treatment changes to semantic evidence itself?**
+
+The target is only candidate Level-0 object `0B`.
+
+This analysis does **not**:
+
+- select an ontology;
+- freeze a semantic evidence set;
+- freeze a realization policy;
+- freeze an estimand or statistical threshold;
+- select a model or prompt;
+- construct a benchmark;
+- implement ECIM;
+- modify `research_state.json`;
+- authorize execution;
+- canonicalize PR #3, #4, #5, or #6.
+
+The purpose is destructive:
+
+> **Try to show that even after treatment constitution is prospectively specified, the proposed G1 intervention still fails to identify causal warranted-evidence control.**
+
+---
+
+# 1. Starting point
+
+The strongest candidate treatment architecture surviving the preceding attacks is:
+
+```text
+0A-S  semantic constitution
+      define semantic evidence state S
+      and independently warranted candidate C*(S)
+
+0A-I  interface contract
+      define available modality, tools, protocol,
+      resource interface, and selection environment K
+
+0A-R  realization constitution
+      define admissible renderings R and a
+      prospective realization policy Q_R
+
+0B    total warranted evidence control
+      does intervention on semantic evidence,
+      under frozen (K,Q_R), causally move selection
+      toward C*(S)?
+
+0B-R  representation/access heterogeneity
+      additional system property
+
+0C    mechanism/channel attribution
+      additional causal/mechanistic property
+```
+
+PR #6 left one question unresolved:
+
+\[
+\boxed{
+\text{Can }(S,K,Q_R,C^*)\text{ jointly define an identifiable causal G1 intervention?}
+}
+\]
+
+The naive requirement would be:
+
+> change semantic evidence while changing no other selection-relevant variable.
+
+The first attack on `0B` is that this requirement is generally impossible and, in part, conceptually wrong.
+
+---
+
+# 2. The intervention cannot literally manipulate semantics alone
+
+Semantic evidence is not delivered to a tested system as an abstract variable.
+
+Let:
+
+\[
+S
+\]
+
+be the semantic evidence state;
+
+\[
+K
+\]
+
+be the frozen interface / selection environment;
+
+\[
+R\sim Q_R(\cdot\mid S,K)
+\]
+
+be the prospectively declared realization policy;
+
+and
+
+\[
+E_{\mathrm{raw}}=h(S,R;K)
+\]
+
+be the concrete evidence delivered to the selector.
+
+A physically meaningful intervention is therefore not merely
+
+\[
+do(S=s)
+\]
+
+with every descendant of \(S\) held fixed.
+
+It is a **semantic-assignment regime**:
+
+\[
+\boxed{
+G_s:
+S\leftarrow s,
+\quad
+R\sim Q_R(\cdot\mid s,K),
+\quad
+E_{\mathrm{raw}}\leftarrow h(s,R;K)
+}
+\]
+
+with non-treatment apparatus held fixed or randomized independently.
+
+The selection outcome is then produced under the regime:
+
+\[
+C(G_s).
+\]
+
+This is a stochastic intervention when \(Q_R\) has multiple realizations.
+
+The central implication is:
+
+\[
+\boxed{
+\text{the operational treatment is a semantic-assignment regime, not a metaphysically isolated semantic bit.}
+}
+\]
+
+This does not yet prove causal identification.
+
+It defines the object that can potentially be identified.
+
+---
+
+# 3. First destructive result: “no other selection-relevant variable changes” is too strong
+
+Changing semantic evidence may necessarily change variables such as:
+
+```text
+delivered tokens
+length
+local ordering
+number of semantic distinctions expressed
+parsing burden
+memory demand
+salience produced by lawful evidence content
+realization-specific access cost
+```
+
+Suppose:
+
+\[
+S\rightarrow L\rightarrow C_{\mathrm{selected}},
+\]
+
+where \(L\) is delivered evidence length.
+
+If \(L\) is a lawful consequence of assigning semantic evidence through the frozen realization policy, then it is a **post-treatment mediator**.
+
+Demanding that \(L\) be held fixed after assigning \(S\) may:
+
+- make the treatment impossible;
+- alter the semantic evidence;
+- select only special treatment versions;
+- block part of the total effect;
+- change the estimand from total evidence control to a controlled direct effect.
+
+Therefore:
+
+\[
+\boxed{
+\text{causal identification of total G1 does not require every descendant of }S\text{ to be fixed.}
+}
+\]
+
+The correct requirement is narrower:
+
+\[
+\boxed{
+\textbf{No uncontrolled co-intervention outside the prospectively frozen evidence-delivery regime.}
+}
+\]
+
+This is the first major refinement of the causal question.
+
+---
+
+# 4. Descendants, apparatus variables, and forbidden co-interventions must be separated
+
+The attack requires three variable classes.
+
+## 4.1 Legitimate treatment descendants
+
+These are variables generated by the frozen semantic-assignment regime:
+
+\[
+S\rightarrow R\rightarrow E_{\mathrm{raw}}\rightarrow L,D,\ldots\rightarrow C.
+\]
+
+Examples may include length, tokenization, local order, or access burden when those properties arise from an admitted realization.
+
+For a **total** G1 effect, these paths are part of the treatment effect.
+
+They should not be conditioned away by default.
+
+## 4.2 Non-treatment apparatus variables
+
+These define the common selection environment and should remain fixed or be randomized independently of semantic assignment.
+
+Examples include:
+
+```text
+candidate pool
+candidate semantic identities
+target context
+candidate count
+candidate generation opportunity
+selection budget
+response budget
+tools not constitutively part of K
+selection instructions
+model parameters
+reset state / episode history
+scoring interface
+candidate-position policy
+```
+
+If these change with \(S\), semantic assignment is not isolated from the rest of the selection problem.
+
+## 4.3 Construction artifacts that create extrinsic authority
+
+Some renderer-produced properties may be descendants of \(S\) in software but still be scientifically inadmissible.
+
+For example:
+
+```text
+candidate ID literally embedded in metadata
+semantic state s_i always placed next to candidate i
+color / position code revealing C*(s)
+file name encoding the warranted candidate
+renderer branch leaking treatment label
+```
+
+A fixed construction algorithm does not automatically make such paths legitimate.
+
+`0A-S` and `0A-R` must already have declared whether the information is part of admissible evidence semantics.
+
+Thus:
+
+\[
+\boxed{
+\text{algorithmically downstream}
+\not\Rightarrow
+\text{scientifically licensed treatment descendant}.
+}
+\]
+
+This prevents “the renderer always does it” from laundering presentation leakage into evidence authority.
+
+---
+
+# 5. Treatment consistency: one semantic state can have multiple physical versions
+
+The usual consistency problem appears immediately.
+
+For one semantic evidence state \(s\), there may be many admissible realizations:
+
+\[
+\mathcal R_{\mathrm{adm}}(s;K)
+=
+\{r_1,r_2,\ldots\}.
+\]
+
+If the experiment writes only
+
+\[
+do(S=s),
+\]
+
+then the potential outcome may be ambiguous because:
+
+\[
+C(s,r_1)\neq C(s,r_2).
+\]
+
+PR #5 and PR #6 already established that such heterogeneity may be scientifically real.
+
+A frozen stochastic realization policy solves the **definition** problem:
+
+\[
+R\sim Q_R(\cdot\mid s,K).
+\]
+
+Then the treatment version is the regime \(G_s\), not an unspecified member of the semantic equivalence class.
+
+The resulting target is:
+
+\[
+P(C=c\mid do(G_s)).
+\]
+
+This gives a single well-defined distribution even when realization-specific outcomes differ.
+
+Therefore:
+
+\[
+\boxed{
+\text{multiple treatment versions do not destroy G1 identifiability if the version policy is itself frozen as part of the intervention.}
+}
+\]
+
+But the price is explicit scope:
+
+\[
+\boxed{
+G_1\text{ is indexed by }(K,Q_R).
+}
+\]
+
+Changing \(Q_R\) changes the scientific treatment regime.
+
+---
+
+# 6. Treatment-version interference is not eliminated by averaging
+
+Freezing \(Q_R\) does not establish that representation versions are irrelevant.
+
+It only defines the target population of versions.
+
+If:
+
+\[
+C(s,r_1)\neq C(s,r_2),
+\]
+
+then parent G1 under \(Q_R\) can still be identified while `0B-R` reports heterogeneity.
+
+This distinction is:
+
+```text
+PARENT EFFECT
+semantic-assignment regime marginalized over frozen Q_R
+
+ADDITIONAL PROPERTY
+how much the response varies across admitted realizations
+```
+
+Thus:
+
+\[
+\boxed{
+\text{version heterogeneity}
+\not\Rightarrow
+\text{parent treatment ambiguity}
+}
+\]
+
+provided the version policy was frozen prospectively.
+
+However, if \(Q_R\) is selected after observing model performance, the parent estimand is contaminated exactly as PR #6 established.
+
+---
+
+# 7. Dynamic realization policies are a different object
+
+Suppose the evidence-delivery process adapts to model responses:
+
+```text
+show evidence chunk
+observe model response
+choose next evidence chunk
+observe model response
+...
+```
+
+Then realization is not a static pre-treatment version.
+
+It is a dynamic policy depending on post-treatment history.
+
+Such an intervention may still be causally definable, but the object becomes:
+
+\[
+G_s^{\mathrm{dynamic}}
+\]
+
+rather than the simple one-shot G1 considered here.
+
+That would require its own treatment policy, history state, consistency rule, and causal contract.
+
+The present attack therefore does **not** use adaptive delivery as a rescue for one-shot G1.
+
+If the evidence regime requires behavior-contingent delivery to be meaningful, the static object has failed for that design.
+
+---
+
+# 8. The nasty counterexample: semantic fidelity can force composite physical treatments
+
+Construct two semantic states:
+
+\[
+C^*(s_1)=c_1,
+\qquad
+C^*(s_2)=c_2.
+\]
+
+Suppose faithful realization of \(s_1\) can be expressed in one short proposition, while every faithful realization of \(s_2\) requires a long structured demonstration.
+
+Then under every admissible realization policy:
+
+\[
+L(s_1)<L(s_2).
+\]
+
+Suppose the tested selector is worse on long evidence regardless of semantic content.
+
+Then:
+
+\[
+P(C=c_2\mid do(G_{s_2}))
+<
+P(C=c_1\mid do(G_{s_1})).
+\]
+
+What does this show?
+
+It does **not** show that random assignment of the semantic regimes is causally unidentified.
+
+The total effects of \(G_{s_1}\) and \(G_{s_2}\) are still observable under randomization.
+
+What is not identified is a purified effect:
+
+> the effect of semantic content while holding all semantic-induced access consequences fixed.
+
+That direct/path-specific effect may be impossible because the relevant treatment versions do not exist.
+
+Therefore:
+
+\[
+\boxed{
+\text{total evidence-regime effect may be identifiable even when a pure semantic-path effect is not.}
+}
+\]
+
+This is the key answer to the proposed counterexample.
+
+It yields another hard distinction:
+
+\[
+\boxed{
+\text{treatment validity}
+\neq
+\text{path-specific causal identifiability}.
+}
+\]
+
+CCA's parent G1 need not claim path-specific semantic purity unless that stronger object is explicitly chosen.
+
+---
+
+# 9. But a total regime effect can still be scientifically malformed
+
+Randomization does not rescue a bad treatment definition.
+
+Suppose the renderer for \(s_1\) places candidate \(c_1\) first and the renderer for \(s_2\) places candidate \(c_2\) first.
+
+Then randomization identifies the total effect of the **package**:
+
+```text
+semantic evidence
++
+candidate position change
+```
+
+It does not establish the intended evidence-control claim unless candidate position is itself a licensed part of the evidence treatment.
+
+So:
+
+\[
+\boxed{
+\text{randomized package effect}
+\neq
+\text{valid semantic-evidence effect}.
+}
+\]
+
+Causal identification is downstream of treatment constitution.
+
+This preserves the exact hierarchy:
+
+\[
+\boxed{
+\text{measurement/treatment validity}
+\prec
+\text{causal identification}.
+}
+\]
+
+A randomized malformed treatment is still malformed.
+
+---
+
+# 10. Post-treatment adjustment can destroy the parent estimand
+
+Consider:
+
+\[
+S\rightarrow L\rightarrow C,
+\]
+
+where \(L\) is a treatment-induced length or access variable.
+
+A tempting analysis is:
+
+> compare semantic states after controlling for length.
+
+That does not generally estimate the total effect of the semantic-assignment regime.
+
+Conditioning on \(L\) may:
+
+- block a real treatment pathway;
+- require unsupported cross-world assumptions;
+- induce selection bias if \(L\) shares causes with other post-treatment variables;
+- restrict analysis to treatment versions that do not represent the original target population.
+
+Thus:
+
+\[
+\boxed{
+\text{post-treatment balancing is not a default repair for evidence-construction asymmetry.}
+}
+\]
+
+If exact length balance is scientifically required, it must be established at treatment construction **before** execution and without altering semantic validity.
+
+If that construction is impossible, the program must either:
+
+1. accept a total regime effect with explicit scope; or
+2. reject that scientific object/design.
+
+It may not observe the result and then condition away inconvenient descendants.
+
+---
+
+# 11. Pre-treatment matching remains legitimate
+
+Not every variable related to evidence delivery is post-treatment.
+
+The experiment may prospectively fix or randomize independently:
+
+```text
+candidate identities
+candidate token labels
+candidate display order
+target context
+selection instructions
+model checkpoint
+candidate pool size
+response budget
+selection budget
+episode reset policy
+realization random seed distribution
+```
+
+These variables are part of common experimental support rather than consequences of semantic assignment.
+
+Holding them fixed or balancing them prospectively strengthens identification.
+
+The key question is causal ordering:
+
+\[
+\boxed{
+\text{Was the variable fixed independently of }S,
+\text{ or generated as part of the frozen treatment regime?}
+}
+\]
+
+That distinction must be decided before outcomes.
+
+---
+
+# 12. The outcome cannot be “accuracy” alone
+
+A second major attack concerns the outcome definition.
+
+Suppose we define:
+
+\[
+Y=\mathbf 1[C_{\mathrm{selected}}=C^*(S)].
+\]
+
+A high value of \(Y\) under treatment does not by itself establish evidence control.
+
+A selector might always choose one candidate because of a fixed prior.
+
+If the evidence distribution disproportionately warrants that candidate, raw warranted accuracy can be high even when evidence has no causal effect.
+
+Thus:
+
+\[
+\boxed{
+P(C=C^*(S))\text{ alone is not a causal G1 estimand.}
+}
+\]
+
+The causal object must ask whether changing assigned semantic evidence moves the **same fixed candidate-choice coordinates** in the warranted direction.
+
+---
+
+# 13. A response-matrix representation avoids treatment-dependent outcome confusion
+
+Let the frozen candidate pool be:
+
+\[
+\mathcal C=\{c_1,\ldots,c_k\}.
+\]
+
+Let semantic conditions be:
+
+\[
+\mathcal S=\{s_1,\ldots,s_m\},
+\]
+
+with prospectively defined warrant mapping:
+
+\[
+C^*(s_i)=c_{w(i)}.
+\]
+
+Define the causal response matrix:
+
+\[
+M_{ij}
+=
+P(C_{\mathrm{selected}}=c_j\mid do(G_{s_i})).
+\]
+
+Each matrix coordinate uses a **fixed observed outcome**:
+
+\[
+\mathbf1[C=c_j].
+\]
+
+The warrant mapping does not redefine the observed outcome.
+
+It orients which response changes count as warranted.
+
+This is important because it avoids making the causal outcome itself change identity with treatment.
+
+The full matrix is scientifically richer than a single accuracy score.
+
+---
+
+# 14. Candidate-specific causal lift
+
+For a semantic state \(s_i\) that warrants candidate \(c_{w(i)}\), define a candidate-specific responsiveness contrast schematically as:
+
+\[
+\Delta_i
+=
+M_{i,w(i)}
+-
+\sum_{\ell:\,w(\ell)\neq w(i)}
+q_{i\ell}\,M_{\ell,w(i)},
+\]
+
+where \(q_{i\ell}\) is a prospectively declared weighting over counterfactual semantic states that do **not** warrant the same candidate.
+
+This asks:
+
+> Is candidate \(c_{w(i)}\) selected more often when the assigned evidence warrants it than when alternative evidence does not?
+
+A selector that always chooses one candidate has approximately zero candidate-specific lift for that candidate because its selection probability does not move with evidence assignment.
+
+This is closer to **causal evidence control** than raw warranted fidelity.
+
+The exact weighting scheme is not frozen here.
+
+---
+
+# 15. Pairwise symmetric causal responsiveness
+
+For two semantic states \(s_a,s_b\) with:
+
+\[
+C^*(s_a)=c_a,
+\qquad
+C^*(s_b)=c_b,
+\qquad
+c_a\neq c_b,
+\]
+
+a symmetric contrast can be written:
+
+\[
+\Delta_{ab}
+=
+\frac12
+\left[
+P(C=c_a\mid do(G_{s_a}))
+-
+P(C=c_a\mid do(G_{s_b}))
+\right]
+\]
+
+\[
++
+\frac12
+\left[
+P(C=c_b\mid do(G_{s_b}))
+-
+P(C=c_b\mid do(G_{s_a}))
+\right].
+\]
+
+This asks whether the selection distribution rotates toward the candidate warranted by the assigned semantic evidence.
+
+A fixed candidate preference cancels:
+
+```text
+always choose c_a
+-> c_a probability does not increase under s_a relative to s_b
+-> c_b probability does not increase under s_b relative to s_a
+-> no warranted responsiveness
+```
+
+The contrast is illustrative only.
+
+No scalar primary estimand is frozen by this attack.
+
+---
+
+# 16. Absolute fidelity and causal control are different properties
+
+A useful separation is:
+
+\[
+F
+=
+P(C=C^*(S)\mid \text{assigned admissible evidence})
+\]
+
+versus a causal responsiveness object based on treatment reassignment.
+
+High \(F\) may coexist with weak causal control if:
+
+- candidate priors are strong;
+- the evidence distribution is unbalanced;
+- one candidate is intrinsically preferred;
+- stable context predicts the warrant independently of evidence assignment.
+
+Conversely, strong causal responsiveness could coexist with imperfect absolute fidelity.
+
+Therefore:
+
+\[
+\boxed{
+\text{warranted fidelity}
+\neq
+\text{warranted evidence control}.
+}
+\]
+
+This repeats the CCA discipline at the selection layer:
+
+\[
+\text{correct output}
+\neq
+\text{correct causal authority assignment}.
+\]
+
+---
+
+# 17. Randomization can identify the total regime effect without reasoning assumptions
+
+Suppose selection episodes are randomized to semantic-assignment regimes \(G_s\), with:
+
+- candidate pool fixed;
+- interface contract \(K\) fixed;
+- realization policy \(Q_R\) frozen prospectively;
+- candidate presentation fixed or randomized independently of \(S\);
+- model parameters fixed;
+- episode state reset or otherwise handled prospectively;
+- assignment reconstructed exactly;
+- selection outcome observed directly.
+
+Then randomization identifies:
+
+\[
+P(C=c_j\mid do(G_s))
+\]
+
+from observed selection frequencies under the assigned regimes, subject to ordinary implementation integrity.
+
+No assumption is required about whether the selector internally uses:
+
+- relations;
+- output marginals;
+- symbolic rules;
+- latent representations;
+- heuristics;
+- any other channel.
+
+Thus:
+
+\[
+\boxed{
+\text{0B identification can remain mechanism-agnostic.}
+}
+\]
+
+This preserves the separation from `0C`.
+
+---
+
+# 18. Model reasoning is not an identification assumption
+
+A valid total-effect design should still work if two models use completely different internal mechanisms but exhibit the same response matrix \(M\).
+
+The causal claim ceiling is about behavior under intervention:
+
+> assigned admissible evidence changed selection in the warranted direction under the frozen regime.
+
+It is not:
+
+> the model represented the evidence in the scientifically intended way.
+
+That stronger statement belongs to mechanism attribution.
+
+Therefore:
+
+\[
+\boxed{
+G_1\text{ identification should not require a theory of internal reasoning.}
+}
+\]
+
+If the proposed analysis needs latent chain-of-thought, attention maps, hidden states, or mechanistic assumptions to identify the parent effect, the design has drifted into `0C`.
+
+---
+
+# 19. Persistent model state creates genuine interference
+
+One-shot randomization assumes selection episodes are causally separable enough to define the intended unit.
+
+Suppose the tested system carries state across episodes:
+
+\[
+S_t\rightarrow H_{t+1}\rightarrow C_{t+1}.
+\]
+
+Then semantic assignment in one episode can affect later selection outcomes.
+
+Naively treating trials as independent violates the intended intervention structure.
+
+Three conceptually different responses exist:
+
+1. **Reset state** between episodes if reset is part of the target system/interface contract.
+2. **Randomize/block sequences** and define history as part of the causal design.
+3. **Admit a dynamic repeated-correction object**, which is downstream of one-shot G1.
+
+The third option cannot be used to rescue a one-shot design after observing interference.
+
+Therefore:
+
+\[
+\boxed{
+\text{episode-level G1 requires an explicit state/reset contract.}
+}
+\]
+
+This is a causal-identification requirement, not a mechanism claim.
+
+---
+
+# 20. Candidate presentation can create a backdoor-like package effect
+
+Suppose candidate order or token labels covary with semantic state:
+
+\[
+S\rightarrow P_C\rightarrow C_{\mathrm{selected}},
+\]
+
+where \(P_C\) is candidate presentation.
+
+If \(P_C\) is not part of admissible evidence semantics, this is a co-intervention.
+
+The clean design options are prospective:
+
+- hold candidate presentation fixed; or
+- randomize/counterbalance it independently of \(S\).
+
+The design must not observe candidate-position effects and then post-hoc discard inconvenient assignments.
+
+This gives a general rule:
+
+\[
+\boxed{
+\text{nonsemantic selection variables must have treatment-independent assignment mechanisms.}
+}
+\]
+
+unless they are explicitly incorporated into a different treatment object.
+
+---
+
+# 21. Task difficulty is not automatically a confound
+
+The prompt for this attack lists “task difficulty” as a possible hidden path.
+
+That phrase must be handled carefully.
+
+If semantic state \(S\) itself changes how difficult the evidence is to use, then difficulty may be a treatment consequence:
+
+\[
+S\rightarrow D\rightarrow C.
+\]
+
+For total G1, this path is part of the evidence-regime effect.
+
+If instead the experiment changes an independent task variable \(T\) whenever it changes \(S\):
+
+\[
+S\leftarrow A\rightarrow T\rightarrow C,
+\]
+
+or uses different target contexts for different semantic states, then evidence assignment is bundled with a separate selection problem.
+
+Thus “difficulty” has no causal classification without a structural role.
+
+The attack therefore rejects the blanket rule:
+
+> match all observed difficulty measures across evidence states.
+
+The correct rule is:
+
+> freeze independent task/context variables; do not condition away genuine treatment-induced access difficulty unless a different estimand was prospectively declared.
+
+---
+
+# 22. No-counterfactual-support failure
+
+Causal evidence control requires evidence reassignment support.
+
+Suppose semantic state \(s_i\) is only ever observed with one stable candidate/context bundle and no alternative semantic condition is assigned under the same selection environment.
+
+Then:
+
+\[
+P(C=c_i\mid S=s_i)
+\]
+
+cannot distinguish evidence control from stable candidate/context structure.
+
+A G1 design needs prospective counterfactual support such that alternative semantic evidence regimes are assigned while the relevant selection environment is otherwise held constant or independently randomized.
+
+This yields:
+
+\[
+\boxed{
+\text{warrant mapping alone does not provide causal support.}
+}
+\]
+
+The experiment must actually intervene on evidence assignment.
+
+---
+
+# 23. Non-unique warrant destroys the current G1 object before causal analysis
+
+If:
+
+\[
+C^*(s)
+\]
+
+is not uniquely defined, then “move selection toward the warranted candidate” is not a single outcome orientation.
+
+A set-valued warrant could potentially define another scientific object, but that would require a new contract.
+
+For the current candidate G1:
+
+\[
+\boxed{
+|C^*(s)|=1
+}
+\]
+
+is a measurement prerequisite.
+
+If the warrant mapping is ambiguous or chosen from tested-model behavior, causal randomization does not repair it.
+
+Again:
+
+\[
+\boxed{
+\text{causal identification cannot outrun measurement validity.}
+}
+\]
+
+---
+
+# 24. Constructive witness: total G1 is identifiable in principle
+
+A minimal in-principle design can be described without choosing a real benchmark.
+
+Assume:
+
+```text
+candidate pool:      {c1,c2}
+semantic states:     {s1,s2}
+C*(s1)=c1
+C*(s2)=c2
+interface K:         fixed
+realization policy:  Q_R prospectively frozen
+candidate order:     randomized independently
+model state:         reset before each episode
+assignment:          s1 or s2 randomized
+selection outcome:   one observed candidate
+```
+
+For each randomized episode, the treatment regime is:
+
+\[
+G_{s_i}:
+S=s_i,
+R\sim Q_R(\cdot\mid s_i,K).
+\]
+
+Estimate the four response probabilities:
+
+\[
+P(C=c_1\mid do(G_{s_1})),
+\quad
+P(C=c_1\mid do(G_{s_2})),
+\]
+
+\[
+P(C=c_2\mid do(G_{s_1})),
+\quad
+P(C=c_2\mid do(G_{s_2})).
+\]
+
+The symmetric warranted-responsiveness contrast is identified by randomization.
+
+No internal mechanism is assumed.
+
+This is an existence proof for causal identification of the **total semantic-assignment-regime effect**.
+
+It is not a proposed CCA benchmark.
+
+---
+
+# 25. Constructive failure witness: randomization identifies the wrong package
+
+Now modify the previous witness:
+
+```text
+when s1 is assigned -> c1 is always displayed first
+when s2 is assigned -> c2 is always displayed first
+```
+
+Suppose the selector simply chooses the first candidate.
+
+Then the randomized response appears perfectly warranted:
+
+\[
+P(C=C^*(S))=1.
+\]
+
+The response matrix also rotates with treatment.
+
+Yet the causal path is:
+
+\[
+S\rightarrow\text{candidate position}\rightarrow C,
+\]
+
+not admissible evidence use.
+
+Randomization correctly identifies a causal effect of the package, but the package is scientifically invalid for G1.
+
+Therefore:
+
+\[
+\boxed{
+\text{causal control of selection}
+\not\Rightarrow
+\text{causal control by admissible evidence}.
+}
+\]
+
+Treatment constitution remains logically prior.
+
+---
+
+# 26. Constructive failure witness: post-treatment “repair” changes the estimand
+
+Suppose:
+
+```text
+s1 faithful realizations: 10–20 tokens
+s2 faithful realizations: 80–100 tokens
+```
+
+After seeing that the selector performs worse under \(s_2\), the experimenter restricts analysis to the rare longest \(s_1\) and shortest \(s_2\) realizations to “match length.”
+
+This procedure conditions on treatment-generated versions after outcome-relevant behavior has been observed.
+
+The new analysis no longer targets the frozen \(Q_R\).
+
+Thus:
+
+\[
+\boxed{
+\text{post-hoc version matching}
+\Rightarrow
+\text{new estimand or invalid analysis},
+}
+\]
+
+not a repair of the original G1.
+
+---
+
+# 27. Constructive failure witness: state interference
+
+Suppose the selector learns a mapping after each episode and retains it.
+
+The first assigned semantic state changes later candidate preferences even when later evidence is different.
+
+Then:
+
+\[
+C_t\neq C_t(S_t)\text{ alone};
+\]
+
+instead:
+
+\[
+C_t=C_t(S_{1:t}).
+\]
+
+A trial-level response matrix estimated without accounting for sequence is not the intended one-shot G1 object.
+
+The result is not necessarily scientifically useless.
+
+It belongs to a dynamic adaptation/repeated-correction design.
+
+But the one-shot Level-0 causal object is not identified under the naive unit definition.
+
+---
+
+# 28. The strongest interpretation of “semantic effect” is refuted in general
+
+One possible target would be:
+
+> estimate the effect of semantic content while holding every nonsemantic consequence of its realization fixed.
+
+This is generally not guaranteed to exist.
+
+If changing semantic evidence necessarily changes physical evidence tokens, length, relations, or access demands, then a counterfactual intervention that changes only semantics while fixing all those variables may be incoherent.
+
+Therefore:
+
+\[
+\boxed{
+\text{a universally defined pure-semantic direct effect is not earned.}
+}
+\]
+
+What is identifiable in principle is the total effect of a prospectively defined semantic-assignment regime.
+
+That distinction is central.
+
+---
+
+# 29. The parent G1 claim must include the delivery regime in its scope
+
+If the attack survives, the strongest defensible claim form is not:
+
+> semantics in the abstract caused warranted selection.
+
+It is closer to:
+
+> Under frozen interface contract \(K\), realization policy \(Q_R\), candidate environment, and episode-state policy, randomized assignment of admissible semantic evidence causally shifted candidate selection in the direction warranted by the independently declared mapping \(C^*(S)\).
+
+This is a total-effect claim.
+
+It does not establish:
+
+- representation stability;
+- channel mechanism;
+- semantic-path purity;
+- target modification efficacy;
+- capability improvement;
+- repeated correction;
+- viability.
+
+The scope terms are part of the scientific claim, not implementation footnotes.
+
+---
+
+# 30. What causal identification requires prospectively
+
+Without freezing a concrete experiment, the attack identifies a minimal logical set of conditions for a future 0B contract.
+
+## 30.1 Valid semantic treatment states
+
+Each assigned \(s\) must have a prospectively defined semantic meaning and unique warrant \(C^*(s)\).
+
+## 30.2 Frozen interface contract
+
+\(K\) must define the selection environment and access interface.
+
+## 30.3 Frozen realization regime
+
+\(Q_R\) and the renderer/admissibility rule must be fixed independently of tested-system outcomes.
+
+## 30.4 Independent semantic assignment
+
+The semantic regime must be randomized or otherwise assigned by an identified causal design.
+
+## 30.5 Non-treatment apparatus invariance / independent randomization
+
+Candidate pool, target context, candidate presentation, resources, and other selection variables must not co-vary with semantic assignment except where explicitly included in the treatment object.
+
+## 30.6 Episode-state integrity
+
+Reset/state/history rules must support the unit-level potential outcome being estimated.
+
+## 30.7 Reconstructible assignment and outcome
+
+The assigned semantic regime, realized version, candidate identities, and selected candidate must be auditable.
+
+## 30.8 Counterfactual support
+
+Alternative semantic regimes must be assigned under a common selection environment so candidate-specific response changes are estimable.
+
+None of these conditions determines the model's internal reasoning mechanism.
+
+---
+
+# 31. What causal identification does not require
+
+The attack rejects several unnecessary requirements for parent G1.
+
+It does **not** require:
+
+- equal behavior across all semantically equivalent representations;
+- equal effective access burden across realizations;
+- identifying a relational information channel;
+- conditioning on all evidence-length or difficulty differences;
+- explaining internal reasoning;
+- proving a unique mediation path;
+- demonstrating target modification efficacy;
+- demonstrating capability improvement.
+
+Those are additional scientific objects.
+
+---
+
+# 32. Relation to 0B-R
+
+If realization \(R\) is recorded and prospectively randomized or sampled under \(Q_R\), the parent G1 effect can coexist with a separate heterogeneity question:
+
+\[
+G_1(s,r).
+\]
+
+The parent estimand may marginalize over \(Q_R\), while `0B-R` asks how strongly the response changes across realization strata.
+
+Therefore:
+
+\[
+\boxed{
+\text{representation/access heterogeneity is not a confound when it is part of the declared treatment population and design.}
+}
+\]
+
+It becomes a separate property that may matter for external validity and later engineering.
+
+---
+
+# 33. Relation to 0C
+
+Nothing in the identification argument requires deciding whether the selector used:
+
+```text
+pairing relations
+output marginals
+input statistics
+symbolic rules
+latent compression
+candidate priors combined with evidence
+multiple channels
+```
+
+A successful total G1 effect can therefore be followed by a mechanism study without retroactively making mechanism part of the parent definition.
+
+Conversely, mechanism sensitivity does not establish G1.
+
+The authority separation remains:
+
+\[
+G_1\not\Rightarrow M_1,
+\qquad
+M_1\not\Rightarrow G_1.
+\]
+
+---
+
+# 34. Relation to ECIM G2
+
+Even a clean positive G1 establishes only evidence-controlled warranted **selection**.
+
+It does not establish that the selected candidate can be instantiated as an effective modification.
+
+The hard downstream principle remains:
+
+\[
+\boxed{
+G_2\text{ must be identified independently by direct }do(M=m).
+}
+\]
+
+Therefore parent G1 causal identification cannot inherit modification efficacy from selection outcomes.
+
+---
+
+# 35. Relation to CCA
+
+CCA asks whether valid correction can govern adaptive change.
+
+At the selection layer, the relevant functional property is not:
+
+> the system is often correct.
+
+It is:
+
+> changing admissible evidence changes which candidate receives selection authority, in the direction warranted by that evidence.
+
+That is naturally an intervention-level property.
+
+The present attack therefore supports a mechanism-agnostic parent object of the form:
+
+\[
+\boxed{
+\text{admissible evidence assignment}
+\rightarrow
+\text{causal warranted-selection response}
+}
+\]
+
+provided the treatment regime itself is validly constituted.
+
+This aligns with CCA's general authority principle:
+
+\[
+\boxed{
+\text{evidence must change future weighting or choice, not merely coexist with it.}
+}
+\]
+
+---
+
+# 36. Relation to C_improve
+
+The provisional `C_improve` theory concerns converting valid feedback into warranted, validated transformation and eventually future viability.
+
+The current attack clarifies the first causal link:
+
+\[
+\text{valid feedback assignment}
+\rightarrow
+\text{warranted selection response}.
+\]
+
+But even a well-identified positive G1 would still be far upstream of:
+
+\[
+\Delta V_{\mathrm{future}}.
+\]
+
+So:
+
+\[
+\boxed{
+\text{identified warranted evidence control}
+\neq
+C_{\mathrm{improve}}\text{ demonstrated}.
+}
+\]
+
+It would establish only one necessary causal component of that larger theory.
+
+---
+
+# 37. Refuted propositions
+
+The attack refutes the following general propositions.
+
+## R1 — Only-semantic-variable-changes requirement
+
+\[
+\boxed{
+\text{G1 is identifiable only if semantic evidence changes while every selection-relevant descendant stays fixed.}
+}
+\]
+
+False for a total regime effect.
+
+## R2 — Randomization repairs treatment invalidity
+
+\[
+\boxed{
+\text{randomized assignment of a malformed evidence package establishes admissible evidence control.}
+}
+\]
+
+False.
+
+## R3 — Warranted accuracy is causal control
+
+\[
+\boxed{
+P(C=C^*)\text{ alone identifies G1.}
+}
+\]
+
+False.
+
+## R4 — Post-treatment matching restores the intended G1
+
+\[
+\boxed{
+\text{conditioning on treatment-generated length/difficulty automatically isolates semantic evidence control.}
+}
+\]
+
+False.
+
+## R5 — A pure semantic direct effect always exists
+
+\[
+\boxed{
+\text{semantic content can always be intervened on while all realization consequences are held fixed.}
+}
+\]
+
+False in general.
+
+## R6 — G1 requires mechanism assumptions
+
+\[
+\boxed{
+\text{internal information-processing mechanism must be known to identify total warranted evidence control.}
+}
+\]
+
+False in principle under a valid randomized regime.
+
+---
+
+# 38. What survives the causal attack
+
+The strongest candidate parent G1 surviving this attack is a **total stochastic intervention effect**.
+
+Conceptually:
+
+\[
+\boxed{
+G_s:
+S\leftarrow s,
+\quad
+R\sim Q_R(\cdot\mid s,K),
+\quad
+E_{\mathrm{raw}}=h(s,R;K)
+}
+\]
+
+with the non-treatment selection environment fixed or independently randomized.
+
+The observed selection distribution is:
+
+\[
+P(C=c_j\mid do(G_s)).
+\]
+
+Causal warranted control is evaluated from how these fixed candidate probabilities move across semantic-assignment regimes relative to the independently declared mapping \(C^*(s)\).
+
+Therefore:
+
+\[
+\boxed{
+\textbf{0B is causally identifiable in principle as a total evidence-regime effect.}
+}
+\]
+
+subject to valid treatment constitution and assignment integrity.
+
+But:
+
+\[
+\boxed{
+\textbf{a purified path-specific effect of semantic content alone is not identifiable in general.}
+}
+\]
+
+These are different scientific claims.
+
+---
+
+# 39. Candidate architecture surviving PR #3–#7
+
+The combined attacks now support, without yet canonicalizing, the following candidate decomposition:
+
+```text
+0A-S  semantic constitution
+      define S and unique C*(S)
+
+0A-I  interface contract
+      define K
+
+0A-R  realization constitution
+      define admissibility and Q_R
+
+0B    total warranted evidence control
+      randomize semantic-assignment regimes G_s
+      estimate fixed candidate-choice response distributions
+      ask whether evidence assignment moves selection
+      in the warranted direction
+
+0B-R  realization/access heterogeneity
+      additional system property
+
+0C    information-channel attribution
+      additional mechanism property
+
+1/G2  direct modification assay do(M=m)
+      independent downstream object
+```
+
+This decomposition remains a candidate architecture under adversarial review.
+
+This document does not change canonical state.
+
+---
+
+# 40. Central verdict
+
+The exact destructive question was:
+
+> Given frozen \((S,K,Q_R)\) and independently defined \(C^*(S)\), can intervention on semantic evidence identify a causal effect on warranted selection without changing selection-relevant variables through evidence construction itself?
+
+The strongest answer is:
+
+## The literal version is refuted
+
+A semantic intervention generally **must** change physical treatment descendants through the evidence-construction process.
+
+Requiring all such descendants to remain fixed either changes the estimand or can make the intervention incoherent.
+
+## The causal parent object survives in refined form
+
+A prospectively constituted semantic-assignment regime can be randomized while:
+
+- the non-treatment selection environment is fixed;
+- the realization policy is frozen;
+- extrinsic authority leakage is excluded by measurement validity;
+- treatment versions are handled by the declared policy;
+- candidate-choice outcomes are observed directly;
+- causal responsiveness is defined through treatment-dependent changes in fixed candidate-selection probabilities.
+
+Therefore:
+
+\[
+\boxed{
+\text{treatment validity}
+\prec
+\text{total causal G1 identification}
+\prec
+\text{mechanism attribution}.
+}
+\]
+
+And:
+
+\[
+\boxed{
+\text{total evidence control}
+\neq
+\text{pure semantic-path effect}.
+}
+\]
+
+---
+
+# 41. What this attack does not authorize
+
+This analysis does not authorize:
+
+- freezing the candidate architecture above;
+- choosing a concrete semantic ontology;
+- choosing \(K\);
+- choosing \(Q_R\);
+- choosing candidate pools;
+- choosing a scalar primary estimand;
+- choosing weights \(q_{i\ell}\);
+- choosing statistical thresholds;
+- selecting a model;
+- constructing a benchmark;
+- implementing G1 or ECIM;
+- executing any experiment;
+- modifying `research_state.json`.
+
+The canonical lifecycle remains `ADVERSARIAL_REVIEW`.
+
+---
+
+# 42. Remaining Level-0 pressure point
+
+If this causal decomposition survives further review, the remaining scientific-object question is no longer whether G1 can *in principle* be causal.
+
+It becomes whether CCA should define parent G1 specifically as:
+
+> **the total causal effect of prospectively constituted admissible evidence-assignment regimes on fixed candidate-choice probabilities, oriented by an independent warrant mapping.**
+
+That is a scientific-object choice, not an implementation decision.
+
+A future state transition would require explicitly deciding whether that claim is the parent evidence-control object CCA wants.
+
+Until then:
+
+\[
+\boxed{
+\text{G1 causal identifiability: feasible in principle, not yet canonicalized.}
+}
+\]
+
+No implementation follows from this document.
