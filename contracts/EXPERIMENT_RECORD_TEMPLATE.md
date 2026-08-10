@@ -52,6 +52,38 @@ SOURCE:
 
 If a required dependency is unresolved, execution cannot be authorized.
 
+## Claimed causal path
+
+Write the object-level causal path the experiment intends to support.
+
+```text
+CLAIMED_PATH:
+```
+
+Do not use gate names such as `G1 -> G2` as substitutes for object-level variables.
+
+## Separable transformations
+
+List every transformation the claimed path prospectively treats as causally separable.
+
+For each one record:
+
+```text
+TRANSFORMATION:
+STATUS: INDEPENDENTLY_IDENTIFIED | VALIDATED_APPARATUS_GUARANTEE | NOT_CROSSED_BY_CLAIM
+INTERVENTION / VERIFICATION:
+SOURCE:
+CLAIM_SCOPE:
+```
+
+The CCA Causal Composition Principle applies:
+
+> A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.
+
+If `STATUS = NOT_CROSSED_BY_CLAIM`, the scientific claim must stop before that transformation.
+
+A deterministic apparatus mapping is not a validated guarantee unless it is prospectively specified and independently validated or mechanically verified over the claimed domain.
+
 ## Measurement structure
 
 Define:
@@ -68,7 +100,7 @@ Define the admissible intervention class and what remains matched.
 
 ## Truth / warrant mapping
 
-Where warranted selection is part of the object, define the independent mapping before model behavior is observed.
+Where warranted selection or change is part of the object, define the independent mapping before model behavior is observed.
 
 ## Outcomes
 
@@ -95,21 +127,31 @@ State the quantities the estimator is intended to recover.
 
 ## Nulls and disconfirmation
 
-What observations count against each proposed mechanism?
+What observations count against each proposed mechanism or separable transformation?
 
 ## Decision / authorization rule
 
-Prefer conjunctive authorization when all mechanisms are required:
+Prefer conjunctive authorization when all mechanisms are required.
+
+For a claimed path \(\pi\):
 
 \[
-\mathrm{ADVANCE}\iff G_1\land G_2\land\cdots\land G_k.
+\mathrm{ADVANCE}_{\pi}
+\iff
+\left(\bigwedge_k G_k\right)
+\land
+\mathrm{PathValid}(\pi).
 \]
 
-No compensatory score may allow downstream success to erase upstream failure.
+`PathValid(π)` requires warranted status for every additional separable transformation the claim crosses.
+
+No compensatory score may allow downstream success to erase upstream failure or an invalid middle transformation.
 
 ## Implementation validity
 
 Define conditions that make the experiment `UNOBSERVED / INVALID` rather than scientifically negative.
+
+Include failures of any apparatus relation on which causal composition depends.
 
 ## Pre-execution freeze
 
@@ -117,6 +159,8 @@ Before `AUTHORIZED`, freeze:
 
 ```text
 scientific object
+claimed causal path
+separable transformations and their authority status
 measurement structure
 intervention space
 truth / warrant mapping where required
