@@ -16,7 +16,7 @@ The program studies one causal pathway:
 \rightarrow
 \text{Authority}
 \rightarrow
-\text{Warranted selection}
+\text{Warranted adaptive decision}
 \rightarrow
 \text{Effective modification}
 \rightarrow
@@ -38,7 +38,7 @@ The corresponding epistemic dependency is:
 \boxed{
 \text{measurement}
 \prec
-\text{selection}
+\text{warranted causal control}
 \prec
 \text{modification}
 \prec
@@ -56,38 +56,71 @@ The corresponding epistemic dependency is:
 
 A downstream claim cannot acquire authority while a required upstream prerequisite remains unvalidated.
 
-## Level 0 — Measurement validity
+## Level 0 — Scientific-object and measurement validity
 
-Can the intended object be identified under a prospectively specified measurement structure?
-
-Current frontier:
+CCA provisionally adopts the scoped role:
 
 \[
-G_1^{\mathrm{broad}}
-\quad\text{vs.}\quad
-G_1^{\mathrm{relational}}.
+\boxed{
+G_1
+=
+\text{warranted evidence acquiring causal control over a separable adaptive decision}
+}
 \]
 
-The project must decide what counts as evidence use before choosing an ontology designed to measure it.
+The current operational decomposition represents the separable adaptive decision as candidate selection:
 
-Measurement analysis has already established an impossibility boundary and an existence witness:
+\[
+E\rightarrow C_{\mathrm{selected}}.
+\]
+
+This is the first empirical pathway CCA has chosen to study. It is **not** a theory that every correction-capable system must implement explicit candidate selection.
+
+The decision record is [`lineage/decisions/G1_LEVEL0_ROLE.md`](lineage/decisions/G1_LEVEL0_ROLE.md).
+
+The destructive Level-0 work established that the following are distinct from G1:
 
 ```text
-universal relational codebook       REFUTED
-ontology-conditional construction   FEASIBLE IN PRINCIPLE
+codebook construction
+relational sensitivity
+representation invariance
+access robustness
+candidate accuracy
+mechanism/channel attribution
 ```
 
-## Level 1 — Evidence-controlled selection
+The surviving treatment/measurement decomposition distinguishes:
 
-Given an independently warranted mapping
+```text
+0A-S  semantic constitution
+0A-I  interface contract
+0A-R  realization policy
+0B    total causal warranted-evidence control
+0B-R  realization/access heterogeneity
+0C    mechanism/channel attribution
+```
+
+No concrete ontology, evidence set, realization policy, estimand, threshold, model, prompt, or benchmark is frozen by adopting the G1 role.
+
+## Level 1 — Evidence-controlled adaptive decision
+
+Given prospectively admissible evidence and an independently warranted mapping, does causal reassignment of evidence move a separable adaptive decision in the warranted direction?
+
+For the current operational instantiation:
 
 \[
 E=e\mapsto C^*(e),
 \]
 
-does intervention on evidence move selection toward the candidate warranted by that evidence?
+with observed choice
 
-Selection variability alone is insufficient.
+\[
+C_{\mathrm{selected}}.
+\]
+
+Selection variability and absolute accuracy alone are insufficient. A valid G1 estimand must recover evidence-induced movement in the warranted direction under a prospectively frozen treatment regime.
+
+No Level-1 empirical result currently exists.
 
 ## Level 2 — Isolated modification
 
@@ -125,12 +158,24 @@ The tolerance \(\epsilon_P\) must be fixed prospectively.
 
 ## Level 3 — Evidence → justified modification
 
-The Level-1 selection and Level-2 modification mechanisms must jointly support:
+The Level-1 and Level-2 mechanisms must eventually support a causal bridge of the form:
 
 \[
 E
 \rightarrow
-C^*(E)
+\text{warranted adaptive decision}
+\rightarrow
+M
+\rightarrow
+(Y_T,Y_P).
+\]
+
+For the current candidate-selection decomposition:
+
+\[
+E
+\rightarrow
+C_{\mathrm{selected}}
 \rightarrow
 M
 \rightarrow
@@ -147,7 +192,7 @@ G_1\land G_{2T}\land G_{2P}
 }
 \]
 
-A large target improvement cannot compensate for evidence-insensitive selection or unacceptable collateral interference.
+A large target improvement cannot compensate for evidence-insensitive decision control or unacceptable collateral interference.
 
 ## Level 4 — Repeated correction
 
@@ -185,7 +230,7 @@ Before testing invariance or equivalence, the admissible transformation class mu
 
 ## Current descendant causal architecture
 
-The provisionally fixed mechanism architecture is:
+The provisionally fixed mechanism architecture remains:
 
 \[
 \boxed{
@@ -202,12 +247,53 @@ M_{\mathrm{effective}}
 with separate identification of:
 
 ```text
-G1   evidence-conditioned warranted selection
-G2T  target efficacy
-G2P  protected-behavior isolation
+G1   warranted causal evidence control over the current separable decision
+G2T  target efficacy under direct do(M=m)
+G2P  protected-behavior isolation under direct do(M=m)
 ```
 
+The non-substitution boundary is:
+
+\[
+\boxed{
+G_1\neq\mathrm{CCA}
+}
+\]
+
+and
+
+\[
+\boxed{
+G_1
+\not\Rightarrow
+G_2
+\not\Rightarrow
+\text{repeated correction}
+\not\Rightarrow
+\text{justified transformability}
+\not\Rightarrow
+\text{adaptive viability}
+}
+\]
+
 No descendant experiment is currently frozen or authorized.
+
+## Next scientific-design boundary
+
+The next new conceptual question is:
+
+\[
+\boxed{G_1\rightarrow G_2?}
+\]
+
+This does not mean G1 has empirically passed. It asks how the program should relate warranted causal decision control to independently identified modification competence while preserving the hard rule:
+
+\[
+\boxed{
+G_2\text{ is identified by direct }do(M=m),
+\text{ never by conditioning on }C_{\mathrm{selected}}.
+}
+\]
 
 ## Research authority
 
