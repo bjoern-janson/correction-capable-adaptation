@@ -15,18 +15,18 @@
 The program is one scientific dependency ladder, not a collection of independent projects:
 
 ```text
-LEVEL 0  MEASUREMENT VALIDITY
+LEVEL 0  MEASUREMENT / SCIENTIFIC-OBJECT VALIDITY
          What exactly is being identified?
              ↓
-LEVEL 1  EVIDENCE-CONTROLLED SELECTION
-         Does evidence control warranted choice?
+LEVEL 1  EVIDENCE-CONTROLLED ADAPTIVE DECISION
+         Does warranted evidence acquire causal control?
              ↓
 LEVEL 2  ISOLATED MODIFICATION
          Does direct do(M=m) cause the intended effect
          while preserving protected behavior?
              ↓
 LEVEL 3  EVIDENCE → JUSTIFIED MODIFICATION
-         Do selection and modification work together?
+         Do decision control and modification work together?
              ↓
 LEVEL 4  REPEATED CORRECTION
          Can correction recur without destroying prior valid structure?
@@ -43,36 +43,73 @@ LEVEL 7  EXTREME ADAPTIVE SYSTEMS
 
 A failed upstream gate blocks authority downstream. Progress is therefore **not an average score**.
 
-\[
-\boxed{\text{current frontier}=\text{first unresolved causal prerequisite}}
-\]
+## Current Level-0 decision
 
-## Current frontier
-
-The program is at **Level 0: measurement validity**.
-
-The unresolved scientific-object decision is:
+After six independent adversarial analyses, CCA provisionally adopts the scoped role:
 
 \[
-G_1^{\mathrm{broad}}
-\quad\text{vs.}\quad
-G_1^{\mathrm{relational}}.
+\boxed{
+G_1
+=
+\text{warranted evidence acquiring causal control over a separable adaptive decision}
+}
 \]
 
-Should evidence use mean any warranted information carried by evidence, or specifically dependence on the demonstrated input-output relation beyond licensed non-relational channels?
+The current operational instantiation is candidate selection:
 
-That decision must be made before selecting the descendant ontology, evidence space, model, prompt, or benchmark.
+\[
+E\rightarrow C_{\mathrm{selected}}.
+\]
 
-Measurement work has already established:
+This is **not** a universal claim that all correction-capable architectures require explicit candidate selection.
+
+The attacks established that none of the following is a substitute for G1:
 
 ```text
-universal relational-codebook construction      REFUTED
-ontology-conditional relational construction    FEASIBLE IN PRINCIPLE
-constant-function witness                        relational UNSAT
-balanced 3-candidate / 2-region witness          relational SAT in principle
+codebook construction
+relational sensitivity
+representation invariance
+access robustness
+candidate accuracy
+mechanism/channel attribution
 ```
 
-These are measurement-design results, not model results.
+The decision record is [`lineage/decisions/G1_LEVEL0_ROLE.md`](lineage/decisions/G1_LEVEL0_ROLE.md).
+
+## What has—and has not—advanced
+
+The scientific role is fixed more strongly than before, but no G1 experiment exists yet:
+
+```text
+G1 scientific role       PROVISIONALLY FIXED
+G1 empirical result      UNOBSERVED
+G1 experiment contract   UNFROZEN
+G1 implementation        NOT AUTHORIZED
+```
+
+No candidate ontology, semantic evidence set, realization policy, scalar estimand, threshold, model, prompt, or benchmark has been frozen.
+
+Thus:
+
+\[
+\boxed{G_1\neq\mathrm{CCA}}
+\]
+
+and
+
+\[
+\boxed{
+G_1
+\not\Rightarrow
+G_2
+\not\Rightarrow
+\text{repeated correction}
+\not\Rightarrow
+\text{justified transformability}
+\not\Rightarrow
+\text{adaptive viability}
+}
+\]
 
 ## One causal pathway
 
@@ -84,7 +121,7 @@ E
 \rightarrow
 \text{authority}
 \rightarrow
-\text{warranted selection}
+\text{warranted adaptive decision}
 \rightarrow
 M
 \rightarrow
@@ -100,6 +137,53 @@ M
 
 The pathway must remain causally intact as the system changes.
 
+## Next scientific-design boundary
+
+The next genuinely new conceptual question is:
+
+\[
+\boxed{G_1\rightarrow G_2?}
+\]
+
+How should warranted causal control over a separable adaptive decision connect to independently identified modification competence?
+
+The hard boundary remains:
+
+\[
+\boxed{
+G_2\text{ is identified only by direct }do(M=m),
+\text{ never by conditioning on }C_{\mathrm{selected}}.
+}
+\]
+
+This is a design question, **not evidence that G1 has empirically passed**.
+
+## Measurement provenance
+
+The six Level-0 attack PRs progressively constrained the object:
+
+```text
+#3  broad vs relational
+#4  outcome vs mechanism/channel attribution
+#5  semantic vs behavioral invariance
+#6  realization/access envelope
+#7  causal identification
+#8  scientific program role
+```
+
+They are preserved as adversarial provenance rather than experiments.
+
+Earlier measurement work also established:
+
+```text
+universal relational-codebook construction      REFUTED
+ontology-conditional relational construction    FEASIBLE IN PRINCIPLE
+constant-function witness                        relational UNSAT
+balanced 3-candidate / 2-region witness          relational SAT in principle
+```
+
+These are measurement-design results, not model results and not the definition of G1.
+
 ## One lineage
 
 ```text
@@ -111,11 +195,13 @@ negative primary result
         ↓
 mechanism diagnosis
         ↓
-ECIM-like descendant architecture
+selection / modification decomposition
         ↓
-measurement frontier
+Level-0 adversarial measurement program
         ↓
-future gates only when earned
+scoped G1 role provisionally fixed
+        ↓
+G1 → G2 scientific-design boundary
 ```
 
 ASI-0 remains an immutable ancestor. It is **not** an ASI experiment and is not repaired retrospectively.
@@ -162,31 +248,6 @@ The authoritative transition rules are in [`methodology/RESEARCH_STATE_MACHINE.m
 - **[Research state](RESEARCH_STATE.md)** — current maturity frontier and authorization state.
 - **[Evidence ledger](lineage/EVIDENCE_LEDGER.md)** — canonical record of what has and has not been established.
 - **[Scientific contracts](contracts/README.md)** — prospective contract discipline before execution.
-
-## Repository map
-
-```text
-.
-├── README.md
-├── MISSION.md
-├── SCIENTIFIC_OBJECT.md
-├── RESEARCH_STATE.md
-├── research_state.json
-├── CARS.md
-├── MAGIKARP.md
-├── methodology/
-│   └── RESEARCH_STATE_MACHINE.md
-├── contracts/
-├── experiments/
-│   ├── ASI-0/
-│   └── ECIM/
-├── measurement/
-├── lineage/
-└── .github/
-    └── scientific contribution templates
-```
-
-This repository is the public research program. Detailed implementation archaeology and exploratory branch history are intentionally not reproduced here.
 
 ## Public-research standard
 
