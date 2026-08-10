@@ -1,5 +1,5 @@
 {
-  "schema_version": 5,
+  "schema_version": 6,
   "program": "Correction-Capable Adaptation",
   "central_question": "Can an adaptive system increase its future viability while remaining capable of incorporating justified correction?",
   "core_rule": "Never infer a downstream capability from an unvalidated upstream mechanism.",
@@ -28,11 +28,11 @@
     "implementation_authorized": false
   },
   "conceptual_frontier": {
-    "object": "repeated_correction_vs_justified_transformability",
-    "question": "Is repeated correction scientifically distinct from Justified Transformability, or can repeated valid corrections occur without establishing the capacity to reach appropriately different warranted states while preserving future correction pathways?",
+    "object": "justified_transformability_warrant_and_distinctness_semantics",
+    "question": "Can the warrant, distinctness, repertoire, preservation, target-family, and counterfactual-availability semantics of Justified Transformability be specified without retrospective approval, trivial-difference inflation, or benchmark-defined reachability?",
     "status": "ADVERSARIAL_REVIEW_NEXT",
     "empirical_execution_authorized": false,
-    "prerequisite_note": "PMC versus repeated correction is now a canonical conceptual distinction. PMC and repeated-correction measurement machinery remain unfrozen, and no downstream transformability claim is authorized."
+    "prerequisite_note": "JT is provisionally fixed in role only as a warranted transformation-repertoire object. Its warrant, distinctness, target-family, preservation/reconstitution, counterfactual availability, representation, metric, and empirical contract remain unfrozen."
   },
   "maturity_ladder": [
     {
@@ -68,7 +68,8 @@
     {
       "level": 5,
       "name": "justified_transformability",
-      "status": "THEORETICAL_OBJECT_NEXT_ADVERSARIAL_FRONTIER"
+      "status": "ROLE_PROVISIONALLY_FIXED_WARRANT_DISTINCTNESS_UNDER_ADVERSARIAL_REVIEW",
+      "criterion": "JT is provisionally a warranted transformation-repertoire object: prospectively relevant materially different warranted transformations remain reachable while future correction conditions are preserved or reconstituted. Warrant, distinctness, target-family, preservation/reconstitution, and counterfactual-availability semantics remain unfrozen."
     },
     {
       "level": 6,
@@ -185,6 +186,38 @@
         "adaptive viability"
       ]
     },
+    "JUSTIFIED_TRANSFORMABILITY": {
+      "role": "conceptual_warranted_transformation_repertoire",
+      "scientific_question": "What prospectively relevant warranted transformations remain reachable, and can materially different warranted destinations be reached while preserving or reconstituting future warranted-correction conditions?",
+      "status": "ROLE_PROVISIONALLY_FIXED",
+      "empirical_status": "UNTESTED",
+      "contract_state": "UNFROZEN",
+      "metric_state": "UNFROZEN",
+      "research_order_requires_repeated_correction": true,
+      "logical_definition_requires_observed_repeated_history": false,
+      "trajectory_repertoire_equivalence_claimed": false,
+      "c_improve_equivalence_claimed": false,
+      "unfrozen": [
+        "warrant semantics",
+        "material distinctness semantics",
+        "appropriately different semantics",
+        "target/transformation family",
+        "reachable-state or transformation formalism",
+        "novelty/distance thresholds",
+        "repertoire breadth/diversity metric",
+        "preservation/reconstitution semantics",
+        "system/apparatus boundary",
+        "counterfactual availability criterion",
+        "estimand",
+        "estimator",
+        "metric",
+        "threshold",
+        "empirical protocol"
+      ],
+      "provenance_prs": [13],
+      "decision_record": "lineage/decisions/JUSTIFIED_TRANSFORMABILITY_ROLE.md",
+      "implementation_authorized": false
+    },
     "ECIM": {
       "role": "provisional_mechanism_architecture",
       "lifecycle_state": "PROPOSED",
@@ -212,7 +245,10 @@
     "post_modification_correctability_role": "PROVISIONALLY_FIXED_CONCEPTUAL",
     "pmc_intrinsic_scalar": "NOT_ESTABLISHED",
     "pmc_repeated_correction_equivalence": "REFUTED_AS_CONCEPTUAL_COLLAPSE",
-    "pmc_repeated_correction_distinction": "CANONICAL_CONCEPTUAL"
+    "pmc_repeated_correction_distinction": "CANONICAL_CONCEPTUAL",
+    "repeated_correction_justified_transformability_equivalence": "REFUTED_AS_TOO_STRONG",
+    "trajectory_evidence_repertoire_evidence_equivalence": "REFUTED",
+    "justified_transformability_role": "PROVISIONALLY_FIXED_CONCEPTUAL"
   },
   "causal_boundaries": [
     "G1 != CCA",
@@ -226,6 +262,9 @@
     "raw correction count does not measure correction capacity",
     "preserved post-modification correctability does not imply correction capacity improved",
     "repeated correction does not imply justified transformability",
+    "justified transformability does not imply an observed repeated-correction history",
+    "trajectory evidence does not imply repertoire evidence",
+    "many reachable states do not imply many warranted transformations",
     "justified transformability does not imply adaptive viability"
   ],
   "agent_policy": {
@@ -256,7 +295,11 @@
       "treat PMC as an intrinsic scalar without a prospectively specified relational correction scope",
       "treat PMC as equivalent to repeated correction or C_improve",
       "infer broad PMC from one realized repeated-correction opportunity",
-      "treat raw correction count or scripted repetition as evidence of justified transformability"
+      "treat raw correction count or scripted repetition as evidence of justified transformability",
+      "treat repeated correction history as the definition of justified transformability",
+      "define warranted transformations retrospectively from successful outcomes",
+      "count trivial state differences as materially distinct transformations without a prospective distinction rule",
+      "equate reachable-state count with warranted transformation repertoire"
     ]
   }
 }
