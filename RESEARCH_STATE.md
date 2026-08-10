@@ -12,8 +12,8 @@ The program advances only through independently validated causal prerequisites.
 
 | Level | Scientific gate | Current state |
 | ---: | --- | --- |
-| 0 | Measurement validity | **ACTIVE FRONTIER / PARTIALLY DEMONSTRATED** |
-| 1 | Evidence-controlled selection | **BLOCKED BY LEVEL 0 OBJECT** |
+| 0 | Measurement validity / scientific-object constitution | **G1 ROLE PROVISIONALLY FIXED / EXPERIMENT CONTRACT UNFROZEN** |
+| 1 | Evidence-controlled adaptive decision | **SCIENTIFIC OBJECT DEFINED / EMPIRICALLY UNTESTED** |
 | 2 | Isolated modification | **ARCHITECTURE ONLY** |
 | 3 | Evidence → justified modification | **NOT AUTHORIZED** |
 | 4 | Repeated correction | **NOT AUTHORIZED** |
@@ -24,38 +24,112 @@ The program advances only through independently validated causal prerequisites.
 These levels are not averaged into a progress percentage.
 
 \[
-\boxed{\text{program frontier}=\text{first unresolved causal prerequisite}}
+\boxed{\text{empirical authority advances only when each prerequisite is independently established}}
 \]
 
-## Current frontier — Level 0 measurement validity
+## Level-0 decision — scoped role of G1
 
-The unresolved scientific-object decision is:
+CCA provisionally adopts:
 
 \[
 \boxed{
-G_1^{\mathrm{broad}}
-\quad\text{vs.}\quad
-G_1^{\mathrm{relational}}
+G_1
+=
+\text{warranted evidence acquiring causal control over a separable adaptive decision}
 }
 \]
 
-### Broad evidence use
+The current operational decomposition instantiates the adaptive decision as candidate selection:
 
 \[
-G_1^{\mathrm{broad}}:E\rightarrow C_{\mathrm{selected}}
+E\longrightarrow C_{\mathrm{selected}}.
 \]
 
-Any independently warranted information legitimately contained in the evidence may support candidate selection.
+This is a scoped commitment about CCA's first studied empirical pathway. It is **not** a claim that every correction-capable architecture must contain an explicit candidate-selection node.
 
-### Relational evidence use
+The canonical decision record is [`lineage/decisions/G1_LEVEL0_ROLE.md`](lineage/decisions/G1_LEVEL0_ROLE.md).
+
+### What G1 is not
+
+The adversarial analysis established that none of the following is a substitute for G1:
+
+```text
+codebook construction
+relational sensitivity
+representation invariance
+access robustness
+candidate accuracy
+mechanism/channel attribution
+```
+
+The measurement attacks also separated semantic constitution, interface scope, realization policy, total warranted evidence control, realization/access heterogeneity, and mechanism attribution. Those distinctions constrain future contracts; they do not convert all of those properties into the definition of G1.
+
+## Current empirical authority
+
+No G1 experiment has been frozen or executed.
+
+The following remain unfrozen:
+
+- candidate ontology;
+- semantic evidence states;
+- interface contract;
+- realization policy;
+- scalar G1 estimand and weighting rule;
+- uncertainty procedure and threshold;
+- model and prompt;
+- benchmark;
+- ECIM contract.
+
+Therefore:
+
+```text
+G1 SCIENTIFIC ROLE       PROVISIONALLY FIXED
+G1 EMPIRICAL RESULT      UNOBSERVED
+G1 CONTRACT              UNFROZEN
+G1 IMPLEMENTATION        NOT AUTHORIZED
+```
+
+## Causal non-substitutions
 
 \[
-G_1^{\mathrm{relational}}:(X,Y,\mathrm{pairing})\rightarrow C_{\mathrm{selected}}
+\boxed{G_1\neq\mathrm{CCA}}
 \]
 
-The stronger claim requires selection to depend on the demonstrated input-output relation beyond a prospectively licensed class of non-relational information channels.
+and
 
-This choice must be made before selecting the descendant candidate ontology or constructing the evidence intervention space. Benchmark convenience is not allowed to choose the scientific object implicitly.
+\[
+\boxed{
+G_1
+\not\Rightarrow
+G_2
+\not\Rightarrow
+\text{repeated correction}
+\not\Rightarrow
+\text{justified transformability}
+\not\Rightarrow
+\text{adaptive viability}
+}
+\]
+
+A positive G1 would establish only the warranted causal-control property under its frozen conditions.
+
+## Level 2 — modification remains independently identified
+
+The provisional mechanism architecture remains:
+
+\[
+E\rightarrow C_{\mathrm{selected}}\rightarrow M_{\mathrm{effective}}\rightarrow(Y_T,Y_P).
+\]
+
+The hard design principle remains:
+
+\[
+\boxed{G_2:\ do(M=m)\rightarrow(Y_T,Y_P)}.
+\]
+
+Modification efficacy and protected interference must be identified through direct assignment of the modification, never by conditioning on whichever modification a selector happened to choose.
+
+Selection competence is not modification competence.
 
 ## Measurement results already established
 
@@ -82,29 +156,26 @@ and
 \boxed{\text{ontology-conditional relational feasibility is FEASIBLE IN PRINCIPLE}}.
 \]
 
-These are measurement-design results, not evidence about a model's inference capability.
+These remain measurement-design results, not model results and not the definition of G1.
 
-## Mechanism architecture — downstream and blocked
+## Adversarial provenance
 
-The provisional mechanism architecture is:
+The scoped G1 decision is informed by six independent attack PRs:
 
-\[
-E\rightarrow C_{\mathrm{selected}}\rightarrow M_{\mathrm{effective}}\rightarrow(Y_T,Y_P).
-\]
+```text
+#3  broad vs relational
+#4  outcome vs mechanism/channel attribution
+#5  semantic vs behavioral invariance
+#6  realization/access envelope
+#7  causal identification
+#8  scientific program role
+```
 
-A fixed design principle is:
-
-\[
-G_2:\ do(M=m)\rightarrow(Y_T,Y_P).
-\]
-
-Modification efficacy and protected interference must be identified through independent direct assignment of the modification, not by conditioning on whichever modification a selector happened to choose.
-
-This architecture does not authorize an ECIM experiment.
+They remain provenance rather than canonical experiments.
 
 ## Ancestral evidence
 
-ASI-0 is an immutable closed ancestor:
+ASI-0 remains an immutable closed ancestor:
 
 ```text
 C            0
@@ -115,49 +186,16 @@ PRIMARY      STOP
 REPLICATION  NOT AUTHORIZED
 ```
 
-The post-outcome diagnosis localized two scoped bottlenecks:
-
-- assigned evidence weakly controlled candidate identity;
-- 15/16 frozen textual patches failed protected-behavior preservation.
-
-The acceptance gate functioned as designed and rejected all 28 valid selected patches. These observations motivated the descendant mechanism decomposition; they do not authorize retrospective repair of ASI-0.
-
-## Experiment lifecycle state
-
-The current frontier object is in:
-
-```text
-ADVERSARIAL_REVIEW
-```
-
-The standard lifecycle is:
-
-```text
-PROPOSED
-   ↓
-ADVERSARIAL_REVIEW
-   ↓
-MEASUREMENT_VALID
-   ↓
-CONTRACT_FROZEN
-   ↓
-AUTHORIZED
-   ↓
-EXECUTED
-   ↓
-ANALYZED
-   ↓
-CLOSED
-```
-
-A valid negative result moves to diagnosis and then, if warranted, a **new prospective object**. It does not move to post-hoc benchmark repair.
+The post-outcome diagnosis localized weak evidence control over candidate identity and poor protected-behavior isolation of the tested textual modifications. That motivated the selection/modification decomposition; it did not authorize retrospective repair.
 
 ## Current authorization
 
 ```text
 PROGRAM OBJECT                         PROVISIONALLY FIXED
 ASI-0                                 CLOSED / IMMUTABLE
-G1 broad vs relational                ADVERSARIAL_REVIEW
+G1 scientific role                    PROVISIONALLY FIXED
+G1 operational candidate-selection    CURRENT INSTANTIATION / NOT UNIVERSAL
+G1 experiment contract                UNFROZEN
 candidate ontology                    UNFROZEN
 evidence intervention space           UNFROZEN
 ECIM scientific contract              UNFROZEN
@@ -166,8 +204,27 @@ ECIM empirical implementation         NOT AUTHORIZED
 new empirical execution               NOT AUTHORIZED
 ```
 
-## Next legitimate action
+## Next scientific design boundary
 
-Resolve what the Level 1 selection claim is intended to mean by resolving the G1 broad-vs-relational fork.
+The next genuinely new program-level question is:
 
-Until that happens, useful work is limited to measurement analysis, counterexamples, theory clarification, contract discipline, provenance, and non-scientific infrastructure that cannot choose the scientific object implicitly.
+\[
+\boxed{G_1\rightarrow G_2?}
+\]
+
+Specifically:
+
+> How should CCA connect warranted causal control over a separable adaptive decision to independently identified modification competence without collapsing selection into modification?
+
+This is a **scientific-design frontier**, not evidence that G1 has empirically passed.
+
+Any future G1→G2 analysis must preserve:
+
+\[
+\boxed{
+G_2\text{ identified only by direct }do(M=m),
+\text{ never by conditioning on }C_{\mathrm{selected}}.
+}
+\]
+
+No implementation is authorized by the Level-0 decision.
