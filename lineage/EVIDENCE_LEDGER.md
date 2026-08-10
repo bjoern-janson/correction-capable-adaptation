@@ -2,7 +2,7 @@
 
 This is the canonical public evidence ledger for Correction-Capable Adaptation. It records **what was actually established**, what was not, and what authority moved forward.
 
-The program does not average evidence across maturity levels. Downstream authority depends on upstream gates.
+The program does not average evidence across maturity levels. Downstream authority depends on upstream gates and on valid causal composition across every separable transformation crossed by the claim.
 
 | ID | Program level | Object | Status | Observation | Authority gained | Authority not gained | Consequence |
 | --- | ---: | --- | --- | --- | --- | --- | --- |
@@ -19,8 +19,11 @@ The program does not average evidence across maturity levels. Downstream authori
 | G1-A6 | 0 | Realization/access envelope | Closed adversarial provenance | A prospective envelope is feasible only relative to an ex ante interface contract and frozen realization policy; equal accessibility cannot be assumed. | Scoped admissibility/sampling layer and access-heterogeneity distinction. | Proof that representation effects are nuisance or mediated by one access variable. | Preserved access capability as a separate property. |
 | G1-A7 | 0 | Causal identification | Closed adversarial provenance | The identifiable parent object is a total effect of prospectively constituted evidence-assignment regimes, not a purified semantic-only path effect. | Causal response-matrix framing; treatment descendants need not be fixed. | Permission to call malformed treatment packages evidence effects. | Preserved treatment validity as logically prior to randomization. |
 | G1-A8 | 0 | Scientific program role | Closed adversarial provenance | Explicit candidate-selection G1 is not universally necessary for all conceivable correction architectures, but it is a coherent earliest separable gate in the current CCA pathway. | Scoped role for G1 without architectural universality. | G1 = CCA; G1 sufficient for correction; universal candidate-selection architecture. | Supported a program-level decision rather than another construction attack. |
-| G1-ROLE | 0 | Warranted causal evidence control over a separable adaptive decision | **Role provisionally fixed / empirically untested** | PRs #3–#8 progressively eliminated codebook construction, relational sensitivity, representation invariance, access robustness, accuracy, and mechanism attribution as substitutes for the parent object. | CCA may define its first studied empirical pathway as warranted evidence acquiring causal control over a separable adaptive decision, currently instantiated as candidate selection. | A positive G1 result; universal necessity of candidate selection; modification competence; repeated correction; transformability; viability. | Scientific-object role fixed; experiment-level contract remains unfrozen. Next conceptual boundary is G1→G2. |
-| G2-DESIGN | 2 | Modification identification | Fixed design principle / architecture only | Modification efficacy/isolation must be estimated through direct \(do(M=m)\), not only selected modifications. | Clean separation of decision-control competence from modification competence. | Evidence that any modification is effective or isolated. | Future Level-2 contract must independently estimate target efficacy and protected interference. |
+| G1-ROLE | 0 | Warranted causal evidence control over a separable adaptive decision | **Role provisionally fixed / empirically untested** | PRs #3–#8 progressively eliminated codebook construction, relational sensitivity, representation invariance, access robustness, accuracy, and mechanism attribution as substitutes for the parent object. | CCA may define its first studied empirical pathway as warranted evidence acquiring causal control over a separable adaptive decision, currently instantiated as candidate selection. | A positive G1 result; universal necessity of candidate selection; modification competence; repeated correction; transformability; viability. | Scientific-object role fixed; experiment-level contract remains unfrozen. |
+| COMP-A9 | cross-level | G1/G2 bridge semantics | Closed adversarial provenance | `G1 -> G2` is shorthand, not a literal causal edge; positive G1 and direct G2 endpoint assays can coexist while the middle selection→deployment→modification relation is absent, blocked, mistranslated, or bypassed. | Established that endpoint success does not identify the missing middle relation in a separable decomposition. | A universal bridge variable; a named gate; a bridge estimand. | Motivated an architecture-necessity attack rather than immediate gate creation. |
+| COMP-A10 | cross-level | Architecture-independent bridge necessity | Closed adversarial provenance | Separate bridge identification is required for some separable architectures, unnecessary for direct-update architectures, and potentially malformed for inseparable architectures. | Architecture-conditional composition obligation; refutation of universal `G1.5`. | A universal adoption/translation architecture. | Supported a general causal-composition law instead of another maturity level. |
+| CCA-COMP | cross-level | CCA Causal Composition Principle | **Canonical methodological rule** | Validated endpoints do not validate an intervening separable pathway. Every separable transformation crossed by a claim must be independently identified or prospectively specified and validated/verified as an apparatus guarantee; otherwise the claim must stop before it. | Program-wide authority-propagation rule; Level-3 conjunction repaired to include path validity. | Any positive G1/G2 result; a bridge gate; system-internal bridge competence; repeated correction. | Governs all future contracts and causal claims. Opens post-modification correctability as the next conceptual frontier while leaving empirical execution blocked. |
+| G2-DESIGN | 2 | Modification identification | Fixed design principle / architecture only | Modification efficacy/isolation must be estimated through direct \(do(M=m)\), not only selected modifications. | Clean separation of decision-control competence from modification competence. | Evidence that any modification is effective or isolated; evidence about how M acquired its value. | Future Level-2 contract must independently estimate target efficacy and protected interference. |
 
 ## Research maturity ladder
 
@@ -30,8 +33,8 @@ Current program state:
 LEVEL 0  measurement/scientific-object validity  G1 ROLE PROVISIONALLY FIXED; CONTRACT UNFROZEN
 LEVEL 1  evidence-controlled adaptive decision   SCIENTIFIC OBJECT DEFINED; EMPIRICALLY UNTESTED
 LEVEL 2  isolated modification                    ARCHITECTURE ONLY
-LEVEL 3  evidence → justified modification        NOT AUTHORIZED
-LEVEL 4  repeated correction                      NOT AUTHORIZED
+LEVEL 3  evidence → justified modification        NOT AUTHORIZED; CAUSAL COMPOSITION REQUIRED
+LEVEL 4  repeated correction                      CONCEPTUAL FRONTIER; EMPIRICALLY NOT AUTHORIZED
 LEVEL 5  justified transformability               THEORETICAL ONLY
 LEVEL 6  adaptive viability / capability          NOT AUTHORIZED
 LEVEL 7  extreme adaptive systems                 NOT AUTHORIZED
@@ -59,13 +62,30 @@ not a universal architectural claim.
 
 The decision record is [`decisions/G1_LEVEL0_ROLE.md`](decisions/G1_LEVEL0_ROLE.md).
 
+## CCA Causal Composition Principle
+
+\[
+\boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}.}
+\]
+
+Canonical rule:
+
+> **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
+
+If a transformation is excluded, the claim stops before it; exclusion does not validate it.
+
+Decision record: [`decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+
 ## Current empirical authority
 
 ```text
-G1 role                 PROVISIONALLY FIXED
-G1 empirical result     UNOBSERVED
-G1 experiment contract  UNFROZEN
-G1 implementation       NOT AUTHORIZED
+G1 role                           PROVISIONALLY FIXED
+CCA causal composition principle  CANONICAL METHODOLOGICAL RULE
+G1 empirical result               UNOBSERVED
+G1 experiment contract            UNFROZEN
+G1 implementation                 NOT AUTHORIZED
+Level-3 end-to-end composition    NOT AUTHORIZED
+repeated-correction execution     NOT AUTHORIZED
 ```
 
 Therefore:
@@ -90,22 +110,25 @@ G_2
 }
 \]
 
-## Next scientific-design boundary
-
-\[
-\boxed{G_1\rightarrow G_2?}
-\]
-
-This is a conceptual dependency question, not evidence that G1 has empirically passed.
-
-The hard modification-identification rule remains:
+Also:
 
 \[
 \boxed{
-G_2\text{ identified only by direct }do(M=m),
-\text{ never by conditioning on }C_{\mathrm{selected}}.
+G_1>0\land G_2>0
+\not\Rightarrow
+\text{connected evidence-to-modification pathway}
 }
 \]
+
+when the claimed path crosses an unvalidated separable transformation.
+
+## Current conceptual frontier
+
+> **What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?**
+
+This is a theory/scientific-object frontier, not authorization to execute a repeated-correction experiment.
+
+Any future empirical claim at this layer remains blocked until its particular evidence-to-change path has established the required upstream gates and valid causal composition.
 
 ## Evidence-to-authority rule
 
@@ -118,7 +141,7 @@ observation
 → next research state
 ```
 
-A result may close a hypothesis without validating its proposed replacement. A mechanism diagnosis may motivate a descendant without repairing the ancestor. An existence witness may show feasibility without authorizing a model experiment.
+A result may close a hypothesis without validating its proposed replacement. A mechanism diagnosis may motivate a descendant without repairing the ancestor. An existence witness may show feasibility without authorizing a model experiment. Valid endpoint relations may coexist without validating an intervening separable transformation.
 
 ## Source of current authority state
 
