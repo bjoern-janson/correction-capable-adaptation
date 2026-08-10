@@ -1,0 +1,74 @@
+program: correction-capable-adaptation
+frontier: G1_evidence_use_object
+policy:
+  aggregate_progress: false
+  frontier_rule: first_unresolved_causal_prerequisite
+
+entries:
+  - id: ASI0
+    object: evidence_assignment_capability_and_attribution
+    status: closed_immutable_negative
+    observations:
+      C: 0.0
+      A: 0.0
+      L_C: 0.0
+      L_A: 0.0
+      primary: STOP
+      replication: NOT_AUTHORIZED
+    authority_gained:
+      - clean_negative_primary_under_frozen_policy
+    authority_not_gained:
+      - general_evidence_alignment_claim
+      - intelligence
+      - viability
+      - ASI
+    next: mechanism_diagnosis_only
+
+  - id: ASI0_DX
+    object: outcome_blind_mechanism_diagnosis
+    status: closed_diagnostic
+    observations:
+      frozen_candidates: 16
+      candidates_preserving_protected_behavior: 1
+      valid_selected_patches: 28
+      admitted_selected_patches: 0
+      all_valid_selected_newly_failed_PINE: true
+      aligned_misaligned_selection_states_identical: 14_of_16_targets
+    authority_gained:
+      - inference_bottleneck_observed
+      - modification_isolation_bottleneck_observed
+      - acceptance_gate_functioned_as_designed
+    authority_not_gained:
+      - permission_to_repair_ASI0
+    next: new_prospective_mechanism_object
+
+  - id: REL_CODEBOOK_UNIVERSAL
+    object: universal_relational_codebook_feasibility
+    status: refuted
+    witness: constant_function_ontology
+    conclusion: relational_identification_not_available_for_every_ontology
+
+  - id: REL_CODEBOOK_EXISTENCE
+    object: ontology_conditional_relational_codebook_feasibility
+    status: feasible_in_principle
+    witness: balanced_three_candidate_two_region_ontology
+    conclusion: relational_identification_can_exist_without_semantic_recoding
+
+  - id: G1_OBJECT
+    object: meaning_of_evidence_use
+    status: unresolved_frontier
+    alternatives:
+      - broad
+      - relational
+    blocks:
+      - candidate_ontology
+      - evidence_intervention_space
+      - model_selection
+      - empirical_execution
+
+  - id: G2_DESIGN
+    object: modification_identification
+    status: fixed_design_principle
+    requirement: direct_do_M_assay
+    causal_form: do(M=m) -> (Y_T,Y_P)
+    purpose: separate_selection_competence_from_modification_competence
