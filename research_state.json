@@ -1,9 +1,22 @@
 {
-  "schema_version": 2,
+  "schema_version": 3,
   "program": "Correction-Capable Adaptation",
   "central_question": "Can an adaptive system increase its future viability while remaining capable of incorporating justified correction?",
   "core_rule": "Never infer a downstream capability from an unvalidated upstream mechanism.",
+  "causal_composition_principle": {
+    "status": "CANONICAL_METHODOLOGICAL_RULE",
+    "statement": "A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.",
+    "compression": "validated endpoints do not imply a validated pathway",
+    "universal_intermediate_gate_required": false,
+    "apparatus_guarantee_requires": [
+      "prospective specification",
+      "independent validation or mechanical verification over the claimed domain"
+    ],
+    "decision_record": "lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md",
+    "provenance_prs": [9, 10]
+  },
   "current_frontier": {
+    "type": "EMPIRICAL_AUTHORITY_FRONTIER",
     "maturity_level": 0,
     "layer": "measurement_and_scientific_object",
     "object": "G1 warranted causal evidence control over a separable adaptive decision",
@@ -14,11 +27,12 @@
     "contract_state": "UNFROZEN",
     "implementation_authorized": false
   },
-  "next_scientific_design_boundary": {
-    "object": "G1_to_G2_bridge",
-    "question": "How should CCA connect warranted causal control over a separable adaptive decision to independently identified modification competence while preserving direct do(M=m) identification?",
-    "status": "NOT_YET_OPENED",
-    "implementation_authorized": false
+  "conceptual_frontier": {
+    "object": "post_modification_correctability",
+    "question": "What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?",
+    "status": "CONCEPTUAL_FRONTIER_ONLY",
+    "empirical_execution_authorized": false,
+    "prerequisite_note": "Any empirical repeated-correction claim remains blocked until its particular evidence-to-change pathway satisfies G1, direct G2 identification, and the CCA causal composition principle for every separable transformation it crosses."
   },
   "maturity_ladder": [
     {
@@ -29,7 +43,7 @@
     },
     {
       "level": 1,
-      "name": "evidence_controlled_selection",
+      "name": "evidence_controlled_adaptive_decision",
       "status": "SCIENTIFIC_OBJECT_DEFINED_EMPIRICALLY_UNTESTED",
       "criterion": "Prospectively admissible independently warranted evidence causally controls a separable adaptive decision in the warranted direction."
     },
@@ -42,12 +56,13 @@
     {
       "level": 3,
       "name": "evidence_to_justified_modification",
-      "status": "NOT_AUTHORIZED"
+      "status": "NOT_AUTHORIZED_CAUSAL_COMPOSITION_REQUIRED",
+      "criterion": "G1 and direct G2 results may be composed into an end-to-end evidence-to-modification claim only when every additional separable transformation crossed by the claim is independently identified or prospectively specified and validated or verified as an apparatus relation."
     },
     {
       "level": 4,
       "name": "repeated_correction",
-      "status": "NOT_AUTHORIZED"
+      "status": "CONCEPTUAL_FRONTIER_EMPIRICALLY_NOT_AUTHORIZED"
     },
     {
       "level": 5,
@@ -102,12 +117,27 @@
       "provenance_prs": [3, 4, 5, 6, 7, 8],
       "decision_record": "lineage/decisions/G1_LEVEL0_ROLE.md"
     },
+    "G1_G2_INTERMEDIATE_TRANSITION": {
+      "role": "architecture_conditional_causal_composition_obligation",
+      "status": "UNNAMED_UNFROZEN",
+      "universal_gate": false,
+      "current_candidate_path": "C_selected -> D_adopt_or_translate -> M",
+      "required_when": "the prospective architecture represents the adaptive decision and modification as separable causal variables and the scientific claim crosses their linkage",
+      "allowed_resolutions": [
+        "independently identified",
+        "prospectively specified and validated or verified apparatus guarantee",
+        "excluded from the causal claim"
+      ],
+      "implementation_authorized": false
+    },
     "ECIM": {
       "role": "provisional_mechanism_architecture",
       "lifecycle_state": "PROPOSED",
-      "architecture": "E -> C_selected -> M_effective -> (Y_T, Y_P)",
+      "architecture": "E -> C_selected -> [architecture-dependent separable transformations] -> M -> (Y_T, Y_P)",
       "fixed_design_principles": [
-        "G2 is identified by independent direct do(M=m), not by conditioning on selected modifications."
+        "G2 is identified by independent direct do(M=m), not by conditioning on selected modifications.",
+        "Validated G1 and G2 endpoints do not establish an end-to-end pathway across an unvalidated separable transformation.",
+        "No universal bridge variable or G1.5 is assumed."
       ],
       "measurement_state": "UNRESOLVED_AT_EXPERIMENT_LEVEL",
       "contract_state": "UNFROZEN",
@@ -121,11 +151,15 @@
     "constant_function_witness": "RELATIONAL_UNSAT",
     "balanced_three_candidate_two_region_witness": "RELATIONAL_SAT_IN_PRINCIPLE",
     "g1_program_role": "PROVISIONALLY_FIXED_SCOPED",
-    "g1_architectural_universality": "NOT_ESTABLISHED"
+    "g1_architectural_universality": "NOT_ESTABLISHED",
+    "universal_explicit_bridge_requirement": "REFUTED_AS_TOO_STRONG",
+    "architecture_conditional_causal_composition_rule": "CANONICAL"
   },
   "causal_boundaries": [
     "G1 != CCA",
     "G1 does not imply G2",
+    "positive G1 and positive G2 do not imply a connected evidence-to-modification pathway",
+    "validated endpoints do not imply a validated pathway",
     "G2 does not imply repeated correction",
     "repeated correction does not imply justified transformability",
     "justified transformability does not imply adaptive viability"
@@ -138,6 +172,10 @@
       "execution_state": "AUTHORIZED",
       "implementation_authorized": true
     },
+    "causal_claim_requires": {
+      "all_claimed_separable_transformations": "INDEPENDENTLY_IDENTIFIED_OR_VALIDATED_APPARATUS_GUARANTEE",
+      "unvalidated_transformation_policy": "STOP_CLAIM_BEFORE_EDGE"
+    },
     "forbidden_shortcuts": [
       "choose scientific object through benchmark convenience",
       "treat available compute as authorization",
@@ -146,7 +184,10 @@
       "replace a policy-level estimand with a post-selected subset",
       "infer capability or viability from upstream mechanism success",
       "treat candidate selection as a universal architecture of correction",
-      "infer modification competence from selected or deployed modifications instead of direct do(M=m)"
+      "infer modification competence from selected or deployed modifications instead of direct do(M=m)",
+      "compose validated endpoints across an unvalidated separable transformation",
+      "treat deterministic apparatus plumbing as validated without prospective specification and validation or verification",
+      "invent an intermediate gate when the target architecture does not instantiate independently meaningful separable variables"
     ]
   }
 }
