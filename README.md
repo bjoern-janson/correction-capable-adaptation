@@ -26,10 +26,11 @@ LEVEL 2  ISOLATED MODIFICATION
          while preserving protected behavior?
              ↓
 LEVEL 3  EVIDENCE → JUSTIFIED MODIFICATION
-         Do decision control and modification work together?
+         Can the validated relations be causally composed
+         across every separable transformation they cross?
              ↓
 LEVEL 4  REPEATED CORRECTION
-         Can correction recur without destroying prior valid structure?
+         Does the changed system remain correctable?
              ↓
 LEVEL 5  JUSTIFIED TRANSFORMABILITY
          Does the system remain open to warranted future change?
@@ -45,7 +46,7 @@ A failed upstream gate blocks authority downstream. Progress is therefore **not 
 
 ## Current Level-0 decision
 
-After six independent adversarial analyses, CCA provisionally adopts the scoped role:
+CCA provisionally adopts the scoped role:
 
 \[
 \boxed{
@@ -76,18 +77,46 @@ mechanism/channel attribution
 
 The decision record is [`lineage/decisions/G1_LEVEL0_ROLE.md`](lineage/decisions/G1_LEVEL0_ROLE.md).
 
+## CCA Causal Composition Principle
+
+CCA now canonically enforces a second program-wide rule:
+
+> **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
+
+Compactly:
+
+\[
+\boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}.}
+\]
+
+and:
+
+\[
+\boxed{\text{No causal authority may be propagated across an unvalidated separable transformation.}}
+\]
+
+This is a **law of composition**, not a new `G1.5` or universal adoption/translation gate.
+
+If the chosen architecture separates candidate selection, deployment, translation, and modification, then a claim crossing those transformations must warrant them. If an architecture updates directly or makes selection and modification inseparable, CCA must use the architecture-appropriate causal decomposition rather than manufacture intermediate variables.
+
+A prospectively fixed apparatus relation can carry the path only when it is independently validated or mechanically verified over the claimed domain. Apparatus-mediated composition does not establish the same competence as a property of the adaptive system.
+
+Decision record: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+
 ## What has—and has not—advanced
 
-The scientific role is fixed more strongly than before, but no G1 experiment exists yet:
+The G1 scientific role and the causal-composition discipline are now clearer, but no G1 experiment exists yet:
 
 ```text
-G1 scientific role       PROVISIONALLY FIXED
-G1 empirical result      UNOBSERVED
-G1 experiment contract   UNFROZEN
-G1 implementation        NOT AUTHORIZED
+G1 scientific role               PROVISIONALLY FIXED
+CCA causal composition principle  CANONICAL METHODOLOGICAL RULE
+G1 empirical result              UNOBSERVED
+G1 experiment contract           UNFROZEN
+G1 implementation                NOT AUTHORIZED
+Level-3 end-to-end claim         NOT AUTHORIZED
 ```
 
-No candidate ontology, semantic evidence set, realization policy, scalar estimand, threshold, model, prompt, or benchmark has been frozen.
+No candidate ontology, semantic evidence set, realization policy, scalar estimand, threshold, model, prompt, benchmark, or architecture-specific bridge assay has been frozen.
 
 Thus:
 
@@ -111,6 +140,18 @@ G_2
 }
 \]
 
+Additionally:
+
+\[
+\boxed{
+G_1>0\land G_2>0
+\not\Rightarrow
+\text{connected evidence-to-modification causality}
+}
+\]
+
+when the claimed path crosses an additional unvalidated separable transformation.
+
 ## One causal pathway
 
 The long-run program can be compressed as:
@@ -123,9 +164,9 @@ E
 \rightarrow
 \text{warranted adaptive decision}
 \rightarrow
-M
+\text{consequential change}
 \rightarrow
-\text{target change + protected structure}
+\text{validated consequences}
 \rightarrow
 \text{repeated correction}
 \rightarrow
@@ -135,32 +176,30 @@ M
 }
 \]
 
-The pathway must remain causally intact as the system changes.
+The exact intermediate factorization is architecture-dependent. The pathway must remain causally warranted as the system changes.
 
-## Next scientific-design boundary
+## Current empirical and conceptual frontiers
 
-The next genuinely new conceptual question is:
+The **empirical authority frontier** has not moved past G1 construction:
 
-\[
-\boxed{G_1\rightarrow G_2?}
-\]
+```text
+G1 role          PROVISIONALLY FIXED
+G1 result        UNOBSERVED
+G1 contract      UNFROZEN
+execution        NOT AUTHORIZED
+```
 
-How should warranted causal control over a separable adaptive decision connect to independently identified modification competence?
+The new **conceptual frontier** is:
 
-The hard boundary remains:
+> **What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?**
 
-\[
-\boxed{
-G_2\text{ is identified only by direct }do(M=m),
-\text{ never by conditioning on }C_{\mathrm{selected}}.
-}
-\]
+That is the first explicit move from the causal validity of one correction pathway toward preservation of correction capacity across change.
 
-This is a design question, **not evidence that G1 has empirically passed**.
+It does **not** authorize a repeated-correction experiment. Any empirical study at that layer remains blocked until its particular evidence-to-change pathway satisfies G1, direct G2 identification, and the CCA Causal Composition Principle across every separable transformation the claim crosses.
 
-## Measurement provenance
+## Provenance
 
-The six Level-0 attack PRs progressively constrained the object:
+The Level-0 G1 attacks were:
 
 ```text
 #3  broad vs relational
@@ -169,6 +208,13 @@ The six Level-0 attack PRs progressively constrained the object:
 #6  realization/access envelope
 #7  causal identification
 #8  scientific program role
+```
+
+The causal-composition attacks were:
+
+```text
+#9  causal semantics of the G1-to-G2 bridge
+#10 architecture-independent necessity of a bridge
 ```
 
 They are preserved as adversarial provenance rather than experiments.
@@ -201,7 +247,11 @@ Level-0 adversarial measurement program
         ↓
 scoped G1 role provisionally fixed
         ↓
-G1 → G2 scientific-design boundary
+causal-composition attacks
+        ↓
+CCA Causal Composition Principle
+        ↓
+post-modification correctability conceptual frontier
 ```
 
 ASI-0 remains an immutable ancestor. It is **not** an ASI experiment and is not repaired retrospectively.
@@ -242,12 +292,12 @@ The authoritative transition rules are in [`methodology/RESEARCH_STATE_MACHINE.m
 
 ## Theory and method
 
-- **[CARS](CARS.md)** — methodological operating system: localize failure, separate evidence from authority, revise minimally, retest, preserve provenance, and stop when support is exhausted.
+- **[CARS](CARS.md)** — methodological operating system: localize failure, separate evidence from authority, enforce causal composition, revise minimally, retest, preserve provenance, and stop when support is exhausted.
 - **[MAGIKARP](MAGIKARP.md)** — provisional theory of adaptive structure and justified transformability; not yet an empirically validated construct.
 - **[Scientific object](SCIENTIFIC_OBJECT.md)** — program-level causal dependency graph and claim boundaries.
-- **[Research state](RESEARCH_STATE.md)** — current maturity frontier and authorization state.
+- **[Research state](RESEARCH_STATE.md)** — current empirical and conceptual frontiers and authorization state.
 - **[Evidence ledger](lineage/EVIDENCE_LEDGER.md)** — canonical record of what has and has not been established.
-- **[Scientific contracts](contracts/README.md)** — prospective contract discipline before execution.
+- **[Scientific contracts](contracts/README.md)** — prospective contract and causal-path discipline before execution.
 
 ## Public-research standard
 
@@ -258,6 +308,9 @@ scientific object
 maturity level
 lifecycle state
 measurement structure
+causal path actually claimed
+separable transformations crossed
+identification / apparatus status of each required transformation
 prospective contract
 intervention / assignment process
 estimator
