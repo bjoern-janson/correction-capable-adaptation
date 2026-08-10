@@ -1,5 +1,5 @@
 {
-  "schema_version": 4,
+  "schema_version": 5,
   "program": "Correction-Capable Adaptation",
   "central_question": "Can an adaptive system increase its future viability while remaining capable of incorporating justified correction?",
   "core_rule": "Never infer a downstream capability from an unvalidated upstream mechanism.",
@@ -28,11 +28,11 @@
     "implementation_authorized": false
   },
   "conceptual_frontier": {
-    "object": "PMC_vs_repeated_correction",
-    "question": "Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?",
+    "object": "repeated_correction_vs_justified_transformability",
+    "question": "Is repeated correction scientifically distinct from Justified Transformability, or can repeated valid corrections occur without establishing the capacity to reach appropriately different warranted states while preserving future correction pathways?",
     "status": "ADVERSARIAL_REVIEW_NEXT",
     "empirical_execution_authorized": false,
-    "prerequisite_note": "PMC role is provisionally fixed but its environment, system boundary, horizon, dimensions, representation, preservation criterion, metric, and empirical protocol remain unfrozen. Any empirical repeated-correction claim remains blocked until its particular evidence-to-change pathway satisfies upstream gates and the CCA causal composition principle."
+    "prerequisite_note": "PMC versus repeated correction is now a canonical conceptual distinction. PMC and repeated-correction measurement machinery remain unfrozen, and no downstream transformability claim is authorized."
   },
   "maturity_ladder": [
     {
@@ -62,13 +62,13 @@
     {
       "level": 4,
       "name": "post_modification_correctability_and_repeated_correction",
-      "status": "PMC_ROLE_PROVISIONALLY_FIXED_REPEATED_CORRECTION_EMPIRICALLY_NOT_AUTHORIZED",
-      "criterion": "PMC asks whether the conditions for future warranted correction remain available after consequential change; repeated correction requires a subsequent valid correction episode. Their distinction remains under adversarial review and neither has an empirical contract."
+      "status": "PMC_ROLE_PROVISIONALLY_FIXED_DISTINCTION_CANONICAL_REPEATED_CORRECTION_EMPIRICALLY_NOT_AUTHORIZED",
+      "criterion": "PMC is latent/dispositional availability of future warranted correction after consequential change; repeated correction is a realized subsequent valid correction episode. A realized episode establishes at most opportunity-local correction availability unless broader scope is independently identified."
     },
     {
       "level": 5,
       "name": "justified_transformability",
-      "status": "THEORETICAL_ONLY"
+      "status": "THEORETICAL_OBJECT_NEXT_ADVERSARIAL_FRONTIER"
     },
     {
       "level": 6,
@@ -161,6 +161,30 @@
       "decision_record": "lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md",
       "implementation_authorized": false
     },
+    "PMC_REPEATED_CORRECTION_DISTINCTION": {
+      "role": "canonical_conceptual_dependency_distinction",
+      "status": "CANONICAL_CONCEPTUAL_DISTINCTION",
+      "statement": "PMC is latent/dispositional availability of future warranted correction; repeated correction is realized exercise in a subsequent valid correction episode.",
+      "local_authority_rule": "A valid repeated correction for opportunity e implies local correction availability for e under the frozen boundary and path-valid process, but not broad PMC over untested opportunities.",
+      "raw_episode_count_is_capacity_metric": false,
+      "provenance_prs": [12],
+      "decision_record": "lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md",
+      "implementation_authorized": false
+    },
+    "REPEATED_CORRECTION": {
+      "role": "realized_subsequent_valid_correction_episode",
+      "status": "CONCEPTUALLY_DISTINGUISHED_EMPIRICALLY_UNTESTED",
+      "contract_state": "UNFROZEN",
+      "metric_state": "UNFROZEN",
+      "implementation_authorized": false,
+      "does_not_imply": [
+        "broad PMC",
+        "novel transformability",
+        "justified transformability",
+        "correction-capacity improvement",
+        "adaptive viability"
+      ]
+    },
     "ECIM": {
       "role": "provisional_mechanism_architecture",
       "lifecycle_state": "PROPOSED",
@@ -187,7 +211,8 @@
     "architecture_conditional_causal_composition_rule": "CANONICAL",
     "post_modification_correctability_role": "PROVISIONALLY_FIXED_CONCEPTUAL",
     "pmc_intrinsic_scalar": "NOT_ESTABLISHED",
-    "pmc_repeated_correction_equivalence": "UNDER_ADVERSARIAL_REVIEW"
+    "pmc_repeated_correction_equivalence": "REFUTED_AS_CONCEPTUAL_COLLAPSE",
+    "pmc_repeated_correction_distinction": "CANONICAL_CONCEPTUAL"
   },
   "causal_boundaries": [
     "G1 != CCA",
@@ -197,6 +222,8 @@
     "one successful correction does not imply post-modification correctability",
     "current performance or capability does not imply post-modification correctability",
     "post-modification correctability does not imply repeated correction occurred",
+    "valid repeated correction implies only opportunity-local correction availability unless broader PMC is independently identified",
+    "raw correction count does not measure correction capacity",
     "preserved post-modification correctability does not imply correction capacity improved",
     "repeated correction does not imply justified transformability",
     "justified transformability does not imply adaptive viability"
@@ -227,7 +254,9 @@
       "invent an intermediate gate when the target architecture does not instantiate independently meaningful separable variables",
       "treat current performance, generic adaptability, or one-shot correction success as evidence of PMC",
       "treat PMC as an intrinsic scalar without a prospectively specified relational correction scope",
-      "treat PMC as equivalent to repeated correction or C_improve"
+      "treat PMC as equivalent to repeated correction or C_improve",
+      "infer broad PMC from one realized repeated-correction opportunity",
+      "treat raw correction count or scripted repetition as evidence of justified transformability"
     ]
   }
 }
