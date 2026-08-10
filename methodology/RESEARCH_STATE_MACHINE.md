@@ -30,10 +30,12 @@ Level 4A POST-MODIFICATION CORRECTABILITY
          for future warranted correction remain available?
               ↓
 Level 4B REPEATED CORRECTION
-         Does another valid correction episode actually occur?
+         Are those conditions actually exercised in another
+         valid correction episode?
               ↓
 Level 5  JUSTIFIED TRANSFORMABILITY
-         Does repeated correction preserve or expand appropriately reachable states?
+         Can the system reach appropriately different warranted
+         states while preserving future warranted correction pathways?
               ↓
 Level 6  ADAPTIVE VIABILITY / CAPABILITY
          Does correction-capable adaptation improve prospectively defined future viability?
@@ -44,7 +46,7 @@ Level 7  EXTREME ADAPTIVE SYSTEMS
 
 These levels are **not averaged**. Empirical maturity is limited by the first unresolved causal prerequisite of the claim being made.
 
-PMC is currently a **provisionally fixed conceptual role**, not an empirical gate with a frozen measurement contract. The Level-4A/4B split is therefore a dependency distinction, not evidence that either object has passed empirically.
+PMC is a **provisionally fixed conceptual role**, and the PMC/repeated-correction distinction is now a canonical conceptual distinction. Neither object has a frozen empirical measurement contract.
 
 ## CCA Causal Composition Principle
 
@@ -277,13 +279,35 @@ PMC is not yet a scalar or metric. A future empirical contract must prospectivel
 
 The canonical role decision is [`../lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](../lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
 
-CCA currently treats:
+## Capacity-survived versus capacity-exercised discipline
+
+CCA canonically distinguishes:
 
 \[
 \boxed{\mathrm{PMC}\neq\mathrm{Repeated\ Correction}}
 \]
 
-as a provisional conceptual distinction under adversarial review. PMC concerns availability of another warranted correction path; repeated correction concerns an actually established subsequent correction episode.
+because PMC is latent/dispositional availability while repeated correction is a realized valid correction episode.
+
+Therefore absence of an observed repeated correction does not identify absence of PMC unless a discriminating correction opportunity and valid activation/execution conditions were prospectively guaranteed.
+
+A realized valid repeated correction provides only local authority:
+
+\[
+\mathrm{ValidRepeatedCorrection}(e)
+\Rightarrow
+\mathrm{LocalCorrectionAvailability}(e)
+\]
+
+for the realized opportunity \(e\), under the frozen boundary and path-valid process.
+
+It does not authorize broad PMC over untested opportunities. Raw episode count, scripted sequences, or repeated execution of the same local route must not be treated as correction-capacity metrics.
+
+\[
+\boxed{N_{\mathrm{corrections}}\neq C_{\mathrm{corr}}.}
+\]
+
+The canonical decision record is [`../lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](../lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
 
 ## Frozen-object rule
 
@@ -329,7 +353,9 @@ An agent must not infer authorization from:
 - a model being easy to run;
 - successful endpoint assays when an intervening separable transformation remains unvalidated;
 - the existence of a PMC role without a frozen PMC measurement contract;
-- successful one-shot correction as evidence of repeated correction or PMC.
+- successful one-shot correction as evidence of repeated correction or PMC;
+- one realized repeated correction as evidence of broad PMC;
+- repeated or scripted correction count as evidence of Justified Transformability.
 
 ## Current application
 
@@ -354,10 +380,12 @@ Candidate selection is the current operational instantiation, not a universal ar
 
 The CCA Causal Composition Principle is canonical.
 
-PMC is now provisionally fixed **in role only**. Its future-correction environment, system boundary, horizon, representation, dimensions, metric, estimator, threshold, and protocol remain unfrozen.
+PMC is provisionally fixed **in role only**. Its future-correction environment, system boundary, horizon, representation, dimensions, metric, estimator, threshold, and protocol remain unfrozen.
+
+The PMC/repeated-correction distinction is canonical conceptually, but repeated correction remains empirically untested and contract-unfrozen.
 
 The next **conceptual** frontier is:
 
-> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
+> **Is repeated correction scientifically distinct from Justified Transformability, or can repeated valid corrections occur without establishing the capacity to reach appropriately different warranted states while preserving future correction pathways?**
 
-This does not authorize a repeated-correction experiment. Any empirical claim about PMC or repeated correction remains blocked until its particular evidence-to-change pathway satisfies the required empirical gates, frozen contract, and every separable transformation it crosses under the CCA Causal Composition Principle.
+This does not authorize a repeated-correction or transformability experiment. Any empirical claim remains blocked until its particular evidence-to-change pathway satisfies the required empirical gates, frozen contract, and every separable transformation it crosses under the CCA Causal Composition Principle.
