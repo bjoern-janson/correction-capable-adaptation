@@ -18,7 +18,7 @@ The program advances only through independently validated causal prerequisites a
 | 3 | Evidence → justified modification | **NOT AUTHORIZED / CAUSAL COMPOSITION REQUIRED** |
 | 4A | Post-Modification Correctability | **ROLE PROVISIONALLY FIXED / METRIC & CONTRACT UNFROZEN** |
 | 4B | Repeated correction | **CONCEPTUALLY DISTINCT / EMPIRICALLY UNTESTED** |
-| 5 | Justified transformability | **NEXT ADVERSARIAL CONCEPTUAL FRONTIER** |
+| 5 | Justified Transformability | **ROLE PROVISIONALLY FIXED / WARRANT & DISTINCTNESS SEMANTICS UNDER REVIEW** |
 | 6 | Adaptive viability / capability | **NOT AUTHORIZED** |
 | 7 | Extreme adaptive systems | **NOT AUTHORIZED** |
 
@@ -28,7 +28,7 @@ These levels are not averaged into a progress percentage.
 \boxed{\text{empirical authority advances only when each prerequisite and required separable transformation is independently warranted}}
 \]
 
-## Canonical methodological transition — CCA Causal Composition Principle
+## CCA Causal Composition Principle
 
 CCA canonically adopts:
 
@@ -46,45 +46,13 @@ and:
 \boxed{\text{No causal authority may be propagated across an unvalidated separable transformation.}}
 \]
 
-This is a composition law governing causal claims. It is **not** a new CCA gate, maturity level, or universal adoption/translation mechanism.
+This is a composition law, not a new CCA gate or universal intermediate mechanism. The exact causal decomposition remains architecture-dependent.
 
-The canonical decision record is [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+Decision record: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
 
-### Architecture-conditional scope
+## Scoped role of G1
 
-The rule applies to the decomposition actually claimed.
-
-A separable architecture may require identification of:
-
-\[
-C_{\mathrm{selected}}\rightarrow D\rightarrow M,
-\]
-
-while a direct-update architecture may instead contain:
-
-\[
-E\rightarrow M.
-\]
-
-If selection and modification are inseparable, adding an artificial bridge would manufacture a causal distinction rather than identify one.
-
-Thus CCA requires **validated evidence-to-change causality**, not one universal intermediate graph.
-
-### Apparatus guarantees
-
-If an experiment uses a fixed relation such as:
-
-\[
-M=\phi(C),
-\]
-
-as apparatus plumbing, \(\phi\) must be prospectively specified and independently validated or mechanically verified over the claimed domain.
-
-An apparatus-mediated link can support an apparatus-mediated pathway claim. It does not establish system-internal adoption or translation competence.
-
-## Level-0 decision — scoped role of G1
-
-CCA continues to provisionally adopt:
+CCA provisionally adopts:
 
 \[
 \boxed{
@@ -94,49 +62,13 @@ G_1
 }
 \]
 
-The current operational decomposition instantiates the adaptive decision as candidate selection:
+The current operational instantiation is candidate selection:
 
 \[
 E\longrightarrow C_{\mathrm{selected}}.
 \]
 
-This is a scoped commitment about CCA's first studied empirical pathway. It is **not** a claim that every correction-capable architecture must contain an explicit candidate-selection node.
-
-The canonical decision record is [`lineage/decisions/G1_LEVEL0_ROLE.md`](lineage/decisions/G1_LEVEL0_ROLE.md).
-
-### What G1 is not
-
-The adversarial analysis established that none of the following is a substitute for G1:
-
-```text
-codebook construction
-relational sensitivity
-representation invariance
-access robustness
-candidate accuracy
-mechanism/channel attribution
-```
-
-The measurement attacks also separated semantic constitution, interface scope, realization policy, total warranted evidence control, realization/access heterogeneity, and mechanism attribution. Those distinctions constrain future contracts; they do not convert all of those properties into the definition of G1.
-
-## Current empirical authority
-
-No G1 experiment has been frozen or executed.
-
-The following remain unfrozen:
-
-- candidate ontology;
-- semantic evidence states;
-- interface contract;
-- realization policy;
-- scalar G1 estimand and weighting rule;
-- uncertainty procedure and threshold;
-- model and prompt;
-- benchmark;
-- ECIM contract;
-- any architecture-specific selection→modification bridge estimand or intervention.
-
-Therefore:
+This is not a universal architectural claim. No G1 experiment has been frozen or executed.
 
 ```text
 G1 SCIENTIFIC ROLE       PROVISIONALLY FIXED
@@ -145,43 +77,7 @@ G1 CONTRACT              UNFROZEN
 G1 IMPLEMENTATION        NOT AUTHORIZED
 ```
 
-## Causal non-substitutions
-
-\[
-\boxed{G_1\neq\mathrm{CCA}}
-\]
-
-and
-
-\[
-\boxed{
-G_1
-\not\Rightarrow
-G_2
-\not\Rightarrow
-\mathrm{PMC}
-\not\Rightarrow
-\text{repeated correction}
-\not\Rightarrow
-\text{justified transformability}
-\not\Rightarrow
-\text{adaptive viability}
-}
-\]
-
-A positive G1 would establish only the warranted causal-control property under its frozen conditions.
-
-Likewise:
-
-\[
-\boxed{
-G_1>0\land G_2>0
-\not\Rightarrow
-\text{connected evidence-to-modification causality}
-}
-\]
-
-when the claimed path crosses an additional separable transformation that has not itself acquired authority.
+Decision record: [`lineage/decisions/G1_LEVEL0_ROLE.md`](lineage/decisions/G1_LEVEL0_ROLE.md).
 
 ## Level 2 — modification remains independently identified
 
@@ -197,7 +93,7 @@ Selection competence is not modification competence, and modification competence
 
 ## Level 3 — end-to-end composition remains unauthorized
 
-For a claimed path \(\pi\), Level 3 requires more than positive endpoint gates:
+For a claimed path \(\pi\):
 
 \[
 \boxed{
@@ -213,13 +109,11 @@ G_{2P}
 }
 \]
 
-`PathValid(π)` requires every additional separable transformation crossed by the claim to be independently identified or prospectively specified and validated/verified as an apparatus relation.
+`PathValid(π)` requires every additional separable transformation crossed by the claim to be independently identified or prospectively specified and validated/verified as an apparatus relation. If a transformation is explicitly excluded, the claim must stop before crossing it.
 
-If a transformation is explicitly excluded, the claim must stop before crossing it.
+No universal bridge gate is frozen.
 
-No bridge gate, bridge estimand, or bridge intervention is currently frozen.
-
-## Post-Modification Correctability — provisional conceptual role
+## Post-Modification Correctability — provisional role
 
 CCA provisionally adopts **Post-Modification Correctability (PMC)** as the conceptual object immediately upstream of repeated correction.
 
@@ -227,7 +121,7 @@ Its role is:
 
 > **After a consequential change, do the conditions required for future warranted correction remain available?**
 
-The causal content must remain stronger than generic flexibility:
+The causal content remains:
 
 \[
 \boxed{
@@ -239,84 +133,31 @@ The causal content must remain stronger than generic flexibility:
 }
 \]
 
-PMC asks whether such a path remains available after modification within a prospectively declared scope.
+within a prospectively declared correction scope.
 
-The decision record is [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
+PMC is not current performance, current capability, generic plasticity, or one-shot correction success. It is not provisionally treated as an intrinsic scalar of \(S_{t+1}\) alone.
 
-### What PMC is not
+Its environment, system boundary, horizon, topology, dimensions, preservation/degradation criterion, scalarization, estimand, estimator, threshold, and protocol all remain unfrozen.
 
-PR #11 established that none of the following is sufficient evidence of PMC:
-
-```text
-current performance
-current capability
-generic adaptability / plasticity
-one-shot correction success
-```
-
-Therefore:
-
-\[
-\boxed{
-\text{the modified system is still good}
-\not\equiv
-\text{the modified system is still correctable}
-}
-\]
-
-and:
-
-\[
-\boxed{
-\text{one successful correction}
-\not\Rightarrow
-\text{PMC after that correction}
-}
-\]
-
-### Relational rather than intrinsic by default
-
-PMC is not provisionally treated as a scalar property of \(S_{t+1}\) alone. A future measurement object must specify the relational future-correction scope under which correctability is claimed.
-
-Illustrative notation such as
-
-\[
-\mathrm{Corr}(S_{t+1};\Omega)
-\]
-
-is not frozen notation or a metric. \(\Omega\), the system boundary, temporal horizon, correction-path representation, dimensions, preservation criteria, scalarization, estimand, estimator, threshold, and protocol all remain unresolved.
+Decision record: [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
 
 ## Canonical PMC ↔ repeated-correction distinction
 
-After PR #12, CCA canonically preserves:
+CCA canonically preserves:
 
 \[
-\boxed{
-\mathrm{PMC}\neq\mathrm{Repeated\ Correction}
-}
+\boxed{\mathrm{PMC}\neq\mathrm{Repeated\ Correction}}
 \]
 
-or, compactly:
+or:
 
 \[
-\boxed{
-\text{capacity survived}\neq\text{capacity exercised}.
-}
+\boxed{\text{capacity survived}\neq\text{capacity exercised}.}
 \]
 
-PMC is a prospectively scoped latent/dispositional availability property. Repeated correction is an actually realized subsequent valid correction episode.
+PMC is latent/dispositional availability. Repeated correction is a realized subsequent valid correction episode.
 
-Therefore:
-
-\[
-\boxed{
-\mathrm{PMC}\not\Rightarrow\mathrm{ObservedRepeatedCorrection}.
-}
-\]
-
-No future opportunity may arrive during the observation horizon even when the system remains correctable.
-
-The reverse direction is local rather than general:
+A realized valid repeated correction provides only local authority:
 
 \[
 \boxed{
@@ -326,7 +167,7 @@ The reverse direction is local rather than general:
 }
 \]
 
-under the frozen system/apparatus boundary and path-valid causal process, but:
+for the realized opportunity \(e\), but:
 
 \[
 \boxed{
@@ -336,80 +177,130 @@ under the frozen system/apparatus boundary and path-valid causal process, but:
 }
 \]
 
-One successful later correction may traverse a narrow retained path while broader future correctability has degraded.
-
 Thus:
 
 \[
-\boxed{
-N_{\mathrm{corrections}}\neq C_{\mathrm{corr}}.
-}
+\boxed{N_{\mathrm{corrections}}\neq C_{\mathrm{corr}}.}
 \]
 
-Raw episode count, scripted repetition, or memorized correction sequences do not establish broad correction capacity.
+Decision record: [`lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
 
-The canonical decision record is [`lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
+## Justified Transformability — provisional conceptual role
 
-PMC also does not imply that correctability increased:
+After PR #13, CCA provisionally adopts **Justified Transformability (JT)** as a distinct repertoire-level conceptual object.
+
+Its current role is:
+
+> **What prospectively relevant warranted transformations remain reachable from a system state, and can materially different warranted destinations be reached while preserving or reconstituting the causal conditions required for future warranted correction?**
+
+CCA therefore preserves:
+
+\[
+\boxed{\mathrm{PMC}=\text{availability}}
+\]
+
+\[
+\boxed{\mathrm{RepeatedCorrection}=\text{realized temporal exercise}}
+\]
+
+\[
+\boxed{\mathrm{JT}=\text{warranted transformation repertoire}}
+\]
+
+and the non-equivalences:
 
 \[
 \boxed{
-\text{PMC preserved}
-\not\Rightarrow
-\Delta\mathrm{Corr}>0
+\mathrm{PMC}\not\Rightarrow\mathrm{RepeatedCorrection},
+\qquad
+\mathrm{RepeatedCorrection}\not\Rightarrow\mathrm{JT}.
 }
 \]
 
-and does not canonize `C_improve`.
+A prospectively established repertoire claim also need not imply that one physical instance has already traversed a repeated correction history:
+
+\[
+\boxed{\mathrm{JT}\not\Rightarrow\mathrm{ObservedRepeatedCorrectionHistory}.}
+\]
+
+Compactly:
+
+\[
+\boxed{\text{trajectory evidence}\neq\text{repertoire evidence}.}
+\]
+
+Repeated correction may remain an upstream **research evidence-ordering prerequisite** because it tests survival across actual consequential temporal change. That is not a universal definition of JT:
+
+\[
+\boxed{\text{logical object dependency}\neq\text{program evidence-ordering dependency}.}
+\]
+
+Decision record: [`lineage/decisions/JUSTIFIED_TRANSFORMABILITY_ROLE.md`](lineage/decisions/JUSTIFIED_TRANSFORMABILITY_ROLE.md).
+
+### What JT does not yet mean
+
+The following remain explicitly unfrozen:
+
+```text
+warrant semantics
+material / appropriate distinctness semantics
+target or transformation family
+reachable-state / reachable-transformation formalism
+novelty or distance thresholds
+repertoire breadth / diversity / coverage
+preservation versus reconstitution semantics
+system / apparatus boundary
+counterfactual availability criterion
+estimand / estimator
+metric / threshold
+empirical protocol
+```
+
+JT must not be inferred from raw correction count, scripted repetition, a large reachable-state count, or retrospective approval of whichever transformation happened to occur.
+
+\[
+\boxed{\text{many reachable states}\not\Rightarrow\text{many warranted transformations}.}
+\]
+
+JT also does not canonize `C_improve` and does not establish that the transformation repertoire improved.
+
+## Causal non-substitutions
+
+\[
+\boxed{G_1\neq\mathrm{CCA}}
+\]
+
+and:
+
+\[
+\boxed{
+G_1
+\not\Rightarrow
+G_2
+\not\Rightarrow
+\mathrm{PMC}
+\not\Rightarrow
+\text{repeated correction}
+\not\Rightarrow
+\mathrm{JT}
+\not\Rightarrow
+\text{adaptive viability}
+}
+\]
+
+A positive result at one layer grants authority only to the scientific object it actually identifies.
 
 ## Adversarial provenance
 
-The scoped G1 decision is informed by:
-
 ```text
-#3  broad vs relational
-#4  outcome vs mechanism/channel attribution
-#5  semantic vs behavioral invariance
-#6  realization/access envelope
-#7  causal identification
-#8  scientific program role
+#3–#8   G1 scientific-object attacks
+#9–#10  causal-composition attacks
+#11     PMC scientific-object attack
+#12     PMC versus repeated-correction attack
+#13     repeated correction versus Justified Transformability attack
 ```
 
-The composition principle is informed by:
-
-```text
-#9  causal semantics of the G1-to-G2 bridge
-#10 architecture-independent necessity of a bridge
-```
-
-The PMC role is informed by:
-
-```text
-#11 attack post-modification correctability as a scientific object
-```
-
-The PMC/repeated-correction distinction is informed by:
-
-```text
-#12 attack PMC versus repeated correction distinction
-```
-
-These remain provenance rather than canonical empirical experiments.
-
-## Ancestral evidence
-
-ASI-0 remains an immutable closed ancestor:
-
-```text
-C            0
-A            0
-L_C          0
-L_A          0
-PRIMARY      STOP
-REPLICATION  NOT AUTHORIZED
-```
-
-The post-outcome diagnosis localized weak evidence control over candidate identity and poor protected-behavior isolation of the tested textual modifications. That motivated the decision/modification decomposition; it did not authorize retrospective repair.
+These remain provenance rather than empirical experiments.
 
 ## Current authorization
 
@@ -417,22 +308,20 @@ The post-outcome diagnosis localized weak evidence control over candidate identi
 PROGRAM OBJECT                         PROVISIONALLY FIXED
 ASI-0                                 CLOSED / IMMUTABLE
 G1 scientific role                    PROVISIONALLY FIXED
-G1 operational candidate-selection    CURRENT INSTANTIATION / NOT UNIVERSAL
 CCA causal composition principle      CANONICAL METHODOLOGICAL RULE
 PMC conceptual role                   PROVISIONALLY FIXED
 PMC ↔ repeated correction distinction CANONICAL CONCEPTUAL DISTINCTION
-PMC environment / system boundary     UNFROZEN
-PMC metric / estimand / threshold     UNFROZEN
+JT conceptual role                    PROVISIONALLY FIXED
+JT warrant / distinctness semantics   UNFROZEN / UNDER ADVERSARIAL REVIEW
+PMC metric / contract                 UNFROZEN
 repeated-correction contract          UNFROZEN
 repeated-correction empirical result  UNOBSERVED
+JT metric / contract                  UNFROZEN
 G1 experiment contract                UNFROZEN
-candidate ontology                    UNFROZEN
-evidence intervention space           UNFROZEN
-architecture-specific bridge object   UNFROZEN / UNNAMED
 ECIM scientific contract              UNFROZEN
-ECIM model / prompt                    NOT SELECTED
-ECIM empirical implementation         NOT AUTHORIZED
+ECIM implementation                   NOT AUTHORIZED
 repeated-correction experiment        NOT AUTHORIZED
+JT experiment                         NOT AUTHORIZED
 new empirical execution               NOT AUTHORIZED
 ```
 
@@ -440,6 +329,6 @@ new empirical execution               NOT AUTHORIZED
 
 The next attack is:
 
-> **Is repeated correction scientifically distinct from Justified Transformability, or can repeated valid corrections occur without establishing the capacity to reach appropriately different warranted states while preserving future correction pathways?**
+> **Can the warrant, distinctness, repertoire, preservation, target-family, and counterfactual-availability semantics of Justified Transformability be specified without retrospective approval, trivial-difference inflation, or benchmark-defined reachability?**
 
-This remains conceptual. No transformability or repeated-correction implementation is authorized, and any empirical work remains blocked until its particular evidence-to-change pathway satisfies the upstream empirical gates and the CCA Causal Composition Principle.
+This remains conceptual. No JT, repeated-correction, PMC, G1, or ECIM empirical implementation is authorized by this transition.
