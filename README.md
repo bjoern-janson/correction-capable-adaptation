@@ -29,8 +29,12 @@ LEVEL 3  EVIDENCE → JUSTIFIED MODIFICATION
          Can the validated relations be causally composed
          across every separable transformation they cross?
              ↓
-LEVEL 4  REPEATED CORRECTION
-         Does the changed system remain correctable?
+LEVEL 4A POST-MODIFICATION CORRECTABILITY
+         After consequential change, do the conditions
+         required for future warranted correction remain available?
+             ↓
+LEVEL 4B REPEATED CORRECTION
+         Does another valid correction actually occur?
              ↓
 LEVEL 5  JUSTIFIED TRANSFORMABILITY
          Does the system remain open to warranted future change?
@@ -64,22 +68,11 @@ E\rightarrow C_{\mathrm{selected}}.
 
 This is **not** a universal claim that all correction-capable architectures require explicit candidate selection.
 
-The attacks established that none of the following is a substitute for G1:
-
-```text
-codebook construction
-relational sensitivity
-representation invariance
-access robustness
-candidate accuracy
-mechanism/channel attribution
-```
-
 The decision record is [`lineage/decisions/G1_LEVEL0_ROLE.md`](lineage/decisions/G1_LEVEL0_ROLE.md).
 
 ## CCA Causal Composition Principle
 
-CCA now canonically enforces a second program-wide rule:
+CCA canonically enforces:
 
 > **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
 
@@ -89,48 +82,109 @@ Compactly:
 \boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}.}
 \]
 
-and:
-
-\[
-\boxed{\text{No causal authority may be propagated across an unvalidated separable transformation.}}
-\]
-
 This is a **law of composition**, not a new `G1.5` or universal adoption/translation gate.
-
-If the chosen architecture separates candidate selection, deployment, translation, and modification, then a claim crossing those transformations must warrant them. If an architecture updates directly or makes selection and modification inseparable, CCA must use the architecture-appropriate causal decomposition rather than manufacture intermediate variables.
-
-A prospectively fixed apparatus relation can carry the path only when it is independently validated or mechanically verified over the claimed domain. Apparatus-mediated composition does not establish the same competence as a property of the adaptive system.
 
 Decision record: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
 
-## What has—and has not—advanced
+## Post-Modification Correctability
 
-The G1 scientific role and the causal-composition discipline are now clearer, but no G1 experiment exists yet:
+CCA now provisionally adopts **Post-Modification Correctability (PMC)** as the conceptual object immediately upstream of repeated correction.
 
-```text
-G1 scientific role               PROVISIONALLY FIXED
-CCA causal composition principle  CANONICAL METHODOLOGICAL RULE
-G1 empirical result              UNOBSERVED
-G1 experiment contract           UNFROZEN
-G1 implementation                NOT AUTHORIZED
-Level-3 end-to-end claim         NOT AUTHORIZED
-```
+Its role is:
 
-No candidate ontology, semantic evidence set, realization policy, scalar estimand, threshold, model, prompt, benchmark, or architecture-specific bridge assay has been frozen.
+> **After a consequential change, do the conditions required for future warranted correction remain available?**
+
+The role retains causal content:
+
+\[
+\boxed{
+\text{future admissible evidence}
+\leadsto
+\text{warranted causal authority}
+\leadsto
+\text{consequential correction}
+}
+\]
+
+PMC is deliberately distinct from current performance, current capability, generic adaptability/plasticity, and one-shot correction success.
 
 Thus:
 
 \[
-\boxed{G_1\neq\mathrm{CCA}}
+\boxed{
+\text{the modified system is still good}
+\not\equiv
+\text{the modified system is still correctable}
+}
 \]
 
-and
+PMC is also **not yet a metric**. Its future-correction environment, system boundary, horizon, correction-path representation, dimensions, preservation criterion, scalarization, estimand, estimator, threshold, and protocol all remain unfrozen.
+
+Decision record: [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
+
+## PMC is not repeated correction
+
+CCA provisionally separates:
+
+\[
+\boxed{
+\mathrm{PMC}\neq\mathrm{Repeated\ Correction}.
+}
+\]
+
+PMC asks whether another warranted correction remains possible after change.
+
+Repeated correction asks whether another valid correction episode actually occurs and is established.
+
+The candidate dependency is:
+
+\[
+\boxed{
+\text{one valid correction}
+\rightarrow
+\text{preserved capacity for another}
+\rightarrow
+\text{actual repeated correction}
+}
+\]
+
+The arrows remain unvalidated scientific claims.
+
+PMC also does not imply improved correction capacity:
+
+\[
+\boxed{
+\text{PMC preserved}\not\Rightarrow\Delta\mathrm{Corr}>0.
+}
+\]
+
+`C_improve` therefore remains a later theoretical object.
+
+## What has—and has not—advanced
+
+```text
+G1 scientific role                PROVISIONALLY FIXED
+CCA causal composition principle  CANONICAL METHODOLOGICAL RULE
+PMC conceptual role               PROVISIONALLY FIXED
+G1 empirical result               UNOBSERVED
+G1 experiment contract            UNFROZEN
+PMC measurement contract          UNFROZEN
+PMC metric                        UNFROZEN
+repeated-correction experiment    NOT AUTHORIZED
+implementation                    NOT AUTHORIZED
+```
+
+No candidate ontology, semantic evidence set, realization policy, scalar estimand, threshold, model, prompt, benchmark, PMC environment, or architecture-specific bridge assay has been frozen.
+
+The core non-substitution chain is:
 
 \[
 \boxed{
 G_1
 \not\Rightarrow
 G_2
+\not\Rightarrow
+\mathrm{PMC}
 \not\Rightarrow
 \text{repeated correction}
 \not\Rightarrow
@@ -139,18 +193,6 @@ G_2
 \text{adaptive viability}
 }
 \]
-
-Additionally:
-
-\[
-\boxed{
-G_1>0\land G_2>0
-\not\Rightarrow
-\text{connected evidence-to-modification causality}
-}
-\]
-
-when the claimed path crosses an additional unvalidated separable transformation.
 
 ## One causal pathway
 
@@ -168,6 +210,8 @@ E
 \rightarrow
 \text{validated consequences}
 \rightarrow
+\text{PMC}
+\rightarrow
 \text{repeated correction}
 \rightarrow
 \text{justified transformability}
@@ -180,7 +224,7 @@ The exact intermediate factorization is architecture-dependent. The pathway must
 
 ## Current empirical and conceptual frontiers
 
-The **empirical authority frontier** has not moved past G1 construction:
+The **empirical authority frontier** remains upstream:
 
 ```text
 G1 role          PROVISIONALLY FIXED
@@ -189,13 +233,11 @@ G1 contract      UNFROZEN
 execution        NOT AUTHORIZED
 ```
 
-The new **conceptual frontier** is:
+The **conceptual frontier** is now:
 
-> **What must be true for a system to remain capable of incorporating warranted correction after a consequential modification?**
+> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
 
-That is the first explicit move from the causal validity of one correction pathway toward preservation of correction capacity across change.
-
-It does **not** authorize a repeated-correction experiment. Any empirical study at that layer remains blocked until its particular evidence-to-change pathway satisfies G1, direct G2 identification, and the CCA Causal Composition Principle across every separable transformation the claim crosses.
+That is a conceptual attack, not authorization to build a repeated-correction experiment.
 
 ## Provenance
 
@@ -217,52 +259,35 @@ The causal-composition attacks were:
 #10 architecture-independent necessity of a bridge
 ```
 
-They are preserved as adversarial provenance rather than experiments.
-
-Earlier measurement work also established:
+The PMC role is informed by:
 
 ```text
-universal relational-codebook construction      REFUTED
-ontology-conditional relational construction    FEASIBLE IN PRINCIPLE
-constant-function witness                        relational UNSAT
-balanced 3-candidate / 2-region witness          relational SAT in principle
+#11 attack post-modification correctability as a scientific object
 ```
 
-These are measurement-design results, not model results and not the definition of G1.
+They are preserved as adversarial provenance rather than experiments.
 
 ## One lineage
 
 ```text
 ancestral empirical work
         ↓
-ASI-0
-        ↓
-negative primary result
+ASI-0 negative primary
         ↓
 mechanism diagnosis
         ↓
 selection / modification decomposition
         ↓
-Level-0 adversarial measurement program
-        ↓
-scoped G1 role provisionally fixed
-        ↓
-causal-composition attacks
+scoped G1 role
         ↓
 CCA Causal Composition Principle
         ↓
-post-modification correctability conceptual frontier
+Post-Modification Correctability role
+        ↓
+PMC vs repeated-correction attack
 ```
 
-ASI-0 remains an immutable ancestor. It is **not** an ASI experiment and is not repaired retrospectively.
-
-ASI-0 produced:
-
-\[
-\boxed{C=0,\qquad A=0,\qquad \mathrm{STOP}}
-\]
-
-The diagnosis localized weak evidence control over candidate identity and poor protected-behavior isolation of the tested textual modifications. That motivated a new prospective mechanism decomposition; it did not authorize repair of ASI-0.
+ASI-0 remains an immutable ancestor and is not repaired retrospectively.
 
 ## Research state machine
 
@@ -298,30 +323,6 @@ The authoritative transition rules are in [`methodology/RESEARCH_STATE_MACHINE.m
 - **[Research state](RESEARCH_STATE.md)** — current empirical and conceptual frontiers and authorization state.
 - **[Evidence ledger](lineage/EVIDENCE_LEDGER.md)** — canonical record of what has and has not been established.
 - **[Scientific contracts](contracts/README.md)** — prospective contract and causal-path discipline before execution.
-
-## Public-research standard
-
-Every empirical claim should make reconstructible:
-
-```text
-scientific object
-maturity level
-lifecycle state
-measurement structure
-causal path actually claimed
-separable transformations crossed
-identification / apparatus status of each required transformation
-prospective contract
-intervention / assignment process
-estimator
-uncertainty procedure
-protocol deviations
-result actually observed
-authority actually gained
-what remains unauthorized
-```
-
-Negative and null results remain first-class evidence.
 
 ## Ultimate question
 
