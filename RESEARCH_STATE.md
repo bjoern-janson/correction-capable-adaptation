@@ -16,8 +16,9 @@ The program advances only through independently validated causal prerequisites a
 | 1 | Evidence-controlled adaptive decision | **SCIENTIFIC OBJECT DEFINED / EMPIRICALLY UNTESTED** |
 | 2 | Isolated modification | **ARCHITECTURE ONLY** |
 | 3 | Evidence → justified modification | **NOT AUTHORIZED / CAUSAL COMPOSITION REQUIRED** |
-| 4 | Post-Modification Correctability → repeated correction | **PMC ROLE PROVISIONALLY FIXED / REPEATED CORRECTION EMPIRICALLY NOT AUTHORIZED** |
-| 5 | Justified transformability | **THEORETICAL ONLY** |
+| 4A | Post-Modification Correctability | **ROLE PROVISIONALLY FIXED / METRIC & CONTRACT UNFROZEN** |
+| 4B | Repeated correction | **CONCEPTUALLY DISTINCT / EMPIRICALLY UNTESTED** |
+| 5 | Justified transformability | **NEXT ADVERSARIAL CONCEPTUAL FRONTIER** |
 | 6 | Adaptive viability / capability | **NOT AUTHORIZED** |
 | 7 | Extreme adaptive systems | **NOT AUTHORIZED** |
 
@@ -29,7 +30,7 @@ These levels are not averaged into a progress percentage.
 
 ## Canonical methodological transition — CCA Causal Composition Principle
 
-After PRs #9 and #10, CCA canonically adopts:
+CCA canonically adopts:
 
 > **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
 
@@ -158,7 +159,7 @@ G_1
 \not\Rightarrow
 G_2
 \not\Rightarrow
-\text{PMC}
+\mathrm{PMC}
 \not\Rightarrow
 \text{repeated correction}
 \not\Rightarrow
@@ -285,9 +286,9 @@ Illustrative notation such as
 
 is not frozen notation or a metric. \(\Omega\), the system boundary, temporal horizon, correction-path representation, dimensions, preservation criteria, scalarization, estimand, estimator, threshold, and protocol all remain unresolved.
 
-### PMC is not repeated correction
+## Canonical PMC ↔ repeated-correction distinction
 
-CCA provisionally distinguishes:
+After PR #12, CCA canonically preserves:
 
 \[
 \boxed{
@@ -295,23 +296,59 @@ CCA provisionally distinguishes:
 }
 \]
 
-PMC concerns whether another warranted correction remains possible under the declared correction scope.
-
-Repeated correction concerns whether another valid correction episode actually occurs and is established under its own prospective causal contract.
-
-The candidate dependency is therefore:
+or, compactly:
 
 \[
 \boxed{
-\text{one valid correction}
-\rightarrow
-\text{preserved capacity for another}
-\rightarrow
-\text{actual repeated correction}
+\text{capacity survived}\neq\text{capacity exercised}.
 }
 \]
 
-The arrows are not empirically established.
+PMC is a prospectively scoped latent/dispositional availability property. Repeated correction is an actually realized subsequent valid correction episode.
+
+Therefore:
+
+\[
+\boxed{
+\mathrm{PMC}\not\Rightarrow\mathrm{ObservedRepeatedCorrection}.
+}
+\]
+
+No future opportunity may arrive during the observation horizon even when the system remains correctable.
+
+The reverse direction is local rather than general:
+
+\[
+\boxed{
+\mathrm{ValidRepeatedCorrection}(e)
+\Rightarrow
+\mathrm{LocalCorrectionAvailability}(e)
+}
+\]
+
+under the frozen system/apparatus boundary and path-valid causal process, but:
+
+\[
+\boxed{
+\mathrm{LocalCorrectionAvailability}(e)
+\not\Rightarrow
+\mathrm{PMC}(\Omega_{\mathrm{broader}}).
+}
+\]
+
+One successful later correction may traverse a narrow retained path while broader future correctability has degraded.
+
+Thus:
+
+\[
+\boxed{
+N_{\mathrm{corrections}}\neq C_{\mathrm{corr}}.
+}
+\]
+
+Raw episode count, scripted repetition, or memorized correction sequences do not establish broad correction capacity.
+
+The canonical decision record is [`lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
 
 PMC also does not imply that correctability increased:
 
@@ -351,6 +388,12 @@ The PMC role is informed by:
 #11 attack post-modification correctability as a scientific object
 ```
 
+The PMC/repeated-correction distinction is informed by:
+
+```text
+#12 attack PMC versus repeated correction distinction
+```
+
 These remain provenance rather than canonical empirical experiments.
 
 ## Ancestral evidence
@@ -377,8 +420,11 @@ G1 scientific role                    PROVISIONALLY FIXED
 G1 operational candidate-selection    CURRENT INSTANTIATION / NOT UNIVERSAL
 CCA causal composition principle      CANONICAL METHODOLOGICAL RULE
 PMC conceptual role                   PROVISIONALLY FIXED
+PMC ↔ repeated correction distinction CANONICAL CONCEPTUAL DISTINCTION
 PMC environment / system boundary     UNFROZEN
 PMC metric / estimand / threshold     UNFROZEN
+repeated-correction contract          UNFROZEN
+repeated-correction empirical result  UNOBSERVED
 G1 experiment contract                UNFROZEN
 candidate ontology                    UNFROZEN
 evidence intervention space           UNFROZEN
@@ -394,6 +440,6 @@ new empirical execution               NOT AUTHORIZED
 
 The next attack is:
 
-> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
+> **Is repeated correction scientifically distinct from Justified Transformability, or can repeated valid corrections occur without establishing the capacity to reach appropriately different warranted states while preserving future correction pathways?**
 
-This remains conceptual. No repeated-correction implementation is authorized, and any empirical work at this layer remains blocked until its particular evidence-to-change pathway satisfies the upstream empirical gates and the CCA Causal Composition Principle.
+This remains conceptual. No transformability or repeated-correction implementation is authorized, and any empirical work remains blocked until its particular evidence-to-change pathway satisfies the upstream empirical gates and the CCA Causal Composition Principle.
