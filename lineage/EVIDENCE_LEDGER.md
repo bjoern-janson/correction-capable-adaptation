@@ -24,8 +24,10 @@ The program does not average evidence across maturity levels. Downstream authori
 | COMP-A10 | cross-level | Architecture-independent bridge necessity | Closed adversarial provenance | Separate bridge identification is required for some separable architectures, unnecessary for direct-update architectures, and potentially malformed for inseparable architectures. | Architecture-conditional composition obligation; refutation of universal `G1.5`. | A universal adoption/translation architecture. | Supported a general causal-composition law instead of another maturity level. |
 | CCA-COMP | cross-level | CCA Causal Composition Principle | **Canonical methodological rule** | Validated endpoints do not validate an intervening separable pathway. Every separable transformation crossed by a claim must be independently identified or prospectively specified and validated/verified as an apparatus guarantee; otherwise the claim must stop before it. | Program-wide authority-propagation rule; Level-3 conjunction repaired to include path validity. | Any positive G1/G2 result; a bridge gate; system-internal bridge competence; repeated correction. | Governs all future contracts and causal claims. |
 | G2-DESIGN | 2 | Modification identification | Fixed design principle / architecture only | Modification efficacy/isolation must be estimated through direct \(do(M=m)\), not only selected modifications. | Clean separation of decision-control competence from modification competence. | Evidence that any modification is effective or isolated; evidence about how M acquired its value. | Future Level-2 contract must independently estimate target efficacy and protected interference. |
-| PMC-A11 | 4 | Post-modification correctability scientific-object attack | Closed adversarial provenance | PMC can be distinguished in principle from current performance, current capability, generic adaptability/plasticity, and one-shot correction success; treating it as an intrinsic scalar of \(S_{t+1}\) is under-specified without a declared future-correction scope. | Supports a relational/scoped conceptual object and separates correctability level from the causal effect of modification on correctability. | A PMC metric; \(\Omega\); system boundary; horizon; topology; scalar; preservation criterion; repeated-correction result. | Supported a role-level decision rather than measurement construction. |
-| PMC-ROLE | 4 | Post-Modification Correctability | **Role provisionally fixed / empirically untested** | PR #11 showed that a changed system may perform better yet lose future correction pathways, or preserve future warranted correction without immediate performance gain. | CCA may use PMC as the conceptual object immediately upstream of repeated correction: after consequential change, do the conditions required for future warranted correction remain available? | A PMC metric; a scalar \(C_{corr}\); correction-capacity improvement; repeated correction; transformability; viability. | Opens the PMC-vs-repeated-correction distinction as the next conceptual attack while leaving all operational machinery unfrozen. |
+| PMC-A11 | 4A | Post-modification correctability scientific-object attack | Closed adversarial provenance | PMC can be distinguished in principle from current performance, current capability, generic adaptability/plasticity, and one-shot correction success; treating it as an intrinsic scalar of \(S_{t+1}\) is under-specified without a declared future-correction scope. | Supports a relational/scoped conceptual object and separates correctability level from the causal effect of modification on correctability. | A PMC metric; \(\Omega\); system boundary; horizon; topology; scalar; preservation criterion; repeated-correction result. | Supported a role-level decision rather than measurement construction. |
+| PMC-ROLE | 4A | Post-Modification Correctability | **Role provisionally fixed / empirically untested** | PR #11 showed that a changed system may perform better yet lose future correction pathways, or preserve future warranted correction without immediate performance gain. | CCA may use PMC as the conceptual object immediately upstream of repeated correction: after consequential change, do the conditions required for future warranted correction remain available? | A PMC metric; a scalar \(C_{corr}\); correction-capacity improvement; repeated correction; transformability; viability. | Opened the PMC-vs-repeated-correction attack while leaving all operational machinery unfrozen. |
+| PMC-A12 | 4A→4B | PMC versus repeated correction | Closed adversarial provenance | PMC can exist without a realized second correction when no future opportunity arrives, while one valid repeated correction witnesses only opportunity-local correction availability and need not establish broad PMC. Scripted repetition, external rescue, and raw correction counts can masquerade as capacity. | Supports the distinction between latent availability and realized exercise; localizes authority from repeated-correction evidence. | Broad PMC from one episode; a correction-capacity scalar; a repeated-correction count metric; transformability. | Supported canonical conceptual separation before moving to transformability. |
+| PMC-RC-DIST | 4A→4B | Capacity survived versus capacity exercised | **Canonical conceptual distinction** | PMC is prospectively scoped latent/dispositional availability; repeated correction is an actually realized subsequent valid correction episode. A valid episode implies only local availability for the realized opportunity unless broader scope is independently identified. | CCA may preserve PMC and repeated correction as distinct objects and constrain authority from realized episodes to the scope actually identified. | A PMC metric; a repeated-correction metric; broad correction capacity; justified transformability; `C_improve`. | Opens repeated correction versus Justified Transformability as the next conceptual frontier. |
 
 ## Research maturity ladder
 
@@ -37,8 +39,8 @@ LEVEL 1  evidence-controlled adaptive decision   SCIENTIFIC OBJECT DEFINED; EMPI
 LEVEL 2  isolated modification                    ARCHITECTURE ONLY
 LEVEL 3  evidence → justified modification        NOT AUTHORIZED; CAUSAL COMPOSITION REQUIRED
 LEVEL 4A post-modification correctability         ROLE PROVISIONALLY FIXED; METRIC/CONTRACT UNFROZEN
-LEVEL 4B repeated correction                      EMPIRICALLY NOT AUTHORIZED
-LEVEL 5  justified transformability               THEORETICAL ONLY
+LEVEL 4B repeated correction                      CONCEPTUALLY DISTINCT; EMPIRICALLY UNTESTED
+LEVEL 5  justified transformability               NEXT ADVERSARIAL CONCEPTUAL FRONTIER
 LEVEL 6  adaptive viability / capability          NOT AUTHORIZED
 LEVEL 7  extreme adaptive systems                 NOT AUTHORIZED
 ```
@@ -101,7 +103,9 @@ PMC is not current performance, current capability, generic adaptability, or one
 
 Decision record: [`decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
 
-CCA provisionally distinguishes:
+## PMC versus repeated correction
+
+CCA canonically distinguishes:
 
 \[
 \boxed{
@@ -110,6 +114,24 @@ CCA provisionally distinguishes:
 \]
 
 and:
+
+\[
+\boxed{
+\text{capacity survived}\neq\text{capacity exercised}.
+}
+\]
+
+A valid repeated correction for opportunity \(e\) may establish local correction availability for \(e\), but not broad PMC over an untested future-correction scope.
+
+\[
+\boxed{
+N_{\mathrm{corrections}}\neq C_{\mathrm{corr}}.
+}
+\]
+
+Decision record: [`decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
+
+PMC preservation also does not imply improvement:
 
 \[
 \boxed{
@@ -123,12 +145,16 @@ and:
 G1 role                           PROVISIONALLY FIXED
 CCA causal composition principle  CANONICAL METHODOLOGICAL RULE
 PMC role                          PROVISIONALLY FIXED
+PMC ↔ repeated correction         CANONICAL CONCEPTUAL DISTINCTION
 G1 empirical result               UNOBSERVED
 G1 experiment contract            UNFROZEN
 PMC measurement / metric          UNFROZEN
+repeated-correction contract      UNFROZEN
+repeated-correction result        UNOBSERVED
 G1 implementation                 NOT AUTHORIZED
 Level-3 end-to-end composition    NOT AUTHORIZED
 repeated-correction execution     NOT AUTHORIZED
+transformability execution        NOT AUTHORIZED
 ```
 
 Therefore:
@@ -151,9 +177,9 @@ G_2
 
 ## Current conceptual frontier
 
-> **Is Post-Modification Correctability scientifically distinct from repeated correction, or is PMC merely the latent precondition for an actually observed repeated-correction episode?**
+> **Is repeated correction scientifically distinct from Justified Transformability, or can repeated valid corrections occur without establishing the capacity to reach appropriately different warranted states while preserving future correction pathways?**
 
-This is a scientific-object frontier, not authorization to execute a repeated-correction experiment.
+This is a scientific-object frontier, not authorization to execute a repeated-correction or transformability experiment.
 
 ## Evidence-to-authority rule
 
@@ -166,7 +192,7 @@ observation
 → next research state
 ```
 
-A result may close a hypothesis without validating its proposed replacement. A mechanism diagnosis may motivate a descendant without repairing the ancestor. An existence witness may show feasibility without authorizing a model experiment. Valid endpoint relations may coexist without validating an intervening separable transformation. A preserved conceptual role does not establish its metric or empirical value.
+A result may close a hypothesis without validating its proposed replacement. A mechanism diagnosis may motivate a descendant without repairing the ancestor. An existence witness may show feasibility without authorizing a model experiment. Valid endpoint relations may coexist without validating an intervening separable transformation. A preserved conceptual role does not establish its metric or empirical value. A realized repeated correction does not authorize broad correction-capacity or transformability claims beyond the scope it actually identifies.
 
 ## Source of current authority state
 
