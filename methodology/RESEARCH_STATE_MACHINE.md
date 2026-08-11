@@ -6,6 +6,8 @@ The purpose is procedural: **an unresolved scientific question must not become a
 
 The program is cumulative. A downstream claim can acquire authority only when the upstream scientific objects, measurement structures, and every separable causal transformation required by that claim have already been warranted.
 
+The program is also **returnable**: no current conceptual or methodological authority state is permanently immune to new discriminating evidence. Reopening is governed by [`RESEARCH_RETURNABILITY.md`](RESEARCH_RETURNABILITY.md).
+
 ## Program maturity ladder
 
 ```text
@@ -130,11 +132,15 @@ Before observing outcomes, the contract freezes at minimum:
 
 For repertoire-level claims, the contract must also freeze whatever prospective target/transformation scope and distinctness/warrant rules constitute the claimed repertoire.
 
+`CONTRACT_FROZEN` preserves the identity of that empirical object. It does not make the surrounding scientific program unreopenable. If later evidence warrants changed scientific or measurement assumptions, the program creates an explicit successor or amended object; it does not rewrite the executed contract.
+
 ### AUTHORIZED / EXECUTED / ANALYZED / CLOSED
 
-`AUTHORIZED` permits execution of the frozen object; it does not assert truth. `EXECUTED` records outcome-bearing execution or explicit implementation failure. `ANALYZED` applies frozen estimands/rules. `CLOSED` fixes the result under its stopping condition.
+`AUTHORIZED` permits execution of the frozen object; it does not assert truth. `EXECUTED` records outcome-bearing execution or explicit implementation failure. `ANALYZED` applies frozen estimands/rules. `CLOSED` fixes the historical result under its stopping condition and original object identity.
 
 Implementation failure must not be recoded as a scientific zero. Closed negative results must not be repaired post hoc.
+
+Closure is not epistemic irreversibility: new discriminating evidence may reopen the subject through a provenance-preserving successor object or explicit methodological/conceptual amendment.
 
 ## Authority transfer
 
@@ -258,9 +264,33 @@ Until prospectively frozen, an agent must not treat any of the following as suff
 
 Warrant semantics, material distinctness, target-family scope, preservation/reconstitution, counterfactual availability, representation, metric, estimator, and threshold remain unfrozen.
 
-## Frozen-object rule
+## Research returnability rule
 
-A `CLOSED` object is immutable as a scientific result. Permitted work after closure includes clearer documentation, provenance repair, bounded outcome-blind diagnosis, and new descendant objects. Changing estimands, models, gates, or post-selecting outcomes to rescue the ancestor is forbidden.
+Every conceptual, methodological, and scientific authority state in CCA is reopenable when new discriminating evidence reaches it.
+
+Reopening follows the same localization discipline as every other correction:
+
+1. localize the failure at the shallowest sufficient locus;
+2. discriminate with evidence that bears on that locus;
+3. reopen only the smallest boundary implicated;
+4. preserve unaffected structure and historical provenance;
+5. revise through an explicit amendment or successor object;
+6. retest consequences that depend on the revised relation;
+7. stop escalation when no discriminating residual remains.
+
+\[
+\boxed{\text{redescription}\neq\text{re-localization}}
+\]
+
+A deeper abstraction has no revision authority merely because it subsumes a shallower explanation.
+
+A `CLOSED` empirical result remains immutable as the historical result produced under its original contract. What remains reopenable is the scientific program around it: interpretation, scope, descendant hypotheses, conceptual roles, methodological rules, and successor contracts may return to adversarial review when warranted.
+
+\[
+\boxed{\text{historical immutability}\neq\text{epistemic irreversibility}}
+\]
+
+See [`RESEARCH_RETURNABILITY.md`](RESEARCH_RETURNABILITY.md).
 
 ## Agent / Codex guardrail
 
@@ -275,7 +305,7 @@ execution_state   = AUTHORIZED
 implementation_authorized = true
 ```
 
-An agent must not infer authorization from directory existence, an open issue, a plausible benchmark, available compute, model availability, endpoint success, conceptual-role adoption, or a theoretical metric.
+An agent must not infer authorization from directory existence, an open issue, a plausible benchmark, available compute, model availability, endpoint success, conceptual-role adoption, a theoretical metric, canonical status, or a decision having once been frozen.
 
 Specifically forbidden are:
 
@@ -284,7 +314,9 @@ Specifically forbidden are:
 - treating repeated correction history as the definition of JT;
 - treating state count as warranted repertoire;
 - defining warrantedness or distinctness retrospectively;
-- implementing JT while its target-family and counterfactual semantics remain unfrozen.
+- implementing JT while its target-family and counterfactual semantics remain unfrozen;
+- rewriting a closed result instead of creating a provenance-preserving successor;
+- reopening a stable localized result merely because a deeper redescription is available.
 
 ## Current application
 
@@ -298,7 +330,9 @@ Specifically forbidden are:
 
 The CCA Causal Composition Principle is canonical. PMC is role-fixed only. The PMC/repeated-correction distinction is canonical conceptually. Repeated correction remains empirically untested. JT is now role-fixed only; its warrant/distinctness semantics and measurement machinery remain unfrozen.
 
-The next conceptual frontier is:
+All of those current authority states are reopenable under the Research Returnability Rule if new discriminating evidence reaches them. Their current status remains the program's operative baseline until such evidence exists.
+
+The next conceptual frontier remains:
 
 > **Can the warrant, distinctness, repertoire, preservation, target-family, and counterfactual-availability semantics of Justified Transformability be specified without retrospective approval, trivial-difference inflation, or benchmark-defined reachability?**
 
