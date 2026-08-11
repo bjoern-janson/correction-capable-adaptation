@@ -12,6 +12,30 @@
 
 > **Never infer a downstream capability from an unvalidated upstream mechanism.**
 
+## Research returnability
+
+CCA applies its own correction discipline to the research program.
+
+> **Open the smallest boundary implicated by new discriminating evidence; revise what the evidence reaches; preserve everything not implicated; and preserve a warranted path for later reopening.**
+
+No conceptual, methodological, or scientific authority state is permanently immune to future evidence.
+
+`canonical`, `provisionally fixed`, and `contract frozen` record current authority; they do not mean epistemically irreversible.
+
+A closed empirical result remains immutable as the historical result produced under its original contract. New evidence reopens the subject through explicit descendants or amendments rather than by rewriting the past.
+
+\[
+\boxed{\text{historical immutability}\neq\text{epistemic irreversibility}}
+\]
+
+\[
+\boxed{\text{redescription}\neq\text{re-localization}}
+\]
+
+No deeper reopening is warranted when the shallowest sufficient localization survives discrimination and retest with no remaining discriminating residual.
+
+Methodological rule: [`methodology/RESEARCH_RETURNABILITY.md`](methodology/RESEARCH_RETURNABILITY.md).
+
 The program is one scientific evidence/dependency ladder:
 
 ```text
@@ -84,7 +108,7 @@ Decision record: [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](
 
 ## Capacity survived is not capacity exercised
 
-CCA canonically preserves:
+CCA currently preserves:
 
 \[
 \boxed{\mathrm{PMC}\neq\mathrm{Repeated\ Correction}}
@@ -174,16 +198,18 @@ JT must not become retrospective approval of whichever transformations happened 
 ## What has—and has not—advanced
 
 ```text
-G1 scientific role                 PROVISIONALLY FIXED
-CCA causal composition principle   CANONICAL METHODOLOGICAL RULE
-PMC conceptual role                PROVISIONALLY FIXED
-PMC / repeated-correction split    CANONICAL CONCEPTUAL DISTINCTION
-JT conceptual role                 PROVISIONALLY FIXED
+G1 scientific role                 PROVISIONALLY FIXED / REOPENABLE
+CCA causal composition principle   CANONICAL CURRENT RULE / REOPENABLE
+PMC conceptual role                PROVISIONALLY FIXED / REOPENABLE
+PMC / repeated-correction split    CANONICAL CURRENT DISTINCTION / REOPENABLE
+JT conceptual role                 PROVISIONALLY FIXED / REOPENABLE
 JT warrant / distinctness          UNDER ADVERSARIAL REVIEW
 G1 empirical result                UNOBSERVED
 all empirical contracts            UNFROZEN
 implementation / execution         NOT AUTHORIZED
 ```
+
+Reopenability does not mean instability. Current authority remains operative until new discriminating evidence reaches the relevant object.
 
 The core non-substitution chain remains:
 
@@ -209,7 +235,7 @@ G_2
 
 The **empirical authority frontier** remains upstream at untested G1. No empirical execution is authorized.
 
-The **conceptual frontier** is now:
+The **conceptual frontier** remains:
 
 > **Can the warrant, distinctness, repertoire, preservation, target-family, and counterfactual-availability semantics of Justified Transformability be specified without retrospective approval, trivial-difference inflation, or benchmark-defined reachability?**
 
@@ -228,6 +254,7 @@ These are adversarial provenance, not empirical experiments.
 ## Theory and method
 
 - **[CARS](CARS.md)** — correction and causal-authority discipline.
+- **[Research returnability](methodology/RESEARCH_RETURNABILITY.md)** — provenance-preserving reopening of the research program under new discriminating evidence.
 - **[MAGIKARP](MAGIKARP.md)** — provisional theory of adaptive structure and justified transformability; not yet validated.
 - **[Scientific object](SCIENTIFIC_OBJECT.md)** — causal dependency graph and claim boundaries.
 - **[Research state](RESEARCH_STATE.md)** — current authority and frontiers.
