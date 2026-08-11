@@ -51,6 +51,8 @@ Resolving the historical fork did not establish a positive G1 result.
 
 The nonempirical Level-0 candidate in [`G1_EVIDENCE_OBJECT_CONSTITUTION_ATTACK.md`](G1_EVIDENCE_OBJECT_CONSTITUTION_ATTACK.md) records one exact \(X\rightarrow\mathcal R\) construction that survived its declared object attacks; it freezes no contract and changes no empirical authority.
 
+The candidate/nonempirical successor in [`G1_SYSTEM_FACING_EXPOSURE_INTEGRITY_ATTACK.md`](G1_SYSTEM_FACING_EXPOSURE_INTEGRITY_ATTACK.md) attacks only \(\mathcal R\rightarrow S\) exposure integrity; it does not open \(S\rightarrow D\), freeze a contract, or change empirical authority.
+
 ## Evidence-codebook feasibility result
 
 A proposed construction uses a shared probe set \(X\) and candidate functions \(f_c\):
