@@ -53,6 +53,8 @@ The nonempirical Level-0 candidate in [`G1_EVIDENCE_OBJECT_CONSTITUTION_ATTACK.m
 
 The candidate/nonempirical successor in [`G1_SYSTEM_FACING_EXPOSURE_INTEGRITY_ATTACK.md`](G1_SYSTEM_FACING_EXPOSURE_INTEGRITY_ATTACK.md) attacks only \(\mathcal R\rightarrow S\) exposure integrity; it does not open \(S\rightarrow D\), freeze a contract, or change empirical authority.
 
+The nonexecutable candidate in [`G1_REALIZED_EXPOSURE_FIDELITY_ATTACK.md`](G1_REALIZED_EXPOSURE_FIDELITY_ATTACK.md) specifies how a future authorized apparatus must validate \(S_{\mathrm{specified}}\rightarrow S_{\mathrm{realized}}\); actual fidelity and \(S_{\mathrm{realized}}\rightarrow D\) remain blocked and unopened.
+
 ## Evidence-codebook feasibility result
 
 A proposed construction uses a shared probe set \(X\) and candidate functions \(f_c\):
