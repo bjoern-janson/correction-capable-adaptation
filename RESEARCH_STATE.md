@@ -8,6 +8,30 @@ This file is the human-readable program state. The machine-readable authority st
 
 The program advances only through independently validated causal prerequisites and warranted causal composition across the transformations a claim actually crosses.
 
+## Research returnability
+
+CCA now explicitly gives the research program itself a reopening path.
+
+No conceptual, methodological, or scientific authority state is permanently immune to new discriminating evidence.
+
+\[
+\boxed{\text{current authority}\neq\text{permanent immunity from revision}}
+\]
+
+Reopening follows CARS localization: open the smallest boundary implicated by the evidence, preserve unaffected structure and provenance, revise through an explicit amendment or successor, and stop when no discriminating residual remains.
+
+\[
+\boxed{\text{redescription}\neq\text{re-localization}}
+\]
+
+A closed empirical result remains immutable as the historical result under its original object identity and contract. The surrounding research remains reopenable through descendants, amended scope/interpretation, or revised conceptual and methodological rules.
+
+\[
+\boxed{\text{historical immutability}\neq\text{epistemic irreversibility}}
+\]
+
+Rule: [`methodology/RESEARCH_RETURNABILITY.md`](methodology/RESEARCH_RETURNABILITY.md).
+
 ## Research maturity ladder
 
 | Level | Scientific gate | Current state |
@@ -24,13 +48,15 @@ The program advances only through independently validated causal prerequisites a
 
 These levels are not averaged into a progress percentage.
 
+Every current role, distinction, and methodological rule in this table is reopenable under the Research Returnability Rule when new discriminating evidence reaches it. Until then, its current authority remains operative.
+
 \[
 \boxed{\text{empirical authority advances only when each prerequisite and required separable transformation is independently warranted}}
 \]
 
 ## CCA Causal Composition Principle
 
-CCA canonically adopts:
+CCA currently adopts:
 
 > **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
 
@@ -71,7 +97,7 @@ E\longrightarrow C_{\mathrm{selected}}.
 This is not a universal architectural claim. No G1 experiment has been frozen or executed.
 
 ```text
-G1 SCIENTIFIC ROLE       PROVISIONALLY FIXED
+G1 SCIENTIFIC ROLE       PROVISIONALLY FIXED / REOPENABLE
 G1 EMPIRICAL RESULT      UNOBSERVED
 G1 CONTRACT              UNFROZEN
 G1 IMPLEMENTATION        NOT AUTHORIZED
@@ -141,9 +167,9 @@ Its environment, system boundary, horizon, topology, dimensions, preservation/de
 
 Decision record: [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
 
-## Canonical PMC ↔ repeated-correction distinction
+## Current PMC ↔ repeated-correction distinction
 
-CCA canonically preserves:
+CCA currently preserves:
 
 \[
 \boxed{\mathrm{PMC}\neq\mathrm{Repeated\ Correction}}
@@ -305,29 +331,31 @@ These remain provenance rather than empirical experiments.
 ## Current authorization
 
 ```text
-PROGRAM OBJECT                         PROVISIONALLY FIXED
-ASI-0                                 CLOSED / IMMUTABLE
-G1 scientific role                    PROVISIONALLY FIXED
-CCA causal composition principle      CANONICAL METHODOLOGICAL RULE
-PMC conceptual role                   PROVISIONALLY FIXED
-PMC ↔ repeated correction distinction CANONICAL CONCEPTUAL DISTINCTION
-JT conceptual role                    PROVISIONALLY FIXED
-JT warrant / distinctness semantics   UNFROZEN / UNDER ADVERSARIAL REVIEW
-PMC metric / contract                 UNFROZEN
-repeated-correction contract          UNFROZEN
-repeated-correction empirical result  UNOBSERVED
-JT metric / contract                  UNFROZEN
-G1 experiment contract                UNFROZEN
-ECIM scientific contract              UNFROZEN
-ECIM implementation                   NOT AUTHORIZED
-repeated-correction experiment        NOT AUTHORIZED
-JT experiment                         NOT AUTHORIZED
-new empirical execution               NOT AUTHORIZED
+PROGRAM GOVERNANCE                      RETURNABLE UNDER NEW DISCRIMINATING EVIDENCE
+ASI-0 historical result                 CLOSED / IMMUTABLE AS HISTORICAL RESULT / DESCENDANTS REOPENABLE
+G1 scientific role                      PROVISIONALLY FIXED / REOPENABLE
+CCA causal composition principle        CURRENT CANONICAL METHODOLOGICAL RULE / REOPENABLE
+PMC conceptual role                     PROVISIONALLY FIXED / REOPENABLE
+PMC ↔ repeated correction distinction   CURRENT CANONICAL CONCEPTUAL DISTINCTION / REOPENABLE
+JT conceptual role                      PROVISIONALLY FIXED / REOPENABLE
+JT warrant / distinctness semantics     UNFROZEN / UNDER ADVERSARIAL REVIEW
+PMC metric / contract                   UNFROZEN
+repeated-correction contract            UNFROZEN
+repeated-correction empirical result    UNOBSERVED
+JT metric / contract                    UNFROZEN
+G1 experiment contract                  UNFROZEN
+ECIM scientific contract                UNFROZEN
+ECIM implementation                     NOT AUTHORIZED
+repeated-correction experiment          NOT AUTHORIZED
+JT experiment                           NOT AUTHORIZED
+new empirical execution                 NOT AUTHORIZED
 ```
+
+Research returnability changes the permanence semantics of scientific authority states. It does **not** authorize any empirical execution.
 
 ## Next conceptual frontier
 
-The next attack is:
+The next attack remains:
 
 > **Can the warrant, distinctness, repertoire, preservation, target-family, and counterfactual-availability semantics of Justified Transformability be specified without retrospective approval, trivial-difference inflation, or benchmark-defined reachability?**
 
