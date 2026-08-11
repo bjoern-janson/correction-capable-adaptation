@@ -49,6 +49,8 @@ no prospectively frozen G1 measurement/treatment contract
 
 Resolving the historical fork did not establish a positive G1 result.
 
+The nonempirical Level-0 candidate in [`G1_EVIDENCE_OBJECT_CONSTITUTION_ATTACK.md`](G1_EVIDENCE_OBJECT_CONSTITUTION_ATTACK.md) records one exact \(X\rightarrow\mathcal R\) construction that survived its declared object attacks; it freezes no contract and changes no empirical authority.
+
 ## Evidence-codebook feasibility result
 
 A proposed construction uses a shared probe set \(X\) and candidate functions \(f_c\):
