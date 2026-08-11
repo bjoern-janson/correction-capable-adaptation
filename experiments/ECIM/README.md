@@ -92,17 +92,27 @@ H_{1,P}:|\theta_P|<\epsilon_P.
 
 A non-significant difference is not enough to establish preservation.
 
-## Current blocker: G1 scientific object
+## Current G1 dependency
 
-Before an ontology or evidence intervention can be frozen, the project must choose between:
+CCA provisionally fixes the G1 scientific role as:
 
 \[
-G_1^{\mathrm{broad}}
-\quad\text{and}\quad
-G_1^{\mathrm{relational}}.
+\boxed{
+G_1
+=
+\text{warranted evidence acquiring causal control over a separable adaptive decision}
+}
 \]
 
-That choice determines which candidate ontologies are admissible.
+```text
+status:           role provisionally fixed / reopenable
+empirical status: untested
+contract:         unfrozen
+```
+
+The broad-versus-relational constitution fork is historical adversarial provenance. It was closed through the G1 adversarial lineage and is not the current blocker.
+
+The current empirical blocker is the absence of a prospectively frozen G1 measurement/treatment contract. Closing the historical fork did not establish G1 empirically and does not authorize ECIM execution.
 
 ## No execution authority
 
@@ -118,4 +128,4 @@ statistical machinery
 empirical execution
 ```
 
-The next legitimate action is conceptual measurement specification, not implementation.
+The next legitimate G1 action is prospective measurement/treatment-contract constitution under the current scoped role, not reopening the historical broad-versus-relational fork or beginning implementation.

@@ -1,5 +1,18 @@
 program: correction-capable-adaptation
-frontier: G1_evidence_use_object
+authority_source: research_state.json
+frontier:
+  type: EMPIRICAL_AUTHORITY_FRONTIER
+  maturity_level: 0
+  layer: measurement_and_scientific_object
+  object: warranted_evidence_acquiring_causal_control_over_a_separable_adaptive_decision
+  lifecycle_state: ROLE_PROVISIONALLY_FIXED
+  reopenable: true
+  operational_instantiation: candidate_selection
+  universal_architectural_claim: false
+  empirical_status: UNTESTED
+  contract_state: UNFROZEN
+  implementation_authorized: false
+  current_blocker: no_prospectively_frozen_G1_measurement_treatment_contract
 policy:
   aggregate_progress: false
   frontier_rule: first_unresolved_causal_prerequisite
@@ -55,16 +68,41 @@ entries:
     conclusion: relational_identification_can_exist_without_semantic_recoding
 
   - id: G1_OBJECT
-    object: meaning_of_evidence_use
-    status: unresolved_frontier
+    object: broad_vs_relational_G1_constitution
+    status: closed_historical_adversarial_provenance
+    historical_authority_state: unresolved_frontier
+    current_frontier: false
     alternatives:
       - broad
       - relational
-    blocks:
+    historical_blocks:
       - candidate_ontology
       - evidence_intervention_space
       - model_selection
       - empirical_execution
+    resolution: closed_through_G1_adversarial_lineage
+    decision_record: lineage/decisions/G1_LEVEL0_ROLE.md
+
+  - id: G1_ROLE
+    object: warranted_evidence_acquiring_causal_control_over_a_separable_adaptive_decision
+    status: ROLE_PROVISIONALLY_FIXED
+    reopenable: true
+    operational_instantiation: candidate_selection
+    universal_architectural_claim: false
+    empirical_status: UNTESTED
+    contract_state: UNFROZEN
+    implementation_authorized: false
+    current_empirical_blocker: no_prospectively_frozen_G1_measurement_treatment_contract
+    authority_gained:
+      - scoped_G1_scientific_role
+      - candidate_selection_as_current_operational_instantiation
+    authority_not_gained:
+      - positive_G1_result
+      - universal_candidate_selection_architecture
+      - modification_competence
+      - downstream_capability_or_viability
+      - empirical_execution_authorization
+    decision_record: lineage/decisions/G1_LEVEL0_ROLE.md
 
   - id: G2_DESIGN
     object: modification_identification
@@ -72,3 +110,29 @@ entries:
     requirement: direct_do_M_assay
     causal_form: do(M=m) -> (Y_T,Y_P)
     purpose: separate_selection_competence_from_modification_competence
+
+  - id: CCA_RETURN
+    object: research_program_returnability
+    status: CANONICAL_METHODOLOGICAL_RULE_REOPENABLE
+    previous_condition: canonical_and_frozen_language_could_be_interpreted_as_permanent_epistemic_closure
+    problem: permanent_epistemic_immunity_is_incompatible_with_applying_CCA_correction_discipline_to_the_research_program
+    current_rule: open_the_smallest_boundary_implicated_by_new_discriminating_evidence_revise_what_the_evidence_reaches_preserve_unaffected_structure_and_provenance_and_retain_a_warranted_path_for_future_reopening
+    authority_gained:
+      - current_conceptual_methodological_and_scientific_authority_states_are_reopenable_under_new_discriminating_evidence
+    authority_not_gained:
+      - permission_to_rewrite_closed_empirical_results
+      - permission_to_alter_executed_contracts_retrospectively
+      - automatic_reopening_from_deeper_redescription
+      - automatic_escalation_after_successful_localization
+      - empirical_authority_for_G1_PMC_repeated_correction_JT_C_improve_viability_AGI_or_ASI
+      - implementation_or_execution_authorization
+    preserved_structure:
+      - historical_result_identity
+      - prospective_contract_discipline
+      - anti_rescue_rule
+      - shallowest_sufficient_localization
+      - stopping_rule
+      - execution_authorization_requirements
+    reopening_condition: new_discriminating_evidence_reaches_the_rule
+    stopping_condition: localized_repair_survives_discrimination_and_retest_with_no_remaining_residual
+    decision_record: lineage/decisions/RESEARCH_RETURNABILITY_RULE.md

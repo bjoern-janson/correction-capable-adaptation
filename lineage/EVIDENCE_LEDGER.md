@@ -23,6 +23,7 @@ The program does not average evidence across maturity levels. Downstream authori
 | COMP-A9 | cross-level | G1/G2 bridge semantics | Closed adversarial provenance | Positive G1 and direct G2 can coexist while selection→deployment→modification linkage is absent or bypassed. | Endpoint success does not identify missing middle. | Universal bridge variable or gate. | Motivated architecture-necessity attack. |
 | COMP-A10 | cross-level | Architecture-independent bridge necessity | Closed adversarial provenance | Bridge identification is required for some separable architectures, unnecessary for direct update, malformed for inseparable architectures. | Architecture-conditional composition obligation. | Universal G1.5. | Supported composition law. |
 | CCA-COMP | cross-level | CCA Causal Composition Principle | **Canonical methodological rule** | Validated endpoints do not validate an intervening separable pathway. | Program-wide authority-propagation rule. | Any positive downstream result or universal bridge gate. | Governs all future contracts. |
+| CCA-RETURN | governance | Research Returnability Rule | **Canonical methodological rule / reopenable** | Canonical and frozen language could be interpreted as permanent epistemic closure, conflicting with application of CCA's correction discipline to the research program itself. | Current conceptual, methodological, and scientific authority states may reopen when new discriminating evidence reaches the smallest implicated boundary. | Retrospective rewriting of closed results or executed contracts; reopening from mere redescription; automatic escalation; empirical authority for any CCA object; implementation or execution authorization. | Preserves historical result identity, prospective contract discipline, anti-rescue, shallowest-sufficient localization, stopping, and execution gates; the rule itself remains reopenable under new discriminating evidence. |
 | G2-DESIGN | 2 | Modification identification | Fixed design principle / architecture only | Modification efficacy/isolation must be estimated through direct \(do(M=m)\). | Decision/modification separation. | Evidence that any modification is effective or how M acquired its value. | Future G2 must be direct-assignment identified. |
 | PMC-A11 | 4A | PMC scientific-object attack | Closed adversarial provenance | PMC is distinct from current performance, capability, plasticity, and one-shot correction; intrinsic-state scalar treatment is under-specified. | Supports relational/scoped PMC role. | Metric, \(\Omega\), boundary, horizon, topology, preservation result. | Supported role decision. |
 | PMC-ROLE | 4A | Post-Modification Correctability | **Role provisionally fixed / empirically untested** | A system may improve performance yet lose future correction pathways, or preserve correctability without immediate gain. | PMC may occupy the conceptual position immediately upstream of repeated correction. | Metric, scalar, improvement, repeated correction, transformability. | Operational machinery remains unfrozen. |
@@ -30,6 +31,40 @@ The program does not average evidence across maturity levels. Downstream authori
 | PMC-RC-DIST | 4A→4B | Capacity survived versus capacity exercised | **Canonical conceptual distinction** | PMC is latent/dispositional availability; repeated correction is realized subsequent valid correction. | Localizes authority from repeated-correction evidence. | Broad correction capacity; JT; `C_improve`. | Opened transformability frontier. |
 | JT-A13 | 4B→5 | Repeated correction versus Justified Transformability | Closed adversarial provenance | Repeated valid corrections can be scripted, narrow, finite-menu, path-trapping, or cumulatively repertoire-destroying; a branching design could in principle probe different warranted transformations without one instance traversing repeated history. | Establishes trajectory evidence ≠ repertoire evidence and challenges definitional dependence on repeated history. | JT metric, warrant semantics, distinctness, target family, preservation/reconstitution, `C_improve`. | Supported a role-level JT decision. |
 | JT-ROLE | 5 | Justified Transformability | **Role provisionally fixed / empirically untested** | JT is provisionally a warranted transformation-repertoire object distinct from PMC availability and repeated temporal exercise. | CCA may study prospectively relevant materially different warranted transformations that preserve or reconstitute future correction conditions. | Warrant semantics; distinctness; target family; repertoire metric; positive JT result; `C_improve`; viability. | Opens the warrant/distinctness semantics attack while leaving measurement machinery unfrozen. |
+
+## Research Returnability authority detail
+
+The `CCA-RETURN` decision gains authority only for disciplined reopening of current research authority.
+
+```text
+AUTHORITY GAINED
+  current conceptual, methodological, and scientific authority states
+  are reopenable when new discriminating evidence reaches them
+
+AUTHORITY NOT GAINED
+  retrospective rewriting of closed empirical results or executed contracts
+  reopening from mere redescription
+  automatic escalation after successful localization
+  empirical authority for G1, PMC, repeated correction, JT, C_improve,
+  viability, AGI, or ASI
+  implementation or execution authorization
+
+PRESERVED
+  historical result identity
+  prospective contract discipline
+  anti-rescue rule
+  shallowest-sufficient localization
+  stopping rule
+  execution-authorization requirements
+
+REOPENING CONDITION
+  new discriminating evidence reaches the Research Returnability Rule itself
+
+STOPPING CONDITION
+  localized repair survives discrimination and retest with no residual
+```
+
+Decision record: [`decisions/RESEARCH_RETURNABILITY_RULE.md`](decisions/RESEARCH_RETURNABILITY_RULE.md).
 
 ## Research maturity ladder
 
@@ -85,6 +120,7 @@ Repeated correction remains an upstream research-order prerequisite for JT autho
 
 Decision records:
 
+- [`decisions/RESEARCH_RETURNABILITY_RULE.md`](decisions/RESEARCH_RETURNABILITY_RULE.md)
 - [`decisions/G1_LEVEL0_ROLE.md`](decisions/G1_LEVEL0_ROLE.md)
 - [`decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md)
 - [`decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md)
