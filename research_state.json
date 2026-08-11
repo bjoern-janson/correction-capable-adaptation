@@ -28,7 +28,8 @@
     "stopping_rule": "If no discriminating residual remains after localized revision and retest, no deeper opening is currently warranted.",
     "historical_immutability_is_epistemic_irreversibility": false,
     "execution_authority_changed": false,
-    "document": "methodology/RESEARCH_RETURNABILITY.md"
+    "document": "methodology/RESEARCH_RETURNABILITY.md",
+    "decision_record": "lineage/decisions/RESEARCH_RETURNABILITY_RULE.md"
   },
   "causal_composition_principle": {
     "status": "CANONICAL_METHODOLOGICAL_RULE",

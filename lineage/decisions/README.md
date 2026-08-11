@@ -12,6 +12,7 @@ A decision record is not a declaration of permanent truth. It is a provenance-be
 
 | Decision | Current role | Reopenability |
 | --- | --- | --- |
+| [`RESEARCH_RETURNABILITY_RULE.md`](RESEARCH_RETURNABILITY_RULE.md) | Canonical rule for local closure plus global reopenability without rewriting closed results or contracts | Reopenable under new discriminating evidence |
 | [`G1_LEVEL0_ROLE.md`](G1_LEVEL0_ROLE.md) | Scoped role for warranted evidence acquiring causal control over a separable adaptive decision | Reopenable under new discriminating evidence |
 | [`CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](CCA_CAUSAL_COMPOSITION_PRINCIPLE.md) | Current canonical causal-composition rule | Reopenable under research returnability |
 | [`POST_MODIFICATION_CORRECTABILITY_ROLE.md`](POST_MODIFICATION_CORRECTABILITY_ROLE.md) | Provisional role for Post-Modification Correctability | Reopenable |
