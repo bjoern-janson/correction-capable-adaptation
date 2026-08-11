@@ -1,52 +1,78 @@
 # Scientific Contracts
 
-Experiments in this program begin with a **prospective scientific contract**, not code.
+> **Experiments begin with a prospective scientific identity, not with code.**
 
-The contract must define what would count before observing whether it happens.
+A CCA contract defines what would count **before** observing whether it happens.
 
-Contract work is governed by:
+It exists to make a later result interpretable, falsifiable, and historically reconstructible.
 
-- [`../methodology/RESEARCH_STATE_MACHINE.md`](../methodology/RESEARCH_STATE_MACHINE.md)
-- [`../research_state.json`](../research_state.json)
-- [`EXPERIMENT_RECORD_TEMPLATE.md`](EXPERIMENT_RECORD_TEMPLATE.md)
+## Governing documents
+
+- [`../methodology/RESEARCH_STATE_MACHINE.md`](../methodology/RESEARCH_STATE_MACHINE.md) — lifecycle and authorization.
+- [`../methodology/RESEARCH_RETURNABILITY.md`](../methodology/RESEARCH_RETURNABILITY.md) — how frozen objects remain scientifically reopenable through explicit successors without rewriting history.
+- [`../research_state.json`](../research_state.json) — machine-readable current authority.
+- [`EXPERIMENT_RECORD_TEMPLATE.md`](EXPERIMENT_RECORD_TEMPLATE.md) — contract record template.
+- [`../KINTSUGI.md`](../KINTSUGI.md) — repository lineage discipline.
 
 A contract may freeze only after the relevant scientific object has reached `MEASUREMENT_VALID`.
 
 ## Required order
 
 ```text
-1. scientific object
-2. causal path actually claimed
-3. separable variables / transformations in that path
-4. identification or validated-apparatus status of each required transformation
-5. admissible intervention space
-6. independent truth / warrant mapping where required
-7. target and protected outcomes
-8. admissible transformation class
-9. prospective nulls and disconfirmation criteria
-10. estimands and estimators
-11. uncertainty and multiplicity
-12. sample / randomization structure
-13. authorization rule
-14. implementation validation
-15. execution
+01  scientific object
+02  causal path actually claimed
+03  separable variables / transformations
+04  identification or apparatus status of every required transformation
+05  admissible intervention space
+06  independent truth / warrant mapping where required
+07  target and protected outcomes
+08  admissible transformation class
+09  prospective nulls and disconfirmation criteria
+10  estimands and estimators
+11  uncertainty and multiplicity
+12  sample / randomization structure
+13  authorization rule
+14  implementation validation
+15  execution
 ```
 
-Statistical machinery may implement the scientific object. It may not define the object retroactively.
+Statistical machinery may implement a scientific object. It may not define the object retroactively.
 
-## CCA Causal Composition Principle
+---
 
-Every contract is subject to the canonical rule:
+## What `CONTRACT_FROZEN` means
+
+A frozen contract protects the **identity of one empirical object**.
+
+It means that the prospective choices needed to interpret that experiment will not be silently changed after the outcome is observed.
+
+\[
+\boxed{\text{frozen contract}\neq\text{supported hypothesis}}
+\]
+
+It also does **not** mean the surrounding research program is frozen.
+
+If later evidence establishes that a different estimand, intervention, threshold, measurement structure, or scientific object is needed, CCA opens an explicit successor or amendment and preserves the original contract in the lineage.
+
+\[
+\boxed{\text{frozen contract}\neq\text{frozen research program}}
+\]
+
+This is the Kintsugi rule for empirical identity: **repair the lineage; do not repaint the ancestor.**
+
+---
+
+## CCA causal composition principle
+
+Every contract is subject to the current canonical rule:
 
 > **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
 
-Thus:
-
 \[
-\boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}.}
+\boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}}
 \]
 
-A contract must make the causal path reconstructible. For each separable transformation the claim crosses, it must record one of:
+For every separable transformation crossed by the claim, the contract must record one of:
 
 ```text
 INDEPENDENTLY_IDENTIFIED
@@ -54,34 +80,54 @@ VALIDATED_APPARATUS_GUARANTEE
 NOT_CROSSED_BY_CLAIM
 ```
 
-`VALIDATED_APPARATUS_GUARANTEE` requires prospective specification plus independent validation or mechanical verification over the claimed domain. Merely declaring a deterministic mapping is insufficient.
+`VALIDATED_APPARATUS_GUARANTEE` requires prospective specification plus independent validation or mechanical verification over the claimed domain.
 
-If a transformation is `NOT_CROSSED_BY_CLAIM`, the claim must stop before that transformation. Exclusion narrows the claim; it does not validate the edge.
+`NOT_CROSSED_BY_CLAIM` narrows the claim. It does not validate the edge.
 
-Canonical decision: [`../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+Decision record: [`../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](../lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+
+---
 
 ## Contract lifecycle
 
-A typical empirical object should move through:
-
 ```text
 PROPOSED
-→ ADVERSARIAL_REVIEW
-→ MEASUREMENT_VALID
-→ CONTRACT_FROZEN
-→ AUTHORIZED
-→ EXECUTED
-→ ANALYZED
-→ CLOSED
+    ↓
+ADVERSARIAL_REVIEW
+    ↓
+MEASUREMENT_VALID
+    ↓
+CONTRACT_FROZEN
+    ↓
+AUTHORIZED
+    ↓
+EXECUTED
+    ↓
+ANALYZED
+    ↓
+CLOSED
 ```
 
-`CONTRACT_FROZEN` does not mean the hypothesis is supported. It means the experiment has a prospective identity stable enough to execute without outcome-dependent redefinition.
+The states carry different kinds of authority:
 
-`AUTHORIZED` is a separate state. It requires both the frozen contract and satisfaction of the program's upstream dependencies.
+| State | Meaning |
+| --- | --- |
+| `PROPOSED` | A candidate object exists. Nothing empirical follows. |
+| `ADVERSARIAL_REVIEW` | The object is being attacked before implementation convenience can define it. |
+| `MEASUREMENT_VALID` | The intended object is identifiable in principle under the declared measurement structure. |
+| `CONTRACT_FROZEN` | The empirical object now has a stable prospective identity. |
+| `AUTHORIZED` | Execution is explicitly permitted; truth is not implied. |
+| `EXECUTED` | Outcome-bearing execution occurred, or implementation failure was recorded. |
+| `ANALYZED` | Frozen analysis rules were applied. |
+| `CLOSED` | The historical result is fixed under its original identity and stopping condition. |
+
+A closed result can generate descendants. It cannot be repaired retrospectively under the same identity.
+
+---
 
 ## Contract template
 
-Every future contract should state:
+Every empirical contract should make the following reconstructible.
 
 ### Status
 
@@ -101,17 +147,15 @@ What proposition is actually under test?
 
 ### Causal path and separability
 
-What object-level causal path does the claim assert? Which nodes/transformations are prospectively treated as separable?
-
-For every separable transformation crossed by the claim, what warrants authority to propagate across it?
+What object-level causal path does the claim assert? Which transformations are treated as separable? What warrants crossing each one?
 
 ### Measurement structure
 
-What observations constitute the object? What transformations preserve its identity?
+What observations constitute the scientific object? Which transformations preserve its identity?
 
 ### Intervention
 
-What can vary under `do(·)` and what is matched?
+What can vary under `do(·)`? What is held fixed or matched?
 
 ### Estimand
 
@@ -119,40 +163,48 @@ What causal or descriptive quantity is to be recovered?
 
 ### Disconfirmation
 
-What evidence would count against the proposed mechanism?
+What evidence would count against the object, mechanism, or claimed relation?
 
 ### Protected structure
 
-What must remain unchanged, and within what prospectively fixed tolerance?
+What must remain unchanged, and under what prospectively fixed tolerance or equivalence relation?
 
 ### Failure validity
 
-Which implementation defects make the scientific object `UNOBSERVED/INVALID` rather than zero or failed?
+Which implementation defects make the scientific object `UNOBSERVED/INVALID` rather than scientifically zero?
 
 ### Authorization
 
-What exact conjunction of results and path-validity conditions permits the next experimental claim?
+What exact conjunction of results and path-validity conditions permits the next claim or execution step?
+
+---
 
 ## No compensatory scoring
 
 Where several causal prerequisites are required, authorization is conjunctive.
 
-For an end-to-end path \(\pi\), the generic form is:
+For an end-to-end path \(\pi\):
 
 \[
 \mathrm{ADVANCE}_{\pi}
 \iff
 \left(\bigwedge_k G_k\right)
 \land
-\mathrm{PathValid}(\pi).
+\mathrm{PathValid}(\pi)
 \]
 
-A strong downstream score cannot compensate for failure of a required upstream mechanism or an unvalidated separable transformation.
+A strong downstream score cannot compensate for a failed upstream prerequisite or an unvalidated separable transformation.
+
+---
 
 ## Implementation gate
 
-Empirical implementation for execution is not authorized merely because a contract directory exists.
+A contract directory, available compute, an open issue, a model, or a plausible benchmark does not authorize empirical implementation.
 
-The relevant object must satisfy the machine-readable authorization requirements in `research_state.json`.
+Before execution work, check [`../research_state.json`](../research_state.json).
 
-If the measurement object is unresolved, the contract remains unfrozen, or a claimed separable transformation lacks the required status, implementation work must not choose those scientific decisions implicitly through benchmark, model, prompt, data, or apparatus convenience.
+If the measurement object is unresolved, the contract remains unfrozen, or a required causal transformation lacks authority, implementation must not make those scientific decisions implicitly through code, prompts, data, or apparatus convenience.
+
+\[
+\boxed{\textbf{Maximum ambition; minimum unearned authority.}}
+\]
