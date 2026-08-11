@@ -1,64 +1,89 @@
 # Contributing
 
-Contributions are welcome when they improve scientific clarity, falsifiability, measurement validity, provenance, or public reproducibility.
+> **Maximum ambition; minimum unearned authority.**
 
-Before proposing empirical implementation, read:
+Contributions are welcome when they improve scientific clarity, falsifiability, measurement validity, provenance, public reproducibility, or the program's ability to remain corrigible without rewriting its history.
 
-- [`RESEARCH_STATE.md`](RESEARCH_STATE.md)
-- [`research_state.json`](research_state.json)
-- [`methodology/RESEARCH_STATE_MACHINE.md`](methodology/RESEARCH_STATE_MACHINE.md)
-- [`lineage/EVIDENCE_LEDGER.md`](lineage/EVIDENCE_LEDGER.md)
+CCA prefers **small, auditable scientific repairs** over large narrative rewrites that silently change object identity.
+
+## Before contributing
+
+Read the current authority surfaces first:
+
+- [`README.md`](README.md) — program map.
+- [`RESEARCH_STATE.md`](RESEARCH_STATE.md) — human-readable current state.
+- [`research_state.json`](research_state.json) — machine-readable authority and implementation policy.
+- [`CARS.md`](CARS.md) — localization, discrimination, minimal revision, stopping.
+- [`methodology/README.md`](methodology/README.md) — methodology map.
+- [`methodology/RESEARCH_STATE_MACHINE.md`](methodology/RESEARCH_STATE_MACHINE.md) — lifecycle and execution authority.
+- [`methodology/RESEARCH_RETURNABILITY.md`](methodology/RESEARCH_RETURNABILITY.md) — reopening without historical rewriting.
+- [`lineage/EVIDENCE_LEDGER.md`](lineage/EVIDENCE_LEDGER.md) — what has and has not actually been established.
+- [`KINTSUGI.md`](KINTSUGI.md) — repository lineage discipline.
 
 ## Highest-value contributions
 
 Good contributions typically do one of the following:
 
-- identify a hidden confound or non-identifiability problem;
-- construct a counterexample to a proposed measurement or mechanism;
-- improve a prospective contract before outcomes are observed;
-- provide independent validation of an already frozen object;
-- improve public explanations without strengthening the scientific claim;
-- add provenance that makes a result easier to reconstruct;
-- make the research authority state harder to violate accidentally.
+- identify a hidden confound, collapsed distinction, or non-identifiability problem;
+- construct a counterexample to a proposed measurement, mechanism, or conceptual equivalence;
+- improve a prospective scientific contract before outcomes are observed;
+- provide independent validation of an already constituted relation;
+- sharpen a scientific object without making it larger than the evidence permits;
+- improve public explanation **without strengthening the scientific claim**;
+- repair provenance or navigation so a result is easier to reconstruct;
+- make accidental authority leakage or unauthorized implementation harder;
+- identify stale documentation that no longer matches `research_state.json`.
 
 ## Scientific discipline
 
-Please preserve these rules:
+Preserve these non-substitutions:
 
 ```text
-negative result ≠ failed project
-surprise ≠ identified mechanism
-selection variation ≠ warranted evidence use
-non-significance ≠ preservation
-capability improvement ≠ justified adaptation
-ASI-0 ≠ ASI evidence
+negative result                ≠ failed project
+surprise                       ≠ identified mechanism
+selection variation            ≠ warranted evidence use
+non-significance               ≠ preservation
+current performance            ≠ post-modification correctability
+one realized correction        ≠ broad correction capacity
+repeated correction            ≠ justified transformability
+many reachable states          ≠ warranted transformation repertoire
+capability improvement         ≠ justified adaptation
+available compute              ≠ authorization
+historical immutability        ≠ epistemic irreversibility
+reopenability                  ≠ permission to rewrite a closed result
 ```
 
-Do not rescue a closed experiment by altering its estimand, gate, model, or interpretation after the outcome.
+Do not rescue a closed experiment by altering its estimand, gate, model, intervention, measurement structure, or interpretation after seeing the outcome.
 
-A new idea motivated by a failure should normally be proposed as a **new prospective object**.
+A new idea motivated by failure should normally become an explicit **descendant, amendment, or successor object** with preserved provenance.
 
-## Research maturity and lifecycle
+\[
+\boxed{\text{redescription}\neq\text{re-localization}}
+\]
 
-Every empirical proposal must declare both:
+A deeper abstraction has no revision authority merely because it subsumes a successful local explanation.
 
-1. its **maturity level** in the program ladder; and
-2. its **lifecycle state**.
+## Research maturity
 
-Maturity levels:
+CCA's current evidence-ordering ladder is:
 
 ```text
-0 measurement validity
-1 evidence-controlled selection
-2 isolated modification
-3 evidence → justified modification
-4 repeated correction
-5 justified transformability
-6 adaptive viability / capability
-7 extreme adaptive systems
+0   measurement / scientific-object validity
+1   evidence-controlled adaptive decision
+2   isolated modification
+3   evidence → justified modification
+4A  post-modification correctability
+4B  repeated correction
+5   justified transformability
+6   adaptive viability / capability
+7   extreme adaptive-system stress tests
 ```
 
-Lifecycle:
+The ladder is an evidence-ordering discipline, not automatically a universal decomposition of adaptive systems.
+
+## Lifecycle
+
+Every empirical object moves through an explicit lifecycle:
 
 ```text
 PROPOSED
@@ -71,15 +96,20 @@ PROPOSED
 → CLOSED
 ```
 
-Downstream work is blocked by unresolved upstream prerequisites.
+These states are not interchangeable.
+
+- `CONTRACT_FROZEN` preserves the identity of one prospective empirical object.
+- `AUTHORIZED` permits execution; it does not imply truth.
+- `CLOSED` preserves the historical result under its original identity.
+- all current conceptual and methodological authority remains reopenable under new discriminating evidence through the research-returnability rule.
 
 ## Implementation authorization
 
-The existence of an idea, issue, benchmark, directory, model, or available compute does **not** authorize empirical implementation.
+The existence of an idea, issue, benchmark, directory, model, available compute, or attractive theory does **not** authorize empirical implementation.
 
-For an empirical experiment to be implemented for execution, its machine-readable state must satisfy the authorization requirements in `research_state.json`.
+Before execution work, check [`research_state.json`](research_state.json).
 
-At minimum:
+At minimum, the relevant empirical object must satisfy the machine-readable authorization requirements, including:
 
 ```text
 measurement_state = MEASUREMENT_VALID or later
@@ -88,32 +118,59 @@ execution_state   = AUTHORIZED
 implementation_authorized = true
 ```
 
-If those conditions are not met, implementation contributions must be restricted to non-scientific scaffolding that cannot select the unresolved scientific object implicitly.
+If those conditions are not met, implementation must not choose unresolved scientific decisions implicitly through benchmark, model, prompt, data, or apparatus convenience.
 
 ## Current frontier
 
-The active unresolved question is measurement-level:
+### Empirical authority frontier
+
+G1 remains **empirically untested** and contract-unfrozen:
 
 \[
-G_1^{\mathrm{broad}}
-\quad\text{vs.}\quad
-G_1^{\mathrm{relational}}.
+\boxed{G_1=\text{warranted evidence acquiring causal control over a separable adaptive decision}}
 \]
 
-Contributions that clarify this fork, produce impossibility/existence results, or sharpen the measurement object are more useful right now than model, prompt, or benchmark implementations.
+No empirical G1 execution is authorized.
+
+### Conceptual frontier
+
+The active conceptual question is Justified Transformability:
+
+> **Can the warrant, distinctness, repertoire, preservation, target-family, and counterfactual-availability semantics of JT be specified without retrospective approval, trivial-difference inflation, or benchmark-defined reachability?**
+
+Contributions should treat this as a scientific-object problem. A compelling JT definition does not authorize a JT benchmark or implementation.
 
 ## Pull requests
 
-A pull request must state:
+A research PR should make its scientific effect auditable.
 
-1. **Scientific object:** what object or communication problem does this address?
-2. **Maturity level:** which program gate does it belong to?
-3. **Lifecycle state:** what state is the object in before and after this PR?
-4. **Authority change:** what authority, if any, does this PR claim to change?
-5. **Nonclaims:** what remains explicitly unauthorized?
-6. **Frozen-object impact:** does it alter a frozen or closed object? If yes, why is that scientifically legitimate?
-7. **Validation:** how was the change checked?
+Include:
 
-A PR must not silently advance a lifecycle state. State transitions require evidence or contract completion appropriate to the transition.
+1. **Scientific object** — what object, distinction, or communication problem does this address?
+2. **Maturity level** — where does it sit in the evidence-ordering ladder?
+3. **Lifecycle state** — what is the object's state before and after the PR?
+4. **Failure locus** — if this is a correction, what is the shallowest sufficient localization?
+5. **Discriminating evidence** — what warrants the change rather than merely redescribing the problem?
+6. **Authority change** — what authority is gained, withdrawn, narrowed, or transferred?
+7. **Nonclaims** — what remains explicitly unsupported or unauthorized?
+8. **Lineage impact** — what ancestor or previous decision remains preserved?
+9. **Execution impact** — does anything become implementable or executable? If not, say so explicitly.
+10. **Validation** — how was the change checked?
 
-Small, auditable changes are preferred to large narrative rewrites.
+A PR must not silently advance a lifecycle state.
+
+## Kintsugi rule
+
+A good contribution leaves the repository easier to understand **because the repair is visible**.
+
+```text
+old state preserved
+→ reason for reopening visible
+→ repair explicit
+→ new authority scoped
+→ history still reconstructible
+```
+
+\[
+\boxed{\textbf{Commit hard. Preserve lineage. Reopen on evidence.}}
+\]
