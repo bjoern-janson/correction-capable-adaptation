@@ -54,6 +54,14 @@ scientific proposition
 
 An error indicates that something failed. It does not identify its cause.
 
+A deeper description does not reopen a successful localization merely because it subsumes it:
+
+\[
+\boxed{\text{redescription}\neq\text{re-localization}}
+\]
+
+If the localized revision survives discrimination and retest with no remaining discriminating residual, escalation stops. Deeper reopening requires new evidence or a residual that the shallower account cannot absorb.
+
 ## Authority discipline
 
 Evidence may increase authority only along dimensions it can identify.
@@ -120,6 +128,38 @@ When a validated contradiction or prediction failure appears:
 
 Revision depth should track evidence strength, persistence, and scope.
 
+The operating rule is:
+
+> **Open the smallest boundary implicated by the evidence. Preserve the rest, and preserve its reopenability too.**
+
+Minimal revision is minimal in justified structural scope, not necessarily small in numerical magnitude.
+
+## Research-program returnability
+
+No current conceptual or methodological state is permanently immune to future discriminating evidence.
+
+`canonical`, `provisionally fixed`, `measurement valid`, and `contract frozen` are current authority states, not declarations of permanent truth.
+
+Reopening obeys localization:
+
+```text
+new discriminating evidence or residual
+→ localize
+→ reopen smallest implicated boundary
+→ preserve unaffected structure and provenance
+→ revise through explicit amendment / successor
+→ retest
+→ stop when no discriminating residual remains
+```
+
+A closed empirical result remains immutable as the historical result under its original contract. Reopening the research program does not permit rewriting that result; it permits new descendants, amended interpretations, revised scope claims, and methodological or conceptual corrections with explicit lineage.
+
+\[
+\boxed{\text{historical immutability}\neq\text{epistemic irreversibility}}
+\]
+
+See [`methodology/RESEARCH_RETURNABILITY.md`](methodology/RESEARCH_RETURNABILITY.md).
+
 ## Anti-rescue rule
 
 A negative result may motivate a new prospective scientific object. It may not be rescued by changing the original estimand, gate, model, intervention class, or interpretation after observing the outcome.
@@ -134,6 +174,8 @@ negative result
 negative result
 ↛ retroactive benchmark repair
 ```
+
+Research returnability does not weaken this rule. It creates a path back into inquiry without changing the identity of the closed ancestor.
 
 ## Research-program recursion
 
