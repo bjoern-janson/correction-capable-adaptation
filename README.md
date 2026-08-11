@@ -1,114 +1,149 @@
 # Correction-Capable Adaptation
 
-**A research program on whether adaptive systems can become more capable and viable while preserving their capacity to incorporate justified correction.**
+> **Can an adaptive system become more capable while preserving its capacity to incorporate justified correction?**
 
-> We study whether adaptive systems can incorporate justified correction, produce effective change, preserve protected structure, retain the capacity for further correction, and preserve a warranted repertoire of future transformation—and whether those properties contribute to viable adaptation and capability.
+CCA is a research program about **warranted change under preserved corrigibility**. It studies how evidence can acquire causal control, how consequential modification can remain scientifically identified, and how a system can preserve or reconstitute the conditions required for future justified correction.
 
-## Core question
+The governing discipline is simple:
 
-> **Can an adaptive system increase its future viability while remaining capable of incorporating justified correction?**
+\[
+\boxed{\textbf{Maximum ambition; minimum unearned authority.}}
+\]
 
-## Core rule
+And the repository itself follows the same rule:
 
-> **Never infer a downstream capability from an unvalidated upstream mechanism.**
+\[
+\boxed{\textbf{Commit hard. Preserve lineage. Reopen on evidence.}}
+\]
 
-## Research returnability
+---
 
-CCA applies its own correction discipline to the research program.
+## The Kintsugi repository
 
-> **Open the smallest boundary implicated by new discriminating evidence; revise what the evidence reaches; preserve everything not implicated; and preserve a warranted path for later reopening.**
+CCA does not hide its fractures.
 
-No conceptual, methodological, or scientific authority state is permanently immune to future evidence.
+Negative results, abandoned constructions, repaired definitions, revised rules, and reopened assumptions remain visible as scientific lineage. A correction creates a successor; it does not manufacture a cleaner past.
 
-`canonical`, `provisionally fixed`, and `contract frozen` record current authority; they do not mean epistemically irreversible.
+```text
+PAST      preserve
+PRESENT   commit
+FUTURE    reopen on evidence
+```
 
-A closed empirical result remains immutable as the historical result produced under its original contract. New evidence reopens the subject through explicit descendants or amendments rather than by rewriting the past.
+This is **local closure + global reopenability**:
+
+- a local attack stops when no discriminating residual remains;
+- a current rule can bind without becoming sacred;
+- a frozen contract preserves one experiment's identity;
+- a closed result remains historically immutable;
+- future evidence may reopen the surrounding science through explicit descendants or amendments.
 
 \[
 \boxed{\text{historical immutability}\neq\text{epistemic irreversibility}}
 \]
 
+See **[Kintsugi](KINTSUGI.md)** and **[Research Returnability](methodology/RESEARCH_RETURNABILITY.md)**.
+
+---
+
+## At a glance
+
+| Object | Current authority | Empirical status |
+| --- | --- | --- |
+| **G1** — warranted evidence control over a separable adaptive decision | Role provisionally fixed / reopenable | Untested; contract unfrozen |
+| **CCA causal composition principle** | Canonical current methodological rule / reopenable | Governs future causal claims |
+| **PMC** — Post-Modification Correctability | Role provisionally fixed / reopenable | Untested; metric/contract unfrozen |
+| **Repeated correction** | Conceptually distinct from PMC | Untested |
+| **JT** — Justified Transformability | Role provisionally fixed / reopenable | Warrant/distinctness semantics under review |
+| **Adaptive viability / capability** | Downstream research target | Not authorized |
+| **AGI / recursive improvement / ASI** | Stress-test regimes only | Not authorized |
+
+**No new empirical execution is currently authorized.** The machine-readable source of truth is [`research_state.json`](research_state.json).
+
+---
+
+## Scientific spine
+
+```mermaid
+flowchart TD
+    L0[Level 0<br/>Measurement / scientific-object validity]
+    L1[Level 1<br/>Evidence-controlled adaptive decision]
+    L2[Level 2<br/>Isolated modification]
+    L3[Level 3<br/>Evidence → justified modification]
+    L4A[Level 4A<br/>Post-Modification Correctability]
+    L4B[Level 4B<br/>Repeated correction]
+    L5[Level 5<br/>Justified Transformability]
+    L6[Level 6<br/>Adaptive viability / capability]
+    L7[Level 7<br/>Extreme-system stress tests]
+
+    L0 --> L1 --> L2 --> L3 --> L4A --> L4B --> L5 --> L6 --> L7
+```
+
+This ladder is an **evidence-ordering policy**, not automatically a universal metaphysical decomposition of adaptive systems.
+
+A failed upstream prerequisite blocks authority downstream. Progress is not an average score.
+
+---
+
+## Core scientific rules
+
+### 1. Never infer downstream capability from an unvalidated upstream mechanism
+
+A successful endpoint cannot rescue an unidentified path.
+
+### 2. Validated endpoints do not validate the pathway
+
+CCA canonically adopts:
+
+> **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
+
+\[
+\boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}}
+\]
+
+Decision record: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+
+### 3. Localize before escalating
+
+CCA uses the shallowest sufficient failure locus and revises only what the evidence reaches.
+
 \[
 \boxed{\text{redescription}\neq\text{re-localization}}
 \]
 
-No deeper reopening is warranted when the shallowest sufficient localization survives discrimination and retest with no remaining discriminating residual.
+A deeper explanation does not earn revision authority merely because it is more general.
 
-Methodological rule: [`methodology/RESEARCH_RETURNABILITY.md`](methodology/RESEARCH_RETURNABILITY.md).
+### 4. Reopenability does not erase commitment
 
-The program is one scientific evidence/dependency ladder:
+Current authority remains operative until new discriminating evidence reaches it.
 
-```text
-LEVEL 0  MEASUREMENT / SCIENTIFIC-OBJECT VALIDITY
-         What exactly is being identified?
-             ↓
-LEVEL 1  EVIDENCE-CONTROLLED ADAPTIVE DECISION
-         Does warranted evidence acquire causal control?
-             ↓
-LEVEL 2  ISOLATED MODIFICATION
-         Does direct do(M=m) cause the intended effect
-         while preserving protected behavior?
-             ↓
-LEVEL 3  EVIDENCE → JUSTIFIED MODIFICATION
-         Can the validated relations be causally composed
-         across every separable transformation they cross?
-             ↓
-LEVEL 4A POST-MODIFICATION CORRECTABILITY
-         After consequential change, do the conditions
-         required for future warranted correction remain available?
-             ↓
-LEVEL 4B REPEATED CORRECTION
-         Are those conditions actually exercised again?
-             ↓
-LEVEL 5  JUSTIFIED TRANSFORMABILITY
-         What warranted transformation repertoire remains reachable,
-         including materially different destinations that preserve
-         or reconstitute future correction conditions?
-             ↓
-LEVEL 6  ADAPTIVE VIABILITY / CAPABILITY
-         Does correction-capable adaptation improve future viability?
-             ↓
-LEVEL 7  EXTREME ADAPTIVE SYSTEMS
-         AGI / recursive improvement / ASI as stress tests
-```
+\[
+\boxed{\text{current authority}\neq\text{permanent immunity from revision}}
+\]
 
-A failed upstream gate blocks authority downstream. Progress is not an average score. The ladder is also an **evidence-ordering policy**; it must not automatically be read as a universal metaphysical decomposition of adaptive systems.
+---
 
-## Scoped G1 role
+## The current scientific objects
 
-CCA provisionally adopts:
+### G1 — warranted causal evidence control
+
+CCA's first empirical pathway is currently instantiated as candidate selection:
 
 \[
 \boxed{G_1=\text{warranted evidence acquiring causal control over a separable adaptive decision}}
 \]
 
-The current operational instantiation is candidate selection, not a universal architecture.
+Candidate selection is an operational instantiation, **not** a universal architecture of correction.
 
 Decision record: [`lineage/decisions/G1_LEVEL0_ROLE.md`](lineage/decisions/G1_LEVEL0_ROLE.md).
 
-## CCA Causal Composition Principle
+### PMC — capacity survived is not capacity exercised
 
-> **A downstream causal claim may not inherit authority from an upstream validated relation across a separable transformation unless that transformation is independently identified, prospectively specified and validated as an apparatus guarantee, or explicitly excluded from the claim.**
-
-\[
-\boxed{\text{validated endpoints}\not\Rightarrow\text{validated pathway}.}
-\]
-
-Decision record: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
-
-## Post-Modification Correctability
-
-CCA provisionally adopts **PMC** with the role:
+Post-Modification Correctability asks:
 
 > **After a consequential change, do the conditions required for future warranted correction remain available?**
 
-PMC is not current performance, current capability, generic plasticity, or one-shot correction success. Its measurement machinery remains unfrozen.
-
-Decision record: [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md).
-
-## Capacity survived is not capacity exercised
-
-CCA currently preserves:
+CCA preserves:
 
 \[
 \boxed{\mathrm{PMC}\neq\mathrm{Repeated\ Correction}}
@@ -117,26 +152,23 @@ CCA currently preserves:
 or:
 
 \[
-\boxed{\text{capacity survived}\neq\text{capacity exercised}.}
+\boxed{\text{capacity survived}\neq\text{capacity exercised}}
 \]
 
-A valid repeated correction provides local evidence that a relevant correction path existed for the realized opportunity, but not broad PMC over untested future opportunities.
+A realized repeated correction provides only opportunity-local evidence unless broader future-correction scope is independently established.
 
-\[
-\boxed{N_{\mathrm{corrections}}\neq C_{\mathrm{corr}}.}
-\]
+Decision records:
 
-Decision record: [`lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md).
+- [`lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md`](lineage/decisions/POST_MODIFICATION_CORRECTABILITY_ROLE.md)
+- [`lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md`](lineage/decisions/PMC_REPEATED_CORRECTION_DISTINCTION.md)
 
-## Trajectory evidence is not repertoire evidence
+### JT — trajectory evidence is not repertoire evidence
 
-CCA now provisionally adopts **Justified Transformability (JT)** as a distinct repertoire-level conceptual object.
-
-Its role is:
+Justified Transformability asks:
 
 > **What prospectively relevant warranted transformations remain reachable, and can materially different warranted destinations be reached while preserving or reconstituting future correction conditions?**
 
-The conceptual split is:
+CCA currently distinguishes:
 
 \[
 \boxed{\mathrm{PMC}=\text{availability}}
@@ -153,93 +185,76 @@ The conceptual split is:
 Therefore:
 
 \[
-\boxed{\mathrm{RepeatedCorrection}\not\Rightarrow\mathrm{JT}}
+\boxed{\text{trajectory evidence}\neq\text{repertoire evidence}}
 \]
 
-and a prospectively established repertoire claim need not imply an observed repeated temporal history:
+and:
 
 \[
-\boxed{\mathrm{JT}\not\Rightarrow\mathrm{ObservedRepeatedCorrectionHistory}.}
+\boxed{\text{many reachable states}\not\Rightarrow\text{many warranted transformations}}
 \]
 
-Compactly:
-
-\[
-\boxed{\text{trajectory evidence}\neq\text{repertoire evidence}.}
-\]
-
-CCA may still require repeated correction before granting JT authority as a conservative evidence-ordering policy. That does not make repeated temporal history part of JT's universal definition.
+JT's warrant, material-distinctness, target-family, preservation/reconstitution, reachability, counterfactual-availability, metric, and empirical-contract semantics remain unfrozen.
 
 Decision record: [`lineage/decisions/JUSTIFIED_TRANSFORMABILITY_ROLE.md`](lineage/decisions/JUSTIFIED_TRANSFORMABILITY_ROLE.md).
 
-### What remains unresolved for JT
+---
 
-No semantics are yet frozen for:
+## Current frontier
 
-```text
-warranted transformation
-materially / appropriately different
-target or transformation family
-reachable-state / transformation representation
-repertoire breadth / diversity / coverage
-preservation versus reconstitution
-counterfactual availability
-metric / estimand / estimator / threshold
-```
+### Empirical authority frontier
 
-In particular:
+**G1 remains empirically untested.** No G1 experiment contract is frozen and no empirical execution is authorized.
 
-\[
-\boxed{\text{many reachable states}\not\Rightarrow\text{many warranted transformations}.}
-\]
-
-JT must not become retrospective approval of whichever transformations happened to succeed.
-
-## What has—and has not—advanced
-
-```text
-G1 scientific role                 PROVISIONALLY FIXED / REOPENABLE
-CCA causal composition principle   CANONICAL CURRENT RULE / REOPENABLE
-PMC conceptual role                PROVISIONALLY FIXED / REOPENABLE
-PMC / repeated-correction split    CANONICAL CURRENT DISTINCTION / REOPENABLE
-JT conceptual role                 PROVISIONALLY FIXED / REOPENABLE
-JT warrant / distinctness          UNDER ADVERSARIAL REVIEW
-G1 empirical result                UNOBSERVED
-all empirical contracts            UNFROZEN
-implementation / execution         NOT AUTHORIZED
-```
-
-Reopenability does not mean instability. Current authority remains operative until new discriminating evidence reaches the relevant object.
-
-The core non-substitution chain remains:
-
-\[
-\boxed{
-G_1
-\not\Rightarrow
-G_2
-\not\Rightarrow
-\mathrm{PMC}
-\not\Rightarrow
-\text{repeated correction}
-\not\Rightarrow
-\mathrm{JT}
-\not\Rightarrow
-\text{adaptive viability}
-}
-\]
-
-`C_improve` remains downstream and theoretical. JT does not establish that the warranted transformation repertoire improved because of feedback.
-
-## Current frontiers
-
-The **empirical authority frontier** remains upstream at untested G1. No empirical execution is authorized.
-
-The **conceptual frontier** remains:
+### Conceptual frontier
 
 > **Can the warrant, distinctness, repertoire, preservation, target-family, and counterfactual-availability semantics of Justified Transformability be specified without retrospective approval, trivial-difference inflation, or benchmark-defined reachability?**
 
-## Provenance
+The frontier is conceptual. It does not authorize implementation.
+
+---
+
+## How CCA changes its mind
+
+```mermaid
+flowchart LR
+    O[Observation] --> L[Localize]
+    L --> H[Competing explanations]
+    H --> D[Discriminate]
+    D --> A[Transfer only warranted authority]
+    A --> R[Minimal sufficient revision]
+    R --> T[Retest]
+    T -->|residual = 0| C[Commit current authority]
+    T -->|residual survives| L2[Reopen next implicated boundary]
+    L2 --> L
+```
+
+This is CARS: [`CARS.md`](CARS.md).
+
+The repository-level companion is research returnability:
+
+> **Open the smallest boundary implicated by new discriminating evidence; revise what the evidence reaches; preserve everything not implicated; and preserve a warranted path for later reopening.**
+
+---
+
+## The evidence lineage
+
+CCA treats negative results as scientific structure, not clutter.
+
+The public lineage records:
+
+```text
+ancestor
+→ observation
+→ authority gained
+→ authority not gained
+→ diagnosis
+→ descendant or closure
+```
+
+The central ledger is [`lineage/EVIDENCE_LEDGER.md`](lineage/EVIDENCE_LEDGER.md).
+
+Current adversarial provenance includes:
 
 ```text
 #3–#8   G1 scientific-object attacks
@@ -249,20 +264,45 @@ The **conceptual frontier** remains:
 #13     repeated correction versus Justified Transformability
 ```
 
-These are adversarial provenance, not empirical experiments.
+These are provenance, not empirical experiments.
 
-## Theory and method
+---
 
-- **[CARS](CARS.md)** — correction and causal-authority discipline.
-- **[Research returnability](methodology/RESEARCH_RETURNABILITY.md)** — provenance-preserving reopening of the research program under new discriminating evidence.
-- **[MAGIKARP](MAGIKARP.md)** — provisional theory of adaptive structure and justified transformability; not yet validated.
-- **[Scientific object](SCIENTIFIC_OBJECT.md)** — causal dependency graph and claim boundaries.
-- **[Research state](RESEARCH_STATE.md)** — current authority and frontiers.
-- **[Evidence ledger](lineage/EVIDENCE_LEDGER.md)** — what has and has not been established.
-- **[Scientific contracts](contracts/README.md)** — prospective contract discipline.
+## Read the repository
+
+| If you want to understand… | Start here |
+| --- | --- |
+| **The scientific question and dependency graph** | [`SCIENTIFIC_OBJECT.md`](SCIENTIFIC_OBJECT.md) |
+| **How CCA responds to contradictions** | [`CARS.md`](CARS.md) |
+| **How the repo stays corrigible without rewriting history** | [`KINTSUGI.md`](KINTSUGI.md) → [`methodology/RESEARCH_RETURNABILITY.md`](methodology/RESEARCH_RETURNABILITY.md) |
+| **Lifecycle and execution authority** | [`methodology/RESEARCH_STATE_MACHINE.md`](methodology/RESEARCH_STATE_MACHINE.md) |
+| **Methodology map** | [`methodology/README.md`](methodology/README.md) |
+| **Current authority state** | [`RESEARCH_STATE.md`](RESEARCH_STATE.md) / [`research_state.json`](research_state.json) |
+| **What evidence has actually been earned** | [`lineage/EVIDENCE_LEDGER.md`](lineage/EVIDENCE_LEDGER.md) |
+| **How experiments must be prospectively constituted** | [`contracts/README.md`](contracts/README.md) |
+| **Provisional higher-order theory** | [`MAGIKARP.md`](MAGIKARP.md) |
+
+---
+
+## What this repository refuses to do
+
+CCA does not:
+
+- repair a closed negative result by changing its estimand after the outcome;
+- treat representation robustness, accuracy, or endpoint success as substitutes for the causal object under test;
+- infer broad capacity from one realized trajectory;
+- treat a large reachable state space as a warranted repertoire;
+- call apparatus-supplied transformations system competence;
+- use `canonical` or `frozen` to mean immune from future evidence;
+- reopen a successful localization merely because a deeper abstraction is available;
+- turn AGI or ASI into foundational assumptions before upstream scientific objects earn authority.
+
+---
 
 ## Ultimate question
 
 \[
 \boxed{\textbf{Can increasing adaptive power preserve—or improve—the ability to change for reasons that remain justified?}}
 \]
+
+**Nothing scientific is permanently frozen. Nothing historical is silently rewritten. Every claim must still earn exactly the authority it uses.**
