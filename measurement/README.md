@@ -55,6 +55,8 @@ The candidate/nonempirical successor in [`G1_SYSTEM_FACING_EXPOSURE_INTEGRITY_AT
 
 The nonexecutable candidate in [`G1_REALIZED_EXPOSURE_FIDELITY_ATTACK.md`](G1_REALIZED_EXPOSURE_FIDELITY_ATTACK.md) specifies how a future authorized apparatus must validate \(S_{\mathrm{specified}}\rightarrow S_{\mathrm{realized}}\); actual fidelity and \(S_{\mathrm{realized}}\rightarrow D\) remain blocked and unopened.
 
+The noncanonical successor in [`G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md`](G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md) earns local `MEASUREMENT_VALID` only for prospectively distinguishing fidelity `PASS`, `FAIL`, and `INVALID/UNRESOLVED`; it does not validate an apparatus, freeze a contract, authorize implementation, or change G1 empirical authority.
+
 ## Evidence-codebook feasibility result
 
 A proposed construction uses a shared probe set \(X\) and candidate functions \(f_c\):
