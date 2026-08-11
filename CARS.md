@@ -113,7 +113,7 @@ A deterministic apparatus relation can carry authority only when it is prospecti
 
 If the apparatus supplies the transformation, the claim is apparatus-mediated. That does not establish the corresponding competence as a property of the adaptive system.
 
-Canonical decision: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
+Current decision: [`lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md`](lineage/decisions/CCA_CAUSAL_COMPOSITION_PRINCIPLE.md).
 
 ## Revision discipline
 
@@ -160,6 +160,28 @@ A closed empirical result remains immutable as the historical result under its o
 
 See [`methodology/RESEARCH_RETURNABILITY.md`](methodology/RESEARCH_RETURNABILITY.md).
 
+## Temporal discipline
+
+CCA separates the temporal roles of authority and provenance:
+
+```text
+PAST      preserve provenance
+PRESENT   commit to current authority
+FUTURE    preserve a path to justified reopening
+```
+
+\[
+\boxed{\textbf{Authority is revisable; provenance is persistent.}}
+\]
+
+A rule may cease to govern. The record that it governed—and the evidence under which it governed—remains part of the scientific lineage.
+
+Later evidence may revise the **current interpretation** of an old result. It may not silently revise the old result's recorded identity, observation, or historical authority state.
+
+A correction therefore creates a successor state rather than a cleaner fictional past.
+
+Repository interpretation: [`KINTSUGI.md`](KINTSUGI.md).
+
 ## Anti-rescue rule
 
 A negative result may motivate a new prospective scientific object. It may not be rescued by changing the original estimand, gate, model, intervention class, or interpretation after observing the outcome.
@@ -190,3 +212,15 @@ How should we revise the theory and experiments when evidence contradicts them?
 ```
 
 The second level is operational now. The first remains an empirical research target.
+
+## Operating posture
+
+\[
+\boxed{\textbf{Local closure + global reopenability}}
+\]
+
+\[
+\boxed{\textbf{Maximum ambition; minimum unearned authority.}}
+\]
+
+Stop every inquiry that has earned a local stopping condition. Never remove reality's ability to start the next one.
