@@ -1,19 +1,44 @@
 schema_version: 1
 method_experiment_id: GAMMA_CAL_REPLACEMENT_SMOOTHECE
-status: CONTRACT_FROZEN_RESULT_UNOBSERVED
+status: CLOSED_G_F_FAIL
 candidate:
   name: SmoothECE
   reference_repo: apple/ml-calibration
   reference_commit: 18ff21a7e4e409fc4885690129f50211b32ea144
+implementation_equivalence:
+  status: PASS
+  n_test_vectors: 12
+  max_abs_error: 0.0
+  threshold: 1.0e-10
+  artifact_sha256: 791f9d9f75f06fb786a27a32cd5a76bebdd9f13beb6acc31ee1105627695979f
 historical_access:
   permitted: false
   m1cal_read: false
   m2s_read: false
 gates:
-  G_F: null
-  G_detect: null
-  G_U: null
-  G_decision: null
+  G_F: FAIL
+  G_detect: NOT_RUN
+  G_U: NOT_RUN
+  G_decision: NOT_RUN
+G_F_result:
+  F0_theta: 0.0
+  F0_pass: true
+  all_fixture_constitution_pass: true
+  all_F1_F6_positive: true
+  all_F1_F6_strict_order: true
+  F5:
+    target_C_cal_L1: 0.010
+    theta: 0.000526051157808805
+    retention_ratio: 0.0526051157808805
+    required_minimum_ratio: 0.10
+    retention_pass: false
+  F6:
+    target_C_cal_L1: 0.010
+    theta: 0.0037371478195394967
+    retention_ratio: 0.37371478195394964
+    required_minimum_ratio: 0.10
+    retention_pass: true
+  artifact_sha256: 2c249d5b692fce7641dcc038d40c79b32ab80e59b17666c82a65c23fedaa10d2
 authority:
   Gamma_cal_smECE: false
   replacement_measurement: false
@@ -23,5 +48,13 @@ authority:
   Z_D: false
   Z_C: false
   Z_P: false
-result: null
-diagnosis: null
+result:
+  candidate_validation: FAIL_AT_G_F
+  first_failed_gate: G_F
+  downstream_execution_stopped: true
+diagnosis:
+  failure_locus: candidate_construct_fidelity
+  local_statement: SmoothECE retained only 5.26 percent of the construct-faithful F5 alternating defect at C_cal_L1=0.010, below the frozen 10 percent minimum.
+  bandwidth_tuning_authorized: false
+  historical_adjudication_authorized: false
+  next_control_state: RETURN_TO_CALIBRATION_REPLACEMENT_DESIGN_ENVELOPE
