@@ -1,10 +1,23 @@
 schema_version: 1
 method_experiment_id: GAMMA_CAL_EFF_IF_V2
-status: AUTHORIZED_RESULT_UNOBSERVED
+status: CLOSED_FIXTURE_CONSTITUTION_FAILURE
 opened_boundary: synthetic_method_validation_fixture_only
-synthetic_fixture_result: null
+synthetic_fixture_result:
+  constituted: false
+  failure_stage: deterministic_population_target_search
+  sampled_outcomes_generated: false
+  historical_oof_read: false
+  failure_message: "target not reachable S1: err=0.001877266596441602"
+  failed_target: S1
+  failed_target_delta_ece: 0.0019987310125
+  nearest_target_absolute_error: 0.001877266596441602
 historical_result: null
-diagnosis: null
+diagnosis:
+  failure_locus: synthetic_fixture_candidate_family
+  explanation: the one-parameter uniform probability-shift family cannot span the prospectively required positive sub-margin ECE contrast under the frozen alternating-residual population geometry
+  influence_function_method_adjudicated: false
+  D_efficiency: UNRESOLVED
+  fixture_family_successor_authorized: true
 authority:
   IF_efficiency_method_valid: null
   D_efficiency_local_weight: null
