@@ -1,0 +1,12 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_EFF_IF
+status: AUTHORIZED_RESULT_UNOBSERVED
+opened_diagnostic: D_efficiency
+synthetic_measurement_validity: null
+historical_result: null
+diagnosis: null
+authority:
+  D_efficiency_local_weight: null
+  ECE_precision_boundary_closed: false
+  mature_non_CCA_probability_treatment: false
+  CCA_derived_feature_authority: false
