@@ -17,9 +17,11 @@ def main():
     cfg=yaml.safe_load(a.config.read_text());parent=loadmod('p',a.parent_runner);idx=pd.read_csv(a.index,usecols=['response_id','session_id','is_correct']); hist=pd.read_csv(a.historical_m2_oof)[['response_id','m2_o_probability']];df=idx.merge(hist,on='response_id',validate='one_to_one')
     rows=[]; frecs=[]
     for fold in range(5):
-        r=json.load(open(a.fold_dir/f'fold{fold}.json')); frecs.append({k:v for k,v in r.items() if k!='arms'}|{'arms':{arm:{kk:vv for kk,vv in rec.items() if kk not in ('response_id','raw_score','raw_probability','calibrated_probability')} for arm,rec in r['arms'].items()}})
-        for arm,rec in r['arms'].items():
+        arms={}
+        for arm in ['M2_S','M2_SC']:
+            rec=json.load(open(a.fold_dir/f'{arm}_fold{fold}.json')); arms[arm]=rec
             rows.extend(zip(rec['response_id'],[arm]*len(rec['response_id']),rec['raw_score'],rec['raw_probability'],rec['calibrated_probability']))
+        frecs.append({'outer_fold':fold,'arms':{arm:{kk:vv for kk,vv in rec.items() if kk not in ('response_id','raw_score','raw_probability','calibrated_probability')} for arm,rec in arms.items()}})
     pred=pd.DataFrame(rows,columns=['response_id','arm','raw_score','raw_probability','calibrated_probability']); w=pred.pivot(index='response_id',columns='arm',values=['raw_score','raw_probability','calibrated_probability']); w.columns=['_'.join(x).lower() for x in w.columns];w=w.reset_index();df=df.merge(w,on='response_id',validate='one_to_one');y=df.is_correct.to_numpy(np.int8);g=df.session_id.astype(str).to_numpy()
     ms_raw=df.raw_probability_m2_s.to_numpy();msc_raw=df.raw_probability_m2_sc.to_numpy();ms_cal=df.calibrated_probability_m2_s.to_numpy();msc_cal=df.calibrated_probability_m2_sc.to_numpy();m2o=df.m2_o_probability.to_numpy()
     boot=lambda cand,base,seed: parent.paired_session_bootstrap(g,parent.per_row_log_loss(y,cand),parent.per_row_log_loss(y,base),int(cfg['uncertainty']['replicates']),int(seed))
