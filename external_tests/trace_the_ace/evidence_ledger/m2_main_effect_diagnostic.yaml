@@ -1,6 +1,6 @@
 schema_version: 1
 experiment_id: M2_D_MAIN
-status: AUTHORIZED_EXECUTION_BLOCKED_APPARATUS_BOUNDARY_OPEN_RESULT_UNOBSERVED
+status: CLOSED_DIAGNOSED_SUPPORT
 diagnostic_candidate: D_main
 probe: centered_historical_R_TO_main_effect_suppression
 prospective_identity:
@@ -9,54 +9,59 @@ prospective_identity:
   eligible_sessions: 22783
   eligible_objectives_sha256: 54d56b68cc05bfcedd8dd5c4701696a465f7798c479cabfae8cb66ae0146aef6
   primary_measurement: raw_sigmoid_log_loss
-execution_diagnosis:
-  preprocessing_matrix_assembly_seconds_B0_fold0: 11.34
-  B0_fold0_train_shape: [27987, 262198]
-  B0_fold0_train_nnz: 73098728
-  B0_fold0_sparse_sorted_indices: true
-  B0_fold0_sparse_canonical_format: true
-  B0_fold0_sparse_explicit_zeros: 0
-  local_runtime:
-    logical_cpus: 5
-    memory_gib: 5.9
-    python: 3.13.5
-    scikit_learn: 1.8.0
-    scipy: 1.17.0
-    numpy: 2.3.5
-  vectorized_objective_centering_committed_before_result: true
-  arm_fold_checkpointing_committed_before_result: true
-  cell_level_checkpointing_committed_before_result: true
-  exact_frozen_B0_fold0_fit_completed_within_900_seconds: false
-  exact_fit_timeout_seconds: 900
-  result_artifact_count: 0
-  scientific_result_observed: false
-  failure_locus: execution_apparatus_runtime_envelope
+apparatus_resolution:
+  prior_failure_locus: monolithic_execution_harness_runtime_lifecycle
+  exact_B0_fold0_fit_seconds_profiled: 25.763461085
+  exact_B0_fold0_n_iter: 84
+  materialized_two_process_successor_validated: true
+  equivalence_reference_cell_sha256: 880273c43169b17344fb77db884b92144512b66867042ba5c9fdce83ce37ebec
+  equivalence_successor_cell_sha256: 880273c43169b17344fb77db884b92144512b66867042ba5c9fdce83ce37ebec
+  probability_max_abs_difference: 0.0
   scientific_contract_changed: false
-result: null
-diagnosis: null
-apparatus_boundary:
-  status: OPEN
-  permitted_changes:
-    - execution_partitioning
-    - caching
-    - serialization
-    - sparse_memory_layout_without_value_change
-    - hardware_resource_envelope
-    - process_scheduling
-  forbidden_changes:
-    - B0_C0_B1_C1_scientific_arms
-    - cohort
-    - folds
-    - estimator_family
-    - estimator_hyperparameters
-    - random_seed
-    - feature_values
-    - primary_measurement
-    - diagnostic_adjudication_rule
+execution:
+  fit_count: 20
+  all_base_models_converged: true
+  max_n_iter: 84
+  iterations:
+    B0: [84, 64, 50, 64, 53]
+    C0: [84, 64, 50, 64, 53]
+    B1: [68, 49, 50, 71, 53]
+    C1: [68, 49, 50, 71, 53]
+result:
+  metrics:
+    B0_log_loss: 0.5772381266959435
+    C0_log_loss: 0.5768994174275998
+    B1_log_loss: 0.5570723486366355
+    C1_log_loss: 0.5571439724402867
+  delta_no_main:
+    point: -0.00033870926834387867
+    ci95_lower: -0.0005356913500928862
+    ci95_upper: -0.00014888919380643035
+  delta_with_main:
+    point: 0.00007162380365116438
+    ci95_lower: -0.00014326471232313146
+    ci95_upper: 0.0002675572438735669
+  suppression_difference:
+    point: -0.00041033307199504293
+    ci95_lower: -0.0006473098200126021
+    ci95_upper: -0.00018356021631722134
+  D_main_local_diagnostic: SUPPORT
+artifacts_local_uncommitted:
+  cell_manifest_sha256: fe7ce254f6da4c8975a472a20c217f568fa49b8d96ede915af5d6585a2722f5a
+  oof_predictions_sha256: 532c7f44fcab91f9c123a7dc4f83c8d326bdb816f3dec7759a430bd6bfb72ce9
+  aggregate_record_sha256: b2a678064a8d8052314896421cb17eb06793d641555abad09e21c85e76dbc92c
+diagnosis:
+  local_statement: centered historical semantic-conditioning residual carries stable incremental predictive information when explicit objective identity is absent, while its incremental value is not established when objective identity is restored; the suppression contrast is stably negative
+  D_main_branch: CLOSED_LOCAL_SUPPORT
+  broad_H_O: OPEN
+  D_temporal: UNRESOLVED
+  D_granularity: UNRESOLVED
+  D_identifiability: UNRESOLVED
+  D_redundancy: UNRESOLVED
 authority:
-  D_main_local_diagnostic_weight: null
+  D_main_local_diagnostic_weight: SUPPORT
+  conditioning_prerequisite_for_mature_baseline: CLOSED
   broad_H_O: OPEN
   new_conditioning_operator_authorized: false
   CCA_derived_feature_authority: false
-  execution_failure_has_scientific_authority: false
-  apparatus_successor_authorized: true
+  causal_authority: false
