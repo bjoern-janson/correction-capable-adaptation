@@ -1,6 +1,6 @@
 schema_version: 1
 experiment_id: M2_SEM
-status: AUTHORIZED_RESULT_UNOBSERVED
+status: DIAGNOSED_UNRESOLVED
 parent_experiment: M2
 hypothesis_id: H_O_SEM
 opened_boundary: objective_conditioning_representation_only
@@ -55,54 +55,116 @@ resource_identity:
   nonfinite_rows: 0
   execution_authorized_after_hash_freeze: true
 
+semantic_feature_identity:
+  construction_reads_outcome_labels: false
+  sessions: 22821
+  responses: 35072
+  session_semantic_features_sha256: d4eafecc328ae42df8456673bff97adc1095d53aeb3609efc2f7953fc50e10d4
+  response_conditioning_features_sha256: 794b3605f733ad53927f93a8a20a8c0998b4660bf4f351f885ad610bf5362b8c
+
+raw_uncalibrated_diagnostic:
+  comparison: M2_SC_vs_M2_S
+  M2_S_log_loss: 0.5547119692807416
+  M2_SC_log_loss: 0.5546563889382546
+  point_delta_log_loss: -0.00005558034248698274
+  bootstrap_ci95: [-0.0002456427324843083, 0.000147199104658347]
+  result: NOT_ESTABLISHED
+  interpretation: diagnostic_separate_from_calibrated_primary_gate
+
 primary_hypothesis:
   comparison: M2_SC_vs_M2_S
-  point_delta_log_loss: null
-  bootstrap_ci95: null
-  result: null
+  M2_S_log_loss: 0.5359576099804155
+  M2_SC_log_loss: 0.5359414160188002
+  point_delta_log_loss: -0.00001619396161534059
+  bootstrap_ci95: [-0.00013111285844040753, 0.00010515830175300576]
+  M2_S_auc: 0.7347266225089983
+  M2_SC_auc: 0.7347911570590504
+  result: FAIL
 
 semantic_capacity_control:
   comparison: M2_S_vs_historical_M2_O
-  point_delta_log_loss: null
-  bootstrap_ci95: null
-  interpretation: diagnostic_only
+  historical_M2_O_log_loss: 0.5366109542150183
+  M2_S_log_loss: 0.5359576099804155
+  point_delta_log_loss: -0.0006533442346027263
+  bootstrap_ci95: [-0.0010827475727140017, -0.0002291104776031671]
+  result: DIAGNOSTIC_PASS
+  interpretation: generic_semantic_capacity_only
 
 total_semantic_successor:
   comparison: M2_SC_vs_historical_M2_O
-  point_delta_log_loss: null
-  bootstrap_ci95: null
-  interpretation: diagnostic_only
+  point_delta_log_loss: -0.0006695381962180669
+  bootstrap_ci95: [-0.0010977837364058805, -0.00024065183763283547]
+  result: DIAGNOSTIC_PASS
+  interpretation: does_not_substitute_for_primary_H_O_SEM_gate
 
 calibration_diagnostics:
+  historical_M2_O:
+    brier: 0.17924568430449414
+    ece_10: 0.017041267231179973
+    absolute_mean_probability_bias: 0.00999951016836629
   M2_S:
-    brier: null
-    ece_10: null
-    absolute_mean_probability_bias: null
+    brier: 0.1790775429407408
+    ece_10: 0.016943779107667246
+    absolute_mean_probability_bias: 0.01025059850899631
   M2_SC:
-    brier: null
-    ece_10: null
-    absolute_mean_probability_bias: null
+    brier: 0.17907104990490152
+    ece_10: 0.01773349427109563
+    absolute_mean_probability_bias: 0.010739282154646635
   historical_M2_calibration_failure_repaired_by_this_branch: false
 
 implementation_validity:
   resource_identity_frozen: true
-  all_objective_embeddings_nonzero: null
-  every_session_has_nonzero_utterance_embedding: null
-  Z_S_objective_independent: null
-  R_TO_nonzero: null
-  R_TO_multiobjective_variation: null
-  outer_session_isolation: null
-  inner_session_isolation: null
-  all_base_models_converged: null
+  all_objective_embeddings_nonzero: true
+  every_session_has_nonzero_utterance_embedding: true
+  Z_S_objective_independent: true
+  R_TO_nonzero: true
+  R_TO_multiobjective_variation: true
+  outer_session_isolation: true
+  inner_session_isolation: true
+  all_base_models_converged: true
+  base_model_fit_count: 60
+  maximum_n_iter: 113
+  max_iter_ceiling: 500
 
-result: null
-diagnosis: null
+fold_conditioning_deltas:
+  - fold: 0
+    raw_delta_log_loss: -0.00042118273146873886
+    calibrated_delta_log_loss: -0.00011492211180474943
+  - fold: 1
+    raw_delta_log_loss: -0.00047521456536314677
+    calibrated_delta_log_loss: -0.00004108701772176371
+  - fold: 2
+    raw_delta_log_loss: 0.00003569277264781068
+    calibrated_delta_log_loss: 0.00008037446601760756
+  - fold: 3
+    raw_delta_log_loss: 0.0006094706438514175
+    calibrated_delta_log_loss: 0.0001641409029840002
+  - fold: 4
+    raw_delta_log_loss: -0.000026548175922957995
+    calibrated_delta_log_loss: -0.00016946894944702695
+
+local_result_artifacts:
+  oof_predictions_sha256: 64679b828af9737e5245dd1348f2c8e0cf5a38e013eefaee02266de7277e096f
+  m2_sem_record_sha256: 7a5720140e589afeaf352418c9f509528c807da83672b10e63892b4ec8669f17
+  generated_rows_committed: false
+
+result: H_O_SEM_FAIL_UNDER_FROZEN_OPERATOR
+diagnosis:
+  implementation_gate: PASS
+  generic_semantic_capacity_diagnostic: PASS
+  raw_conditioning_signal: NOT_ESTABLISHED
+  H_O_SEM_primary_gate: FAIL
+  historical_calibration_branch: UNRESOLVED
+  M2_SEM_gate: UNRESOLVED
+  CCA_derived_feature_authority: false
+  shallowest_next_boundary: conditioning_operator_diagnosis_or_independent_calibration_branch
 
 authority:
   inherited:
     - learning_objective_information_adds_predictive_information_beyond_M1_CAL
   gained:
     - M2_SEM_execution_authorized_by_frozen_resource_identity
+    - generic_semantic_capacity_adds_predictive_information_beyond_historical_M2_O_under_M2_SEM
   not_gained:
     - H_O_SEM_support
     - CCA_support
@@ -115,4 +177,4 @@ authority:
     - C_improve_measurement
     - CCA_derived_feature_authorization
   conditional_rule:
-    if_H_O_SEM_passes_but_calibration_successor_unresolved: CCA_derived_feature_authorization_remains_false
+    CCA_derived_feature_authorization_remains_false: true
