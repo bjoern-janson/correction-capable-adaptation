@@ -1,6 +1,6 @@
 schema_version: 1
 experiment_id: M1_PRIME
-status: AUTHORIZED_RESULT_UNOBSERVED
+status: DIAGNOSED_UNRESOLVED
 parent_experiment: M1
 parent_status:
   information_gate: PASS
@@ -30,11 +30,53 @@ prospective_gates:
   ece_relative_reduction_minimum: 0.25
   absolute_mean_probability_bias_relative_reduction_minimum: 0.25
   objective_exclusion_exact: true
-result: null
-diagnosis: null
+result:
+  pooled:
+    m1_log_loss: 0.5790941374560221
+    m1_prime_log_loss: 0.5765421661651912
+    delta_log_loss_m1_prime_minus_m1: -0.0025519712908309566
+    m1_prime_auc: 0.6765416346549795
+  uncertainty:
+    method: paired_session_cluster_bootstrap
+    clusters: 22821
+    replicates: 2000
+    seed: 1702
+    ci95_lower: -0.002868817482076296
+    ci95_upper: -0.002215037524187423
+  convergence:
+    fold_n_iter: [81, 50, 36, 62, 56]
+    all_strictly_below_500: true
+  calibration:
+    m1_brier: 0.19519137289395985
+    m1_prime_brier: 0.19444578627328427
+    m1_ece_10: 0.0580493569617112
+    m1_prime_ece_10: 0.051898451783714696
+    m1_absolute_mean_probability_bias: 0.05542349805596558
+    m1_prime_absolute_mean_probability_bias: 0.049311986148874
+    ece_relative_reduction: 0.10595991928133817
+    absolute_bias_relative_reduction: 0.11026932837981997
+    prospective_ece_threshold: 0.0435370177212834
+    prospective_absolute_bias_threshold: 0.041567623541974186
+  objective_exclusion:
+    max_within_session_prediction_range: 0.0
+    pass: true
+diagnosis:
+  convergence_gate: PASS
+  log_loss_gate: PASS
+  brier_gate: PASS
+  objective_exclusion_gate: PASS
+  calibration_gate: FAIL
+  baseline_gate: UNRESOLVED
+  m2_authorized: false
+  shallowest_next_boundary: calibration_only_successor
 authority:
-  gained: []
+  gained:
+    - convergence_ceiling_defect_resolved
+    - converged_ordinary_semantic_estimator_improves_log_loss_relative_to_historical_M1
+  inherited:
+    - generic_transcript_semantics_add_predictive_information_beyond_M0
   not_gained:
+    - M2_authorization
     - CCA_support
     - CCA_refutation
     - causal_evidence
