@@ -1,0 +1,44 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_NI
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+reopened_rule: deterministic_point_ECE_nondegradation
+reference_probability_object: M1_CAL
+candidate_probability_object: M2_S_PLATT
+reference_oof_sha256_required: f2aa3e53b345200f2dacf7b3c912e29a9a9ac76f09758cb8bb172f4ec06a2a47
+candidate_oof_sha256_required: 64679b828af9737e5245dd1348f2c8e0cf5a38e013eefaee02266de7277e096f
+reference_metrics:
+  ece_10: 0.0159898481
+  absolute_mean_probability_bias: 0.0105359299
+materiality_fraction_inherited: 0.25
+epsilon_ece: 0.003997462025
+epsilon_bias: 0.002633982475
+bootstrap:
+  historical_replicates: 2000
+  seeds:
+    delta_log_loss: 1741
+    delta_brier: 1742
+    delta_ece: 1743
+    delta_bias: 1744
+synthetic_validation:
+  session_sizes_source: canonical_index_label_free
+  latent_probability: "0.1 + 0.8 * Beta(7,3)"
+  scenarios:
+    S0: 0.0
+    S1: 0.0019987310125
+    S2: 0.00799492405
+  dataset_seeds: [1901, 1902, 1903, 1904, 1905, 1906, 1907, 1908, 1909, 1910]
+  bootstrap_replicates: 300
+  bootstrap_seed_offset: 50000
+  validity_gates:
+    S0_min_pass: 9
+    S1_min_pass: 7
+    S2_min_fail: 9
+historical_successor_gates:
+  delta_log_loss_ci95_upper_lt: 0.0
+  delta_brier_ci95_upper_lt: 0.0
+  delta_ece_ci95_upper_lt: 0.003997462025
+  delta_bias_ci95_upper_lt: 0.002633982475
+public_leaderboard_used_in_thresholds: false
+model_refit_allowed: false
+new_calibrator_allowed: false
+cca_derived_features_allowed: false
