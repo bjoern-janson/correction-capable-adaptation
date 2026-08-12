@@ -1,0 +1,12 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_ECE_OBJECT_ADEQUACY_V2
+status: AUTHORIZED_RESULT_UNOBSERVED
+opened_diagnostic: D_object_truth_criterion_repair
+synthetic_result: null
+diagnosis: null
+authority:
+  V1_D_object_support_withheld: true
+  D_object_local_weight: null
+  ECE10_replacement_authorized: false
+  mature_non_CCA_probability_treatment: false
+  CCA_derived_feature_authority: false
