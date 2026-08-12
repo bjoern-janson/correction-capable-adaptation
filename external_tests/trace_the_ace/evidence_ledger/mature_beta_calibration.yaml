@@ -1,12 +1,52 @@
 schema_version: 1
 experiment_id: M_MATURE_BETA_CAL
-status: AUTHORIZED_RESULT_UNOBSERVED
+status: DIAGNOSED_UNRESOLVED
 opened_boundary: calibration_flexibility_variance_tradeoff
 parent_predictive_object: M2_S
 parent_probability_map: Platt
 successor_probability_map: monotone_beta_calibration
-result: null
-diagnosis: null
+parent_platt:
+  log_loss: 0.5359576099804156
+  brier: 0.1790775429407408
+  ece_10: 0.016943779107667253
+  absolute_mean_probability_bias: 0.010250598508996234
+successor_beta:
+  log_loss: 0.5360147480439164
+  brier: 0.17910657791425955
+  ece_10: 0.017367473320997334
+  absolute_mean_probability_bias: 0.010310252952371535
+log_loss_delta_beta_minus_platt: 0.00005713806350084187
+paired_session_cluster_bootstrap_ci95:
+  lower: -0.000008606963623654348
+  upper: 0.00012307148733575976
+  replicates: 2000
+  seed: 1722
+optimizer:
+  all_outer_folds_success: true
+  iterations: [15, 16, 15, 15, 16]
+gates:
+  optimizer_success_all_outer_folds: PASS
+  ece_10_not_worse_than_historical_m1_cal: FAIL
+  log_loss_strictly_better_than_parent_platt: FAIL
+  log_loss_bootstrap_ci95_upper_below_zero: FAIL
+  brier_not_worse_than_parent_platt: FAIL
+  absolute_mean_probability_bias_not_worse_than_historical_m1_cal: PASS
+local_artifacts:
+  oof_predictions_sha256: 2a512326846846d4537d4757073200c785bd25796596861be99f65b0abbaa760
+  mature_beta_record_sha256: 4fe412aaae31729ec09416ac42e3da0bb08ecd05a7cca7dcd7c7c2ba4b298c78
+  generated_rows_committed: false
+result: BETA_CALIBRATION_DOES_NOT_REPAIR_MATURE_GATE
+diagnosis:
+  isotonic_shape_flexibility_repaired_ECE_but_lacked_robust_LL_gain: true
+  low_dimensional_asymmetric_beta_map_repair: FAIL
+  base_representation_reopen_authorized: false
+  calibration_resolved: false
+  next_boundary_requires_new_diagnostic_not_calibrator_proliferation: true
 authority:
   mature_non_CCA_probability_treatment: false
   CCA_derived_feature_authority: false
+  not_gained:
+    - conditioning_authority
+    - H_O_support
+    - CCA_support
+    - causal_evidence
