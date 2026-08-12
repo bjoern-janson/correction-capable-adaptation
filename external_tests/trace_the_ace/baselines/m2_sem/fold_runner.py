@@ -55,11 +55,13 @@ def main():
     max_iter=int(cfg['base_classifier']['max_iter']); icfg=cfg['inner_crossfit']; result={'outer_fold':outer,'arms':{}}
     for arm in ['M2_S','M2_SC']:
         t0=time.time(); oscore,onit=fit_score(parent,arm,Xt,Xo,Xs,Xr,Xstruct,y,otr,ova,cfg['base_classifier'])
+        # Freeze and record the uncalibrated consequence before any calibrator is fitted.
+        rp=sigmoid(oscore); raw_ll=float(log_loss(y[ova],rp))
         inner=np.full(len(otr),np.nan); nit=[]; splitter=StratifiedGroupKFold(n_splits=int(icfg['n_splits']),shuffle=bool(icfg['shuffle']),random_state=int(icfg['random_state'])); yo=y[otr]; go=groups[otr]
         for itr,iva in splitter.split(np.zeros(len(otr),np.int8),yo,groups=go):
             tr=otr[itr]; va=otr[iva]; assert not(set(groups[tr])&set(groups[va])); sc,ni=fit_score(parent,arm,Xt,Xo,Xs,Xr,Xstruct,y,tr,va,cfg['base_classifier']); inner[iva]=sc; nit.append(int(ni))
-        assert np.isfinite(inner).all(); cal=parent_logistic(cfg['calibrator']); cal.fit(inner.reshape(-1,1),yo); cp=cal.predict_proba(oscore.reshape(-1,1))[:,1]; rp=sigmoid(oscore)
-        result['arms'][arm]={'outer_n_iter':int(onit),'inner_n_iter':nit,'all_converged':bool(onit<max_iter and all(x<max_iter for x in nit)),'platt_slope':float(cal.coef_[0,0]),'platt_intercept':float(cal.intercept_[0]),'raw_log_loss':float(log_loss(y[ova],rp)),'calibrated_log_loss':float(log_loss(y[ova],cp)),'elapsed_seconds':time.time()-t0,'response_id':df.iloc[ova].response_id.astype(str).tolist(),'raw_score':oscore.tolist(),'raw_probability':rp.tolist(),'calibrated_probability':cp.tolist()}
+        assert np.isfinite(inner).all(); cal=parent_logistic(cfg['calibrator']); cal.fit(inner.reshape(-1,1),yo); cp=cal.predict_proba(oscore.reshape(-1,1))[:,1]
+        result['arms'][arm]={'outer_n_iter':int(onit),'inner_n_iter':nit,'all_converged':bool(onit<max_iter and all(x<max_iter for x in nit)),'platt_slope':float(cal.coef_[0,0]),'platt_intercept':float(cal.intercept_[0]),'raw_log_loss':raw_ll,'calibrated_log_loss':float(log_loss(y[ova],cp)),'elapsed_seconds':time.time()-t0,'response_id':df.iloc[ova].response_id.astype(str).tolist(),'raw_score':oscore.tolist(),'raw_probability':rp.tolist(),'calibrated_probability':cp.tolist()}
     a.output.parent.mkdir(parents=True,exist_ok=True); a.output.write_text(json.dumps(result,separators=(',',':'))+'\n'); print(json.dumps({'outer_fold':outer,'arms':{k:{kk:vv for kk,vv in v.items() if kk not in ('response_id','raw_score','raw_probability','calibrated_probability')} for k,v in result['arms'].items()}},indent=2))
 
 def parent_logistic(c):
