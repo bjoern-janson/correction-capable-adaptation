@@ -1,0 +1,24 @@
+schema_version: 1
+experiment_id: CAL_ECE_STABILITY
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+metric:
+  name: ECE_10_equal_width
+  bins: 10
+m1_cal_oof_sha256_required: f2aa3e53b345200f2dacf7b3c912e29a9a9ac76f09758cb8bb172f4ec06a2a47
+m2_sem_oof_sha256_required: 64679b828af9737e5245dd1348f2c8e0cf5a38e013eefaee02266de7277e096f
+m1_probability_column: m1_cal_probability
+m2_probability_column: m2_s_cal_probability
+bootstrap:
+  unit: session_id
+  paired: true
+  replicates: 2000
+  seed: 1723
+  interval: percentile_95
+adjudication:
+  stable_degradation: point_delta_gt_zero_and_ci95_lower_gt_zero
+  stable_nondegradation: point_delta_le_zero_and_ci95_upper_le_zero
+  otherwise: NOT_STABLY_IDENTIFIED
+authority_ceiling:
+  changes_historical_gate: false
+  mature_calibration_authority: false
+  CCA_derived_feature_authority: false
