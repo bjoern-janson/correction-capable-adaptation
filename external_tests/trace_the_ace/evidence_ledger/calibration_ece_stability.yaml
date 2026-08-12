@@ -1,0 +1,31 @@
+schema_version: 1
+experiment_id: CAL_ECE_STABILITY
+status: DIAGNOSED
+historical_gate_changed: false
+measurement:
+  metric: ECE_10_equal_width
+  m1_cal: 0.015989848091338636
+  m2_s_platt: 0.016943779107667253
+  delta_m2_minus_m1: 0.0009539310163286172
+paired_session_cluster_bootstrap:
+  replicates: 2000
+  seed: 1723
+  clusters: 22821
+  ci95: [-0.003419881156962645, 0.005038075611455211]
+diagnosis: NOT_STABLY_IDENTIFIED
+interpretation:
+  historical_point_gate_verdict_remains: FAIL
+  stable_ECE_degradation_established: false
+  stable_ECE_nondegradation_established: false
+  methodological_successor_question_authorized: true
+  methodological_successor_itself_authorized: false
+authority:
+  mature_non_CCA_probability_treatment: false
+  CCA_derived_feature_authority: false
+  may_open:
+    - calibration_gate_uncertainty_methodological_diagnosis
+  may_not_claim:
+    - retroactive_calibration_pass
+    - ECE_equivalence
+    - mature_baseline_complete
+    - Z_E_authorization
