@@ -2,9 +2,18 @@
 
 ## Current state
 
-**SCIENTIFIC CONTRACT FROZEN — EXTERNAL RESOURCE IDENTITY NOT YET MATERIALIZED — EXECUTION NOT AUTHORIZED**
+**SCIENTIFIC CONTRACT FROZEN — EXTERNAL RESOURCE IDENTITY CONSTITUTED — EXECUTION AUTHORIZED — RESULT UNOBSERVED**
 
-M2-SEM prospectively selects exactly one external semantic resource:
+```text
+R_selected       = PASS
+R_materialized   = PASS
+R_hashed         = PASS
+R_validated      = PASS
+AUTH(execution)  = TRUE
+H_O_SEM          = UNOBSERVED
+```
+
+M2-SEM prospectively selected exactly one external semantic resource:
 
 ```text
 Stanford GloVe 2024 Wikipedia + Gigaword 5, 50 dimensions
@@ -12,36 +21,47 @@ glove.2024.wikigiga.50d.zip
 https://nlp.stanford.edu/data/wordvecs/glove.2024.wikigiga.50d.zip
 ```
 
-No alternative embedding family, release, dimensionality, or source may be substituted under the same experiment identity.
+No alternative embedding family, release, dimensionality, or source was substituted.
 
-## Acquisition rule
-
-Before any M2-SEM model score, fold loss, calibration result, or outcome-bearing prediction may be inspected, record and commit:
+## Constituted archive identity
 
 ```text
-archive SHA-256
-archive byte size
-archive member listing
-selected vector-member name
-selected vector-file SHA-256
-vector dimension validation = 50
+archive byte size: 301036094
+archive SHA-256:   afa5e258ee38272db6394547c4b075ecbb7b2164e98542c8d1237b6029b35a65
+member count:      1
+ZIP integrity:     PASS
 ```
 
-Then update both `config.yaml` and `evidence_ledger/m2_sem.yaml` with those exact identities.
-
-The acquisition step may verify the already-selected apparatus. It may not use Trace the Ace labels or model outcomes to choose among semantic resources.
-
-## Failure semantics
-
-Download failure, unavailable storage, or inability to materialize the selected archive is an execution/apparatus-access failure only.
-
-It is not evidence for or against:
+Archive member:
 
 ```text
-H_O_SEM
-semantic objective conditioning
-objective main effects
-CCA
+wiki_giga_2024_50_MFT20_vectors_seed_123_alpha_0.75_eta_0.075_combined.txt
 ```
 
-A different semantic resource requires a separately identified successor proposal.
+## Constituted vector identity
+
+```text
+vector byte size: 842192707
+vector SHA-256:   16c4253cb9a19045dcdc758b6a1eda52d3c37b894dea2601a45046b4300a8d10
+vocabulary rows:  1291147
+vector dimension: 50
+malformed rows:   0
+nonfinite rows:   0
+```
+
+The vector member was hashed both while streaming decompressed bytes from the ZIP and after extraction to a standalone local file; the hashes matched exactly.
+
+## Acquisition rule closure
+
+The prospectively required fields are now frozen before any M2-SEM result-bearing execution:
+
+```text
+archive SHA-256                         PASS
+archive byte size                       PASS
+archive member listing                  PASS
+selected vector-member name             PASS
+selected vector-file SHA-256            PASS
+vector dimension validation = 50        PASS
+```
+
+This gate closure authorizes execution of the already-frozen M2-SEM experiment only. It does not support `H_O_SEM`, CCA, causation, G1, PMC, repeated correction, JT, `C_improve`, or any CCA-derived feature family.
