@@ -1,6 +1,6 @@
 schema_version: 1
 experiment_id: M2_D_MAIN
-status: AUTHORIZED_EXECUTION_BLOCKED_LOCAL_RUNTIME_RESULT_UNOBSERVED
+status: AUTHORIZED_EXECUTION_BLOCKED_APPARATUS_BOUNDARY_OPEN_RESULT_UNOBSERVED
 diagnostic_candidate: D_main
 probe: centered_historical_R_TO_main_effect_suppression
 prospective_identity:
@@ -13,18 +13,50 @@ execution_diagnosis:
   preprocessing_matrix_assembly_seconds_B0_fold0: 11.34
   B0_fold0_train_shape: [27987, 262198]
   B0_fold0_train_nnz: 73098728
+  B0_fold0_sparse_sorted_indices: true
+  B0_fold0_sparse_canonical_format: true
+  B0_fold0_sparse_explicit_zeros: 0
+  local_runtime:
+    logical_cpus: 5
+    memory_gib: 5.9
+    python: 3.13.5
+    scikit_learn: 1.8.0
+    scipy: 1.17.0
+    numpy: 2.3.5
   vectorized_objective_centering_committed_before_result: true
   arm_fold_checkpointing_committed_before_result: true
-  exact_frozen_B0_fold0_fit_completed_within_local_ceiling: false
+  cell_level_checkpointing_committed_before_result: true
+  exact_frozen_B0_fold0_fit_completed_within_900_seconds: false
+  exact_fit_timeout_seconds: 900
   result_artifact_count: 0
   scientific_result_observed: false
-  failure_locus: execution_runtime_envelope
+  failure_locus: execution_apparatus_runtime_envelope
   scientific_contract_changed: false
 result: null
 diagnosis: null
+apparatus_boundary:
+  status: OPEN
+  permitted_changes:
+    - execution_partitioning
+    - caching
+    - serialization
+    - sparse_memory_layout_without_value_change
+    - hardware_resource_envelope
+    - process_scheduling
+  forbidden_changes:
+    - B0_C0_B1_C1_scientific_arms
+    - cohort
+    - folds
+    - estimator_family
+    - estimator_hyperparameters
+    - random_seed
+    - feature_values
+    - primary_measurement
+    - diagnostic_adjudication_rule
 authority:
   D_main_local_diagnostic_weight: null
   broad_H_O: OPEN
   new_conditioning_operator_authorized: false
   CCA_derived_feature_authority: false
   execution_failure_has_scientific_authority: false
+  apparatus_successor_authorized: true
