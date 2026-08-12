@@ -1,0 +1,168 @@
+schema_version: 1
+registry_id: TRACE_THE_ACE_INITIAL_BETS_V1
+status: PROSPECTIVE
+append_only_policy: >-
+  Hypothesis definitions are fixed before result inspection. Results and interpretations
+  are populated afterward. Any material revision creates a successor hypothesis entry
+  rather than rewriting the ancestor.
+authority_rule: >-
+  Predictive result != construct validity != causal evidence != theoretical support.
+common_evidence_lineage:
+  fields:
+    - delta_log_loss
+    - delta_calibration
+    - split_robustness
+    - source_robustness
+    - ablation
+    - fidelity
+    - identifiability
+    - nonredundancy
+common_primary_metric: log_loss
+common_validation_rule: session-grouped fixed folds
+hypotheses:
+  - hypothesis_id: H_O
+    name: objective-conditioned relevance
+    source_type: task_structure
+    cca_source: null
+    role: structural_M2_hypothesis
+    claim_ceiling: >-
+      The learning objective contains predictive information about the correctness outcome
+      conditional on the transcript and strongest conventional baseline representation.
+      No causal claim is licensed.
+    predictive_hypothesis: >-
+      Explicitly conditioning transcript representations on the target learning objective
+      improves grouped-validation log loss relative to an otherwise matched transcript model.
+    observable_criterion: >-
+      The same session transcript may be paired with distinct learning objectives and outcomes;
+      representations must therefore permit objective-specific relevance.
+    unit: response_objective_with_session_group
+    representation_status: UNIMPLEMENTED
+    representation: null
+    fidelity_test: null
+    identifiability_test: null
+    nonredundancy_test: M1 versus M2 under fixed grouped folds
+    control_or_placebo: objective-shuffled or complexity-matched control where valid
+    primary_comparison: M1_vs_M2
+    robustness:
+      - fixed_grouped_folds
+      - calibration
+      - source_shift_when_source_is_identifiable
+    result: null
+    interpretation: null
+
+  - hypothesis_id: H_E
+    name: evidence exposure
+    source_type: CCA_DERIVED
+    cca_source: evidence_and_measurement_distinctions
+    role: M3_candidate_family
+    claim_ceiling: >-
+      A transcript operationalization motivated by CCA's evidence distinctions captures
+      incremental predictive structure. It is not a G1 measurement and does not establish
+      warranted evidence acquiring causal control.
+    predictive_hypothesis: >-
+      Representations of learner-produced evidence about current understanding add predictive
+      information beyond M2.
+    observable_criterion: >-
+      Transcript spans in which the learner exposes reasoning, uncertainty, intermediate work,
+      misconception-relevant statements, or answer attempts relevant to the objective.
+    unit: turn_span_session_objective
+    representation_status: UNIMPLEMENTED
+    representation: null
+    fidelity_test: null
+    identifiability_test: null
+    nonredundancy_test: M2 versus M2_plus_Z_E
+    control_or_placebo: matched transcript-content representation stripped of the hypothesized evidence-role structure
+    primary_comparison: M2_vs_M2_plus_Z_E
+    robustness:
+      - fixed_grouped_folds
+      - calibration
+      - source_shift_when_source_is_identifiable
+    result: null
+    interpretation: null
+
+  - hypothesis_id: H_D
+    name: learner-state diagnosis
+    source_type: CCA_DERIVED
+    cca_source: localization_and_diagnosis_distinctions
+    role: M3_candidate_family
+    claim_ceiling: >-
+      A diagnosis-motivated transcript representation captures incremental predictive structure.
+      It does not identify a causal diagnosis mechanism.
+    predictive_hypothesis: >-
+      Objective-conditioned representations of tutor/learner interaction that distinguish and
+      localize learner difficulty improve prediction beyond M2.
+    observable_criterion: >-
+      Transcript evidence consistent with the tutor identifying, testing, narrowing, or revising
+      an account of the learner's objective-relevant state.
+    unit: turn_span_session_objective
+    representation_status: UNIMPLEMENTED
+    representation: null
+    fidelity_test: null
+    identifiability_test: null
+    nonredundancy_test: M2 versus M2_plus_Z_D
+    control_or_placebo: matched tutor-language representation without diagnosis-role structure
+    primary_comparison: M2_vs_M2_plus_Z_D
+    robustness:
+      - fixed_grouped_folds
+      - calibration
+      - source_shift_when_source_is_identifiable
+    result: null
+    interpretation: null
+
+  - hypothesis_id: H_C
+    name: correction response
+    source_type: CCA_DERIVED
+    cca_source: correction_and_minimal_revision_distinctions
+    role: M3_candidate_family
+    claim_ceiling: >-
+      A correction-response operationalization captures incremental predictive structure.
+      It does not establish causal correction, modification efficacy, or G2.
+    predictive_hypothesis: >-
+      Representations of tutor responses to exposed objective-relevant difficulty add predictive
+      information beyond M2.
+    observable_criterion: >-
+      Tutor actions following learner evidence that are consistent with correction, explanation,
+      targeted prompting, counterexample, worked demonstration, or other response to the exposed state.
+    unit: linked_turn_span_session_objective
+    representation_status: UNIMPLEMENTED
+    representation: null
+    fidelity_test: null
+    identifiability_test: null
+    nonredundancy_test: M2 versus M2_plus_Z_C
+    control_or_placebo: complexity-matched tutor-response representation stripped of learner-evidence linkage
+    primary_comparison: M2_vs_M2_plus_Z_C
+    robustness:
+      - fixed_grouped_folds
+      - calibration
+      - source_shift_when_source_is_identifiable
+    result: null
+    interpretation: null
+
+  - hypothesis_id: H_P
+    name: post-intervention learner evidence
+    source_type: CCA_DERIVED
+    cca_source: post_change_evidence_and_repeated_correction_distinctions
+    role: M3_candidate_family
+    claim_ceiling: >-
+      A post-intervention learner-evidence operationalization captures incremental predictive structure.
+      It is not PMC, repeated-correction, JT, or C_improve measurement.
+    predictive_hypothesis: >-
+      Learner behavior after an objective-relevant tutor intervention contains predictive information
+      about the subsequent assessment outcome beyond M2 and pre-intervention representations.
+    observable_criterion: >-
+      Learner turns following a candidate intervention that provide objective-relevant evidence of
+      reconstruction, application, correction, persistence of misconception, uncertainty, or transfer.
+    unit: linked_post_intervention_span_session_objective
+    representation_status: UNIMPLEMENTED
+    representation: null
+    fidelity_test: null
+    identifiability_test: null
+    nonredundancy_test: M2 versus M2_plus_Z_P
+    control_or_placebo: matched later-session representation without intervention linkage
+    primary_comparison: M2_vs_M2_plus_Z_P
+    robustness:
+      - fixed_grouped_folds
+      - calibration
+      - source_shift_when_source_is_identifiable
+    result: null
+    interpretation: null
