@@ -1,0 +1,54 @@
+schema_version: 1
+experiment_id: M_MATURE_CAL
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+parent_predictive_object: M2_S
+parent_definition: '[Z_T, Z_O, X_ordinary, Z_S]'
+opened_boundary: probability_calibration_only
+cca_derived_features_allowed: false
+conditioning_operator_changes_allowed: false
+base_model_retraining_allowed: false
+index_sha256_required: 296399770b0818fa528f33382497bc7f4793b3c54a2e49e56e77efbc19d55c60
+fold_sha256_required: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+m2_s_score_manifest_sha256_required: fff1bd519171b3e5eb613ce95a99e6ba2d84c295382973a5dc4cdd431bf5a2dc
+parent_m2_sem_oof_sha256_required: 64679b828af9737e5245dd1348f2c8e0cf5a38e013eefaee02266de7277e096f
+parent_platt_metrics:
+  log_loss: 0.5359576099804155
+  brier: 0.1790775429407408
+  ece_10: 0.016943779107667246
+  absolute_mean_probability_bias: 0.01025059850899631
+historical_m1_cal_reference:
+  log_loss: 0.568358215399684
+  brier: 0.19212772052741983
+  ece_10: 0.015989848091338636
+  absolute_mean_probability_bias: 0.01053592989423624
+successor_calibrator:
+  family: IsotonicRegression
+  y_min: 0.000001
+  y_max: 0.999999
+  increasing: true
+  out_of_bounds: clip
+training_scores: inner_grouped_oof_only
+outer_validation_scores_used_for_fit: false
+primary_gates:
+  ece_10_not_worse_than_historical_m1_cal: true
+  log_loss_strictly_better_than_parent_platt: true
+  paired_session_cluster_bootstrap_ci95_upper_below_zero_for_log_loss: true
+  brier_not_worse_than_parent_platt: true
+  absolute_mean_probability_bias_not_worse_than_historical_m1_cal: true
+uncertainty:
+  method: paired_session_cluster_bootstrap
+  replicates: 2000
+  seed: 1721
+  interval: percentile_95
+authority_if_passes:
+  gained:
+    - mature_non_CCA_probability_treatment_under_M2_S
+  not_gained:
+    - H_O_support
+    - conditioning_authority
+    - CCA_support
+    - causal_evidence
+    - Z_E_authorization
+    - Z_D_authorization
+    - Z_C_authorization
+    - Z_P_authorization
