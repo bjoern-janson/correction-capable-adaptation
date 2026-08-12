@@ -1,0 +1,27 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_REPLACEMENT_SMOOTHECE
+status: CONTRACT_FROZEN_RESULT_UNOBSERVED
+candidate:
+  name: SmoothECE
+  reference_repo: apple/ml-calibration
+  reference_commit: 18ff21a7e4e409fc4885690129f50211b32ea144
+historical_access:
+  permitted: false
+  m1cal_read: false
+  m2s_read: false
+gates:
+  G_F: null
+  G_detect: null
+  G_U: null
+  G_decision: null
+authority:
+  Gamma_cal_smECE: false
+  replacement_measurement: false
+  mature_non_CCA_probability_treatment: false
+  mature_non_CCA_baseline: false
+  Z_E: false
+  Z_D: false
+  Z_C: false
+  Z_P: false
+result: null
+diagnosis: null
