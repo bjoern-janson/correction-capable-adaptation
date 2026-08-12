@@ -1,6 +1,6 @@
 schema_version: 1
 experiment_id: M2
-status: AUTHORIZED_RESULT_UNOBSERVED
+status: DIAGNOSED_UNRESOLVED
 parent_experiment: M1_CAL
 hypothesis_id: H_O
 opened_boundary: objective_conditioning_only
@@ -19,19 +19,101 @@ new_objects:
   main_effect_control: M2_O=[Z_T,Z_O,X_ordinary]
   conditioning_interaction: Z_T_x_Z_O=elementwise_product_same_hash_space
   conditioned_model: M2=[Z_T,Z_O,Z_T_x_Z_O,X_ordinary]
+execution:
+  method: fold_checkpointed_exact_frozen_fits
+  scientific_contract_changed: false
+  z_t_cache:
+    semantic_equivalence: PASS
+    evidence: exact CSR equality on sampled rows from each of all five cache blocks against the frozen sequential serializer/vectorizer
+  scheduling:
+    parallel_arms_attempt: REJECTED_LOCAL_MEMORY_ENVELOPE_EXIT_137
+    final: single_arm_at_a_time
+  all_outer_and_inner_base_models_converged: true
+  total_base_model_fits: 60
+result:
+  implementation_validity:
+    objective_id_text_mapping_one_to_one: true
+    objective_block_nonzero: true
+    interaction_block_nonzero: true
+    objective_feature_rows_differ_within_multiobjective_session: true
+    control_all_outer_and_inner_base_models_converged: true
+    full_all_outer_and_inner_base_models_converged: true
+    unique_objective_ids: 398
+    unique_objective_texts: 398
+    objective_matrix_nnz: 417406
+    interaction_matrix_nnz: 373693
+  parent_m1_cal:
+    log_loss: 0.568358215399684
+    auc: 0.6765200310812957
+    brier: 0.19212772052741983
+    ece_10: 0.015989848091338636
+    absolute_mean_probability_bias: 0.01053592989423624
+  main_effect_control_m2_o:
+    log_loss: 0.5366109542150183
+    delta_log_loss_vs_m1_cal: -0.031747261184665754
+    auc: 0.7337559709093916
+    brier: 0.1792456843044941
+    ece_10: 0.017041267231179977
+    bootstrap_vs_m1_cal:
+      ci95_lower: -0.03406438209197752
+      ci95_upper: -0.0293823143448044
+      replicates: 2000
+      seed: 1707
+      clusters: 22821
+  conditioned_m2:
+    log_loss: 0.5365875998865843
+    delta_log_loss_vs_m1_cal: -0.031770615513099676
+    delta_log_loss_vs_m2_o: -0.000023354328433922156
+    auc: 0.7337645477693076
+    brier: 0.17923762987073105
+    ece_10: 0.017049254435532013
+    absolute_mean_probability_bias: 0.009958359292578378
+    bootstrap_vs_m1_cal:
+      ci95_lower: -0.03411153532613641
+      ci95_upper: -0.029313782444952956
+      replicates: 2000
+      seed: 1705
+      clusters: 22821
+    bootstrap_vs_m2_o:
+      ci95_lower: -0.00012577669848935807
+      ci95_upper: 0.00008557702412326827
+      replicates: 2000
+      seed: 1706
+      clusters: 22821
 primary_hypothesis:
   comparison: M2_vs_M2_O
-  result: null
+  point_log_loss_improvement: true
+  bootstrap_ci95_upper_strictly_below_zero: false
+  gate: FAIL
+  interpretation: The specified sparse elementwise objective-conditioning interaction does not establish nonredundant predictive value beyond the objective main effect under the frozen regime.
 total_objective_information:
   comparison: M2_vs_M1_CAL
-  result: null
+  point_log_loss_improvement: true
+  bootstrap_ci95_upper_strictly_below_zero: true
+  gate: PASS
 main_effect_control:
   comparison: M2_O_vs_M1_CAL
-  result: null
-diagnosis: null
+  gate: DIAGNOSTIC_STRONG_GAIN
+calibration_preservation:
+  brier_not_worse_than_parent: true
+  ece_10_not_worse_than_parent: false
+  absolute_mean_probability_bias_not_worse_than_parent: true
+  gate: FAIL
+diagnosis:
+  implementation_gate: PASS
+  total_objective_information_gate: PASS
+  H_O_gate: FAIL
+  calibration_preservation_gate: FAIL
+  M2_baseline_gate: UNRESOLVED
+  cca_derived_feature_families_authorized: false
+  shallowest_remaining_boundaries:
+    - objective_conditioning_representation_diagnosis
+    - calibration_diagnosis
 authority:
-  gained: []
+  gained:
+    - objective_information_predictive_gain_under_frozen_operationalization
   not_gained:
+    - H_O_support
     - CCA_support
     - CCA_refutation
     - causal_evidence
@@ -40,4 +122,4 @@ authority:
     - repeated_correction_evidence
     - JT_evidence
     - C_improve_measurement
-    - CCA_derived_feature_authorization_until_M2_gate_closes
+    - CCA_derived_feature_authorization
