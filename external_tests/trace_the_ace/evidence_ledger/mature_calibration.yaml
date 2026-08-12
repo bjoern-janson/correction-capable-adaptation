@@ -1,12 +1,48 @@
 schema_version: 1
 experiment_id: M_MATURE_CAL
-status: AUTHORIZED_RESULT_UNOBSERVED
+status: DIAGNOSED_UNRESOLVED
 opened_boundary: probability_calibration_only
 parent_predictive_object: M2_S
 parent_raw_score_identity:
   manifest_sha256: fff1bd519171b3e5eb613ce95a99e6ba2d84c295382973a5dc4cdd431bf5a2dc
-result: null
-diagnosis: null
+parent_platt:
+  log_loss: 0.5359576099804156
+  brier: 0.1790775429407408
+  ece_10: 0.016943779107667253
+  absolute_mean_probability_bias: 0.010250598508996234
+successor_isotonic:
+  log_loss: 0.5359019722906156
+  brier: 0.17906845203766092
+  ece_10: 0.013074423086220192
+  absolute_mean_probability_bias: 0.010275693609736791
+log_loss_delta_isotonic_minus_platt: -0.000055637689799933776
+paired_session_cluster_bootstrap_ci95:
+  lower: -0.0004190393238243893
+  upper: 0.00030005387040281774
+  replicates: 2000
+  seed: 1721
+gates:
+  ece_10_not_worse_than_historical_m1_cal: PASS
+  log_loss_point_improvement: PASS
+  log_loss_bootstrap_ci95_upper_below_zero: FAIL
+  brier_not_worse_than_parent_platt: PASS
+  absolute_mean_probability_bias_not_worse_than_historical_m1_cal: PASS
+local_artifacts:
+  oof_predictions_sha256: 2e2d01de5468d5dd960d58f374959a2d352491e3088ad9f5380d36074c7515f8
+  mature_cal_record_sha256: 3d9e8d8eaf68c0d6d2d7ec7ae18dcb341943e1cf26197362b03fc4fd32ce1b48
+  generated_rows_committed: false
+result: ISOTONIC_REPAIRS_ECE_BUT_DOES_NOT_EARN_ROBUST_LOG_LOSS_AUTHORITY
+diagnosis:
+  calibration_shape_flexibility: SUPPORTED_AS_RELEVANT
+  isotonic_ECE_repair: PASS
+  isotonic_log_loss_authority: FAIL
+  base_model_reopen_authorized: false
+  next_shallowest_boundary: calibration_flexibility_variance_tradeoff
 authority:
   mature_non_CCA_probability_treatment: false
   CCA_derived_feature_authority: false
+  not_gained:
+    - conditioning_authority
+    - H_O_support
+    - CCA_support
+    - causal_evidence
