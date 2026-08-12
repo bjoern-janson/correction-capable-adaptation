@@ -1,0 +1,105 @@
+schema_version: 1
+experiment_id: M2_SEM
+status: AUTHORIZED_RESULT_UNOBSERVED
+parent_experiment: M2
+hypothesis_id: H_O_SEM
+opened_boundary: objective_conditioning_representation_only
+
+historical_parent_evidence:
+  objective_information_main_effect:
+    status: PASS
+    delta_log_loss_M2_minus_M1_CAL: -0.0317706155
+  lexical_interaction:
+    status: FAIL
+    delta_log_loss_M2_minus_M2_O: -0.0000233543
+    bootstrap_ci95: [-0.0001257767, 0.0000855770]
+  calibration_preservation:
+    status: FAIL
+  CCA_derived_feature_authority: false
+
+locked:
+  fold_sha256: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+  historical_m2_oof_sha256: 87e6fc4621f7e7ebf8d0fbe84ba0ace87b055c9a287f12217e9016a53d7eaa04
+  historical_m2_record_sha256: 67e80c6e6d7698a4eba4e9c175c9f211ac4d9bb6affefe40ad9abd1bb60fde98
+  M2_O_unchanged: true
+  Z_T_unchanged: true
+  Z_O_unchanged: true
+  X_ordinary_unchanged: true
+  classifier_training_policy_unchanged: true
+  calibration_procedure_unchanged: true
+  outer_validation_unchanged: true
+  cca_derived_features_allowed: false
+
+new_objects:
+  semantic_resource: Stanford_GloVe_2024_Wikipedia_Gigaword_50d
+  objective_independent_semantic_control: M2_S=[Z_T,Z_O,X_ordinary,Z_S]
+  objective_conditioning_residual: R_TO=Z_C(O)-Z_S
+  semantic_conditioned_model: M2_SC=[Z_T,Z_O,X_ordinary,Z_S,R_TO]
+
+resource_identity:
+  archive: glove.2024.wikigiga.50d.zip
+  source_url: https://nlp.stanford.edu/data/wordvecs/glove.2024.wikigiga.50d.zip
+  archive_sha256: null
+  extracted_member_name: null
+  extracted_vector_sha256: null
+  execution_authorized_after_hash_freeze: false
+
+primary_hypothesis:
+  comparison: M2_SC_vs_M2_S
+  point_delta_log_loss: null
+  bootstrap_ci95: null
+  result: null
+
+semantic_capacity_control:
+  comparison: M2_S_vs_historical_M2_O
+  point_delta_log_loss: null
+  bootstrap_ci95: null
+  interpretation: diagnostic_only
+
+total_semantic_successor:
+  comparison: M2_SC_vs_historical_M2_O
+  point_delta_log_loss: null
+  bootstrap_ci95: null
+  interpretation: diagnostic_only
+
+calibration_diagnostics:
+  M2_S:
+    brier: null
+    ece_10: null
+    absolute_mean_probability_bias: null
+  M2_SC:
+    brier: null
+    ece_10: null
+    absolute_mean_probability_bias: null
+  historical_M2_calibration_failure_repaired_by_this_branch: false
+
+implementation_validity:
+  resource_identity_frozen: null
+  all_objective_embeddings_nonzero: null
+  every_session_has_nonzero_utterance_embedding: null
+  Z_S_objective_independent: null
+  R_TO_nonzero: null
+  R_TO_multiobjective_variation: null
+  outer_session_isolation: null
+  inner_session_isolation: null
+  all_base_models_converged: null
+
+result: null
+diagnosis: null
+
+authority:
+  inherited:
+    - learning_objective_information_adds_predictive_information_beyond_M1_CAL
+  gained: []
+  not_gained:
+    - CCA_support
+    - CCA_refutation
+    - causal_evidence
+    - G1_evidence
+    - PMC_evidence
+    - repeated_correction_evidence
+    - JT_evidence
+    - C_improve_measurement
+    - CCA_derived_feature_authorization
+  conditional_rule:
+    if_H_O_SEM_passes_but_calibration_successor_unresolved: CCA_derived_feature_authorization_remains_false
