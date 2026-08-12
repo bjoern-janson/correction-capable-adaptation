@@ -1,0 +1,12 @@
+schema_version: 1
+experiment_id: M_MATURE_BETA_CAL
+status: AUTHORIZED_RESULT_UNOBSERVED
+opened_boundary: calibration_flexibility_variance_tradeoff
+parent_predictive_object: M2_S
+parent_probability_map: Platt
+successor_probability_map: monotone_beta_calibration
+result: null
+diagnosis: null
+authority:
+  mature_non_CCA_probability_treatment: false
+  CCA_derived_feature_authority: false
