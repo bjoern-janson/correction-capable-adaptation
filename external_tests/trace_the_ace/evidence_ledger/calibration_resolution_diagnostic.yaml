@@ -1,0 +1,46 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_RESOLUTION_DIAGNOSTIC
+status: CONTRACT_FROZEN_RESULT_UNOBSERVED
+opened_boundary: D_resolution
+
+source_geometry:
+  canonical_index_sha256: 296399770b0818fa528f33382497bc7f4793b3c54a2e49e56e77efbc19d55c60
+  n_rows_expected: 35072
+  n_sessions_expected: 22821
+  labels_forbidden: true
+
+resolution_object:
+  h_min_detect: null
+  h_min_decision: null
+  scale_pass_vector_detect: null
+  scale_pass_vector_decision: null
+  topology_nonmonotone: null
+
+oracle_scope:
+  candidate_neutral: true
+  upper_bound_only: true
+  sign_pattern_known: true
+  replacement_operator_authority: false
+
+gates:
+  D_resolution_executed: false
+  detection_resolution_identified: null
+  decision_resolution_identified: null
+
+historical_access:
+  permitted: false
+  m1cal_read: false
+  m2s_read: false
+
+authority:
+  R3_star_resolution_evidence: false
+  Gamma_cal_replacement: false
+  mature_non_CCA_probability_treatment: false
+  mature_non_CCA_baseline: false
+  Z_E: false
+  Z_D: false
+  Z_C: false
+  Z_P: false
+
+result: null
+diagnosis: null
