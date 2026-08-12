@@ -1,0 +1,90 @@
+schema_version: 1
+experiment_id: M2_D_MAIN
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+diagnostic_candidate: D_main
+broad_H_O_status: OPEN
+cca_derived_features_allowed: false
+new_conditioning_operator_authorized: false
+index_sha256_required: 296399770b0818fa528f33382497bc7f4793b3c54a2e49e56e77efbc19d55c60
+fold_sha256_required: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+zt_cache_sha256_required: 4b7e8b23ea93740f86afa0a99c8352031925e079a66aa252362b964f1fb97e18
+session_semantic_sha256_required: d4eafecc328ae42df8456673bff97adc1095d53aeb3609efc2f7953fc50e10d4
+response_conditioning_sha256_required: 794b3605f733ad53927f93a8a20a8c0998b4660bf4f351f885ad610bf5362b8c
+eligible_objectives_sha256_required: 54d56b68cc05bfcedd8dd5c4701696a465f7798c479cabfae8cb66ae0146aef6
+eligible_rule: objective_present_in_at_least_2_canonical_outer_folds
+eligible_objectives: 319
+eligible_rows: 34978
+eligible_sessions: 22783
+operator_probe:
+  source: historical_M2_SEM_R_TO
+  raw_definition: R_TO=Z_C(O)-Z_S
+  diagnostic_transform: outer_training_fold_objective_mean_centering
+  centered_definition: R_centered=R_TO-mean_train(R_TO|O)
+  validation_objective_must_exist_in_outer_training: true
+arms:
+  B0: '[Z_T, X_ordinary, Z_S]'
+  C0: '[Z_T, X_ordinary, Z_S, R_centered]'
+  B1: '[Z_T, Z_O, X_ordinary, Z_S]'
+  C1: '[Z_T, Z_O, X_ordinary, Z_S, R_centered]'
+primary_measurement: raw_sigmoid_log_loss
+calibration_used_in_primary: false
+primary_quantities:
+  delta_no_main: LL(C0)-LL(B0)
+  delta_with_main: LL(C1)-LL(B1)
+  suppression_difference: '[LL(C0)-LL(B0)]-[LL(C1)-LL(B1)]'
+D_main_support_rule:
+  delta_no_main_point_lt_zero: true
+  delta_no_main_ci95_upper_lt_zero: true
+  suppression_difference_point_lt_zero: true
+  suppression_difference_ci95_upper_lt_zero: true
+D_main_weigh_against_rule:
+  delta_no_main_ci95_lower_ge_zero: true
+  suppression_difference_ci95_lower_ge_zero: true
+secondary_diagnostics:
+  - raw_auc_each_arm
+  - delta_with_main_bootstrap
+uncertainty:
+  method: paired_session_cluster_bootstrap
+  replicates: 2000
+  seed_delta_no_main: 1731
+  seed_delta_with_main: 1732
+  seed_suppression_difference: 1733
+hashed_representation:
+  family: HashingVectorizer
+  analyzer: word
+  ngram_range: [1, 2]
+  n_features: 262144
+  alternate_sign: false
+  binary: false
+  norm: l2
+  lowercase: true
+  token_pattern: "(?u)\\b\\w+\\b"
+  dtype: float32
+ordinary_covariates:
+  - n_turns
+  - n_student_words
+  - numeric_turns_per_word
+  - digit_chars_per_word
+base_classifier:
+  family: SGDClassifier
+  loss: log_loss
+  penalty: l2
+  alpha: 1.0e-5
+  max_iter: 500
+  tol: 1.0e-4
+  shuffle: true
+  random_state: 17
+  average: true
+  fit_intercept: true
+  class_weight: null
+  early_stopping: false
+authority_ceiling:
+  never_from_this_diagnostic:
+    - new_conditioning_operator_authorization
+    - global_H_O_support_or_refutation
+    - calibration_resolution
+    - CCA_support
+    - Z_E_authorization
+    - Z_D_authorization
+    - Z_C_authorization
+    - Z_P_authorization
