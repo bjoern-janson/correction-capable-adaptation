@@ -1,0 +1,36 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_ECE_OBJECT_ADEQUACY_V2
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+opened_diagnostic: D_object_truth_criterion_repair
+scientific_scale:
+  epsilon: 0.003997462025
+measurement_under_test:
+  name: fixed_equal_width_ECE_10
+  bins: 10
+synthetic_population:
+  candidate_p_min: 0.15
+  candidate_p_max: 0.85
+  weights: canonical_session_response_counts_label_free
+  conditional_outcome_definition: q_of_p_equals_p_minus_amplitude_times_shape
+  amplitude_grid_min: 0.0
+  amplitude_grid_max: 0.05
+  amplitude_grid_points: 10001
+  target_match_absolute_tolerance: 0.000005
+  probability_lower_exclusive: 0.001
+  probability_upper_exclusive: 0.999
+  target_multipliers: [0.5, 1.0, 2.0]
+  defect_families:
+    - global_shift
+    - linear_tilt
+    - smooth_low_frequency
+    - localized_band
+    - within_bin_alternating
+adequacy_gates:
+  require_all_families: true
+  ECE_noninferiority_threshold: 0.003997462025
+  require_directional_nondecreasing: true
+historical_oof_access_allowed: false
+metric_replacement_allowed: false
+tolerance_change_allowed: false
+additional_evidence_allowed: false
+cca_derived_features_allowed: false
