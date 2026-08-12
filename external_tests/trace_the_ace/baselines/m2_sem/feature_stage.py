@@ -50,12 +50,13 @@ def filter_glove(a,cfg):
 
 def shard(a,cfg):
  z=np.load(a.filtered,allow_pickle=True); wl=z['words'].tolist(); V=z['vectors']; words={w:i for i,w in enumerate(wl)};dim=V.shape[1];r=token_re(cfg); beta=float(cfg['semantic_conditioning']['beta'])
- idx=pd.read_csv(a.index,usecols=['response_id','session_id','learning_objective_id','learning_objective']); pm={}
+ idx=pd.read_csv(a.index,usecols=['response_id','session_id','learning_objective_id','learning_objective']); idx['session_id']=idx['session_id'].astype(str); idx['learning_objective_id']=idx['learning_objective_id'].astype(str); pm={}
  for root in a.root:pm.update(paths(root))
- sessions=sorted(idx.session_id.astype(str).unique())[a.start:a.end]
+ sessions=sorted(idx.session_id.unique())[a.start:a.end]
  objtxt=idx[['learning_objective_id','learning_objective']].drop_duplicates('learning_objective_id'); OE={str(x.learning_objective_id):emb(str(x.learning_objective),r,words,V,dim) for x in objtxt.itertuples(index=False)}
  assert all(np.any(v) for v in OE.values())
- obj_by=idx.groupby('session_id')['learning_objective_id'].apply(lambda s:sorted(set(map(str,s))))
+ obj_by=idx.groupby('session_id')['learning_objective_id'].apply(lambda s:sorted(set(s)))
+ rows_by={sid:list(zip(g.response_id.astype(str),g.learning_objective_id)) for sid,g in idx.groupby('session_id',sort=False)}
  srows=[];rrows=[]
  for n,sid in enumerate(sessions,1):
   qs=[]
@@ -66,12 +67,11 @@ def shard(a,cfg):
     if np.any(e):qs.append(e)
   if not qs:raise AssertionError(f'zero session {sid}')
   Q=np.stack(qs).astype(np.float32);zs=Q.mean(0,dtype=np.float64).astype(np.float32);sr={'session_id':sid,'nonzero_semantic_utterances':len(qs)};sr.update({f'z_s_{j:02d}':float(zs[j]) for j in range(dim)});srows.append(sr)
-  sub=idx[idx.session_id.astype(str)==sid][['response_id','learning_objective_id']]
   residual={}
   for oid in obj_by.loc[sid]:
    qo=OE[oid];lg=beta*(Q@qo);lg-=float(lg.max());w=np.exp(lg,dtype=np.float64);w/=w.sum();zc=(w[:,None]*Q).sum(0,dtype=np.float64).astype(np.float32);residual[oid]=zc-zs
-  for x in sub.itertuples(index=False):
-   rr={'response_id':x.response_id,'session_id':sid,'learning_objective_id':x.learning_objective_id};rv=residual[str(x.learning_objective_id)];rr.update({f'r_to_{j:02d}':float(rv[j]) for j in range(dim)});rrows.append(rr)
+  for response_id,oid in rows_by[sid]:
+   rr={'response_id':response_id,'session_id':sid,'learning_objective_id':oid};rv=residual[oid];rr.update({f'r_to_{j:02d}':float(rv[j]) for j in range(dim)});rrows.append(rr)
   if n%1000==0:print(json.dumps({'shard_sessions_done':n}),flush=True)
  out=Path(a.output);out.mkdir(parents=True,exist_ok=True);pd.DataFrame(srows).to_csv(out/f'sessions_{a.start}_{a.end}.csv',index=False,lineterminator='\n');pd.DataFrame(rrows).to_csv(out/f'responses_{a.start}_{a.end}.csv',index=False,lineterminator='\n');print(json.dumps({'sessions':len(srows),'responses':len(rrows)}))
 
