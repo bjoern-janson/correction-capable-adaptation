@@ -1,13 +1,43 @@
 schema_version: 1
 method_experiment_id: GAMMA_CAL_NI
-status: AUTHORIZED_RESULT_UNOBSERVED
+status: METHOD_VALID_HISTORICAL_UNRESOLVED
 opened_boundary: ECE_gate_uncertainty_semantics
 predecessor_protocol: Gamma_t
-synthetic_measurement_validity_result: null
-method_diagnosis: null
+synthetic_measurement_validity_result:
+  S0_pass: 10
+  S0_fail: 0
+  S1_pass: 10
+  S1_fail: 0
+  S2_pass: 1
+  S2_fail: 9
+  all_finite_suite_gates_pass: true
+method_diagnosis: >-
+  The uncertainty-bearing ECE non-inferiority rule survived the prospectively frozen finite synthetic validation suite. It therefore earns local methodological authority for the declared scope. When applied as a successor adjudication to the sealed M1-cal and M2-S Platt OOF vectors, LL, Brier, and mean-bias gates pass, but the ECE non-inferiority interval remains too wide relative to the inherited 25% practical margin. The calibration boundary therefore remains unresolved; the historical deterministic ECE failure is not rewritten.
 method_authority:
-  Gamma_cal_NI: false
-historical_successor_adjudication: null
+  Gamma_cal_NI: true
+historical_successor_adjudication:
+  reference: M1_CAL
+  candidate: M2_S_PLATT
+  point_differences:
+    delta_log_loss: -0.03240060541926846
+    delta_brier: -0.013050177586679014
+    delta_ece_10: 0.0009539310163289155
+    delta_absolute_mean_bias: -0.00028533138524000634
+  ci95:
+    delta_log_loss: [-0.034694227813034044, -0.02992145742201522]
+    delta_brier: [-0.013980095903076405, -0.012019485699650698]
+    delta_ece_10: [-0.0032400811136148507, 0.005016178220585462]
+    delta_absolute_mean_bias: [-0.0012835725461373597, 0.0007164329410068981]
+  practical_margins:
+    epsilon_ece: 0.003997462025
+    epsilon_bias: 0.002633982475
+  gates:
+    G_LL: true
+    G_Brier: true
+    G_ECE_NI: false
+    G_bias_NI: true
+  all_gates_pass: false
+  result_record_sha256: c20e8691dd01f0eace7fddfb06854f77b36baf23969803d4ac61cbddc8f4a12e
 scientific_authority:
   mature_non_CCA_probability_treatment: false
   mature_non_CCA_baseline: false
