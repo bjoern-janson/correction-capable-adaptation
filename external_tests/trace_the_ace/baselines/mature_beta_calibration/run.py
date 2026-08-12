@@ -29,7 +29,7 @@ def bootstrap(session_ids,y,cand,base,reps,seed):
     q=np.quantile(out,[.025,.975]); return {'point_delta_log_loss':float((per_row_loss(y,cand)-per_row_loss(y,base)).mean()),'ci95_lower':float(q[0]),'ci95_upper':float(q[1]),'replicates':int(reps),'seed':int(seed),'clusters':int(n)}
 def verify_manifest(score_dir,manifest,required):
     if sha256(manifest)!=required: raise AssertionError('manifest hash mismatch')
-    lines=manifest.read_text().splitlines();
+    lines=manifest.read_text().splitlines()
     if len(lines)!=30: raise AssertionError('expected 30 score artifacts')
     for line in lines:
         name,size_s,h=line.split('\t'); p=score_dir/name
@@ -44,7 +44,9 @@ def beta_predict(raw_score,coef,cfg):
     eps=float(cfg['raw_probability_clip']); p0=np.clip(sigmoid(raw_score),eps,1-eps); z=coef[0]*np.log(p0)-coef[1]*np.log1p(-p0)+coef[2]; return sigmoid(z)
 def main():
     ap=argparse.ArgumentParser(); ap.add_argument('--config',type=Path,required=True); ap.add_argument('--index',type=Path,required=True); ap.add_argument('--folds',type=Path,required=True); ap.add_argument('--score-dir',type=Path,required=True); ap.add_argument('--score-manifest',type=Path,required=True); ap.add_argument('--parent-oof',type=Path,required=True); ap.add_argument('--output-dir',type=Path,required=True); a=ap.parse_args(); cfg=yaml.safe_load(a.config.read_text()); assert cfg['experiment_id']=='M_MATURE_BETA_CAL' and not cfg['cca_derived_features_allowed'] and not cfg['base_model_retraining_allowed']
-    if sha256(a.index)!=cfg['index_sha256_required'] or sha256(a.folds)!=cfg['fold_sha256_required']: raise AssertionError('index/fold identity mismatch'); verify_manifest(a.score_dir,a.score_manifest,cfg['m2_s_score_manifest_sha256_required'])
+    if sha256(a.index)!=cfg['index_sha256_required'] or sha256(a.folds)!=cfg['fold_sha256_required']:
+        raise AssertionError('index/fold identity mismatch')
+    verify_manifest(a.score_dir,a.score_manifest,cfg['m2_s_score_manifest_sha256_required'])
     if sha256(a.parent_oof)!=cfg['parent_m2_sem_oof_sha256_required']: raise AssertionError('parent OOF hash mismatch')
     idx=pd.read_csv(a.index,usecols=['response_id','session_id','is_correct']); folds=pd.read_csv(a.folds); df=idx.merge(folds,on='session_id',validate='many_to_one'); y=df.is_correct.to_numpy(np.int8); g=df.session_id.astype(str).to_numpy(); fa=df.fold.to_numpy(int)
     po=pd.read_csv(a.parent_oof,usecols=['response_id','m2_s_cal_probability']); po=idx[['response_id']].merge(po,on='response_id',validate='one_to_one'); p_parent=po.m2_s_cal_probability.to_numpy(float); p_beta=np.full(len(df),np.nan,float); fold_records=[]; bc=cfg['beta_calibrator']
@@ -52,7 +54,8 @@ def main():
         otr=np.flatnonzero(fa!=outer); ova=np.flatnonzero(fa==outer); oz=np.load(a.score_dir/f'M2_S_fold{outer}_outer.npz'); pos={int(ix):j for j,ix in enumerate(oz['global_index'])}; os=np.asarray([oz['score'][pos[int(ix)]] for ix in ova],float); inner=np.full(len(df),np.nan,float); seen=set()
         for k in range(5):
             z=np.load(a.score_dir/f'M2_S_fold{outer}_inner{k}.npz'); gi=np.asarray(z['global_index'],int)
-            if seen.intersection(map(int,gi)): raise AssertionError('inner overlap'); seen.update(map(int,gi)); inner[gi]=np.asarray(z['score'],float)
+            if seen.intersection(map(int,gi)): raise AssertionError('inner overlap')
+            seen.update(map(int,gi)); inner[gi]=np.asarray(z['score'],float)
         if seen!=set(map(int,otr)) or not np.isfinite(inner[otr]).all(): raise AssertionError('inner coverage mismatch')
         res=beta_fit(inner[otr],y[otr],bc); coef=np.asarray(res.x,float); pred=beta_predict(os,coef,bc); p_beta[ova]=pred; cm=calibration_summary(y[ova],pred); fold_records.append({'fold':outer,'optimizer_success':bool(res.success),'optimizer_status':int(res.status),'optimizer_message':str(res.message),'iterations':int(res.nit),'a':float(coef[0]),'b':float(coef[1]),'c':float(coef[2]),'log_loss':float(log_loss(y[ova],pred)),'brier':cm['brier_score'],'ece_10':cm['ece_10_equal_width']})
     if not np.isfinite(p_beta).all(): raise AssertionError('incomplete beta OOF')
