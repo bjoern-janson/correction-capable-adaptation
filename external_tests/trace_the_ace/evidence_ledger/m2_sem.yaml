@@ -37,12 +37,23 @@ new_objects:
   semantic_conditioned_model: M2_SC=[Z_T,Z_O,X_ordinary,Z_S,R_TO]
 
 resource_identity:
+  selection_status: PASS
+  materialization_status: PASS
+  hash_status: PASS
+  validation_status: PASS
   archive: glove.2024.wikigiga.50d.zip
   source_url: https://nlp.stanford.edu/data/wordvecs/glove.2024.wikigiga.50d.zip
-  archive_sha256: null
-  extracted_member_name: null
-  extracted_vector_sha256: null
-  execution_authorized_after_hash_freeze: false
+  archive_byte_size: 301036094
+  archive_sha256: afa5e258ee38272db6394547c4b075ecbb7b2164e98542c8d1237b6029b35a65
+  archive_member_count: 1
+  extracted_member_name: wiki_giga_2024_50_MFT20_vectors_seed_123_alpha_0.75_eta_0.075_combined.txt
+  extracted_vector_byte_size: 842192707
+  extracted_vector_sha256: 16c4253cb9a19045dcdc758b6a1eda52d3c37b894dea2601a45046b4300a8d10
+  vocabulary_rows: 1291147
+  vector_dimension: 50
+  malformed_rows: 0
+  nonfinite_rows: 0
+  execution_authorized_after_hash_freeze: true
 
 primary_hypothesis:
   comparison: M2_SC_vs_M2_S
@@ -74,7 +85,7 @@ calibration_diagnostics:
   historical_M2_calibration_failure_repaired_by_this_branch: false
 
 implementation_validity:
-  resource_identity_frozen: null
+  resource_identity_frozen: true
   all_objective_embeddings_nonzero: null
   every_session_has_nonzero_utterance_embedding: null
   Z_S_objective_independent: null
@@ -90,8 +101,10 @@ diagnosis: null
 authority:
   inherited:
     - learning_objective_information_adds_predictive_information_beyond_M1_CAL
-  gained: []
+  gained:
+    - M2_SEM_execution_authorized_by_frozen_resource_identity
   not_gained:
+    - H_O_SEM_support
     - CCA_support
     - CCA_refutation
     - causal_evidence
