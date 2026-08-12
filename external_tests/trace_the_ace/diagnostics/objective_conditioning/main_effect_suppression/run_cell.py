@@ -18,12 +18,10 @@ def sigmoid(x):
 def struct(a,b):
  a=a.copy();b=b.copy();m=np.nanmedian(a,axis=0);ia=np.where(np.isnan(a));ib=np.where(np.isnan(b));a[ia]=m[ia[1]];b[ib]=m[ib[1]];s=StandardScaler();return s.fit_transform(a).astype(np.float32),s.transform(b).astype(np.float32)
 def center(R,obj,tr,va):
- means={o:R[tr][obj[tr]==o].mean(0,dtype=np.float64).astype(np.float32) for o in np.unique(obj[tr])};missing=set(obj[va])-set(means)
- if missing:raise AssertionError(f'missing objective support {len(missing)}')
- a=np.vstack([R[i]-means[obj[i]] for i in tr]).astype(np.float32);b=np.vstack([R[i]-means[obj[i]] for i in va]).astype(np.float32)
- for o in np.unique(obj[tr]):
-  m=obj[tr]==o
-  if np.max(np.abs(a[m].mean(0,dtype=np.float64)))>2e-6:raise AssertionError('centering failure')
+ otr=obj[tr];ova=obj[va];keys,inv=np.unique(otr,return_inverse=True);rtr=R[tr].astype(np.float64,copy=False);sums=np.zeros((len(keys),R.shape[1]),dtype=np.float64);np.add.at(sums,inv,rtr);counts=np.bincount(inv,minlength=len(keys)).astype(np.float64);means=(sums/counts[:,None]).astype(np.float32);vix=np.searchsorted(keys,ova)
+ if np.any(vix>=len(keys)) or np.any(keys[vix]!=ova):raise AssertionError('validation objective without training support')
+ a=(R[tr]-means[inv]).astype(np.float32);b=(R[va]-means[vix]).astype(np.float32);check=np.zeros_like(sums);np.add.at(check,inv,a.astype(np.float64,copy=False));check/=counts[:,None]
+ if np.max(np.abs(check))>2e-6:raise AssertionError('centering failure')
  return a,b
 def main():
  p=argparse.ArgumentParser();p.add_argument('--outer-fold',type=int,required=True);p.add_argument('--arm',choices=['B0','C0','B1','C1'],required=True);p.add_argument('--config',type=Path,required=True);p.add_argument('--index',type=Path,required=True);p.add_argument('--folds',type=Path,required=True);p.add_argument('--m0-session-features',type=Path,required=True);p.add_argument('--zt-cache',type=Path,required=True);p.add_argument('--session-semantic',type=Path,required=True);p.add_argument('--response-conditioning',type=Path,required=True);p.add_argument('--eligible-objectives',type=Path,required=True);p.add_argument('--parent-runner',type=Path,required=True);p.add_argument('--output',type=Path,required=True);a=p.parse_args();cfg=yaml.safe_load(a.config.read_text());parent=loadmod('parent',a.parent_runner)
