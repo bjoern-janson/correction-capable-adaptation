@@ -1,0 +1,14 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_NI
+status: AUTHORIZED_RESULT_UNOBSERVED
+opened_boundary: ECE_gate_uncertainty_semantics
+predecessor_protocol: Gamma_t
+synthetic_measurement_validity_result: null
+method_diagnosis: null
+method_authority:
+  Gamma_cal_NI: false
+historical_successor_adjudication: null
+scientific_authority:
+  mature_non_CCA_probability_treatment: false
+  mature_non_CCA_baseline: false
+  CCA_derived_feature_authority: false
