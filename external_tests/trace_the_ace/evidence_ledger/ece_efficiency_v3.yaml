@@ -1,0 +1,13 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_EFF_IF_V3
+status: AUTHORIZED_RESULT_UNOBSERVED
+opened_boundary: synthetic_candidate_family_only
+synthetic_fixture_result: null
+historical_result: null
+diagnosis: null
+authority:
+  IF_efficiency_method_valid: null
+  D_efficiency_local_weight: null
+  ECE_precision_boundary_closed: false
+  mature_non_CCA_probability_treatment: false
+  CCA_derived_feature_authority: false
