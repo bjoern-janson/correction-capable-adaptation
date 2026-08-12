@@ -1,0 +1,62 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_EFF_IF_V3
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+parent_experiment: GAMMA_CAL_EFF_IF_V2
+opened_boundary: synthetic_candidate_family_only
+candidate_method_unchanged: paired_session_cluster_influence_function_sandwich
+scientific_target:
+  metric: fixed_equal_width_ECE_10
+  bins: 10
+  epsilon_ece: 0.003997462025
+reference_oof_sha256_required: f2aa3e53b345200f2dacf7b3c912e29a9ac76f09758cb8bb172f4ec06a2a47
+candidate_oof_sha256_required: 64679b828af9737e5245dd1348f2c8e0cf5a38e013eefaee02266de7277e096f
+predecessor_bootstrap_ece_ci95:
+  lower: -0.0032400811
+  upper: 0.0050161782
+  width: 0.0082562593
+uncertainty_candidate:
+  z_critical: 1.959963984540054
+  regularity_gate_z: 1.96
+synthetic_fixture:
+  reference_probability: deterministic_uniform_0.15_to_0.85_by_session_rank
+  reference_bin_residual_magnitude: 0.03
+  reference_bin_residual_sign: alternating_by_fixed_ECE_bin
+  candidate_family: p_reference_plus_a_plus_b_times_reference_bin_sign
+  a_grid_min: -0.05
+  a_grid_max: 0.05
+  a_grid_points: 81
+  b_grid_min: -0.08
+  b_grid_max: 0.08
+  b_grid_points: 121
+  probability_lower_exclusive: 0.001
+  probability_upper_exclusive: 0.999
+  target_match_absolute_tolerance: 0.00005
+  minimum_bin_membership_change_fraction_nonzero: 0.01
+  scenarios:
+    S0: 0.0
+    S1: 0.0019987310125
+    SB: 0.003997462025
+    S2: 0.00799492405
+  outcome_seeds_start: 6101
+  outcome_seed_count: 100
+  nonregular_negative_control_seeds_start: 7101
+  nonregular_negative_control_count: 30
+  validity_gates:
+    minimum_coverage_each_nonzero_scenario: 0.90
+    minimum_NI_pass_rate_S1: 0.75
+    maximum_NI_pass_rate_SB: 0.10
+    minimum_NI_fail_rate_S2: 0.90
+    minimum_regularity_pass_rate_regular_scenarios: 0.90
+    minimum_regularity_fail_rate_nonregular_control: 0.90
+    minimum_median_ci_width_nonzero_scenarios: 0.0001
+historical_rules:
+  synthetic_method_validity_required: true
+  historical_regularity_required: true
+  more_efficient_if_ci_width_lt: 0.0082562593
+  identifies_noninferiority_if_ci95_upper_lt: 0.003997462025
+metric_switch_allowed: false
+tolerance_change_allowed: false
+additional_evidence_allowed: false
+model_refit_allowed: false
+new_calibrator_allowed: false
+cca_derived_features_allowed: false
