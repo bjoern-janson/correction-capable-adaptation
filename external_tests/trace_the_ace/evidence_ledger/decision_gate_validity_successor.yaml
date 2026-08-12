@@ -1,0 +1,37 @@
+schema_version: 1
+method_experiment_id: GAMMA_DECISION_GATE_VALIDITY_SUCCESSOR
+status: CONTRACT_FROZEN_RESULT_UNOBSERVED
+opened_boundary: D_decision_gate_validity
+
+predecessor:
+  pr44_raw_verdict: NOT_IDENTIFIED_WITHIN_GRID
+  pr44_authority: WITHHELD_DUE_GATE_VALIDITY
+
+validation:
+  V0: null
+  V1: null
+  V2: null
+  V3: null
+  V4: null
+  V5: null
+
+authority:
+  Gamma_decision_gate_prime: false
+  permission_to_readjudicate_PR44: false
+  D_additional_evidence: unresolved_due_gate_validity
+  replacement_measurement: false
+  Gamma_cal_replacement: false
+  historical_calibration_closure: false
+  mature_non_CCA_baseline: false
+  Z_E: false
+  Z_D: false
+  Z_C: false
+  Z_P: false
+
+historical_access:
+  permitted: false
+  m1cal_read: false
+  m2s_read: false
+
+result: null
+diagnosis: null
