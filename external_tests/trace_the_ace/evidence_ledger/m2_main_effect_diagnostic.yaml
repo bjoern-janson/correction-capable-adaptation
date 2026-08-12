@@ -1,0 +1,12 @@
+schema_version: 1
+experiment_id: M2_D_MAIN
+status: AUTHORIZED_RESULT_UNOBSERVED
+diagnostic_candidate: D_main
+probe: centered_historical_R_TO_main_effect_suppression
+result: null
+diagnosis: null
+authority:
+  D_main_local_diagnostic_weight: null
+  broad_H_O: OPEN
+  new_conditioning_operator_authorized: false
+  CCA_derived_feature_authority: false
