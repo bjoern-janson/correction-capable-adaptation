@@ -1,6 +1,6 @@
 schema_version: 1
 method_experiment_id: GAMMA_CAL_INFORMATION_SCALING
-status: CONTRACT_FROZEN_RESULT_UNOBSERVED
+status: EXECUTED_AUTHORITY_WITHHELD_GATE_VALIDITY
 opened_boundary: D_additional_evidence
 
 predecessor_state:
@@ -8,20 +8,39 @@ predecessor_state:
   D_decision: NONE_IDENTIFIED
   shallowest_live_boundary: decision_precision
 
-information_response:
-  m_min_decision_coarse: null
-  m_min_decision_fine: null
-  m_min_decision_joint: null
-  n_min_decision_joint: null
-  coarse_pass_vector: null
-  fine_pass_vector: null
-  joint_pass_vector: null
-
 baseline_reproducibility:
-  status: NOT_RUN
+  status: PASS
+  exact_substantive_mismatches: 0
+  artifact_sha256: 56a028d64f81fe850b62d216cbd33a1317303be8a71669f9dad679d0d61fd72c
 
-D_additional_evidence:
-  status: UNOBSERVED
+information_response:
+  raw_m_min_decision_coarse: NONE_IDENTIFIED_WITHIN_GRID
+  raw_m_min_decision_fine: NONE_IDENTIFIED_WITHIN_GRID
+  raw_m_min_decision_joint: NONE_IDENTIFIED_WITHIN_GRID
+  raw_n_min_decision_joint: NONE_IDENTIFIED_WITHIN_GRID
+  coarse_pass_vector: [false, false, false, false, false]
+  fine_pass_vector: [false, false, false, false, false]
+  joint_pass_vector: [false, false, false, false, false]
+  R_0_125_NI_coarse: [0.57, 0.83, 1.00, 1.00, 1.00]
+  R_0_125_NI_fine: [0.45, 0.75, 1.00, 1.00, 1.00]
+  R_0_125_width_coarse: [0.1380214793, 0.0902576116, 0.0575685682, 0.0403269723, 0.0279879321]
+  R_0_125_width_fine: [0.1788704434, 0.1010143672, 0.0629278410, 0.0423800300, 0.0287257855]
+
+raw_contract:
+  D_additional_evidence: NOT_IDENTIFIED_WITHIN_GRID
+  authority: WITHHELD
+
+validity_diagnosis:
+  D_decision_gate_validity: FAIL
+  failure_locus: R_0_DEGENERATE_COVERAGE_UPPER_BOUND
+  explanation: >-
+    Under R=0 the paired oracle statistic is exactly zero on every valid bootstrap
+    replicate, so the 95% interval is [0,0] and valid-data coverage is structurally
+    1.00. The frozen coverage gate [0.90,0.99] therefore penalizes increasing
+    information/validity and cannot validly adjudicate information sufficiency.
+  D_additional_evidence: UNRESOLVED_DUE_GATE_VALIDITY
+  D_decision_object: NOT_AUTHORIZED
+  directional_information_response: SUPPORTED_LOCALLY_WITHOUT_FORMAL_AUTHORITY
 
 historical_access:
   permitted: false
@@ -30,6 +49,7 @@ historical_access:
 
 authority:
   information_quantity_diagnosis: false
+  decision_gate_validity_diagnosis: true
   replacement_measurement: false
   Gamma_cal_replacement: false
   historical_calibration_closure: false
@@ -39,5 +59,8 @@ authority:
   Z_C: false
   Z_P: false
 
-result: null
-diagnosis: null
+result:
+  final_partitioned_sha256: 788109fbec94649a9f7aa94d77a09c8b8141ef7b440fbb0e79e98838ff8807c7
+  hash_manifest_sha256: b08c47b094a174ca41a7f14b932040538aae24676acc0c1f04059eb3aec73b5d
+
+diagnosis: DECISION_GATE_VALIDITY_FAILURE_BLOCKS_INFORMATION_SCALING_AUTHORITY
