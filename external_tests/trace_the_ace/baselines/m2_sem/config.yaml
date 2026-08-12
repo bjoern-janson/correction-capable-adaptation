@@ -1,0 +1,188 @@
+schema_version: 1
+experiment_id: M2_SEM
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+parent_experiment_id: M2
+historical_parent_status:
+  objective_information_main_effect: PASS
+  lexical_interaction_H_O_gate: FAIL
+  calibration_preservation_gate: FAIL
+hypothesis_id: H_O_SEM
+opened_boundary: objective_conditioning_representation_only
+cca_derived_features_allowed: false
+
+fold_sha256_required: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+historical_m2_oof_sha256_required: 87e6fc4621f7e7ebf8d0fbe84ba0ace87b055c9a287f12217e9016a53d7eaa04
+historical_m2_record_sha256_required: 67e80c6e6d7698a4eba4e9c175c9f211ac4d9bb6affefe40ad9abd1bb60fde98
+historical_main_effect_probability_column: m2_o_probability
+
+locked_parent_blocks:
+  - Z_T
+  - Z_O
+  - X_ordinary
+
+text_serialization:
+  preserve_utterance_order: true
+  role_markers:
+    tutor: __ROLE_TUTOR__
+    student: __ROLE_STUDENT__
+    background: __ROLE_BACKGROUND__
+  include_timestamp: false
+  include_session_id: false
+  include_response_id: false
+  include_objective: false
+  normalize_internal_whitespace: true
+
+ordinary_covariates:
+  - n_turns
+  - n_student_words
+  - numeric_turns_per_word
+  - digit_chars_per_word
+
+hashed_representation:
+  family: HashingVectorizer
+  analyzer: word
+  ngram_range: [1, 2]
+  n_features: 262144
+  alternate_sign: false
+  binary: false
+  norm: l2
+  lowercase: true
+  token_pattern: "(?u)\\b\\w+\\b"
+  dtype: float32
+
+external_semantic_resource:
+  family: Stanford_GloVe
+  archive_name: glove.2024.wikigiga.50d.zip
+  source_url: https://nlp.stanford.edu/data/wordvecs/glove.2024.wikigiga.50d.zip
+  vector_dimension: 50
+  case: uncased
+  archive_sha256_required: REQUIRED_BEFORE_EXECUTION
+  extracted_member_name_required: REQUIRED_BEFORE_EXECUTION
+  extracted_vector_sha256_required: REQUIRED_BEFORE_EXECUTION
+  adaptation_on_trace_the_ace: none
+
+semantic_tokenization:
+  lowercase: true
+  token_pattern: "(?u)\\b\\w+\\b"
+  role_markers_included: false
+  oov_handling: ignore
+  text_embedding: mean_in_vocab_vectors_then_l2_normalize
+
+semantic_control:
+  model_id: M2_S
+  transcript_summary: unweighted_mean_nonzero_normalized_utterance_embeddings
+  dimension: 50
+  objective_information_allowed_in_Z_S: false
+  blocks:
+    - Z_T
+    - Z_O
+    - X_ordinary
+    - Z_S
+
+semantic_conditioning:
+  model_id: M2_SC
+  objective_embedding: mean_in_vocab_vectors_then_l2_normalize
+  similarity: cosine
+  attention: softmax_beta_cosine
+  beta: 5.0
+  beta_search: none
+  conditioned_pool: attention_weighted_mean_nonzero_utterance_embeddings
+  residual: R_TO=Z_C_minus_Z_S
+  residual_dimension: 50
+  blocks:
+    - Z_T
+    - Z_O
+    - X_ordinary
+    - Z_S
+    - R_TO
+
+base_classifier:
+  family: SGDClassifier
+  loss: log_loss
+  penalty: l2
+  alpha: 1.0e-5
+  max_iter: 500
+  tol: 1.0e-4
+  shuffle: true
+  random_state: 17
+  average: true
+  fit_intercept: true
+  class_weight: null
+  early_stopping: false
+
+structural_preprocessing:
+  imputation: train_fold_median
+  scaling: StandardScaler_train_fold
+
+inner_crossfit:
+  method: StratifiedGroupKFold
+  n_splits: 5
+  shuffle: true
+  random_state: 1703
+  grouping_key: session_id
+
+calibrator:
+  family: LogisticRegression
+  mapping: sigmoid(a*s+b)
+  penalty: null
+  solver: lbfgs
+  fit_intercept: true
+  max_iter: 1000
+  tol: 1.0e-8
+  class_weight: null
+
+primary_metric: log_loss
+primary_hypothesis_test:
+  comparison: M2_SC_vs_M2_S_same_outer_oof_rows
+  point_improvement_required: true
+  paired_session_cluster_bootstrap_ci95_upper_strictly_below_zero: true
+
+semantic_capacity_control_test:
+  comparison: M2_S_vs_historical_M2_O_same_outer_oof_rows
+  diagnostic_only: true
+
+total_semantic_successor_test:
+  comparison: M2_SC_vs_historical_M2_O_same_outer_oof_rows
+  diagnostic_only: true
+
+calibration_branch_policy:
+  preserve_same_platt_procedure: true
+  report_brier: true
+  report_ece_10: true
+  report_absolute_mean_probability_bias: true
+  calibration_is_primary_gate_in_this_branch: false
+  historical_M2_calibration_failure_remains_unresolved: true
+
+implementation_validity_gates:
+  external_resource_identity_frozen_before_execution: true
+  all_398_objectives_have_nonzero_semantic_embedding: true
+  every_session_has_at_least_one_nonzero_utterance_embedding: true
+  Z_S_identical_within_session_across_response_rows: true
+  R_TO_nonzero_for_at_least_one_response: true
+  R_TO_varies_across_objectives_in_at_least_one_multiobjective_session: true
+  no_objective_information_enters_Z_S: true
+  exact_outer_session_isolation: true
+  exact_inner_session_isolation: true
+  all_outer_and_inner_base_models_converge_before_max_iter: true
+
+uncertainty:
+  method: paired_session_cluster_bootstrap
+  replicates: 2000
+  random_seed_primary: 1711
+  random_seed_semantic_control: 1712
+  random_seed_total: 1713
+  interval: percentile_95
+
+authority_if_primary_passes:
+  gained:
+    - objective_conditioned_semantic_reweighting_predictive_value_under_M2_SEM
+  not_gained_until_separate_calibration_successor_passes:
+    - CCA_derived_feature_authorization
+  never_gained_from_this_experiment_alone:
+    - CCA_support
+    - causal_evidence
+    - G1_evidence
+    - PMC_evidence
+    - repeated_correction_evidence
+    - JT_evidence
+    - C_improve_measurement
