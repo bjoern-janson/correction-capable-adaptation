@@ -1,0 +1,194 @@
+schema_version: 1
+experiment_id: GAMMA_CAL_REPLACEMENT_SMOOTHECE
+status: PROSPECTIVE_RESULT_UNOBSERVED
+
+source_geometry:
+  canonical_index_path: external_tests/trace_the_ace/artifacts/index.csv
+  canonical_index_sha256: 296399770b0818fa528f33382497bc7f4793b3c54a2e49e56e77efbc19d55c60
+  allowed_columns:
+    - response_id
+    - session_id
+  labels_forbidden: true
+  n_rows_expected: 35072
+  n_sessions_expected: 22821
+
+base_truth_design:
+  salt: "SMECE_CAL_REPLACEMENT_V1|"
+  hash: sha256
+  uniform_from_hash: "u_i = (uint64_be(sha256(salt + response_id)[0:8]) + 0.5) / 2^64"
+  truth_probability: "T_i = 0.05 + 0.90 * u_i"
+  support: [0.05, 0.95]
+  uniqueness_tolerance: 1.0e-15
+
+construct:
+  finite_design_truth: "Q(P_i)=T_i whenever mapping i -> P_i is injective"
+  calibration_L1: "C_cal_L1 = mean_i |P_i - T_i|"
+  injectivity_tolerance: 1.0e-12
+  bounds_required: [0.0, 1.0]
+  clipping_forbidden: true
+
+shape_functions:
+  F0:
+    formula: "s_i = 0"
+  F1:
+    formula: "s_i = 1"
+  F2:
+    formula: "s_i = 2*T_i - 1"
+  F3:
+    formula: "s_i = sin(2*pi*T_i)"
+  F4:
+    formula: "s_i = max(1 - abs(T_i - 0.65)/0.15, 0)"
+  F5:
+    legacy_bin: "b_i = min(floor(10*T_i), 9)"
+    within_bin_order: "sort by (T_i, response_id) ascending"
+    sign_assignment: "within each bin assign +1,-1,+1,-1,...; if bin count is odd, set final ordered row sign to 0"
+    required_bin_sum: "sum_i s_i = 0 exactly inside every legacy bin"
+  F6:
+    formula: "s_i = sin(80*pi*T_i)"
+    nominal_period: 0.025
+
+prediction_family:
+  formula: "P_i(a) = T_i + a*s_i"
+  amplitude_nonnegative: true
+  amplitude_for_construct_target: "a = target_C_cal_L1 / mean_i |s_i|"
+  constitution_checks:
+    - "all P_i(a) in [0,1]"
+    - "all P_i(a) pairwise distinct at injectivity_tolerance"
+    - "abs(mean|P-T| - target) <= 1e-12"
+
+construct_fidelity_targets:
+  - 0.005
+  - 0.010
+  - 0.020
+
+population_candidate_measurement:
+  definition: "run pinned SmoothECE point algorithm on f=P_i(a), y=T_i"
+  note: "continuous y is the exact conditional mean for the finite-design population; no Bernoulli sampling is used in G_F"
+
+candidate_reference_identity:
+  repo: apple/ml-calibration
+  commit: 18ff21a7e4e409fc4885690129f50211b32ea144
+  metrics_blob: 662821b962ea67c21515b1a133a7692ae6ac793d
+  kernels_blob: a55bec6793ef18ea735e58466e6d5143f5e5b660
+  config_blob: 65059c7f156df78ef44b8bd43dfd85fda216ef8d
+  defaults:
+    reflected_gaussian: true
+    use_logit_scaling: false
+    smECE_mesh_pts: 200
+    automatic_bandwidth_eps: 0.001
+    search_start: 1.0
+    search_refinements: 10
+    manual_bandwidth_forbidden: true
+
+implementation_equivalence_gate:
+  deterministic_test_seed: 1809
+  n_test_vectors: 12
+  lengths: [8, 31, 257, 4096]
+  include_boundary_predictions: true
+  compare:
+    - point_smECE
+    - selected_bandwidth
+  max_abs_error: 1.0e-10
+  failure_action: STOP_BEFORE_F0
+
+clustered_outcome_generator:
+  gaussian_copula_rho: 0.15
+  formula:
+    - "Z_s ~ N(0,1)"
+    - "eps_si ~ N(0,1)"
+    - "L_si = sqrt(rho)*Z_s + sqrt(1-rho)*eps_si"
+    - "U_si = Phi(L_si)"
+    - "Y_si = 1[U_si <= T_i]"
+  marginal_claim: "Y_i ~ Bernoulli(T_i)"
+  same_Y_used_for_all_predictors_in_a_paired_cell: true
+
+randomness:
+  implementation_equivalence_seed: 1809
+  F0_null_training_seed: 1810
+  fixture_master_seed: 1811
+  bootstrap_master_seed: 1812
+  F0_null_evaluation_seed: 1813
+  no_seed_change_after_result: true
+
+G_F:
+  F0_population_max: 1.0e-4
+  positive_required_F1_F6: true
+  strict_order_required: "theta(0.005) < theta(0.010) < theta(0.020) for every F1..F6"
+  local_retention:
+    families: [F5, F6]
+    target_C_cal_L1: 0.010
+    minimum_ratio_theta_to_construct: 0.10
+  failure_action: STOP_CANDIDATE
+
+G_detect:
+  target_C_cal_L1: 0.010
+  null_training_replicates: 200
+  null_evaluation_replicates: 100
+  defect_replicates_each: 100
+  null_critical_value: "95th percentile of F0 null-training point-smECE values, numpy quantile method='higher'"
+  detection_rule: "point_smECE > null_critical_value"
+  F0_false_positive_max: 0.10
+  F1_F6_detection_min_each: 0.80
+  failure_action: STOP_CANDIDATE
+
+paired_decision_fixture:
+  reference_construct_target_C_cal_L1: 0.010
+  relative_measurement_targets: [0.0, 0.125, 0.25, 0.50]
+  reference_amplitude: "a_R = 0.010 / mean|s|"
+  reference_theta: "theta_R = population SmoothECE(P(a_R), T)"
+  candidate_target: "theta_C_target = (1 + R_sm) * theta_R"
+  candidate_amplitude_search:
+    domain: "[a_R, a_max], where a_max is largest value preserving bounds and injectivity"
+    coarse_grid_points: 4097
+    crossing_rule: "first upward crossing of theta(a) - theta_C_target in increasing a"
+    bisection_iterations: 50
+    target_abs_tolerance: 1.0e-8
+    no_crossing_action: FIXTURE_CONSTITUTION_FAIL
+  paired_outcomes: "same sampled Y_i used for P_R and P_C"
+
+bootstrap:
+  type: paired_session_cluster_percentile
+  resampling_unit: session_id
+  B: 2000
+  confidence: 0.95
+  statistic: "R_sm_hat = (smECE_C - smECE_R) / smECE_R"
+  invalid_replicate: "smECE_R <= 0 -> replicate invalid"
+  invalid_replicate_max_fraction: 0.01
+
+G_U:
+  synthetic_replicates_per_family_ratio_cell: 100
+  families: [F1, F2, F3, F4, F5, F6]
+  ratio_cells: [0.0, 0.125, 0.25, 0.50]
+  coverage_interval_required_each_cell: [0.90, 0.99]
+  failure_action: STOP_CANDIDATE
+
+G_decision:
+  NI_rule: "upper95(R_sm_hat) < 0.25"
+  required_NI_pass_rates_each_family:
+    R_0.00_min: 0.80
+    R_0.125_min: 0.80
+    R_0.25_max: 0.10
+    R_0.50_max: 0.10
+  denominator_guard:
+    rule: "lower95(smECE_R) > 0.001"
+    minimum_fraction_each_cell: 0.95
+  failure_action: STOP_CANDIDATE
+
+historical_firewall:
+  read_historical_before_all_four_gates_pass: false
+  all_required:
+    - G_F
+    - G_detect
+    - G_U
+    - G_decision
+
+historical_if_authorized:
+  reference: M1-cal
+  candidate: M2-S historical Platt treatment
+  statistic: "R_sm_hist = (smECE_M2S - smECE_M1cal) / smECE_M1cal"
+  denominator_guard: "lower95(smECE_M1cal) > 0.001"
+  NI_rule: "upper95(R_sm_hist) < 0.25"
+  unchanged_other_gates:
+    - LL
+    - Brier
+    - mean_bias
