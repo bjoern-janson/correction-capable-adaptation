@@ -1,0 +1,43 @@
+schema_version: 1
+experiment_id: M2
+status: AUTHORIZED_RESULT_UNOBSERVED
+parent_experiment: M1_CAL
+hypothesis_id: H_O
+opened_boundary: objective_conditioning_only
+locked:
+  fold_sha256: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+  parent_oof_sha256: f2aa3e53b345200f2dacf7b3c912e29a9a9ac76f09758cb8bb172f4ec06a2a47
+  transcript_processing_unchanged: true
+  transcript_representation_unchanged: true
+  ordinary_covariates_unchanged: true
+  classifier_training_policy_unchanged: true
+  calibration_procedure_unchanged: true
+  outer_validation_unchanged: true
+  cca_derived_features_allowed: false
+new_objects:
+  objective_representation: Z_O
+  main_effect_control: M2_O=[Z_T,Z_O,X_ordinary]
+  conditioning_interaction: Z_T_x_Z_O=elementwise_product_same_hash_space
+  conditioned_model: M2=[Z_T,Z_O,Z_T_x_Z_O,X_ordinary]
+primary_hypothesis:
+  comparison: M2_vs_M2_O
+  result: null
+total_objective_information:
+  comparison: M2_vs_M1_CAL
+  result: null
+main_effect_control:
+  comparison: M2_O_vs_M1_CAL
+  result: null
+diagnosis: null
+authority:
+  gained: []
+  not_gained:
+    - CCA_support
+    - CCA_refutation
+    - causal_evidence
+    - G1_evidence
+    - PMC_evidence
+    - repeated_correction_evidence
+    - JT_evidence
+    - C_improve_measurement
+    - CCA_derived_feature_authorization_until_M2_gate_closes
