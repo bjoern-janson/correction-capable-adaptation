@@ -56,9 +56,14 @@ external_semantic_resource:
   source_url: https://nlp.stanford.edu/data/wordvecs/glove.2024.wikigiga.50d.zip
   vector_dimension: 50
   case: uncased
-  archive_sha256_required: REQUIRED_BEFORE_EXECUTION
-  extracted_member_name_required: REQUIRED_BEFORE_EXECUTION
-  extracted_vector_sha256_required: REQUIRED_BEFORE_EXECUTION
+  archive_byte_size: 301036094
+  archive_sha256_required: afa5e258ee38272db6394547c4b075ecbb7b2164e98542c8d1237b6029b35a65
+  archive_member_count: 1
+  extracted_member_name_required: wiki_giga_2024_50_MFT20_vectors_seed_123_alpha_0.75_eta_0.075_combined.txt
+  extracted_vector_byte_size: 842192707
+  extracted_vector_sha256_required: 16c4253cb9a19045dcdc758b6a1eda52d3c37b894dea2601a45046b4300a8d10
+  vocabulary_rows_validated: 1291147
+  full_dimension_validation: PASS
   adaptation_on_trace_the_ace: none
 
 semantic_tokenization:
