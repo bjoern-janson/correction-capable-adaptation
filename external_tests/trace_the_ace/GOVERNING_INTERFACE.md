@@ -233,6 +233,166 @@ Each candidate must be opened prospectively and tested against the independently
 
 A combined CCA model may not retroactively grant authority to components that failed or were never individually identified.
 
+## Recursive methodological authority
+
+Let `Gamma_t` denote the locally binding methodological protocol that governs how experiments under Trace the Ace may acquire and propagate authority at time `t`.
+
+Object-level model change and method-level rule change are distinct transition classes:
+
+\[
+\boxed{
+M_k \rightarrow M_{k+1}
+\quad\text{only under}\quad
+\Gamma_t
+}
+\]
+
+while:
+
+\[
+\boxed{
+\Gamma_t \rightarrow \Gamma_{t+1}
+\quad\text{only through a separately authorized methodological successor.}
+}
+\]
+
+`Gamma_t` is therefore neither immutable dogma nor a continuously negotiable preference. It is locally binding until evidence earns authority to replace it.
+
+A model revision may alter `M_k` only within the boundaries already licensed by its scientific contract. It may not silently alter what counts as evidence, how evidence is attributed, how identification is judged, what uncertainty standard applies, what robustness is required, or how authority propagates.
+
+A methodological revision changes the evidence protocol itself. It must therefore be identified as such before it is allowed to govern later experiments.
+
+### Methodological-successor gate
+
+Any proposed successor `Gamma_{t+1}` must enter through a prospective methodological contract rather than through modeling convenience:
+
+\[
+\boxed{
+\mathcal C_{method}
+\rightarrow
+\text{adversarial review}
+\rightarrow
+\text{measurement validity}
+\rightarrow
+D_{method}
+\rightarrow
+\operatorname{AUTH}(\Gamma_{t+1})
+}
+\]
+
+At minimum, the methodological successor must state prospectively:
+
+```text
+which rule in Gamma_t is being reopened
+why existing evidence identifies that rule as the implicated boundary
+what competing methodological hypotheses remain live
+what observation would discriminate them
+what authority either result could earn
+what unaffected rules remain binding
+what result stops escalation
+how provenance and returnability are preserved
+```
+
+Until that process earns `AUTH(Gamma_{t+1})`, `Gamma_t` remains governing.
+
+### Recursive predecessor constraint
+
+Methodological corrigibility is itself rule-governed:
+
+\[
+\boxed{
+\operatorname{AUTH}(\Gamma_{t+1})
+\text{ must be earned under the predecessor protocol }\Gamma_t.
+}
+\]
+
+The current protocol cannot be displaced merely because a result produced under it is inconvenient. Evidence may motivate a methodological successor, but the inconvenient result does not authorize its own reinterpretation.
+
+This blocks the invalid path:
+
+\[
+\boxed{
+\text{inconvenient result}
+\rightarrow
+\text{quiet rule change}
+\rightarrow
+\text{retroactive reinterpretation}
+}
+\]
+
+### Three anti-drift invariants
+
+For all subsequent Trace the Ace work:
+
+\[
+\boxed{\text{model change cannot silently change the evidence rules}}
+\]
+
+\[
+\boxed{\text{method change cannot be smuggled in as model engineering}}
+\]
+
+\[
+\boxed{\text{an inconvenient result cannot authorize its own reinterpretation}}
+\]
+
+These invariants create a two-level correction topology:
+
+\[
+\boxed{
+\text{object-level correction}
+\leftrightarrow
+\text{method-level correction}
+}
+\]
+
+Neither level may overwrite the other implicitly.
+
+Object-level correction remains:
+
+\[
+\text{science}
+\rightarrow
+\text{experiment}
+\rightarrow
+\text{result}
+\rightarrow
+\text{diagnosis}
+\rightarrow
+\text{authorized revision}.
+\]
+
+Method-level correction remains:
+
+\[
+\text{prospective methodological hypothesis}
+\rightarrow
+\text{methodological test}
+\rightarrow
+\text{diagnosis}
+\rightarrow
+\text{authorized methodological revision}.
+\]
+
+### Permanent compact invariants
+
+\[
+\boxed{\textbf{Price is consequence. Authority is diagnosed consequence.}}
+\]
+
+\[
+\boxed{\textbf{Scientific revision obeys the method; revision of the method must itself earn authority.}}
+\]
+
+Equivalently:
+
+\[
+\boxed{
+\text{models may evolve within authorized boundaries;}\quad
+\text{authority rules may evolve only through authorized methodological successors.}
+}
+\]
+
 ## Fixed methodological boundary
 
 For all subsequent Trace the Ace work:
@@ -243,6 +403,10 @@ positive result -> attribution before credit
 negative result -> localization before revision
 external consequence -> diagnosis -> earned authority -> weight update
 no direct leaderboard-to-theory shortcut
+model revision != methodological revision
+model change cannot silently change evidence rules
+method change requires an authorized methodological successor
+an inconvenient result cannot authorize its own reinterpretation
 ```
 
 Any departure from this protocol is itself a methodological revision and must be made explicit rather than introduced implicitly through modeling convenience.
