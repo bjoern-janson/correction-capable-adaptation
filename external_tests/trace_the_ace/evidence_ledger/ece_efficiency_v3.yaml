@@ -1,13 +1,64 @@
 schema_version: 1
 method_experiment_id: GAMMA_CAL_EFF_IF_V3
-status: AUTHORIZED_RESULT_UNOBSERVED
+status: CLOSED_METHOD_VALIDATION_FAIL_IF_ROUTE
 opened_boundary: synthetic_candidate_family_only
-synthetic_fixture_result: null
+synthetic_fixture_result:
+  constituted: true
+  historical_oof_read: false
+  target_matches: true
+  nondegenerate_width: true
+  nonregular_control_fail_rate: 1.0
+  scenarios:
+    S1:
+      true_delta_ece: 0.0020021337059002234
+      target_error: 0.0000034026934002235297
+      bin_membership_change_fraction: 0.3527452784715832
+      coverage_rate: 0.93
+      NI_pass_rate: 0.09
+      regularity_pass_rate: 0.55
+      median_ci_width: 0.012921844050673956
+    SB:
+      true_delta_ece: 0.003995200349756679
+      target_error: 0.0000022616752433203893
+      bin_membership_change_fraction: 0.4211910082818457
+      coverage_rate: 0.94
+      NI_pass_rate: 0.04
+      regularity_pass_rate: 0.85
+      median_ci_width: 0.01295408276103088
+    S2:
+      true_delta_ece: 0.007998241712287059
+      target_error: 0.0000033176622870594724
+      bin_membership_change_fraction: 0.8121467069804128
+      coverage_rate: 0.93
+      NI_pass_rate: 0.0
+      regularity_pass_rate: 0.07
+      median_ci_width: 0.017099371685080477
+  gates:
+    coverage_S1: true
+    coverage_SB: true
+    coverage_S2: true
+    NI_S1: false
+    NI_SB: true
+    NI_S2: true
+    regularity_regular: false
+    regularity_nonregular: true
+    nondegenerate_width: true
+    target_matches: true
 historical_result: null
-diagnosis: null
+diagnosis:
+  failure_locus: candidate_same_target_IF_efficiency_route
+  explanation: the repaired fixture is discriminating and well-covered, but the fixed-bin absolute ECE contrast frequently violates the candidate IF regularity condition under bin-crossing perturbations and the IF interval is too wide to establish non-inferiority reliably even at true 0.5-epsilon degradation
+  influence_function_method_adjudicated: false_for_historical_use
+  D_efficiency: NOT_ESTABLISHED_BY_IF_ROUTE
+  D_object: WEIGHT_INCREASED_LOCAL_METHOD_DIAGNOSIS
+  D_additional: UNOPENED
+  metric_replacement_authorized: false
+  tolerance_change_authorized: false
 authority:
-  IF_efficiency_method_valid: null
-  D_efficiency_local_weight: null
+  IF_efficiency_method_valid: false
+  D_efficiency_local_weight: AGAINST_THIS_IF_ROUTE
   ECE_precision_boundary_closed: false
   mature_non_CCA_probability_treatment: false
   CCA_derived_feature_authority: false
+artifacts_local_uncommitted:
+  record_sha256: 6a208a449b7ec0853de6df6d83f92f2a061e6ad225b51c6722438b7ccfa54d88
