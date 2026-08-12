@@ -1,0 +1,12 @@
+schema_version: 1
+experiment_id: M_MATURE_CAL
+status: AUTHORIZED_RESULT_UNOBSERVED
+opened_boundary: probability_calibration_only
+parent_predictive_object: M2_S
+parent_raw_score_identity:
+  manifest_sha256: fff1bd519171b3e5eb613ce95a99e6ba2d84c295382973a5dc4cdd431bf5a2dc
+result: null
+diagnosis: null
+authority:
+  mature_non_CCA_probability_treatment: false
+  CCA_derived_feature_authority: false
