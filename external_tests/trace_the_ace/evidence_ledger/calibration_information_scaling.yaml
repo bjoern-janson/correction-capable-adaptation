@@ -1,0 +1,43 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_INFORMATION_SCALING
+status: CONTRACT_FROZEN_RESULT_UNOBSERVED
+opened_boundary: D_additional_evidence
+
+predecessor_state:
+  D_detect: PASS_THROUGH_FROZEN_GRID
+  D_decision: NONE_IDENTIFIED
+  shallowest_live_boundary: decision_precision
+
+information_response:
+  m_min_decision_coarse: null
+  m_min_decision_fine: null
+  m_min_decision_joint: null
+  n_min_decision_joint: null
+  coarse_pass_vector: null
+  fine_pass_vector: null
+  joint_pass_vector: null
+
+baseline_reproducibility:
+  status: NOT_RUN
+
+D_additional_evidence:
+  status: UNOBSERVED
+
+historical_access:
+  permitted: false
+  m1cal_read: false
+  m2s_read: false
+
+authority:
+  information_quantity_diagnosis: false
+  replacement_measurement: false
+  Gamma_cal_replacement: false
+  historical_calibration_closure: false
+  mature_non_CCA_baseline: false
+  Z_E: false
+  Z_D: false
+  Z_C: false
+  Z_P: false
+
+result: null
+diagnosis: null
