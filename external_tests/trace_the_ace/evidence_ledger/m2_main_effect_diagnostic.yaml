@@ -1,8 +1,25 @@
 schema_version: 1
 experiment_id: M2_D_MAIN
-status: AUTHORIZED_RESULT_UNOBSERVED
+status: AUTHORIZED_EXECUTION_BLOCKED_LOCAL_RUNTIME_RESULT_UNOBSERVED
 diagnostic_candidate: D_main
 probe: centered_historical_R_TO_main_effect_suppression
+prospective_identity:
+  eligible_objectives: 319
+  eligible_rows: 34978
+  eligible_sessions: 22783
+  eligible_objectives_sha256: 54d56b68cc05bfcedd8dd5c4701696a465f7798c479cabfae8cb66ae0146aef6
+  primary_measurement: raw_sigmoid_log_loss
+execution_diagnosis:
+  preprocessing_matrix_assembly_seconds_B0_fold0: 11.34
+  B0_fold0_train_shape: [27987, 262198]
+  B0_fold0_train_nnz: 73098728
+  vectorized_objective_centering_committed_before_result: true
+  arm_fold_checkpointing_committed_before_result: true
+  exact_frozen_B0_fold0_fit_completed_within_local_ceiling: false
+  result_artifact_count: 0
+  scientific_result_observed: false
+  failure_locus: execution_runtime_envelope
+  scientific_contract_changed: false
 result: null
 diagnosis: null
 authority:
@@ -10,3 +27,4 @@ authority:
   broad_H_O: OPEN
   new_conditioning_operator_authorized: false
   CCA_derived_feature_authority: false
+  execution_failure_has_scientific_authority: false
