@@ -1,0 +1,164 @@
+schema_version: 1
+experiment_id: GAMMA_DECISION_GATE_VALIDITY_SUCCESSOR
+status: PROSPECTIVE_RESULT_UNOBSERVED
+opened_boundary: D_decision_gate_validity
+
+predecessor:
+  pr: 44
+  head_sha: 8626826364fb31318750ba8c9f70866e524cb577
+  raw_verdict: NOT_IDENTIFIED_WITHIN_GRID
+  scientific_authority: WITHHELD_DUE_GATE_VALIDITY
+
+unchanged_objects:
+  construct: C_cal_L1
+  reference_construct: 0.010
+  relative_construct_degradation: [0.0, 0.125, 0.25, 0.50]
+  practical_NI_boundary: 0.25
+  NI_rule: "upper95(R_hat_oracle) < 0.25"
+  bootstrap_type: paired_session_cluster_percentile
+  bootstrap_B: 2000
+  confidence: 0.95
+  denominator_guard: "lower95(C_hat_R) > 0 in >=95% of datasets"
+  invalid_bootstrap_max_fraction_each_dataset: 0.01
+  NI_pass_rates:
+    R_0.00_min: 0.80
+    R_0.125_min: 0.80
+    R_0.25_max: 0.10
+    R_0.50_max: 0.10
+
+coverage_semantics:
+  structural_classification_must_precede_outcomes: true
+  structurally_degenerate_definition: "R_hat(w,Y)=R_true for every admissible outcome Y and admissible resample w with valid denominator"
+  observed_zero_variance_cannot_create_degeneracy: true
+  numerical_exactness_tolerance: 1.0e-12
+
+  structurally_degenerate_gate:
+    required:
+      - "all valid lower interval endpoints equal R_true within 1e-12"
+      - "all valid upper interval endpoints equal R_true within 1e-12"
+      - "empirical coverage == 1.00"
+      - "inherited denominator guard passes"
+      - "inherited invalid-bootstrap guard passes"
+      - "inherited NI operating-characteristic gate passes"
+
+  stochastic_gate:
+    coverage_min: 0.90
+    coverage_max_gate: null
+    coverage_above_nominal_label: CONSERVATIVE_COVERAGE
+    excessive_coverage_alone_is_failure: false
+    decision_usefulness_remains_separate: true
+    inherited_NI_gate_required: true
+    inherited_denominator_gate_required: true
+    inherited_invalid_bootstrap_gate_required: true
+
+monte_carlo_reporting:
+  required_for_stochastic_cells: true
+  formula: "MCSE_cov=sqrt(p_hat*(1-p_hat)/N_sim)"
+  changes_coverage_threshold: false
+
+cell_gate:
+  definition: "G_cell = G_cov & G_NI & G_denominator & G_invalid_bootstrap"
+  conjunctive: true
+  compensation_forbidden: true
+
+validation_suite:
+  V0:
+    name: correct_exact_degeneracy
+    classification: STRUCTURALLY_DEGENERATE
+    R_true: 0.0
+    n_sim: 100
+    interval_lower: 0.0
+    interval_upper: 0.0
+    coverage: 1.0
+    NI_pass_rate: 1.0
+    denominator_pass: true
+    invalid_bootstrap_pass: true
+    expected: PASS
+  V1:
+    name: wrong_point_mass_degeneracy
+    classification: STRUCTURALLY_DEGENERATE
+    R_true: 0.0
+    n_sim: 100
+    interval_lower: 0.01
+    interval_upper: 0.01
+    coverage: 0.0
+    NI_pass_rate: 1.0
+    denominator_pass: true
+    invalid_bootstrap_pass: true
+    expected: FAIL
+  V2:
+    name: nominal_stochastic
+    classification: STOCHASTIC
+    R_true: 0.125
+    n_sim: 100
+    coverage: 0.95
+    NI_pass_rate: 0.90
+    denominator_pass: true
+    invalid_bootstrap_pass: true
+    expected: PASS
+  V3:
+    name: stochastic_undercoverage
+    classification: STOCHASTIC
+    R_true: 0.125
+    n_sim: 100
+    coverage: 0.89
+    NI_pass_rate: 0.90
+    denominator_pass: true
+    invalid_bootstrap_pass: true
+    expected: FAIL
+  V4:
+    name: conservative_vacuous
+    classification: STOCHASTIC
+    R_true: 0.125
+    n_sim: 100
+    coverage: 1.0
+    NI_pass_rate: 0.0
+    denominator_pass: true
+    invalid_bootstrap_pass: true
+    expected: FAIL
+  V5:
+    name: conservative_decision_capable
+    classification: STOCHASTIC
+    R_true: 0.125
+    n_sim: 100
+    coverage: 1.0
+    NI_pass_rate: 0.90
+    denominator_pass: true
+    invalid_bootstrap_pass: true
+    expected: PASS
+
+authority_gate:
+  formula: "AUTH(Gamma_decision_gate_prime)=V0&V1&V2&V3&V4&V5"
+  all_required: true
+
+readjudication_if_authorized:
+  source: PR44 frozen information-response record
+  regenerate_synthetic_data: false
+  regenerate_bootstrap: false
+  change_NI_results: false
+  change_multiplier_grid: false
+  change_sentinels: false
+  change_construct: false
+  change_margin: false
+  output_must_be_new_successor_record: true
+  predecessor_raw_verdict_remains_immutable: true
+
+historical_firewall:
+  M1cal_M2S_forbidden: true
+  replacement_operator_selection_forbidden: true
+  CCA_feature_execution_forbidden: true
+
+max_authority:
+  - local_decision_gate_methodological_validity
+  - permission_to_successor_adjudicate_PR44
+
+forbidden_authority:
+  - D_additional_evidence_support_without_successor_adjudication
+  - replacement_measurement
+  - Gamma_cal_replacement
+  - historical_calibration_closure
+  - mature_non_CCA_baseline
+  - Z_E
+  - Z_D
+  - Z_C
+  - Z_P
