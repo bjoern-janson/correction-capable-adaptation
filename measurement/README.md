@@ -44,7 +44,8 @@ resolution:
 closed through the G1 adversarial lineage
 
 current empirical blocker:
-apparatus fidelity remains untested; implementation and execution remain unauthorized
+no concrete G1 apparatus has been instantiated and fidelity-audited;
+implementation and execution remain unauthorized
 ```
 
 Resolving the historical fork did not establish a positive G1 result.
@@ -58,6 +59,8 @@ The nonexecutable candidate in [`G1_REALIZED_EXPOSURE_FIDELITY_ATTACK.md`](G1_RE
 The noncanonical successor in [`G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md`](G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md) earns local `MEASUREMENT_VALID` only for prospectively distinguishing fidelity `PASS`, `FAIL`, and `INVALID/UNRESOLVED`; it does not validate an apparatus, authorize implementation, or change G1 empirical authority.
 
 The frozen design successor in [`G1_MEASUREMENT_TREATMENT_CONTRACT.md`](G1_MEASUREMENT_TREATMENT_CONTRACT.md) fixes the G1 evidence-package treatment contrast, typed direction \(D\subseteq C\), primary estimand, upstream gates, authority ceiling, and stopping rule. Its state is `MEASUREMENT_AND_TREATMENT_VALID_IN_DESIGN`; apparatus fidelity and G1 remain untested and execution authority remains `NONE`.
+
+The frozen apparatus successor in [`G1_APPARATUS_FIDELITY_CONTRACT.md`](G1_APPARATUS_FIDELITY_CONTRACT.md) fixes the fidelity requirements for a future concrete realization, including the complete selector-facing boundary, strict audit-result typing, regime-level non-degeneracy, and realized-exposure gate \(A_7\). Its state is `APPARATUS_FIDELITY_CONTRACT_VALID_IN_DESIGN`; the concrete apparatus remains `UNTESTED`, and neither implementation nor execution is authorized by the contract.
 
 ## Evidence-codebook feasibility result
 
