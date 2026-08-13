@@ -1,0 +1,65 @@
+{
+  "agreement": {
+    "estimator": "exact set equality over all X, equally weighted",
+    "gamma_frozen": 0.75,
+    "rate": 0.75,
+    "ties": "none"
+  },
+  "apparatus_id": "g1-minimal-v0",
+  "assignment": {
+    "construction": "int(SHA256(seed + ':' + unit_id), 16) mod 2",
+    "seed_policy": "campaign seed frozen and auditor-checkpointed after unit_id freeze and before any audit-unit package construction",
+    "unit_id_policy": "all unit_id values frozen and auditor-checkpointed before campaign seed commitment and before evidence/direction construction"
+  },
+  "checkpoint_genesis_sha256": "1625c3c679868846694a05032fcbf74817cb573e6c95e1139bb1eebc39b948e3",
+  "execution_authority": false,
+  "fidelity_audit": "NOT_EXECUTED",
+  "g1": "UNTESTED",
+  "implementation_commit": "4c947e2b7a4680cfcb162a929d81ef1fd1e42cc4",
+  "load_bearing_files": {
+    "config/auditor_checkpoint_genesis.txt": "1625c3c679868846694a05032fcbf74817cb573e6c95e1139bb1eebc39b948e3",
+    "config/process_isolation.txt": "a9e5562e7940c6fbaf3b705f9f6d85d183d70e0ecbd43d48b2fe7d3cd0cf9075",
+    "config/randomization.py": "f780491e6e944829a6b4c8e5a698e377e5744ede8716e4fbcd9fb9f99c019f4c",
+    "config/runtime.txt": "b2b4916846a1bb5043052f17de4e693f02e27438850521b23903b73ee9bdc01b",
+    "config/selector_environment.txt": "31350a6698667f025be6e00b85480d0c7fb8bf2b221f9389a9abab9debd9d474",
+    "config/thresholds.py": "b5d930faa869a23498abcc8ac45647562eb25d471ea0b5ccf1fb284cf1af36f1",
+    "config/transport.txt": "7fcab9e42bd1bc15f57f21eddbbcc95f6229f6298c8628dc9117cace96e21564",
+    "data/domain.py": "6f83218f433caaf728eaa1c6bb9b48d52a88ff9afefb5d70f548dad0dd9b0881",
+    "data/oc_table.py": "aba0391498e40f8c1a9d9c27c32cb80b937f79f08bc289e4366972cddfa6992b",
+    "src/adjudicator.py": "4c07ca103ad05ac969c486fcd338fe75d2e466b87c03f8c340ab890ce947de69",
+    "src/adjudicator_worker.py": "6513fd63df161581af7048fdb539464a30043710088a679dd5ce1b8a57d7a5a8",
+    "src/agreement.py": "1b1c6d53baa1d92004046aa3534da9d3e30a2dbbc55d4879a866fa4c6292e59c",
+    "src/evidence.py": "07fb3e9c8c544d6d4be7f25d57c8c2c6cc0886ea8502a33dbf431824ff60a5f2",
+    "src/harness.py": "69e0b2f088e1335a69716561dc63e517b89ba3872ef99626c3cfc811285e64a0",
+    "src/null.py": "7f45d25dac4661598dcb48a08aec3c0fd97ed6d99a3919629e993744dbddcdef",
+    "src/packages.py": "04a6990f107ed5c33cb4fe8a5818fa462429c1b30e5ed304354b9c3f3581143e",
+    "src/provenance.py": "cf1a3150480d58addf98dc72ce7dc8c572ebfd50045732932aff0e192a906fa5",
+    "src/randomizer.py": "2566a69296ccd3624d887f1d33d3d9a97748d1498003661895016e46c0731baa",
+    "src/reference.py": "e1887d742790550d0f75c481e1fee7f87710791f4c5ed3a5bb5580e530ac661f",
+    "src/selector.py": "b987985ff3fad9d19324c7a898bb1ce55741716bd05a42d5e07de9a7cd38211c",
+    "src/selector_worker.py": "051acb3b927cabd54ca69724d2a082a4d5b4cdf00bb8efebb96cbe484af9fe3b",
+    "src/transport.py": "7d0f88cb06bf7272088f0bc78e84d626a8790f17395e1bd2145f64f0374e5892"
+  },
+  "load_bearing_manifest_root_sha256": "d1ceb2c185fb1eaca17c24d26d44aa5d783c6bda55b5f4762b4aea90708705d1",
+  "null_rule": {
+    "control_direction": null,
+    "matched_coordinates": ["noise", "format"],
+    "tolerances": {"format": "exact", "noise": 0.0}
+  },
+  "runtime": {
+    "implementation": "CPython",
+    "platform": "Linux-6.18.35-x86_64-with-glibc2.41",
+    "python_executable_sha256": "17b78e0a93175e86f9ac03141924fd7a7f0c0c52e66b34bfa0de20ffef989df1",
+    "version": "3.13.5"
+  },
+  "state": "CONCRETE_APPARATUS_REFERENT_FROZEN",
+  "support_empty_init_sha256": "e3b0c44298fc1c149afbf4c8996fb92427ae41e4649b934ca495991b7852b855",
+  "transport": {
+    "encoding": "UTF-8",
+    "equivalence": "exact structural equality after round-trip",
+    "ipc": "JSON over stdin/stdout process pipe"
+  },
+  "validation_only": {
+    "tests/test_binding.py": "cf6c592e376233f35d5474e06e7158a4137e5881cef5dd3dc436e85c31521825"
+  }
+}
