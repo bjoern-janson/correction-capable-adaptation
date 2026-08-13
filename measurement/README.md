@@ -1,6 +1,6 @@
 # Measurement Layer
 
-The current empirical authority frontier is G1 apparatus fidelity, not G1 effect execution.
+The current empirical authority frontier is G1 referent-binding repair after an aborted apparatus-fidelity audit, not G1 effect execution.
 
 CCA provisionally fixes the scientific role of G1 as:
 
@@ -12,7 +12,7 @@ G_1
 }
 \]
 
-Its role is **provisionally fixed and reopenable**, its empirical status is **untested**, a minimal fidelity-audit apparatus implementation is now bound, and G1 execution remains unauthorized.
+Its role is **provisionally fixed and reopenable**, its empirical status is **untested**, and G1 execution remains unauthorized. The first concrete fidelity-audit attempt against `g1-minimal-v0` aborted correctly at the global attribution gate `G0` because one load-bearing file hash in the frozen binding manifest did not match the exact committed blob.
 
 The former broad-versus-relational choice is historical adversarial provenance. It is not the current G1 frontier.
 
@@ -43,9 +43,15 @@ broad-vs-relational G1 constitution
 resolution:
 closed through the G1 adversarial lineage
 
+first concrete fidelity-audit attempt:
+ABORTED AT G0
+21/22 load-bearing hashes matched
+src/harness.py binding-manifest SHA-256 did not match committed bytes
+no H0, H1, seed, packages, or audit units were created
+
 current empirical blocker:
-g1-minimal-v0 is content-addressed and bound for fidelity-audit validation,
-but the frozen apparatus fidelity audit has not yet been executed;
+produce a new correct content-addressed referent binding,
+then rerun G0 from the beginning;
 G1 execution remains unauthorized
 ```
 
@@ -63,11 +69,27 @@ The frozen design successor in [`G1_MEASUREMENT_TREATMENT_CONTRACT.md`](G1_MEASU
 
 The frozen apparatus successor in [`G1_APPARATUS_FIDELITY_CONTRACT.md`](G1_APPARATUS_FIDELITY_CONTRACT.md) fixes the fidelity requirements for a concrete realization, including the complete selector-facing boundary, strict audit-result typing, regime-level non-degeneracy, and realized-exposure gate \(A_7\). Its state is `APPARATUS_FIDELITY_CONTRACT_VALID_IN_DESIGN`; no fidelity result is implied by implementation.
 
-The frozen audit successor in [`G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md`](G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md) fixes the attributable audit procedure: referent binding \(\mathfrak a_A\), global attribution gate \(G_0\), audit/G1 unit firewall, gate-level verdict rules, static plus per-episode realized-exposure evidence, and noncompensatory `FIDELITY_PASS` / `FIDELITY_FAIL` / `INVALID/UNRESOLVED` aggregation. Its state is `AUDIT_PROTOCOL_VALID_IN_DESIGN`.
+The frozen audit successor in [`G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md`](G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md) fixes the attributable audit procedure: referent binding \(\mathfrak a_A\), global attribution gate \(G_0\), audit/G1 unit firewall, gate-level verdict rules, static plus per-episode realized-exposure evidence, and noncompensatory `FIDELITY_PASS` / `FIDELITY_FAIL` / `INVALID/UNRESOLVED` aggregation. Its design state remains `AUDIT_PROTOCOL_VALID_IN_DESIGN`.
 
 The frozen blueprint in [`G1_MINIMAL_APPARATUS_REFERENT_SPECIFICATION.md`](G1_MINIMAL_APPARATUS_REFERENT_SPECIFICATION.md) specifies the smallest fidelity-only apparatus target and preserves the distinction between a frozen specification and a concrete bound referent.
 
-The concrete successor in [`G1_MINIMAL_APPARATUS_BINDING_RECORD.md`](G1_MINIMAL_APPARATUS_BINDING_RECORD.md), with machine-readable inventory at [`g1_minimal_v0/binding_manifest.json`](g1_minimal_v0/binding_manifest.json), binds `g1-minimal-v0` to exact code/configuration SHA-256 identities, a frozen runtime target, package/null semantics, assignment mechanism, transport graph, isolation declarations, and provenance genesis. Its state is `CONCRETE_APPARATUS_REFERENT_FROZEN`; the apparatus fidelity audit remains `NOT_EXECUTED`, `D_G1_APPARATUS = UNTESTED`, and G1 execution authority remains `FALSE`.
+The concrete binding in [`G1_MINIMAL_APPARATUS_BINDING_RECORD.md`](G1_MINIMAL_APPARATUS_BINDING_RECORD.md), with machine-readable inventory at [`g1_minimal_v0/binding_manifest.json`](g1_minimal_v0/binding_manifest.json), was the referent submitted to the first concrete audit attempt. The attempted audit found a load-bearing provenance inconsistency before any audit-unit execution: the manifest recorded SHA-256 `69e0b2f088e1335a69716561dc63e517b89ba3872ef99626c3cfc811285e64a0` for `src/harness.py`, while the exact committed bytes hash to `18bf42540629b7c996ee24ae9bab22382af35b7961fa5d3f989041e503cb2443`.
+
+The resulting provenance record in [`G1_MINIMAL_FIDELITY_AUDIT_G0_ABORT.md`](G1_MINIMAL_FIDELITY_AUDIT_G0_ABORT.md) freezes the local result:
+
+\[
+\boxed{
+\begin{aligned}
+D_{\mathrm{G1\ apparatus}}&=\mathrm{INVALID/UNRESOLVED},\\
+D_{\mathrm{failure\ locus}}&=\mathrm{REFERENT\_BINDING/PROVENANCE},\\
+D_{\mathrm{audit\ protocol}}&=\mathrm{OPERATIONALLY\_DISCRIMINATING\_ON\_THIS\_FAILURE\_CASE},\\
+\mathrm{AUTH}(G_1\text{ execution})&=\mathrm{FALSE},\\
+G_1&=\mathrm{UNTESTED}.
+\end{aligned}
+}
+\]
+
+This result licenses no apparatus or theory redesign. The minimal sufficient revision is a new correct content-addressed binding followed by a fresh `G0` run. The failed binding must not be silently repaired in place and then treated as the same audited referent.
 
 ## Evidence-codebook feasibility result
 
