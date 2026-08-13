@@ -1,0 +1,8 @@
+python_implementation: CPython
+python_version: 3.13.5
+python_executable: /opt/pyvenv/bin/python
+python_executable_sha256: 17b78e0a93175e86f9ac03141924fd7a7f0c0c52e66b34bfa0de20ffef989df1
+platform: Linux-6.18.35-x86_64-with-glibc2.41
+selector_worker_invocation: python -m src.selector_worker
+adjudicator_worker_invocation: python -m src.adjudicator_worker
+binding_role: exact reference runtime used for pre-audit validation; future audit must match or classify referent drift
