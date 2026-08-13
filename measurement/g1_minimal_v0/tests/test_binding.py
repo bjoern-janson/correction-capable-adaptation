@@ -11,6 +11,7 @@ from src.randomizer import assign_treatment
 from src.reference import r
 from src.selector import pi
 from src.transport import serialize, deserialize, equivalent
+from src.harness import run_unit
 
 
 class BindingTests(unittest.TestCase):
@@ -50,6 +51,16 @@ class BindingTests(unittest.TestCase):
         self.assertEqual(pi({"direction": "c_A"}), "c_A")
         self.assertEqual(pi({"direction": "c_B"}), "c_B")
         self.assertEqual(pi({"direction": None}), "c_A")
+
+    def test_harness_runs_separate_workers(self):
+        record, new_hash = run_unit("u0", "x1", "frozen-test-seed")
+        self.assertIsNone(new_hash)
+        self.assertIn(record["treatment"], {0, 1})
+        self.assertIn(record["selected"], {"c_A", "c_B"})
+        self.assertEqual(
+            record["s_selector"],
+            record["s1_specified"] if record["treatment"] else record["s0_specified"],
+        )
 
     def test_randomizer(self):
         values = [assign_treatment(f"u{i}", "frozen-test-seed") for i in range(16)]
