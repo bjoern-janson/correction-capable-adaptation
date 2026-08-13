@@ -1,0 +1,5 @@
+transport: JSON over stdin/stdout process pipe
+encoding: UTF-8
+serializer: json.dumps(sort_keys=True,separators=(",",":"),ensure_ascii=True)
+deserializer: json.loads(utf8)
+licensed_equivalence: exact structural equality after round-trip

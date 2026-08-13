@@ -1,0 +1,8 @@
+adjudicator_process: separate
+selector_process: separate
+shared_mutable_state: forbidden
+shared_parameters: forbidden
+shared_prompt_state: forbidden
+selector_process_reset: fresh process image per unit
+audit_logs_selector_accessible: false
+auditor_checkpoint_selector_accessible: false

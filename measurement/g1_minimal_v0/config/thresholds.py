@@ -1,0 +1,1 @@
+GAMMA_FROZEN = 0.75

@@ -15,6 +15,8 @@ This directory contains the rules that let Correction-Capable Adaptation change 
 | [`../research_state.json`](../research_state.json) | Machine-readable current authority and implementation guardrails. |
 | [`../KINTSUGI.md`](../KINTSUGI.md) | Repository-design interpretation: visible repairs, persistent lineage, global reopenability. |
 
+The candidate/nonempirical audit in [`G1_APPARATUS_AUTHORIZATION_DEADLOCK_ATTACK.md`](G1_APPARATUS_AUTHORIZATION_DEADLOCK_ATTACK.md) tests the alleged G1 apparatus-authorization deadlock and finds the claimed cycle unestablished; it grants no apparatus, implementation, lifecycle, or execution authority.
+
 ## Operational flow
 
 ```text
