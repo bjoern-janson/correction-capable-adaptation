@@ -1,0 +1,175 @@
+schema_version: 1
+experiment_id: GAMMA_CAL_INFORMATION_SCALING
+status: PROSPECTIVE_RESULT_UNOBSERVED
+opened_boundary: D_additional_evidence
+
+predecessor:
+  pr: 43
+  head_sha: 9bddb9a6f13bc63582413e92aa7e3c5a0382b2ec
+  result:
+    h_min_detect: 4.8828125e-05
+    h_min_decision: NONE_IDENTIFIED
+  authority_ceiling: empirical_regime_specific_upper_bound_not_universal_impossibility
+
+source_geometry:
+  canonical_index_path: external_tests/trace_the_ace/artifacts/index.csv
+  canonical_index_sha256: 296399770b0818fa528f33382497bc7f4793b3c54a2e49e56e77efbc19d55c60
+  allowed_columns: [response_id, session_id]
+  labels_forbidden: true
+  n_rows_per_cohort: 35072
+  n_sessions_per_cohort: 22821
+
+truth_design:
+  salt: "SMECE_CAL_REPLACEMENT_V1|"
+  hash: sha256
+  uniform_from_hash: "u_i = (uint64_be(sha256(salt + response_id)[0:8]) + 0.5) / 2^64"
+  truth_probability: "T_i = 0.05 + 0.90*u_i"
+  support: [0.05, 0.95]
+
+fixed_construct_and_decision:
+  construct: C_cal_L1
+  reference_construct: 0.010
+  relative_construct_degradation: [0.0, 0.125, 0.25, 0.50]
+  practical_NI_boundary: 0.25
+  NI_rule: "upper95(R_hat_oracle) < 0.25"
+  margin_change_forbidden: true
+  decision_object_change_forbidden: true
+
+scale_sentinels:
+  coarse:
+    h: 0.1
+    predecessor_scale_index: 0
+  fine:
+    h: 0.000048828125
+    predecessor_scale_index: 11
+  rationale: structural_endpoints_of_predecessor_frozen_grid
+  result_responsive_scale_change_forbidden: true
+
+information_multipliers:
+  values: [1, 2, 4, 8, 16]
+  rows: [35072, 70144, 140288, 280576, 561152]
+  sessions: [22821, 45642, 91284, 182568, 365136]
+  interpretation: independent_cohort_equivalents
+  interpolation_after_result_forbidden: true
+
+independent_information_construction:
+  geometry_repeated: true
+  truth_coordinates_repeated: true
+  cohort_session_identity: "cluster_id = (cohort_index, session_id)"
+  cross_cohort_dependence: none
+  within_cohort_outcome_generator:
+    type: gaussian_copula_bernoulli
+    rho: 0.15
+    formula:
+      - "Z_cs ~ N(0,1)"
+      - "eps_csi ~ N(0,1)"
+      - "L_csi = sqrt(rho)*Z_cs + sqrt(1-rho)*eps_csi"
+      - "U_csi = Phi(L_csi)"
+      - "Y_csi = 1[U_csi <= T_i]"
+  paired_reference_candidate_share_Y: true
+  synthetic_equivalent_only: true
+  historical_availability_claim: false
+
+oracle_measurement:
+  candidate_metric: false
+  known_sign_pattern: true
+  sign_pattern: "s_h(T_i) = sign(sin(2*pi*T_i/h)); exact sine zeros -> 0"
+  reference_prediction: "P_R = T + a_R*s_h(T), a_R=0.010/mean|s_h(T)|"
+  candidate_prediction: "P_C = T + a_C*s_h(T), a_C=(1+R)*0.010/mean|s_h(T)|"
+  row_score: "m_i = s_h(T_i)*(P_i-Y_i)"
+  construct_estimator: "C_hat_oracle = mean_i m_i / mean_i |s_h(T_i)|"
+  relative_statistic: "R_hat_oracle = (C_hat_C-C_hat_R)/C_hat_R"
+
+baseline_reproducibility_gate:
+  required: true
+  predecessor_runner_commit: f6874e31bcd36581a7cf504892b7d2e948ae4c70
+  predecessor_decision_seed: 1823
+  predecessor_bootstrap_seed: 1824
+  endpoint_scales_only: [0.1, 0.000048828125]
+  ratio_cells: [0.0, 0.125, 0.25, 0.50]
+  replicates_per_cell: 100
+  bootstrap_B: 2000
+  exact_substantive_cell_reproduction_required: true
+  failure_action: STOP_AS_IMPLEMENTATION_FAILURE
+
+scaling_randomness:
+  outcome_master_seed: 1831
+  bootstrap_master_seed: 1832
+  nested_cohorts: true
+  outcome_seed_derivation: "SeedSequence([1831, sentinel_index, ratio_index, synthetic_replicate, cohort_index])"
+  bootstrap_seed_derivation: "SeedSequence([1832, multiplier_index])"
+  common_bootstrap_draws_within_multiplier: true
+  no_seed_change_after_result: true
+
+uncertainty:
+  type: paired_session_cluster_percentile
+  resampling_unit: independent_cluster_id
+  bootstrap_B: 2000
+  confidence: 0.95
+  invalid_replicate: "C_hat_R <= 0"
+  invalid_replicate_max_fraction: 0.01
+
+synthetic_replicates:
+  per_sentinel_ratio_multiplier_cell: 100
+
+cell_outputs_required:
+  - NI_pass_rate
+  - coverage
+  - median_interval_width_R
+  - median_lower_C_hat_R
+  - max_invalid_bootstrap_fraction
+  - denominator_guard_rate
+
+cell_gates:
+  coverage_interval: [0.90, 0.99]
+  NI_pass_rate:
+    R_0.00_min: 0.80
+    R_0.125_min: 0.80
+    R_0.25_max: 0.10
+    R_0.50_max: 0.10
+  denominator_guard:
+    rule: "lower95(C_hat_R) > 0"
+    minimum_fraction: 0.95
+  invalid_bootstrap:
+    maximum_fraction_each_dataset: 0.01
+
+multiplier_gate:
+  sentinel_pass: "all four ratio cells pass all cell gates"
+  joint_pass: "coarse and fine sentinels both pass at same multiplier"
+  no_monotonicity_assumed: true
+  full_pass_vectors_required: true
+
+resolution_outputs:
+  m_min_decision_coarse: null
+  m_min_decision_fine: null
+  m_min_decision_joint: null
+  n_min_decision_joint: null
+  if_none: NONE_IDENTIFIED_WITHIN_GRID
+
+D_additional_evidence:
+  supported_rule: "exists m>1 with joint_pass"
+  supported_label: SUPPORTED_AS_INFORMATION_QUANTITY
+  failure_label: NOT_IDENTIFIED_WITHIN_GRID
+  does_not_establish_historical_availability: true
+  does_not_authorize_decision_object_change: true
+
+historical_firewall:
+  historical_vectors_forbidden: true
+  replacement_operator_selection_forbidden: true
+  leaderboard_use_forbidden: true
+
+max_authority:
+  - local_information_response_curve
+  - synthetic_independent_information_threshold_if_identified
+  - D_additional_evidence_local_diagnosis
+
+forbidden_authority:
+  - replacement_measurement
+  - Gamma_cal_replacement
+  - historical_calibration_closure
+  - evidence_availability_in_actual_dataset
+  - mature_non_CCA_baseline
+  - Z_E
+  - Z_D
+  - Z_C
+  - Z_P

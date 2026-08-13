@@ -1,0 +1,97 @@
+schema_version: 1
+artifact_id: OBJECTIVE_CONDITIONING_DIAGNOSIS
+status: DIAGNOSTIC_MAP_FROZEN_NO_EXPERIMENT_AUTHORIZED
+parent_experiments:
+  - M2
+  - M2_SEM
+
+preserved_distinction:
+  tested_operator_not_equal_representation_family: true
+  representation_family_not_equal_broader_hypothesis: true
+
+current_authority:
+  objective_main_effect: SUPPORTED
+  generic_semantic_capacity: SUPPORTED
+  H_O_lexical: FAILED
+  H_O_SEM: FAILED
+  H_O_broad: OPEN_NOT_GLOBALLY_IDENTIFIED
+  conditioning_generating_explanation: UNRESOLVED
+  calibration: UNRESOLVED
+  CCA_derived_feature_authority: false
+
+live_diagnostics:
+  D_main:
+    claim: objective_signal_mostly_exhausted_as_main_effect
+    discriminator: conditioning_value_changes_when_objective_main_effect_capacity_is_prospectively_manipulated_under_fixed_validation
+    falsifier: conditioning_survives_strong_objective_main_effect_and_matched_generic_semantic_control
+    currently_adjudicated: false
+  D_temporal:
+    claim: conditioning_is_temporally_localized
+    discriminator: matched_conditioned_gain_concentrates_in_prospectively_defined_outcome_independent_temporal_windows
+    falsifier: precise_matched_nulls_across_independently_motivated_temporal_partitions
+    currently_adjudicated: false
+  D_granularity:
+    claim: conditioning_exists_below_current_semantic_unit
+    discriminator: fine_grained_conditioned_representation_beats_matched_fine_grained_generic_semantic_control
+    falsifier: precise_matched_nulls_across_independent_fine_grained_operators
+    currently_adjudicated: false
+  D_identifiability:
+    claim: current_transcript_interface_cannot_identify_interaction_relevant_distinction
+    discriminator: independent_challenge_channel_splits_transcript_equivalent_cases_in_interaction_relevant_ways
+    falsifier: richer_independent_observations_fail_to_expose_missing_distinctions_while_transcript_interface_recovers_available_structure
+    currently_adjudicated: false
+  D_redundancy:
+    claim: objective_conditioned_reinterpretation_is_practically_redundant_for_this_target
+    discriminator: uncertainty_interval_contained_inside_predeclared_practical_null_region_for_admissible_operator_class
+    falsifier: stable_incremental_conditioning_outside_practical_null_region
+    currently_adjudicated: false
+    ordinary_nonsignificance_sufficient: false
+
+next_conditioning_experiment_authorization_rule:
+  requires:
+    - identifies_which_live_D_candidates_are_discriminated
+    - identifies_competing_candidates_that_can_be_distinguished
+    - states_what_observation_changes_future_weights
+    - preserves_mature_baseline_unaffected_structure
+    - states_stop_condition
+    - states_authority_ceiling_for_both_outcomes
+  third_operator_authorized_by_two_prior_failures_alone: false
+
+calibration_independence:
+  D_conditioning_independent_of_D_calibration: true
+  raw_M2_SEM_null_present_before_calibration: true
+  calibration_is_sufficient_explanation_for_conditioning_nulls: false
+
+mature_baseline_rule:
+  required_before_CCA_component_tests:
+    - generic_transcript_semantics
+    - objective_task_information
+    - independently_resolved_calibration_treatment
+  first_pass_CCA_components:
+    - Z_E
+    - Z_D
+    - Z_C
+    - Z_P
+  each_component_must_beat_same_mature_non_CCA_baseline: true
+  combined_model_may_not_retroactively_authorize_components: true
+
+result: null
+diagnosis: null
+
+authority:
+  gained:
+    - diagnostic_state_formalized
+  not_gained:
+    - new_conditioning_operator_authorization
+    - H_O_global_support
+    - H_O_global_refutation
+    - calibration_resolution
+    - CCA_support
+    - CCA_refutation
+    - causal_evidence
+    - G1_evidence
+    - PMC_evidence
+    - repeated_correction_evidence
+    - JT_evidence
+    - C_improve_measurement
+    - CCA_derived_feature_authorization

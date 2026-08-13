@@ -1,0 +1,75 @@
+schema_version: 1
+experiment_id: M1_CAL
+status: DIAGNOSED_PASS
+parent_experiment: M1_PRIME
+parent_status:
+  information_gate: PASS
+  convergence_gate: PASS
+  calibration_gate: FAIL
+  baseline_gate: UNRESOLVED
+opened_boundary: probability_calibration_only
+locked:
+  predictive_object: P(Y|T,X_ordinary)
+  objective_information_allowed: false
+  cca_derived_features_allowed: false
+  fold_sha256: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+  parent_oof_sha256: a067828455a9d992023213a9d9bd113e1ec041c73f1178b6706961760f219484
+  outer_raw_predictions_unchanged: true
+  text_serialization_unchanged: true
+  ordinary_covariates_unchanged: true
+  semantic_representation_unchanged: true
+  base_classifier_unchanged: true
+  structural_preprocessing_unchanged: true
+repair:
+  calibrator: Platt_scaling
+  mapping: sigmoid(a*s+b)
+  fitting: five_fold_session_grouped_inner_crossfit_within_each_outer_training_partition
+prospective_gates:
+  pooled_log_loss_strictly_better_than_parent: true
+  brier_not_worse_than_parent: true
+  ece_relative_reduction_minimum: 0.25
+  absolute_mean_probability_bias_relative_reduction_minimum: 0.25
+  objective_exclusion_exact: true
+  inner_base_models_must_converge_before_max_iter: true
+result:
+  raw_m1_prime_log_loss: 0.5765421661651912
+  calibrated_log_loss: 0.568358215399684
+  delta_log_loss_cal_minus_raw: -0.008183950765507153
+  raw_auc: 0.6765416346549795
+  calibrated_auc: 0.6765200310812957
+  raw_brier: 0.19444578627328427
+  calibrated_brier: 0.19212772052741983
+  raw_ece_10: 0.051898451783714696
+  calibrated_ece_10: 0.015989848091338636
+  raw_absolute_mean_probability_bias: 0.049311986148874
+  calibrated_absolute_mean_probability_bias: 0.01053592989423624
+  ece_relative_reduction: 0.6919012505811182
+  absolute_mean_bias_relative_reduction: 0.7863414005992776
+  bootstrap_ci95_delta_log_loss:
+  - -0.010027986910879187
+  - -0.006270249533783667
+  all_five_outer_folds_improve_log_loss: true
+  all_25_inner_base_fits_converged: true
+  objective_exclusion_max_within_session_range: 0.0
+diagnosis:
+  calibration_gate: PASS
+  baseline_gate: PASS
+  m2_authorized: true
+  shallowest_remaining_boundary: null
+authority:
+  gained:
+  - ordinary_semantic_probability_calibration_repaired
+  - M2_may_be_opened
+  inherited:
+  - generic_transcript_semantics_add_predictive_information_beyond_M0
+  - convergence_boundary_resolved
+  not_gained:
+  - CCA_support
+  - CCA_refutation
+  - causal_evidence
+  - H_O_support
+  - G1_evidence
+  - PMC_evidence
+  - repeated_correction_evidence
+  - JT_evidence
+  - C_improve_measurement

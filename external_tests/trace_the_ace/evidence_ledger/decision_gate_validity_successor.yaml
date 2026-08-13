@@ -1,0 +1,44 @@
+schema_version: 1
+method_experiment_id: GAMMA_DECISION_GATE_VALIDITY_SUCCESSOR
+status: EXECUTED_PASS
+opened_boundary: D_decision_gate_validity
+
+predecessor:
+  pr44_raw_verdict: NOT_IDENTIFIED_WITHIN_GRID
+  pr44_authority: WITHHELD_DUE_GATE_VALIDITY
+
+validation:
+  V0: PASS
+  V1: PASS
+  V2: PASS
+  V3: PASS
+  V4: PASS
+  V5: PASS
+
+authority:
+  Gamma_decision_gate_prime: true
+  permission_to_readjudicate_PR44: true
+  D_additional_evidence: unresolved_pending_successor_adjudication
+  replacement_measurement: false
+  Gamma_cal_replacement: false
+  historical_calibration_closure: false
+  mature_non_CCA_baseline: false
+  Z_E: false
+  Z_D: false
+  Z_C: false
+  Z_P: false
+
+historical_access:
+  permitted: false
+  m1cal_read: false
+  m2s_read: false
+
+result:
+  status: PASS_ALL_VALIDITY_FIXTURES
+  final_json_sha256: ab8e72eea42628197b9debb151f73ac0dd03ac436c8d338b743894918dcf7f76
+  runner_commit: ca5ab3bd12471d286d45d816fa86a8f809b80d5d
+  runner_blob: 54742f92ef96aad44b74e3acb1e4201945c183e1
+
+diagnosis:
+  D_decision_gate_validity: CLOSED_SUPPORT
+  next_reachable_boundary: PR44_successor_adjudication

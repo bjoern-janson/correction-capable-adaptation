@@ -1,0 +1,5 @@
+# Competition data and locally generated artifacts must not be committed.
+artifacts/
+local_data/
+*.joblib
+*.pkl

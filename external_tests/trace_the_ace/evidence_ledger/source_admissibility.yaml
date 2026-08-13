@@ -1,0 +1,159 @@
+schema_version: 1
+experiment_id: GAMMA_CAL_SOURCE_ADMISSIBILITY
+status: PUBLIC_SOURCE_SCAN_COMPLETE
+opened_boundary: D_source
+
+predecessor:
+  pr: 46
+  head_sha: b7f1ba85ab9b4f268be0304a9390a561b8f757fc
+  D_additional_evidence: SUPPORTED_AS_INFORMATION_QUANTITY
+  scope: LOCAL_SYNTHETIC_ORACLE_INFORMATION_QUANTITY_ONLY
+  m_min_decision_joint: 4
+  n_min_decision_joint: 140288
+  sessions_min_decision_joint: 91284
+  additional_response_equivalents_vs_canonical: 105216
+  additional_session_clusters_vs_canonical: 68463
+
+source_gate:
+  formula: VERIFIED_ADMISSIBLE = S1 & S2 & S3 & S4 & S5 & S6 & S7
+  S1: independent_new_session_level_information
+  S2: tutoring_precedes_assessment
+  S3: trace_the_ace_target_equivalence
+  S4: contamination_and_sample_separation
+  S5: transport_validity
+  S6: legal_and_competition_admissibility
+  S7: sufficient_independent_quantity
+
+classification_states:
+  - VERIFIED_ADMISSIBLE
+  - PLAUSIBLE_UNVERIFIED
+  - REJECTED_AS_DIRECT_SOURCE
+
+competition_object:
+  source_providers: [Third_Space_Learning, Eedi]
+  target: next_same_topic_assessment_question_correct_after_tutoring
+  external_data_allowed: true
+  hidden_test_pooling_for_training_forbidden_by_default: true
+  inference_without_test_dependent_retraining_required: true
+
+sources:
+  NTO_MTM_source_family:
+    classification: PLAUSIBLE_UNVERIFIED
+    S1: PLAUSIBLE
+    S2: PLAUSIBLE_SUPPORTED_IN_DESIGN
+    S3: PLAUSIBLE_STUDENT_OUTCOME_LINKAGE_STATED_AS_PROGRAM_GOAL
+    S4: UNVERIFIED
+    S5: UNVERIFIED
+    S6: UNVERIFIED_CONCRETE_TARGET_BEARING_RELEASE
+    S7: PLAUSIBLE_PROGRAM_SCALE_UNVERIFIED_AVAILABLE_TARGET_ROWS
+    authority: false
+    sources:
+      - https://nationaltutoringobservatory.org/
+      - https://nationaltutoringobservatory.org/approach.html
+
+  MTM_v1_UPchieve:
+    classification: REJECTED_AS_DIRECT_SOURCE
+    S1: SUPPORT_AT_PROVIDER_LEVEL
+    S2: PASS
+    S3: FAIL_NO_POST_TUTORING_SUCCESSOR_CORRECTNESS_OUTCOME_IN_RELEASE
+    S4: PLAUSIBLE_PROVIDER_DISJOINT_BUT_STUDENT_LEVEL_UNPROVEN
+    S5: UNRESOLVED
+    S6: UNRESOLVED_CONCRETE_DATASET_LICENSE_AND_SHAREABILITY
+    S7: FAIL_4654_SESSIONS_BELOW_68463_ADDITIONAL_SESSION_BENCHMARK
+    authority: false
+    sources:
+      - https://arxiv.org/abs/2605.08092
+      - https://arxiv.org/html/2605.08092v1
+
+  Eedi_QATD_2k:
+    classification: REJECTED_AS_DIRECT_SOURCE
+    S1: UNRESOLVED_SAME_PROVIDER_OVERLAP_RISK
+    S2: PASS
+    S3: FAIL_NO_TRACE_THE_ACE_SUCCESSOR_CORRECTNESS_LABEL
+    S4: FAIL_UNRESOLVED_SAME_PROVIDER_NO_DISJOINTNESS_PROOF
+    S5: UNRESOLVED
+    S6: FAIL_NONCOMMERCIAL_CC_BY_NC_SA_TERMS
+    S7: FAIL_1971_INTERVENTIONS_BELOW_68463_ADDITIONAL_SESSION_BENCHMARK
+    authority: false
+    sources:
+      - https://huggingface.co/datasets/Eedi/Question-Anchored-Tutoring-Dialogues-2k
+
+  Eedi_public_question_response_datasets:
+    classification: REJECTED_AS_DIRECT_SOURCE
+    S1: UNRESOLVED
+    S2: FAIL_NO_REQUIRED_TUTORING_PRECURSOR_OBJECT
+    S3: FAIL_NOT_POST_TUTORING_NEXT_SAME_TOPIC_TARGET
+    S4: NOT_REACHED
+    S5: NOT_REACHED
+    S6: NOT_REACHED
+    S7: NOT_REACHED
+    authority: false
+    sources:
+      - https://www.eedi.com/research
+
+  Third_Space_Learning_internal_outcome_corpus:
+    classification: PLAUSIBLE_UNVERIFIED
+    S1: UNVERIFIED_DISJOINT_ADDITIONAL_COHORT
+    S2: PLAUSIBLE_SUPPORTED_IN_PRODUCT_PROCESS
+    S3: PLAUSIBLE_EXIT_TICKET_SEMANTICS_NOT_EXACTLY_VERIFIED
+    S4: UNVERIFIED_COMPETITION_OVERLAP_EXCLUSION
+    S5: PLAUSIBLE_UNVERIFIED
+    S6: UNVERIFIED_NO_PUBLIC_LICENSED_ROW_LEVEL_COHORT
+    S7: PLAUSIBLE_AGGREGATE_SCALE_NUMERICALLY_SUFFICIENT
+    authority: false
+    sources:
+      - https://thirdspacelearning.com/us/pricing/
+      - https://thirdspacelearning.com/tutoring/ai-tutor/
+
+  Eedi_internal_RCT_or_tutoring_outcome_cohorts:
+    classification: PLAUSIBLE_UNVERIFIED
+    S1: UNVERIFIED
+    S2: PLAUSIBLE
+    S3: UNVERIFIED_EXACT_TARGET
+    S4: UNVERIFIED_COMPETITION_OVERLAP_EXCLUSION
+    S5: UNVERIFIED
+    S6: UNVERIFIED_ROW_LEVEL_RIGHTS_AND_SHAREABILITY
+    S7: UNVERIFIED
+    authority: false
+    sources:
+      - https://www.eedi.com/school
+      - https://www.eedi.com/news/two-year-rct-earns-eedi-a-gold-efficacy-certificate-from-eduevidence
+
+diagnosis:
+  D_source: POSSIBLE_BUT_UNVERIFIED
+  verified_admissible_source_count: 0
+  no_verified_source_is_not_no_source_exists: true
+  shallowest_live_boundary: source_specific_constitution_and_verification
+  D_availability_FAIL_authorized: false
+  D_decision_object_authorized: false
+
+required_source_packet:
+  - cohort_provenance_and_collection_dates
+  - provider_source_identity
+  - session_student_independence_definition
+  - assessment_timing_relative_to_tutoring
+  - exact_outcome_schema_and_target_mapping
+  - overlap_exclusion_against_competition_source_pools
+  - population_protocol_subject_transport_description
+  - post_filter_row_and_session_counts
+  - license_and_legal_use_documentation
+  - organizer_verifiability_shareability_confirmation
+
+historical_access:
+  m1cal_read: false
+  m2s_read: false
+  hidden_test_used: false
+
+authority:
+  public_source_classification: true
+  source_failure_loci: true
+  source_verified_admissible: false
+  additional_real_evidence_constituted: false
+  replacement_measurement: false
+  Gamma_cal_replacement: false
+  historical_calibration_closure: false
+  mature_non_CCA_baseline: false
+  Z_E: false
+  Z_D: false
+  Z_C: false
+  Z_P: false

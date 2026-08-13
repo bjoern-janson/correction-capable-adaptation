@@ -1,0 +1,65 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_RESOLUTION_DIAGNOSTIC
+status: EXECUTED_DIAGNOSED
+opened_boundary: D_resolution
+
+source_geometry:
+  canonical_index_sha256: 296399770b0818fa528f33382497bc7f4793b3c54a2e49e56e77efbc19d55c60
+  n_rows_expected: 35072
+  n_sessions_expected: 22821
+  labels_forbidden: true
+
+resolution_object:
+  h_min_detect: 0.000048828125
+  h_min_decision: NONE_IDENTIFIED
+  scale_pass_vector_detect: [true, true, true, true, true, true, true, true, true, true, true, true]
+  scale_pass_vector_decision: [false, false, false, false, false, false, false, false, false, false, false, false]
+  detection_topology_nonmonotone: false
+  decision_topology_nonmonotone: false
+  detection_floor_located_inside_grid: false
+
+oracle_scope:
+  candidate_neutral: true
+  upper_bound_only: true
+  sign_pattern_known: true
+  replacement_operator_authority: false
+
+gates:
+  D_resolution_executed: true
+  detection_resolution_identified: true
+  decision_resolution_identified: false
+
+primary_discriminator:
+  decision_cell: R_construct_0.125
+  NI_pass_rate_range_across_scales: [0.52, 0.67]
+  NI_pass_rate_required_min: 0.80
+  median_relative_interval_width_range: [0.126763, 0.150672]
+  interpretation: practical_relative_NI_precision_not_spatial_detection_resolution
+
+historical_access:
+  permitted: false
+  m1cal_read: false
+  m2s_read: false
+
+authority:
+  R3_star_resolution_evidence: true
+  decision_admissible_scale_earned: false
+  Gamma_cal_replacement: false
+  mature_non_CCA_probability_treatment: false
+  mature_non_CCA_baseline: false
+  Z_E: false
+  Z_D: false
+  Z_C: false
+  Z_P: false
+
+result:
+  h_min_detect: 0.000048828125
+  h_min_decision: NONE_IDENTIFIED
+  final_json_sha256: 46b1ab44416cb30cdb000787981f2e762c0cc9cf2df500dd9d31c3a0b0bfe007
+  console_sha256: 04f2f4cf6ed38bf6e35d7841a855eaaae37dea20bad392881361763005109b50
+  substantive_result_sha256: 43f9b89ddfdb562ba7f7e9932fbade4fa15fedacae6ff10fdbf3cdee3a152772
+
+diagnosis:
+  detection: IDENTIFIABLE_THROUGH_FULL_FROZEN_GRID
+  decision: NONE_IDENTIFIED
+  shallowest_live_boundary: practical_relative_NI_precision_at_C_R_0.010

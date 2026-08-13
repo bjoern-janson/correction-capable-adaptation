@@ -1,0 +1,36 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_REPLACEMENT_DESIGN
+status: DESIGN_ENVELOPE_FROZEN_CANDIDATE_UNINSTANTIATED_EXECUTION_UNAUTHORIZED
+opened_boundary: calibration_replacement_measurement_object
+predecessor_result:
+  D_object_construct_faithful_support: true
+  predecessor_pr: 40
+candidate:
+  identity: null
+  observable: null
+  estimator: null
+  uncertainty_procedure: null
+  practical_margin_mapping: null
+fixtures:
+  qualitative_family_frozen: true
+  quantitative_instantiation_frozen: false
+  historical_OOF_access_permitted: false
+authority_gates:
+  G_F: null
+  G_detect: null
+  G_U: null
+  G_decision: null
+authority:
+  Gamma_cal_replacement: false
+  replacement_measurement_authorized: false
+  historical_replacement_adjudication_authorized: false
+  mature_non_CCA_probability_treatment: false
+  mature_non_CCA_baseline: false
+  Z_E: false
+  Z_D: false
+  Z_C: false
+  Z_P: false
+reachability:
+  instantiate_one_prospective_replacement_candidate: true
+  historical_OOF_adjudication: false
+  open_Z_E: false

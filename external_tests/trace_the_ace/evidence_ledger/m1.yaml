@@ -1,0 +1,37 @@
+schema_version: 1
+experiment_id: M1
+lineage_parent: M0
+lifecycle_state: AUTHORIZED
+prospective_identity_frozen: true
+result_observed: false
+predictive_hypothesis: >-
+  A prospectively fixed generic transcript-semantic representation plus the enumerated
+  ordinary structural covariates improves session-grouped OOF log loss beyond M0.
+authority_ceiling: >-
+  At most, generic transcript semantics add predictive information beyond M0 under this
+  operationalization and validation regime. No CCA or causal authority is licensed.
+objective_information_present: false
+cca_derived_features_present: false
+result:
+  pooled_log_loss: null
+  delta_log_loss_vs_m0: null
+  pooled_auc: null
+  brier_score: null
+  ece_10_equal_width: null
+  fold_results: null
+diagnosis:
+  status: UNOBSERVED
+  failure_locus: null
+  discrepancies: []
+authority:
+  gained: []
+  not_gained:
+    - CCA_support
+    - CCA_refutation
+    - causal_evidence
+    - H_O_support
+    - G1_evidence
+    - PMC_evidence
+    - repeated_correction_evidence
+    - JT_evidence
+    - C_improve_measurement

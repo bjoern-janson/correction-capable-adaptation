@@ -1,0 +1,45 @@
+schema_version: 1
+method_experiment_id: GAMMA_CAL_ECE_OBJECT_ADEQUACY_V2
+status: CLOSED_DIAGNOSED_SUPPORT_D_OBJECT_CONSTRUCT_FAITHFUL
+opened_diagnostic: D_object_truth_criterion_repair
+synthetic_result:
+  historical_oof_read: false
+  construct_fidelity:
+    candidate_prediction_is_primitive: true
+    conditional_outcome_probability_is_function_of_candidate_prediction: true
+    reference_prediction_equals_q_and_is_perfectly_calibrated: true
+  all_adequacy_gates_pass: false
+  diagnostic_outcome: ECE10_INADEQUATE_ON_DECLARED_SCOPE
+  epsilon: 0.003997462025
+  within_bin_alternating:
+    submargin_true_calibration_L1: 0.0020000000000000018
+    submargin_ECE10: 0.000012887773722627736
+    boundary_true_calibration_L1: 0.003994999999999994
+    boundary_ECE10: 0.00002574332801094982
+    material_true_calibration_L1: 0.00799499999999998
+    material_ECE10: 0.00005151887545620387
+    material_ECE_to_true_ratio: 0.006443886861313822
+    material_ECE_indicates_noninferiority: true
+  material_detection:
+    global_shift: true
+    linear_tilt: true
+    smooth_low_frequency: true
+    localized_band: true
+    within_bin_alternating: false
+diagnosis:
+  V1_truth_criterion_fidelity: FAIL
+  V1_D_object_support_authority: WITHHELD
+  V2_D_object: SUPPORT_ON_DECLARED_SCOPE
+  explanation: after correcting the synthetic truth criterion so Q(P)=E[Y|P] by construction, fixed equal-width ECE-10 still fails to detect a prospectively declared material within-bin calibration defect because residuals cancel inside bins
+  replacement_measurement_successor_authorized: true
+  ECE10_replacement_authorized: false
+  historical_calibration_state_changed: false
+authority:
+  V1_D_object_support_withheld: true
+  D_object_local_weight: SUPPORT
+  ECE10_replacement_authorized: false
+  replacement_measurement_successor_authorized: true
+  mature_non_CCA_probability_treatment: false
+  CCA_derived_feature_authority: false
+artifacts_local_uncommitted:
+  record_sha256: a4b5dda01bf08da6ac7a8e6f140260210069e2284946223ea07bcadfdd41ffa0

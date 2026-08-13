@@ -1,0 +1,83 @@
+schema_version: 1
+experiment_id: M1_CAL
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+parent_experiment_id: M1_PRIME
+opened_boundary: probability_calibration_only
+predictive_object: P(Y|T,X_ordinary)
+objective_information_allowed: false
+cca_derived_features_allowed: false
+fold_sha256_required: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+parent_oof_sha256_required: a067828455a9d992023213a9d9bd113e1ec041c73f1178b6706961760f219484
+text_serialization:
+  preserve_utterance_order: true
+  role_markers:
+    tutor: __ROLE_TUTOR__
+    student: __ROLE_STUDENT__
+    background: __ROLE_BACKGROUND__
+  include_timestamp: false
+  include_session_id: false
+  include_response_id: false
+  include_objective: false
+  normalize_internal_whitespace: true
+ordinary_covariates:
+  - n_turns
+  - n_student_words
+  - numeric_turns_per_word
+  - digit_chars_per_word
+semantic_representation:
+  family: HashingVectorizer
+  pretrained_resources: []
+  analyzer: word
+  ngram_range: [1, 2]
+  n_features: 262144
+  alternate_sign: false
+  binary: false
+  norm: l2
+  lowercase: true
+  token_pattern: "(?u)\\b\\w+\\b"
+  dtype: float32
+base_classifier:
+  family: SGDClassifier
+  loss: log_loss
+  penalty: l2
+  alpha: 1.0e-5
+  max_iter: 500
+  tol: 1.0e-4
+  shuffle: true
+  random_state: 17
+  average: true
+  fit_intercept: true
+  class_weight: null
+  early_stopping: false
+structural_preprocessing:
+  imputation: train_fold_median
+  scaling: StandardScaler_train_fold
+inner_crossfit:
+  method: StratifiedGroupKFold
+  n_splits: 5
+  shuffle: true
+  random_state: 1703
+  grouping_key: session_id
+calibrator:
+  family: LogisticRegression
+  mapping: sigmoid(a*s+b)
+  penalty: null
+  solver: lbfgs
+  fit_intercept: true
+  max_iter: 1000
+  tol: 1.0e-8
+  class_weight: null
+prospective_gates:
+  pooled_log_loss_strictly_better_than_parent: true
+  brier_not_worse_than_parent: true
+  ece_relative_reduction_minimum: 0.25
+  absolute_mean_probability_bias_relative_reduction_minimum: 0.25
+  objective_exclusion_exact: true
+  inner_base_models_must_converge_before_max_iter: true
+primary_metric: log_loss
+primary_comparison: M1_PRIME_vs_M1_CAL_same_outer_oof_rows
+uncertainty:
+  method: paired_session_cluster_bootstrap
+  replicates: 2000
+  random_seed: 1704
+  interval: percentile_95

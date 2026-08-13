@@ -1,0 +1,58 @@
+schema_version: 1
+experiment_id: GAMMA_CAL_INFORMATION_SCALING_PR44_SUCCESSOR_ADJUDICATION
+status: EXECUTED_NO_REGENERATION
+
+lineage:
+  source_pr44_head: 8626826364fb31318750ba8c9f70866e524cb577
+  source_pr44_final_partitioned_sha256: 788109fbec94649a9f7aa94d77a09c8b8141ef7b440fbb0e79e98838ff8807c7
+  authorized_gate_pr45_head: 9ba62109641a33dc45103a3dec947a07cabfb79c
+  successor_adjudicator_commit: caef3ab77c2faa35fad55b15fb81866a6c426445
+  successor_final_sha256: 233986a41afbec57164a270d94a0cf835d70e668d8002696b13b19c157198f45
+
+regeneration:
+  synthetic_outcomes: false
+  bootstrap_draws: false
+  historical_vectors_read: false
+
+successor_topology:
+  multipliers: [1, 2, 4, 8, 16]
+  coarse_pass_vector: [false, true, true, true, true]
+  fine_pass_vector: [false, false, true, true, true]
+  joint_pass_vector: [false, false, true, true, true]
+
+information_threshold:
+  m_min_decision_coarse: 2
+  m_min_decision_fine: 4
+  m_min_decision_joint: 4
+  n_min_decision_joint: 140288
+  sessions_min_decision_joint: 91284
+
+D_additional_evidence:
+  status: SUPPORTED_AS_INFORMATION_QUANTITY
+  scope: LOCAL_SYNTHETIC_ORACLE_INFORMATION_QUANTITY_ONLY
+  historical_availability_established: false
+  practical_collectibility_established: false
+  admissibility_for_trace_the_ace_established: false
+
+next_boundary:
+  D_evidence_availability_admissibility: OPENABLE
+  D_decision_object: NOT_YET_SHALLOWEST
+
+authority:
+  Gamma_decision_gate_prime: true
+  information_quantity_diagnosis: true
+  replacement_measurement: false
+  Gamma_cal_replacement: false
+  historical_calibration_closure: false
+  mature_non_CCA_baseline: false
+  Z_E: false
+  Z_D: false
+  Z_C: false
+  Z_P: false
+
+historical_preservation:
+  pr44_raw_verdict: NOT_IDENTIFIED_WITHIN_GRID
+  pr44_raw_authority: WITHHELD_DUE_GATE_VALIDITY
+  pr44_modified: false
+
+diagnosis: ADDITIONAL_INDEPENDENT_INFORMATION_QUANTITY_SUPPORTED_LOCALLY_AT_M4

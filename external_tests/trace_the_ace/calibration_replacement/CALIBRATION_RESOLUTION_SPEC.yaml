@@ -1,0 +1,136 @@
+schema_version: 1
+experiment_id: GAMMA_CAL_RESOLUTION_DIAGNOSTIC
+status: PROSPECTIVE_RESULT_UNOBSERVED
+
+source_geometry:
+  canonical_index_path: external_tests/trace_the_ace/artifacts/index.csv
+  canonical_index_sha256: 296399770b0818fa528f33382497bc7f4793b3c54a2e49e56e77efbc19d55c60
+  allowed_columns: [response_id, session_id]
+  labels_forbidden: true
+  n_rows_expected: 35072
+  n_sessions_expected: 22821
+
+truth_design:
+  salt: "SMECE_CAL_REPLACEMENT_V1|"
+  hash: sha256
+  uniform_from_hash: "u_i = (uint64_be(sha256(salt + response_id)[0:8]) + 0.5) / 2^64"
+  truth_probability: "T_i = 0.05 + 0.90*u_i"
+  support: [0.05, 0.95]
+
+scale_grid:
+  definition: "h_j = 0.1 / 2^j, j=0..11"
+  values:
+    - 0.1
+    - 0.05
+    - 0.025
+    - 0.0125
+    - 0.00625
+    - 0.003125
+    - 0.0015625
+    - 0.00078125
+    - 0.000390625
+    - 0.0001953125
+    - 0.00009765625
+    - 0.000048828125
+  result_responsive_changes_forbidden: true
+
+scale_defect:
+  sign_pattern: "s_h(T_i) = sign(sin(2*pi*T_i/h)); exact sine zeros -> 0"
+  prediction: "P_i(C,h) = T_i + a(C,h)*s_h(T_i)"
+  amplitude: "a(C,h) = C / mean_i |s_h(T_i)|"
+  finite_design_truth: "Q(P_i)=T_i when i -> P_i is injective"
+  constitution_checks:
+    bounds: [0.0, 1.0]
+    injectivity_tolerance: 1.0e-12
+    construct_error_tolerance: 1.0e-12
+    clipping_forbidden: true
+
+outcome_generator:
+  type: gaussian_copula_bernoulli
+  rho: 0.15
+  formula:
+    - "Z_s ~ N(0,1)"
+    - "eps_si ~ N(0,1)"
+    - "L_si = sqrt(rho)*Z_s + sqrt(1-rho)*eps_si"
+    - "U_si = Phi(L_si)"
+    - "Y_si = 1[U_si <= T_i]"
+  paired_cells_share_Y: true
+
+randomness:
+  null_training_seed: 1821
+  detection_seed: 1822
+  decision_seed: 1823
+  bootstrap_seed: 1824
+  no_seed_change_after_result: true
+
+oracle_measurement:
+  purpose: best_case_information_resolution_upper_bound
+  candidate_metric: false
+  known_sign_pattern: true
+  row_score: "m_i = s_h(T_i)*(P_i-Y_i)"
+  construct_estimator: "C_hat_oracle = mean_i m_i / mean_i |s_h(T_i)|"
+
+resolution_output:
+  h_min_detect: null
+  h_min_decision: null
+  full_pass_vectors_required: true
+  force_monotonicity: false
+
+D_detect:
+  construct_target: 0.010
+  null_training_replicates: 200
+  null_evaluation_replicates: 100
+  defect_replicates_each_scale: 100
+  null_critical: "95th percentile of null-training C_hat_oracle, numpy quantile method='higher'"
+  detection_rule: "C_hat_oracle > null_critical"
+  false_positive_max: 0.10
+  power_min: 0.80
+  h_min_rule: finest_passing_declared_scale
+
+D_decision:
+  reference_construct: 0.010
+  relative_construct_degradation: [0.0, 0.125, 0.25, 0.50]
+  candidate_construct: "C_C = (1+R_construct)*0.010"
+  synthetic_replicates_per_scale_ratio_cell: 100
+  bootstrap:
+    type: paired_session_cluster_percentile
+    B: 2000
+    confidence: 0.95
+    resampling_unit: session_id
+    statistic: "R_hat_oracle=(C_hat_C-C_hat_R)/C_hat_R"
+    invalid_replicate: "C_hat_R <= 0"
+    invalid_replicate_max_fraction: 0.01
+  interval_coverage_required_each_cell: [0.90, 0.99]
+  NI_rule: "upper95(R_hat_oracle) < 0.25"
+  NI_pass_rates:
+    R_0.00_min: 0.80
+    R_0.125_min: 0.80
+    R_0.25_max: 0.10
+    R_0.50_max: 0.10
+  denominator_guard:
+    rule: "lower95(C_hat_R) > 0"
+    minimum_fraction_each_cell: 0.95
+  h_min_rule: finest_passing_declared_scale
+
+historical_firewall:
+  historical_vectors_forbidden: true
+  candidate_selection_from_partial_results_forbidden: true
+
+operator_gate_after_resolution:
+  definition: "G_operator = R1 & R2 & R3_star & R4"
+  R3_star: "promised spatial scale must lie within earned resolution topology"
+
+max_authority:
+  - local_resolution_upper_bound
+  - h_min_detect
+  - h_min_decision
+
+forbidden_authority:
+  - replacement_measurement
+  - Gamma_cal_replacement
+  - historical_calibration_closure
+  - mature_non_CCA_baseline
+  - Z_E
+  - Z_D
+  - Z_C
+  - Z_P

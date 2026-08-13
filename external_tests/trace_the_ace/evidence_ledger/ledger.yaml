@@ -1,0 +1,149 @@
+schema_version: 1
+ledger_id: TRACE_THE_ACE_EVIDENCE_LEDGER_V1
+policy:
+  append_only_in_spirit: true
+  successor_rule: A material change to a frozen hypothesis, dataset identity, fold assignment, preprocessing configuration, model configuration, or runtime creates a successor record.
+  authority_rule: Leaderboard score is an outcome, not an explanation. Predictive evidence does not inherit causal or CCA-theoretical authority without independent diagnosis.
+records:
+- experiment_id: M0
+  status: DIAGNOSED_PASS
+  purpose: reference-faithful measurement/comparison apparatus check
+  identity:
+    dataset_index_hash: 296399770b0818fa528f33382497bc7f4793b3c54a2e49e56e77efbc19d55c60
+    fold_artifact_hash: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+    preprocessing_config_hash: 9eaebf85e39c12da6677f9c22092629c7a7dfcba8d4cf3f06ace16896055fe0b
+    model_config_hash: 0489e7eb0015e62b3187ee27150278bbad82f717c32c54e326f0a9e00ab507b5
+    runtime_environment_hash: cf54c2e6e34e75a0f4b3c248da0db0fdb1855844fbb8f12c6b759ca5d5f317c7
+    transcript_manifest_hash: c957400ecc41752514fddd4fb4a9f576dcf84b5ef503cc293f80b1abe9ec44b2
+  data_expectations:
+    response_rows: 35072
+    unique_sessions: 22821
+    transcript_sessions: 22821
+    learning_objectives: 398
+  validation:
+    grouping_key: session_id
+    canonical_n_folds: 5
+    canonical_seed: 3
+    fold_hash: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+    leakage_checks:
+      '0': 0
+      '1': 0
+      '2': 0
+      '3': 0
+      '4': 0
+    reference_witness:
+      method: GroupShuffleSplit
+      test_size: 0.2
+      random_state: 3
+  model:
+    feature_set: M0_REFERENCE_ONLY
+    cca_features_present: false
+    config_hash: 51dcfebff467f88fcfdb94293222ab344244bcb4a65dae3414190aa1246acff5
+  environment:
+    python: 3.13.5
+    packages:
+      numpy: 2.3.5
+      pandas: 2.2.3
+      scikit_learn: 1.8.0
+      pyyaml: 6.0.3
+    platform: Linux-6.18.35-x86_64-with-glibc2.41
+    hardware:
+      cpu_count_visible: 5
+  reference:
+    metric: log_loss
+    published_base_log_loss_4dp: 0.6089
+    published_model_log_loss_4dp: 0.6054
+    published_auc_4dp: 0.5473
+    published_coefficients_3dp:
+      n_student_words: 0.068
+      numeric_turns_per_word: -0.211
+      digit_chars_per_word: 0.076
+    reproduction_rule: rounded_values_must_match_published_precision
+  results:
+    data_integrity:
+      status: PASS
+      responses: 35072
+      sessions: 22821
+      objectives: 398
+      transcript_sessions: 22821
+      utterances: 6139854
+    reference_reproduction:
+      auc: 0.5473456079616892
+      base_log_loss: 0.6088918065840663
+      checks:
+        auc: true
+        base_log_loss: true
+        coefficients: true
+        model_log_loss: true
+      coefficients:
+        digit_chars_per_word: 0.07569770194075158
+        n_student_words: 0.06836157563364859
+        numeric_turns_per_word: -0.21051638172143497
+      model_log_loss: 0.6053677970854194
+      reproduced: true
+      train_responses: 27909
+      validation_responses: 7004
+      validation_sessions: 4543
+    canonical_oof:
+      pooled_log_loss: 0.6045154928170339
+      pooled_auc: 0.5566948897220998
+      calibration:
+        brier_score: 0.207221464432313
+        ece_10_equal_width: 0.004379974720982257
+        mean_probability: 0.7023837906495382
+        observed_rate: 0.7024692062043796
+      folds:
+      - auc: 0.5529186107587646
+        fold: 0
+        log_loss: 0.6050549518472262
+        quiet_responses: 26
+        responses: 7014
+        sessions: 4555
+        train_base_rate: 0.7023813786929275
+      - auc: 0.5589057962793761
+        fold: 1
+        log_loss: 0.6036818294994436
+        quiet_responses: 29
+        responses: 7016
+        sessions: 4612
+        train_base_rate: 0.702392036095395
+      - auc: 0.56502988675389
+        fold: 2
+        log_loss: 0.6029511923829645
+        quiet_responses: 36
+        responses: 7014
+        sessions: 4562
+        train_base_rate: 0.7024163236083766
+      - auc: 0.5466744026758086
+        fold: 3
+        log_loss: 0.6068992251037145
+        quiet_responses: 37
+        responses: 7014
+        sessions: 4552
+        train_base_rate: 0.7024985681557846
+      - auc: 0.5602155631296954
+        fold: 4
+        log_loss: 0.6039905029659117
+        quiet_responses: 31
+        responses: 7014
+        sessions: 4540
+        train_base_rate: 0.7023272466881489
+  diagnosis:
+    apparatus_reproducible: true
+    discrepancies: []
+    failure_locus: null
+    m1_opening_condition_met: true
+  authority:
+    gained:
+    - Trace_the_Ace_data_integrity_gate_passed
+    - Trace_the_Ace_fixed_grouped_fold_apparatus_passed
+    - M0_reference_reproduced
+    - M1_may_be_opened
+    not_gained:
+    - CCA_support
+    - CCA_refutation
+    - causal_evidence
+    - G1_evidence
+    - PMC_evidence
+    - JT_evidence
+    - C_improve_measurement

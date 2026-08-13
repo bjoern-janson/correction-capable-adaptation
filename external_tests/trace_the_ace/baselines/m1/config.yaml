@@ -1,0 +1,64 @@
+schema_version: 1
+experiment_id: M1
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+predictive_object: "P(Y|T,X_ordinary)"
+objective_information_allowed: false
+cca_derived_features_allowed: false
+fold_sha256_required: "014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6"
+text_serialization:
+  preserve_utterance_order: true
+  role_markers:
+    tutor: "__ROLE_TUTOR__"
+    student: "__ROLE_STUDENT__"
+    background: "__ROLE_BACKGROUND__"
+  include_timestamp: false
+  include_session_id: false
+  include_response_id: false
+  include_objective: false
+  normalize_internal_whitespace: true
+ordinary_covariates:
+  - n_turns
+  - n_student_words
+  - numeric_turns_per_word
+  - digit_chars_per_word
+semantic_representation:
+  family: HashingVectorizer
+  pretrained_resources: []
+  analyzer: word
+  ngram_range: [1, 2]
+  n_features: 262144
+  alternate_sign: false
+  binary: false
+  norm: l2
+  lowercase: true
+  token_pattern: "(?u)\\b\\w+\\b"
+  dtype: float32
+classifier:
+  family: SGDClassifier
+  loss: log_loss
+  penalty: l2
+  alpha: 1.0e-5
+  max_iter: 50
+  tol: 1.0e-4
+  shuffle: true
+  random_state: 17
+  average: true
+  fit_intercept: true
+  class_weight: null
+  early_stopping: false
+structural_preprocessing:
+  imputation: train_fold_median
+  scaling: StandardScaler_train_fold
+calibration:
+  posthoc_calibrator: none
+  diagnostics:
+    - brier_score
+    - ece_10_equal_width
+primary_metric: log_loss
+primary_comparison: M0_vs_M1_same_oof_rows
+hyperparameter_search: none
+uncertainty:
+  method: paired_session_cluster_bootstrap
+  replicates: 2000
+  random_seed: 1701
+  interval: percentile_95

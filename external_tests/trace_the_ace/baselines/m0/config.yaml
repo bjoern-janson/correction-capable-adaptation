@@ -1,0 +1,39 @@
+schema_version: 1
+experiment_id: M0
+feature_definition: productive_math_talk_reference
+min_student_words: 100
+features:
+  - n_student_words
+  - numeric_turns_per_word
+  - digit_chars_per_word
+word_regex: "[a-z0-9]+(?:'[a-z]+)?"
+digit_regex: "\\d"
+reference_split:
+  method: GroupShuffleSplit
+  test_size: 0.2
+  random_state: 3
+reference_model:
+  scaler: StandardScaler
+  classifier: LogisticRegression
+  max_iter: 1000
+reference_targets:
+  rounding_rule: python_round
+  base_log_loss:
+    decimals: 4
+    value: 0.6089
+  model_log_loss:
+    decimals: 4
+    value: 0.6054
+  auc:
+    decimals: 4
+    value: 0.5473
+  coefficients:
+    decimals: 3
+    values:
+      n_student_words: 0.068
+      numeric_turns_per_word: -0.211
+      digit_chars_per_word: 0.076
+canonical_cv:
+  n_splits: 5
+  seed: 3
+  quiet_session_prediction: training_base_rate

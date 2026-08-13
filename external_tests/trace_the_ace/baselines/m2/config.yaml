@@ -1,0 +1,118 @@
+schema_version: 1
+experiment_id: M2
+status_at_freeze: AUTHORIZED_RESULT_UNOBSERVED
+parent_experiment_id: M1_CAL
+predictive_object: P(Y|T,O,X_ordinary)
+hypothesis_id: H_O
+cca_derived_features_allowed: false
+fold_sha256_required: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+parent_oof_sha256_required: f2aa3e53b345200f2dacf7b3c912e29a9a9ac76f09758cb8bb172f4ec06a2a47
+parent_probability_column: m1_cal_probability
+text_serialization:
+  preserve_utterance_order: true
+  role_markers:
+    tutor: __ROLE_TUTOR__
+    student: __ROLE_STUDENT__
+    background: __ROLE_BACKGROUND__
+  include_timestamp: false
+  include_session_id: false
+  include_response_id: false
+  include_objective: false
+  normalize_internal_whitespace: true
+ordinary_covariates:
+  - n_turns
+  - n_student_words
+  - numeric_turns_per_word
+  - digit_chars_per_word
+semantic_representation:
+  family: HashingVectorizer
+  pretrained_resources: []
+  analyzer: word
+  ngram_range: [1, 2]
+  n_features: 262144
+  alternate_sign: false
+  binary: false
+  norm: l2
+  lowercase: true
+  token_pattern: "(?u)\\b\\w+\\b"
+  dtype: float32
+objective_representation:
+  source_field: learning_objective
+  id_field: learning_objective_id
+  normalization: collapse_internal_whitespace
+  vectorizer: inherit_semantic_representation_exactly
+objective_main_effect_control:
+  model_id: M2_O
+  blocks:
+    - Z_T
+    - Z_O
+    - X_ordinary
+objective_conditioning:
+  model_id: M2
+  mechanism: sparse_elementwise_product_same_hash_space
+  expression: Z_T * Z_O
+  blocks:
+    - Z_T
+    - Z_O
+    - Z_T_x_Z_O
+    - X_ordinary
+base_classifier:
+  family: SGDClassifier
+  loss: log_loss
+  penalty: l2
+  alpha: 1.0e-5
+  max_iter: 500
+  tol: 1.0e-4
+  shuffle: true
+  random_state: 17
+  average: true
+  fit_intercept: true
+  class_weight: null
+  early_stopping: false
+structural_preprocessing:
+  imputation: train_fold_median
+  scaling: StandardScaler_train_fold
+inner_crossfit:
+  method: StratifiedGroupKFold
+  n_splits: 5
+  shuffle: true
+  random_state: 1703
+  grouping_key: session_id
+calibrator:
+  family: LogisticRegression
+  mapping: sigmoid(a*s+b)
+  penalty: null
+  solver: lbfgs
+  fit_intercept: true
+  max_iter: 1000
+  tol: 1.0e-8
+  class_weight: null
+primary_metric: log_loss
+primary_hypothesis_test:
+  comparison: M2_vs_M2_O_same_outer_oof_rows
+  point_improvement_required: true
+  paired_session_cluster_bootstrap_ci95_upper_strictly_below_zero: true
+total_objective_information_test:
+  comparison: M2_vs_M1_CAL_same_outer_oof_rows
+  point_improvement_required: true
+  paired_session_cluster_bootstrap_ci95_upper_strictly_below_zero: true
+main_effect_control_test:
+  comparison: M2_O_vs_M1_CAL_same_outer_oof_rows
+  diagnostic_only: true
+calibration_preservation_gates:
+  brier_not_worse_than_parent: true
+  ece_10_not_worse_than_parent: true
+  absolute_mean_probability_bias_not_worse_than_parent: true
+implementation_validity_gates:
+  objective_id_text_mapping_one_to_one: true
+  objective_block_nonzero: true
+  interaction_block_nonzero: true
+  objective_feature_rows_differ_within_at_least_one_multiobjective_session: true
+  all_outer_and_inner_base_models_converge_before_max_iter: true
+uncertainty:
+  method: paired_session_cluster_bootstrap
+  replicates: 2000
+  random_seed_total: 1705
+  random_seed_interaction: 1706
+  random_seed_main_effect: 1707
+  interval: percentile_95

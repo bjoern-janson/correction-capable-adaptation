@@ -1,0 +1,64 @@
+schema_version: 1
+experiment_id: M1
+lineage_parent: M0
+lifecycle_state: DIAGNOSED
+prospective_identity_frozen: true
+result_observed: true
+objective_information_present: false
+cca_derived_features_present: false
+result:
+  pooled_log_loss: 0.5790941374560221
+  m0_pooled_log_loss_recomputed: 0.6045154928170339
+  delta_log_loss_vs_m0: -0.025421355361011755
+  pooled_auc: 0.6763607523745989
+  brier_score: 0.19519137289395985
+  ece_10_equal_width: 0.0580493569617112
+  mean_probability: 0.7578927042603452
+  observed_rate: 0.7024692062043796
+  paired_session_bootstrap:
+    replicates: 2000
+    seed: 1701
+    clusters: 22821
+    ci95_lower: -0.02914376791793282
+    ci95_upper: -0.021685287168438025
+  fold_results:
+    - {fold: 0, m0_log_loss: 0.6050549518472262, m1_log_loss: 0.5802745401953002, delta_log_loss: -0.024780411651926015, auc: 0.6726306129869842, n_iter: 50}
+    - {fold: 1, m0_log_loss: 0.6036818294994436, m1_log_loss: 0.5743590037627784, delta_log_loss: -0.029322825736665226, auc: 0.6801361800431484, n_iter: 50}
+    - {fold: 2, m0_log_loss: 0.6029511923829645, m1_log_loss: 0.5825950483138025, delta_log_loss: -0.020356144069161974, auc: 0.6798810306565943, n_iter: 36}
+    - {fold: 3, m0_log_loss: 0.6068992251037145, m1_log_loss: 0.5795159309963491, delta_log_loss: -0.027383294107365397, auc: 0.6760385383182874, n_iter: 50}
+    - {fold: 4, m0_log_loss: 0.6039905029659117, m1_log_loss: 0.5787275143659767, delta_log_loss: -0.025262988599935032, auc: 0.6743773904953869, n_iter: 50}
+validation_checks:
+  all_folds_better_than_m0: true
+  maximum_within_session_prediction_range: 0.0
+  multi_response_sessions_checked: 8364
+identity:
+  dataset_index_sha256: 296399770b0818fa528f33382497bc7f4793b3c54a2e49e56e77efbc19d55c60
+  fold_artifact_sha256: 014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6
+  config_sha256: 1d922f22f1ef50dd87b96462007a1f3948be45ddb164be3a1565bfb19e2e2018
+  m1_record_sha256: bd35033ae7c95e0c685d3334afe75025259447428883f27b5692fca36476c51e
+  oof_predictions_sha256: ee3b60f9165237480778ef2a5be71735192e520dfaf605e6a4754f77e3b5f434
+diagnosis:
+  predictive_information_gate: PASS
+  strongest_ordinary_baseline_gate: UNRESOLVED
+  residuals:
+    - type: estimator_training
+      observation: four_of_five_outer_folds_hit_max_iter_50
+      consequence: M1 cannot yet be treated as the final strongest ordinary semantic baseline
+    - type: calibration
+      observation: ECE_10_is_0.0580_and_mean_probability_exceeds_observed_rate
+      consequence: raw M1 probabilities are undercalibrated under the frozen no-calibrator policy
+  shallowest_next_boundary: M1_estimator_calibration_successor
+  m2_authorized: false
+authority:
+  gained:
+    - generic_transcript_semantics_add_predictive_information_beyond_M0_under_frozen_M1
+  not_gained:
+    - CCA_support
+    - CCA_refutation
+    - causal_evidence
+    - H_O_support
+    - G1_evidence
+    - PMC_evidence
+    - repeated_correction_evidence
+    - JT_evidence
+    - C_improve_measurement
