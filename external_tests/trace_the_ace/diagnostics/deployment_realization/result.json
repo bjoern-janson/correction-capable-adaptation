@@ -1,0 +1,94 @@
+{
+  "D_deployment": "UNIDENTIFIED_INPUT_BLOCKED",
+  "STOP": "BLOCKED_MISSING_INPUT",
+  "audit_id": "TRACE_THE_ACE_DEPLOYMENT_REALIZATION",
+  "authority": {
+    "authorized_interpretation": "INPUT_AND_PROVENANCE_DIAGNOSIS_ONLY",
+    "calibration_selection_reopened": false,
+    "cca_update_authorized": false,
+    "deployment_mismatch_conclusion_authorized": false,
+    "hidden_or_public_test_information_used": false,
+    "model_search_reopened": false,
+    "submission_02_authorized": false
+  },
+  "metrics": null,
+  "missing_required_objects": [
+    "historical_m2s_oof",
+    "historical_outer_folds",
+    "deployment_crossfit_scores",
+    "deployment_crossfit_fitting_implementation",
+    "deployment_crossfit_platt_geometry"
+  ],
+  "parent_commit": "4d02c557e234772ed28319fd4cf67098341318fd",
+  "phase0": {
+    "external_semantic_resource_integrity": "PASS",
+    "paired_score_row_identity": "NOT_CONSTITUTABLE",
+    "required_object_availability": "FAIL",
+    "research_implementation_integrity": "PASS",
+    "state": "COMPLETED_BLOCKED",
+    "submission_01_integrity": "PASS",
+    "training_feature_label_row_alignment": "PASS",
+    "training_input_integrity": "PASS",
+    "training_transcript_session_coverage": "PASS"
+  },
+  "phases": {
+    "phase1_raw_score_comparison": "NOT_RUN_BLOCKED_MISSING_INPUT",
+    "phase2_fixed_family_platt_comparison": "NOT_RUN_BLOCKED_MISSING_INPUT",
+    "phase3_packaged_implementation_equivalence": "NOT_RUN_BLOCKED_MISSING_INPUT",
+    "phase4_full_fit_secondary_diagnostic": "NOT_RUN_BLOCKED_MISSING_INPUT"
+  },
+  "schema_version": 1,
+  "tests": {
+    "direct_vs_packaged_probability_equivalence": "NOT_REACHED",
+    "direct_vs_packaged_raw_score_equivalence": "NOT_REACHED",
+    "phase0_fail_closed_contract": "PASS",
+    "primary_paired_row_alignment": "NOT_REACHED",
+    "score_extraction_consistency": "NOT_REACHED"
+  },
+  "verification_detail": {
+    "primary_objects": {
+      "deployment_crossfit_fitting_implementation": {
+        "expected_sha256": null,
+        "observed_sha256": null,
+        "path": null,
+        "status": "ABSENT"
+      },
+      "deployment_crossfit_platt_geometry": {
+        "expected_sha256": null,
+        "observed_sha256": null,
+        "path": null,
+        "status": "ABSENT"
+      },
+      "deployment_crossfit_scores": {
+        "expected_sha256": null,
+        "observed_sha256": null,
+        "path": null,
+        "status": "ABSENT"
+      },
+      "historical_m2s_oof": {
+        "expected_sha256": "64679b828af9737e5245dd1348f2c8e0cf5a38e013eefaee02266de7277e096f",
+        "observed_sha256": null,
+        "path": null,
+        "status": "ABSENT"
+      },
+      "historical_outer_folds": {
+        "expected_sha256": "014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6",
+        "observed_sha256": null,
+        "path": null,
+        "status": "ABSENT"
+      }
+    },
+    "training": {
+      "response_id_order_matches": true,
+      "response_ids_unique": true,
+      "rows": 35072,
+      "sessions": 22821
+    },
+    "transcripts": {
+      "combined_session_coverage_matches": true,
+      "part1_csv_members": 11400,
+      "part2_csv_members": 11421,
+      "sessions": 22821
+    }
+  }
+}

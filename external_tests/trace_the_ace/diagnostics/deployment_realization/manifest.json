@@ -1,0 +1,207 @@
+{
+  "audit_id": "TRACE_THE_ACE_DEPLOYMENT_REALIZATION",
+  "authority": {
+    "calibration_selection_reopened": false,
+    "cca_features_authorized": false,
+    "hidden_or_public_test_information_used": false,
+    "model_search_reopened": false,
+    "raw_competition_data_committed": false,
+    "submission_02_authorized": false
+  },
+  "contract": {
+    "issue": 48,
+    "url": "https://github.com/bjoern-janson/correction-capable-adaptation/issues/48"
+  },
+  "frozen_parent": {
+    "commit": "4d02c557e234772ed28319fd4cf67098341318fd",
+    "pull_request": 47,
+    "pull_request_branch": "agent/trace-the-ace-source-admissibility-diagnostic"
+  },
+  "present_inputs": {
+    "external_semantic_resource": {
+      "archive_byte_size": 301036094,
+      "archive_filename": "glove.2024.wikigiga.50d.zip",
+      "archive_sha256": "afa5e258ee38272db6394547c4b075ecbb7b2164e98542c8d1237b6029b35a65",
+      "dimension": 50,
+      "extracted_member_byte_size": 842192707,
+      "extracted_member_name": "wiki_giga_2024_50_MFT20_vectors_seed_123_alpha_0.75_eta_0.075_combined.txt",
+      "extracted_member_sha256": "16c4253cb9a19045dcdc758b6a1eda52d3c37b894dea2601a45046b4300a8d10"
+    },
+    "submission_01": {
+      "archive": {
+        "filename": "trace_the_ace_submission_01_m2s.zip",
+        "sha256": "48d4d2f1db873e77a5c185cce6649d1425090ad710767b7541eb225035c93aec",
+        "size_bytes": 7371771
+      },
+      "members": {
+        "assets/glove_filtered.npz": "2af970dfabbcb70fa8247d646532e1b420afa09f1d02fe545fca317d6bf3c17b",
+        "assets/model.npz": "a5af72f06930ac2a5c43a69d2c5a0b8ffc1765631b18e55afa7dd91cbf120742",
+        "assets/model_manifest.json": "5c555adcb7295bc538802d473c6945dc3c3b6f4196dedccb93c8ad995ccffee2",
+        "main.py": "28c7f515e6a388a03b4eadca0b083fb3577bd05c8d530341116a065ada30941c"
+      }
+    },
+    "training_features": {
+      "filename": "train_features_TMQTWsB.csv",
+      "response_ids_unique": true,
+      "rows": 35072,
+      "sessions": 22821,
+      "sha256": "71bea3abb76a1cff5e1eaa75b9cbcfaf26d0419f6274b83a199ed520047a5063"
+    },
+    "training_labels": {
+      "filename": "train_labels_44ujmj2.csv",
+      "response_id_order_matches_features": true,
+      "response_ids_unique": true,
+      "rows": 35072,
+      "sha256": "d98ee4389e5cde3f66d6d15b7b574261024a80e405958eca333d3c1921fd65b9"
+    },
+    "training_transcripts": {
+      "combined_session_coverage_matches_features": true,
+      "part1": {
+        "csv_members": 11400,
+        "filename": "train_transcripts_part1.zip",
+        "sha256": "f8172da9547286f7bd09967571c56626f63e39fb6e24ffcdf475071db57836b7"
+      },
+      "part2": {
+        "csv_members": 11421,
+        "filename": "train_transcripts_part2.zip",
+        "sha256": "22ff3c12b599ec82489d9cb546cc2dd2322a8e77dc812ea15352f4830f24cd82"
+      },
+      "sessions": 22821
+    }
+  },
+  "required_missing_objects": {
+    "deployment_crossfit_fitting_implementation": {
+      "required_for": "exact deployment implementation and fitting provenance",
+      "status": "ABSENT_FROM_AUDITED_SCOPE"
+    },
+    "deployment_crossfit_platt_geometry": {
+      "required_for": "fold-specific fixed-family calibration comparison",
+      "status": "ABSENT_FROM_AUDITED_SCOPE"
+    },
+    "deployment_crossfit_scores": {
+      "required_for": "z_deploy_CF with response and fold identities",
+      "status": "ABSENT_FROM_AUDITED_SCOPE"
+    },
+    "historical_m2s_oof": {
+      "required_for": "z_research_OOF with response and fold identities",
+      "sha256_required": "64679b828af9737e5245dd1348f2c8e0cf5a38e013eefaee02266de7277e096f",
+      "status": "ABSENT_FROM_AUDITED_SCOPE"
+    },
+    "historical_outer_folds": {
+      "required_for": "exact historical row-to-fold assignment",
+      "sha256_required": "014df0fb893250dc15f106605109ca3b7e86460f98bece560582826cc8b20cb6",
+      "status": "ABSENT_FROM_AUDITED_SCOPE"
+    }
+  },
+  "research_implementation": {
+    "files": {
+      "external_tests/trace_the_ace/baselines/m0/train.py": "5c36a4dfaf528fac3e86face05dda13eecebbaeaf9b2ebdc6e9bc80e50009e57",
+      "external_tests/trace_the_ace/baselines/m1_prime/train.py": "e8134bf4ec8d18aca74c6fb5e7bcf3d02ab327f0f96115e5b566474cf500f208",
+      "external_tests/trace_the_ace/baselines/m2/train.py": "c693b23a9d09a73bfadbfb33476b9fe8c16a3d21d24d76ded74e0b02a71d77f7",
+      "external_tests/trace_the_ace/baselines/m2_sem/aggregate.py": "7d958aac68461e598ff6c6c428cdf282524f2d9b609f8fc7b86eb8e85c67f59d",
+      "external_tests/trace_the_ace/baselines/m2_sem/checkpoint_arm.py": "d3c4efb5c08f3b89ea241b8921a83d7e96bd7b3d46f298a1c837a7c1a60ffc8e",
+      "external_tests/trace_the_ace/baselines/m2_sem/config.yaml": "6953bdfaf77bbe60b1bf7214626150d74e5e4911283a7250c1254d93695bae2e",
+      "external_tests/trace_the_ace/baselines/m2_sem/feature_stage.py": "231d89f8d5250b0b01b0f34697233eafd86c34ee086199c6f9a6071c4a7e0132",
+      "external_tests/trace_the_ace/data/build_index.py": "ae3da3fcaafdf137dec5941b012ea200dc450aa73edcc56ba4e6e4e90c694090",
+      "external_tests/trace_the_ace/validation/make_folds.py": "7ced032076ac74e4b0bfa7d8071a0034335ff67a729f622509142189b412c717"
+    },
+    "identity": "PRESENT_HASH_VALID",
+    "settings": {
+      "base_classifier": {
+        "alpha": 1e-05,
+        "average": true,
+        "family": "SGDClassifier",
+        "fit_intercept": true,
+        "loss": "log_loss",
+        "max_iter": 500,
+        "penalty": "l2",
+        "random_state": 17,
+        "shuffle": true,
+        "tol": 0.0001
+      },
+      "calibrator": {
+        "family": "LogisticRegression",
+        "fit_intercept": true,
+        "mapping": "sigmoid(a*s+b)",
+        "max_iter": 1000,
+        "penalty": null,
+        "solver": "lbfgs",
+        "tol": 1e-08
+      },
+      "external_semantic_resource": "Stanford_GloVe_50d",
+      "features": [
+        "hashed_transcript_word_ngrams_1_2",
+        "hashed_learning_objective_word_ngrams_1_2",
+        "four_ordinary_session_covariates",
+        "objective_independent_session_semantic_mean_50d"
+      ],
+      "hashed_representation": {
+        "alternate_sign": false,
+        "analyzer": "word",
+        "binary": false,
+        "dtype": "float32",
+        "family": "HashingVectorizer",
+        "lowercase": true,
+        "n_features": 262144,
+        "ngram_range": [
+          1,
+          2
+        ],
+        "norm": "l2",
+        "token_pattern": "(?u)\\b\\w+\\b"
+      },
+      "inner_crossfit": {
+        "grouping_key": "session_id",
+        "method": "StratifiedGroupKFold",
+        "n_splits": 5,
+        "random_state": 1703,
+        "shuffle": true
+      },
+      "ordinary_covariates": [
+        "n_turns",
+        "n_student_words",
+        "numeric_turns_per_word",
+        "digit_chars_per_word"
+      ],
+      "outer_split": {
+        "fold_artifact_status": "ABSENT_FROM_AUDITED_SCOPE",
+        "grouping_key": "session_id",
+        "method": "StratifiedGroupKFold",
+        "n_splits": 5,
+        "seed": 3,
+        "shuffle": true
+      },
+      "structural_preprocessing": {
+        "imputation": "train_fold_median",
+        "scaling": "StandardScaler_train_fold"
+      }
+    }
+  },
+  "submission_01_fitted_state": {
+    "base_classifier_n_iter": 40,
+    "calibration_mapping": {
+      "intercept": 0.016844607580613378,
+      "slope": 0.6809290337993068
+    },
+    "provenance_ceiling": "FINAL_FULL_TRAINING_PACKAGE_ONLY_NOT_DEPLOYMENT_CROSSFIT",
+    "structural_imputation_median": [
+      266.0,
+      963.0,
+      0.0422138836773,
+      0.1921664626683
+    ],
+    "structural_scaler_mean": [
+      268.342723540146,
+      1003.203067974453,
+      0.0447982113314,
+      0.2004088328977
+    ],
+    "structural_scaler_scale": [
+      72.047810435625,
+      430.620482750115,
+      0.0192281648488,
+      0.0846125735688
+    ]
+  },
+  "schema_version": 1
+}
