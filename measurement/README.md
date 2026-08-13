@@ -12,7 +12,7 @@ G_1
 }
 \]
 
-Its role is **provisionally fixed and reopenable**, its empirical status is **untested**, and its experiment contract is **unfrozen**. Implementation remains unauthorized.
+Its role is **provisionally fixed and reopenable**, its empirical status is **untested**, and implementation remains unauthorized.
 
 The former broad-versus-relational choice is historical adversarial provenance. It is not the current G1 frontier.
 
@@ -44,7 +44,7 @@ resolution:
 closed through the G1 adversarial lineage
 
 current empirical blocker:
-no prospectively frozen G1 measurement/treatment contract
+apparatus fidelity remains untested; implementation and execution remain unauthorized
 ```
 
 Resolving the historical fork did not establish a positive G1 result.
@@ -55,7 +55,9 @@ The candidate/nonempirical successor in [`G1_SYSTEM_FACING_EXPOSURE_INTEGRITY_AT
 
 The nonexecutable candidate in [`G1_REALIZED_EXPOSURE_FIDELITY_ATTACK.md`](G1_REALIZED_EXPOSURE_FIDELITY_ATTACK.md) specifies how a future authorized apparatus must validate \(S_{\mathrm{specified}}\rightarrow S_{\mathrm{realized}}\); actual fidelity and \(S_{\mathrm{realized}}\rightarrow D\) remain blocked and unopened.
 
-The noncanonical successor in [`G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md`](G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md) earns local `MEASUREMENT_VALID` only for prospectively distinguishing fidelity `PASS`, `FAIL`, and `INVALID/UNRESOLVED`; it does not validate an apparatus, freeze a contract, authorize implementation, or change G1 empirical authority.
+The noncanonical successor in [`G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md`](G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md) earns local `MEASUREMENT_VALID` only for prospectively distinguishing fidelity `PASS`, `FAIL`, and `INVALID/UNRESOLVED`; it does not validate an apparatus, authorize implementation, or change G1 empirical authority.
+
+The frozen design successor in [`G1_MEASUREMENT_TREATMENT_CONTRACT.md`](G1_MEASUREMENT_TREATMENT_CONTRACT.md) fixes the G1 evidence-package treatment contrast, typed direction \(D\subseteq C\), primary estimand, upstream gates, authority ceiling, and stopping rule. Its state is `MEASUREMENT_AND_TREATMENT_VALID_IN_DESIGN`; apparatus fidelity and G1 remain untested and execution authority remains `NONE`.
 
 ## Evidence-codebook feasibility result
 
