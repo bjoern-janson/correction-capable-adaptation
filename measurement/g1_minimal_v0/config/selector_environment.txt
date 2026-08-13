@@ -1,0 +1,8 @@
+network: disabled
+tools: none
+filesystem: read-denied except fixed executable/runtime image
+environment: frozen
+argv: frozen
+cwd: frozen
+history: none
+persistent_memory: none

@@ -1,0 +1,1 @@
+g1-minimal-v0:auditor-checkpoint-genesis:v0
