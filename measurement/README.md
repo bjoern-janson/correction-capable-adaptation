@@ -1,6 +1,6 @@
 # Measurement Layer
 
-The current empirical authority frontier is G1 measurement and scientific-object validity, not model execution.
+The current empirical authority frontier is G1 apparatus fidelity, not G1 effect execution.
 
 CCA provisionally fixes the scientific role of G1 as:
 
@@ -12,7 +12,7 @@ G_1
 }
 \]
 
-Its role is **provisionally fixed and reopenable**, its empirical status is **untested**, and implementation remains unauthorized.
+Its role is **provisionally fixed and reopenable**, its empirical status is **untested**, a minimal fidelity-audit apparatus implementation is now bound, and G1 execution remains unauthorized.
 
 The former broad-versus-relational choice is historical adversarial provenance. It is not the current G1 frontier.
 
@@ -44,8 +44,9 @@ resolution:
 closed through the G1 adversarial lineage
 
 current empirical blocker:
-no concrete G1 apparatus has been instantiated and fidelity-audited
-under the frozen audit protocol; implementation and execution remain unauthorized
+g1-minimal-v0 is content-addressed and bound for fidelity-audit validation,
+but the frozen apparatus fidelity audit has not yet been executed;
+G1 execution remains unauthorized
 ```
 
 Resolving the historical fork did not establish a positive G1 result.
@@ -56,13 +57,17 @@ The candidate/nonempirical successor in [`G1_SYSTEM_FACING_EXPOSURE_INTEGRITY_AT
 
 The nonexecutable candidate in [`G1_REALIZED_EXPOSURE_FIDELITY_ATTACK.md`](G1_REALIZED_EXPOSURE_FIDELITY_ATTACK.md) specifies how a future authorized apparatus must validate \(S_{\mathrm{specified}}\rightarrow S_{\mathrm{realized}}\); actual fidelity and \(S_{\mathrm{realized}}\rightarrow D\) remain blocked and unopened.
 
-The noncanonical successor in [`G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md`](G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md) earns local `MEASUREMENT_VALID` only for prospectively distinguishing fidelity `PASS`, `FAIL`, and `INVALID/UNRESOLVED`; it does not validate an apparatus, authorize implementation, or change G1 empirical authority.
+The noncanonical successor in [`G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md`](G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md) earns local `MEASUREMENT_VALID` only for prospectively distinguishing fidelity `PASS`, `FAIL`, and `INVALID/UNRESOLVED`; it does not validate an apparatus, authorize execution, or change G1 empirical authority.
 
-The frozen design successor in [`G1_MEASUREMENT_TREATMENT_CONTRACT.md`](G1_MEASUREMENT_TREATMENT_CONTRACT.md) fixes the G1 evidence-package treatment contrast, typed direction \(D\subseteq C\), primary estimand, upstream gates, authority ceiling, and stopping rule. Its state is `MEASUREMENT_AND_TREATMENT_VALID_IN_DESIGN`; apparatus fidelity and G1 remain untested and execution authority remains `NONE`.
+The frozen design successor in [`G1_MEASUREMENT_TREATMENT_CONTRACT.md`](G1_MEASUREMENT_TREATMENT_CONTRACT.md) fixes the G1 evidence-package treatment contrast, typed direction \(D\subseteq C\), primary estimand, upstream gates, authority ceiling, and stopping rule. Its state is `MEASUREMENT_AND_TREATMENT_VALID_IN_DESIGN`; G1 remains untested and execution authority remains `NONE`.
 
-The frozen apparatus successor in [`G1_APPARATUS_FIDELITY_CONTRACT.md`](G1_APPARATUS_FIDELITY_CONTRACT.md) fixes the fidelity requirements for a future concrete realization, including the complete selector-facing boundary, strict audit-result typing, regime-level non-degeneracy, and realized-exposure gate \(A_7\). Its state is `APPARATUS_FIDELITY_CONTRACT_VALID_IN_DESIGN`; the concrete apparatus remains `UNTESTED`, and neither implementation nor execution is authorized by the contract.
+The frozen apparatus successor in [`G1_APPARATUS_FIDELITY_CONTRACT.md`](G1_APPARATUS_FIDELITY_CONTRACT.md) fixes the fidelity requirements for a concrete realization, including the complete selector-facing boundary, strict audit-result typing, regime-level non-degeneracy, and realized-exposure gate \(A_7\). Its state is `APPARATUS_FIDELITY_CONTRACT_VALID_IN_DESIGN`; no fidelity result is implied by implementation.
 
-The frozen audit successor in [`G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md`](G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md) fixes the attributable audit procedure for a future concrete apparatus: referent binding \(\mathfrak a_A\), global attribution gate \(G_0\), audit/G1 unit firewall, gate-level verdict rules, static plus per-episode realized-exposure evidence, and noncompensatory `FIDELITY_PASS` / `FIDELITY_FAIL` / `INVALID/UNRESOLVED` aggregation. Its state is `AUDIT_PROTOCOL_VALID_IN_DESIGN`; no concrete apparatus has been audited and execution authority remains `FALSE`.
+The frozen audit successor in [`G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md`](G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md) fixes the attributable audit procedure: referent binding \(\mathfrak a_A\), global attribution gate \(G_0\), audit/G1 unit firewall, gate-level verdict rules, static plus per-episode realized-exposure evidence, and noncompensatory `FIDELITY_PASS` / `FIDELITY_FAIL` / `INVALID/UNRESOLVED` aggregation. Its state is `AUDIT_PROTOCOL_VALID_IN_DESIGN`.
+
+The frozen blueprint in [`G1_MINIMAL_APPARATUS_REFERENT_SPECIFICATION.md`](G1_MINIMAL_APPARATUS_REFERENT_SPECIFICATION.md) specifies the smallest fidelity-only apparatus target and preserves the distinction between a frozen specification and a concrete bound referent.
+
+The concrete successor in [`G1_MINIMAL_APPARATUS_BINDING_RECORD.md`](G1_MINIMAL_APPARATUS_BINDING_RECORD.md), with machine-readable inventory at [`g1_minimal_v0/binding_manifest.json`](g1_minimal_v0/binding_manifest.json), binds `g1-minimal-v0` to exact code/configuration SHA-256 identities, a frozen runtime target, package/null semantics, assignment mechanism, transport graph, isolation declarations, and provenance genesis. Its state is `CONCRETE_APPARATUS_REFERENT_FROZEN`; the apparatus fidelity audit remains `NOT_EXECUTED`, `D_G1_APPARATUS = UNTESTED`, and G1 execution authority remains `FALSE`.
 
 ## Evidence-codebook feasibility result
 
