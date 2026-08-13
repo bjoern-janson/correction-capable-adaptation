@@ -44,8 +44,8 @@ resolution:
 closed through the G1 adversarial lineage
 
 current empirical blocker:
-no concrete G1 apparatus has been instantiated and fidelity-audited;
-implementation and execution remain unauthorized
+no concrete G1 apparatus has been instantiated and fidelity-audited
+under the frozen audit protocol; implementation and execution remain unauthorized
 ```
 
 Resolving the historical fork did not establish a positive G1 result.
@@ -61,6 +61,8 @@ The noncanonical successor in [`G1_FIDELITY_MEASUREMENT_VALIDITY_ATTACK.md`](G1_
 The frozen design successor in [`G1_MEASUREMENT_TREATMENT_CONTRACT.md`](G1_MEASUREMENT_TREATMENT_CONTRACT.md) fixes the G1 evidence-package treatment contrast, typed direction \(D\subseteq C\), primary estimand, upstream gates, authority ceiling, and stopping rule. Its state is `MEASUREMENT_AND_TREATMENT_VALID_IN_DESIGN`; apparatus fidelity and G1 remain untested and execution authority remains `NONE`.
 
 The frozen apparatus successor in [`G1_APPARATUS_FIDELITY_CONTRACT.md`](G1_APPARATUS_FIDELITY_CONTRACT.md) fixes the fidelity requirements for a future concrete realization, including the complete selector-facing boundary, strict audit-result typing, regime-level non-degeneracy, and realized-exposure gate \(A_7\). Its state is `APPARATUS_FIDELITY_CONTRACT_VALID_IN_DESIGN`; the concrete apparatus remains `UNTESTED`, and neither implementation nor execution is authorized by the contract.
+
+The frozen audit successor in [`G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md`](G1_APPARATUS_FIDELITY_AUDIT_PROTOCOL.md) fixes the attributable audit procedure for a future concrete apparatus: referent binding \(\mathfrak a_A\), global attribution gate \(G_0\), audit/G1 unit firewall, gate-level verdict rules, static plus per-episode realized-exposure evidence, and noncompensatory `FIDELITY_PASS` / `FIDELITY_FAIL` / `INVALID/UNRESOLVED` aggregation. Its state is `AUDIT_PROTOCOL_VALID_IN_DESIGN`; no concrete apparatus has been audited and execution authority remains `FALSE`.
 
 ## Evidence-codebook feasibility result
 
