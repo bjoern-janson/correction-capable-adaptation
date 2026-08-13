@@ -1,8 +1,12 @@
 ASSIGNMENT_CONSTRUCTION = "sha256(seed:unit_id) mod 2"
-CAMPAIGN_SEED_POLICY = (
-    "seed is fixed and auditor-checkpointed before any audit-unit package construction"
+UNIT_ID_POLICY = (
+    "all unit_id values are frozen and auditor-checkpointed before campaign seed commitment "
+    "and before evidence/direction construction"
 )
-UNIT_ID_POLICY = "unit_id is assigned before evidence and direction construction"
+CAMPAIGN_SEED_POLICY = (
+    "campaign seed is fixed and auditor-checkpointed after unit_id freeze and before any "
+    "audit-unit package construction"
+)
 FORBIDDEN_ASSIGNMENT_INPUTS = (
     "evidence",
     "direction",
